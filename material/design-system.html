@@ -1,0 +1,691 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unidade 1.1 — Módulo I · Saúde da Caminhoneira e Caminhoneiro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600&family=IBM+Plex+Serif:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary:   { DEFAULT: '#187848', deep: '#0E6238' },
+            accent:    '#43B64A',
+            cta:       { DEFAULT: '#F5A623', deep: '#E08C0E' },
+            bg:        '#F3F6F4',
+            fg:        '#1E2A23',
+            card:      '#FFFFFF',
+            secondary: '#EAF6EF',
+            muted:     { DEFAULT: '#ECF1EE', fg: '#6B7771' },
+            border:    '#D8E2DC',
+          },
+          fontFamily: {
+            serif: ['"IBM Plex Serif"', 'Georgia', 'serif'],
+            sans:  ['"IBM Plex Sans"',  'system-ui', 'sans-serif'],
+          },
+          boxShadow: {
+            sm:    '0 1px 3px rgba(0,0,0,.07),0 1px 2px rgba(0,0,0,.04)',
+            md:    '0 3px 10px rgba(0,0,0,.09)',
+            lg:    '0 18px 48px rgba(15,55,33,.16)',
+            brand: '0 12px 28px rgba(24,120,72,.28)',
+            cta:   '0 10px 22px rgba(245,166,35,.35)',
+            logo:  '0 8px 32px rgba(0,0,0,.25),0 1px 0 rgba(255,255,255,.12) inset',
+          },
+          backgroundImage: {
+            'hero':   'linear-gradient(150deg,#0e6238 0%,#187848 100%)',
+            'brand':  'linear-gradient(135deg,#187848 0%,#0e6238 100%)',
+            'cta-g':  'linear-gradient(135deg,#f5a623 0%,#e08c0e 100%)',
+            'bright': 'linear-gradient(135deg,#4FC65A 0%,#2E9E58 100%)',
+            'prog':   'linear-gradient(90deg,#187848 0%,#43B64A 60%,#F5A623 100%)',
+          },
+          fontSize: {
+            hero:    ['clamp(1.9rem,1.2rem+2.8vw,3.1rem)', { lineHeight: '1.18', fontWeight: '700' }],
+            section: ['clamp(1.25rem,.95rem+1vw,1.6rem)',  { lineHeight: '1.22' }],
+            sub:     ['clamp(1.05rem,.9rem+.5vw,1.28rem)', { lineHeight: '1.22' }],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    :root { --sidebar-w: 220px; }
+    html  { scroll-behavior: smooth; scroll-padding-top: 20px; }
+    body  { font-family: 'IBM Plex Sans', system-ui, sans-serif; font-size: 16px; line-height: 1.7; }
+    h1,h2,h3,h4 { font-family: 'IBM Plex Serif', Georgia, serif; line-height: 1.22; }
+    p  { margin: 0 0 1.05em; }
+    li { margin-bottom: .3em; }
+
+    .pf { height: 100%; width: 0; background: linear-gradient(90deg,#187848 0%,#43B64A 60%,#F5A623 100%); transition: width .1s linear; border-radius: 0 2px 2px 0; }
+
+    .sidenav { flex: none; position: sticky; top: 0; height: 100vh; overflow-y: auto; overflow-x: hidden; background-color: #fff; border-right: 1px solid #D8E2DC; z-index: 50; padding: 1.1rem .8rem; width: var(--sidebar-w); transition: width .18s ease, padding .18s ease; }
+    body.sidebar-closed .sidenav { width: 0; padding: 0; overflow: hidden; }
+    body.sidebar-closed .sb-toggle { display: flex; }
+
+    .toc-a.is-active { background-color: #EAF6EF; color: #0E6238; font-weight: 600; box-shadow: inset 3px 0 0 #187848; }
+
+    .section-h { display: flex; align-items: flex-start; gap: .65rem; margin-bottom: 1rem; padding-bottom: .75rem; border-bottom: 1px solid #D8E2DC; }
+    .section-h::before { content: ''; width: .25rem; flex-shrink: 0; border-radius: 9999px; background-color: #187848; margin-top: .2em; align-self: stretch; min-height: 1.35em; }
+
+    .acc summary { list-style: none; }
+    .acc summary::-webkit-details-marker { display: none; }
+    .acc[open] .acc-chev { transform: rotate(180deg); }
+
+    .hs::after { content: ''; position: absolute; border-radius: 9999px; border: 2px solid currentColor; opacity: .55; inset: -9px; animation: hpulse 2.2s cubic-bezier(.4,0,.2,1) infinite; }
+    @keyframes hpulse { 0%{ transform:scale(1); opacity:.55; } 70%{ transform:scale(1.5); opacity:0; } 100%{ opacity:0; } }
+
+    .overlay { position: fixed; inset: 0; z-index: 200; display: grid; place-items: center; padding: 1.5rem; background-color: rgba(0,0,0,.4); opacity: 0; visibility: hidden; transition: opacity .15s, visibility .15s; }
+    .overlay.is-open { opacity: 1; visibility: visible; }
+    .overlay .modal { transform: translateY(6px); transition: transform .15s; }
+    .overlay.is-open .modal { transform: none; }
+
+    .totop { position: fixed; right: 1.5rem; bottom: 1.5rem; z-index: 90; width: 2.75rem; height: 2.75rem; padding: 0; border: none; border-radius: .25rem; cursor: pointer; background-color: #187848; color: #fff; display: grid; place-items: center; opacity: 0; transform: translateY(.5rem); pointer-events: none; transition: opacity .2s, transform .2s, background-color .12s; box-shadow: 0 12px 28px rgba(24,120,72,.28); }
+    .totop:hover { background-color: #0E6238; }
+    .totop.is-shown { opacity: 1; transform: translateY(0); pointer-events: auto; }
+
+    .bigbtn        { background: linear-gradient(135deg,#4FC65A 0%,#2E9E58 100%); }
+    .bigbtn--brand { background: linear-gradient(135deg,#187848 0%,#0E6238 100%); }
+    .bigbtn--cta   { background: linear-gradient(135deg,#F5A623 0%,#E08C0E 100%); }
+
+    @media (max-width: 920px) {
+      .page-layout { display: block !important; }
+      .sidenav { position: fixed !important; top: 0 !important; left: 0 !important; height: 100vh !important; width: var(--sidebar-w) !important; padding: 1.1rem .8rem !important; overflow-y: auto !important; overflow-x: hidden !important; transform: translateX(-100%); transition: transform .18s ease !important; }
+      .sidenav.is-open { transform: translateX(0) !important; }
+      body.sidebar-closed .sidenav { width: var(--sidebar-w) !important; padding: 1.1rem .8rem !important; }
+      .sb-toggle { display: flex; }
+      .cw { padding: 2rem 1.25rem 4rem !important; }
+    }
+    @media (max-width: 600px) {
+      .hero-s { padding: 2.5rem 1rem 2rem !important; }
+      .cw     { padding: 1.5rem 1rem 4rem !important; }
+      .bb-sub { display: none; }
+    }
+  </style>
+</head>
+<body class="bg-bg text-fg antialiased">
+
+<!-- ─── Progress bar ─────────────────────────────── -->
+<div class="fixed top-0 left-0 right-0 h-1 bg-black/5 z-[120]">
+  <div class="pf" id="pf"></div>
+</div>
+
+<!-- ─── Hero ─────────────────────────────────────── -->
+<section class="relative overflow-hidden text-white pt-20 pb-[4.5rem] px-6 bg-hero hero-s">
+  <div class="absolute inset-0 pointer-events-none"
+       style="background-image:radial-gradient(ellipse at 15% 60%,rgba(255,255,255,.07) 0%,transparent 55%),radial-gradient(ellipse at 85% 15%,rgba(255,255,255,.05) 0%,transparent 45%)"></div>
+  <div class="max-w-[860px] mx-auto text-center relative">
+
+    <!-- Logo destaque -->
+    <img src="../modulo-01/images/logo_final.svg"
+         alt="Saúde da Caminhoneira e Caminhoneiro" width="240" height="76"
+         class="block h-[76px] w-auto mx-auto mb-[2.4rem] bg-white rounded-[16px] px-8 py-[.85rem] shadow-logo">
+
+    <!-- Badges -->
+    <div class="flex items-center justify-center gap-[.4rem] mb-4 flex-wrap">
+      <span class="inline-flex items-center font-sans font-semibold text-[.69rem] tracking-[.05em] px-[.6em] py-[.28em] rounded-sm uppercase whitespace-nowrap bg-white/[.16] text-white border border-white/[.36]">Módulo I</span>
+      <span class="inline-flex items-center font-sans font-semibold text-[.69rem] tracking-[.05em] px-[.6em] py-[.28em] rounded-sm uppercase whitespace-nowrap bg-white/[.16] text-white border border-white/[.36]">Unidade 1.1</span>
+    </div>
+
+    <!-- Título -->
+    <h1 class="text-hero max-w-[26ch] mx-auto mb-[.9rem] [text-shadow:0_2px_12px_rgba(0,0,0,.2)]">
+      Lorem ipsum dolor sit amet consectetur
+    </h1>
+
+    <!-- Subtítulo -->
+    <p class="opacity-[.88] text-[1.02rem] max-w-[56ch] mx-auto leading-[1.7] font-sans mb-[1.3rem]">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor
+      incididunt ut labore et dolore magna aliqua ut enim.
+    </p>
+
+    <!-- Meta -->
+    <div class="flex flex-wrap gap-[.4rem] items-center justify-center mb-[1.8rem]">
+      <span class="inline-flex items-center gap-[.3em] font-sans font-semibold text-[.69rem] tracking-[.05em] px-[.6em] py-[.28em] rounded-sm uppercase whitespace-nowrap bg-cta text-white">
+        <svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+        25 h de carga horária
+      </span>
+    </div>
+
+    <!-- Actions -->
+    <div class="flex flex-wrap gap-[.7rem] justify-center">
+      <a href="#apresentacao"
+         class="inline-flex items-center justify-center gap-[.45em] font-sans font-semibold text-[.98rem] leading-none py-[.76em] px-[1.4em] rounded border border-cta bg-cta text-white no-underline whitespace-nowrap cursor-pointer transition-colors duration-[120ms] hover:bg-cta-deep hover:border-cta-deep">
+        Iniciar unidade
+      </a>
+      <a href="#"
+         class="inline-flex items-center justify-center gap-[.45em] font-sans font-semibold text-[.9rem] leading-none py-[.66em] px-[1.2em] rounded border border-white/[.36] bg-white/[.1] text-white no-underline whitespace-nowrap cursor-pointer transition-colors duration-[120ms] hover:bg-white/[.2]">
+        ← Voltar ao curso
+      </a>
+    </div>
+
+    <!-- Barra de logos -->
+    <div class="mt-[3.2rem] pt-8 border-t border-white/[.15]">
+      <div class="block bg-white/[.96] rounded-[14px] px-8 py-[.85rem] max-w-[720px] mx-auto shadow-[0_4px_20px_rgba(0,0,0,.16)]">
+        <img src="../modulo-01/images/barra-logos.svg" alt="Logos institucionais"
+             class="w-full h-auto max-h-16 block">
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ─── Sidebar overlay (mobile) ─────────────────── -->
+<div id="sidebar-overlay" class="hidden fixed inset-0 bg-black/[.36] z-[49]"></div>
+
+<!-- ─── Toggle button (shown when sidebar closed) ── -->
+<button id="sidebar-toggle" class="sb-toggle hidden fixed top-4 left-3 z-[60] items-center justify-center w-8 h-8 border border-border rounded bg-white text-fg shadow-sm cursor-pointer hover:bg-muted transition-colors duration-[120ms]" aria-label="Abrir menu lateral" aria-expanded="false">
+  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+</button>
+
+<!-- ─── Layout: sidebar + conteúdo ───────────────── -->
+<div class="flex items-start min-h-screen page-layout">
+
+  <!-- Sidebar -->
+  <aside id="sidebar" class="sidenav">
+    <!-- Logo + fechar -->
+    <div class="flex items-center justify-between px-[.4rem] py-[.6rem] pb-[.9rem] border-b border-border mb-2">
+      <a href="#"><img src="../modulo-01/images/logo_final.svg" alt="Saúde da Caminhoneira e Caminhoneiro" class="h-[58px] w-auto block"></a>
+      <button id="sidebar-close" class="ml-auto flex items-center justify-center w-6 h-6 border-0 bg-transparent cursor-pointer rounded text-muted-fg hover:bg-muted transition-colors" aria-label="Fechar menu lateral">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+    </div>
+    <!-- TOC -->
+    <ul class="list-none m-0 p-0 flex flex-col gap-[.08rem]">
+      <li><a href="#apresentacao"   class="toc-a block px-[.55rem] py-[.4rem] rounded text-[.88rem] leading-[1.35] text-fg hover:bg-muted transition-colors">Apresentação</a></li>
+      <li><a href="#caso-introdutorio" class="toc-a block px-[.55rem] py-[.4rem] rounded text-[.88rem] leading-[1.35] text-fg hover:bg-muted transition-colors">Caso introdutório</a></li>
+      <li><a href="#saude-na-estrada"  class="toc-a block px-[.55rem] py-[.4rem] rounded text-[.88rem] leading-[1.35] text-fg hover:bg-muted transition-colors"><span class="text-[.76rem] font-semibold text-muted-fg mr-[.35em]">1.1</span>Lorem ipsum</a></li>
+      <li><a href="#riscos-e-agravos"  class="toc-a block pl-[1.65rem] pr-[.55rem] py-[.4rem] rounded text-[.88rem] leading-[1.35] text-fg hover:bg-muted transition-colors"><span class="text-[.76rem] font-semibold text-muted-fg mr-[.35em]">1.1.1</span>Consectetur</a></li>
+      <li><a href="#papel-da-aps"      class="toc-a block pl-[1.65rem] pr-[.55rem] py-[.4rem] rounded text-[.88rem] leading-[1.35] text-fg hover:bg-muted transition-colors"><span class="text-[.76rem] font-semibold text-muted-fg mr-[.35em]">1.1.2</span>Adipiscing elit</a></li>
+      <li><a href="#pontos-de-atencao" class="toc-a block pl-[1.65rem] pr-[.55rem] py-[.4rem] rounded text-[.88rem] leading-[1.35] text-fg hover:bg-muted transition-colors"><span class="text-[.76rem] font-semibold text-muted-fg mr-[.35em]">1.1.3</span>Sed do eiusmod</a></li>
+      <li><a href="#referencias"       class="toc-a block px-[.55rem] py-[.4rem] rounded text-[.88rem] leading-[1.35] text-fg hover:bg-muted transition-colors">Referências</a></li>
+    </ul>
+  </aside>
+
+  <!-- Conteúdo -->
+  <div class="flex-1 min-w-0 py-10 px-8 pb-20 cw">
+    <main class="max-w-[860px]">
+
+      <!-- ── Apresentação ───────────────────── -->
+      <section id="apresentacao" class="[scroll-margin-top:20px] mb-[2.8rem]">
+        <div class="section-h">
+          <h2 class="text-section text-fg">Apresentação</h2>
+        </div>
+        <p><strong>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</strong></p>
+        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+
+        <!-- Callout soft -->
+        <div class="bg-secondary border border-[#cde6d8] border-t-[3px] border-t-primary rounded p-[1.15rem_1.3rem] my-[1.4rem] shadow-sm">
+          <p class="font-sans font-semibold text-[.71rem] tracking-[.09em] uppercase text-primary block mb-[.45rem]">Objetivo de aprendizagem</p>
+          <p class="m-0 text-[1rem] text-fg">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam quis nostrud exercitation ullamco laboris.</p>
+        </div>
+
+        <!-- Tags -->
+        <div class="flex flex-wrap gap-[.35rem] my-3">
+          <span class="inline-flex items-center font-sans font-semibold text-[.69rem] tracking-[.05em] px-[.6em] py-[.28em] rounded-sm uppercase whitespace-nowrap bg-secondary text-primary-deep">Lorem</span>
+          <span class="inline-flex items-center font-sans font-semibold text-[.69rem] tracking-[.05em] px-[.6em] py-[.28em] rounded-sm uppercase whitespace-nowrap bg-secondary text-primary-deep">Ipsum</span>
+          <span class="inline-flex items-center font-sans font-semibold text-[.69rem] tracking-[.05em] px-[.6em] py-[.28em] rounded-sm uppercase whitespace-nowrap bg-secondary text-primary-deep">Dolor sit</span>
+          <span class="inline-flex items-center font-sans font-semibold text-[.69rem] tracking-[.05em] px-[.6em] py-[.28em] rounded-sm uppercase whitespace-nowrap bg-secondary text-primary-deep">Amet</span>
+        </div>
+      </section>
+
+      <!-- ── Caso introdutório ──────────────── -->
+      <section id="caso-introdutorio" class="[scroll-margin-top:20px] mb-[2.8rem]">
+        <div class="section-h">
+          <h2 class="text-section text-fg">Caso introdutório</h2>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam.</p>
+
+        <!-- Callout case -->
+        <div class="border border-border border-l-[4px] border-l-primary rounded-r p-[1.15rem_1.3rem] bg-card my-[1.4rem] shadow-sm">
+          <div class="flex items-start gap-4 flex-wrap">
+            <div class="w-[3.8rem] h-[3.8rem] rounded-full bg-secondary grid place-items-center shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#187848" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+            </div>
+            <div class="flex-1 min-w-[180px]">
+              <p class="font-sans font-semibold text-[.71rem] tracking-[.09em] uppercase text-accent block mb-[.22rem]">Caso clínico</p>
+              <p class="font-sans font-bold text-[1.05rem] text-primary-deep mb-[.35rem]">Lorem Ipsum — 52 anos</p>
+              <p class="m-0 text-muted-fg text-[.95rem]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.</p>
+            </div>
+          </div>
+          <div class="mt-4 pt-[.9rem] border-t border-border">
+            <p class="m-0 text-fg text-[.96rem]">Lorem ipsum dolor sit amet, consectetur adipiscing <strong>elit sed do eiusmod</strong>. Ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation.</p>
+            <p class="mt-[.7rem] mb-0 font-sans font-semibold text-[.96rem] text-primary">Lorem ipsum dolor sit amet, consectetur adipiscing elit?</p>
+          </div>
+        </div>
+
+        <button class="inline-flex items-center gap-[.45em] font-sans font-semibold text-[.82rem] leading-none py-[.52em] px-[.9em] rounded border border-transparent bg-transparent text-primary cursor-pointer transition-colors hover:bg-secondary" data-open-modal="modal-reflexao">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+          Abrir reflexão
+        </button>
+      </section>
+
+      <!-- ── 1.1 ─────────────────────────────── -->
+      <section id="saude-na-estrada" class="[scroll-margin-top:20px] mb-[2.8rem]">
+        <div class="section-h">
+          <h2 class="text-section text-fg">1.1 Lorem ipsum dolor sit amet</h2>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <ul class="pl-6 text-muted-fg mb-[1.05em]">
+          <li>Lorem ipsum dolor sit amet consectetur</li>
+          <li>Adipiscing elit sed do eiusmod tempor</li>
+          <li>Incididunt ut labore et dolore magna</li>
+          <li>Aliqua ut enim ad minim veniam quis</li>
+          <li>Nostrud exercitation ullamco laboris</li>
+        </ul>
+        <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore. Excepteur sint occaecat cupidatat non proident, <strong>laborum universalidade</strong>, da <strong>integralidade</strong> e da <strong>equidade</strong>.</p>
+
+        <div class="flex flex-wrap gap-[.6rem] my-5">
+          <button class="inline-flex items-center gap-[.45em] font-sans font-semibold text-[.82rem] leading-none py-[.52em] px-[.9em] rounded border border-border bg-secondary text-primary-deep cursor-pointer transition-colors hover:bg-[#d9efe2]" data-open-modal="modal-saiba-mais-pnstt">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/></svg>
+            Lorem ipsum dolor sit amet
+          </button>
+          <button class="inline-flex items-center gap-[.45em] font-sans font-semibold text-[.82rem] leading-none py-[.52em] px-[.9em] rounded border border-transparent bg-transparent text-primary cursor-pointer transition-colors hover:bg-secondary" data-open-modal="modal-podcast">
+            <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polygon points="10 8 16 12 10 16 10 8"/></svg>
+            Podcast — Lorem ipsum
+          </button>
+        </div>
+      </section>
+
+      <!-- ── 1.1.1 ───────────────────────────── -->
+      <section id="riscos-e-agravos" class="[scroll-margin-top:20px] mb-[2.8rem]">
+        <div class="section-h">
+          <h3 class="text-sub text-fg">1.1.1 Lorem ipsum dolor sit amet</h3>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+
+        <!-- Accordion -->
+        <div class="flex flex-col gap-[.4rem] my-[1.1rem]">
+
+          <details class="acc bg-card border border-border rounded overflow-hidden">
+            <summary class="flex items-center gap-[.85rem] p-[1.05rem_1.2rem] font-serif font-bold text-[1.08rem] text-primary-deep cursor-pointer hover:bg-secondary transition-colors duration-[150ms]">
+              <span class="w-[2.1rem] h-[2.1rem] rounded-full bg-secondary text-primary grid place-items-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg>
+              </span>
+              Lorem ipsum dolor sit
+              <span class="ml-auto text-primary transition-transform duration-[250ms] acc-chev">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </summary>
+            <div class="px-[1.2rem] pb-[1.2rem] pl-[4.15rem] text-muted-fg">
+              <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim.</p>
+              <p class="mb-0">Ut enim ad minim veniam, quis nostrud exercitation ullamco <strong>laboris nisi ut aliquip</strong> ex ea commodo consequat duis aute irure.</p>
+            </div>
+          </details>
+
+          <details class="acc bg-card border border-border rounded overflow-hidden">
+            <summary class="flex items-center gap-[.85rem] p-[1.05rem_1.2rem] font-serif font-bold text-[1.08rem] text-primary-deep cursor-pointer hover:bg-secondary transition-colors duration-[150ms]">
+              <span class="w-[2.1rem] h-[2.1rem] rounded-full bg-secondary text-primary grid place-items-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+              </span>
+              Consectetur adipiscing
+              <span class="ml-auto text-primary transition-transform duration-[250ms] acc-chev">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </summary>
+            <div class="px-[1.2rem] pb-[1.2rem] pl-[4.15rem] text-muted-fg">
+              <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur excepteur sint occaecat cupidatat non proident.</p>
+              <p class="mb-0">Sunt in culpa qui officia deserunt mollit anim id est <strong>laborum sed ut perspiciatis</strong> unde omnis iste natus error sit voluptatem.</p>
+            </div>
+          </details>
+
+          <details class="acc bg-card border border-border rounded overflow-hidden">
+            <summary class="flex items-center gap-[.85rem] p-[1.05rem_1.2rem] font-serif font-bold text-[1.08rem] text-primary-deep cursor-pointer hover:bg-secondary transition-colors duration-[150ms]">
+              <span class="w-[2.1rem] h-[2.1rem] rounded-full bg-secondary text-primary grid place-items-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+              </span>
+              Sed do eiusmod tempor
+              <span class="ml-auto text-primary transition-transform duration-[250ms] acc-chev">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </summary>
+            <div class="px-[1.2rem] pb-[1.2rem] pl-[4.15rem] text-muted-fg">
+              <p>Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.</p>
+              <p class="mb-0">Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet <strong>consectetur adipisci velit</strong> sed quia non numquam eius modi tempora.</p>
+            </div>
+          </details>
+
+          <details class="acc bg-card border border-border rounded overflow-hidden">
+            <summary class="flex items-center gap-[.85rem] p-[1.05rem_1.2rem] font-serif font-bold text-[1.08rem] text-primary-deep cursor-pointer hover:bg-secondary transition-colors duration-[150ms]">
+              <span class="w-[2.1rem] h-[2.1rem] rounded-full bg-secondary text-primary grid place-items-center shrink-0">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 10h.01M15 10h.01M12 2a8 8 0 0 0-8 8c0 1.892.402 3.13 1.5 4.5L12 22l6.5-7.5c1.098-1.37 1.5-2.608 1.5-4.5a8 8 0 0 0-8-8z"/></svg>
+              </span>
+              Incididunt ut labore
+              <span class="ml-auto text-primary transition-transform duration-[250ms] acc-chev">
+                <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </span>
+            </summary>
+            <div class="px-[1.2rem] pb-[1.2rem] pl-[4.15rem] text-muted-fg">
+              <p>Ut labore et dolore magnam aliquam quaerat voluptatem. Ut enim ad minima veniam, quis nostrum exercitationem ullam corporis suscipit laboriosam.</p>
+              <p class="mb-0">Quis autem vel eum iure reprehenderit qui <strong>in ea voluptate velit</strong> esse quam nihil molestiae consequatur, vel illum qui dolorem eum fugiat.</p>
+            </div>
+          </details>
+
+        </div>
+      </section>
+
+      <!-- ── 1.1.2 ───────────────────────────── -->
+      <section id="papel-da-aps" class="[scroll-margin-top:20px] mb-[2.8rem]">
+        <div class="section-h">
+          <h3 class="text-sub text-fg">1.1.2 Adipiscing elit sed do eiusmod</h3>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam. Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <ul class="pl-6 text-muted-fg mb-[1.05em]">
+          <li>Lorem ipsum dolor sit amet consectetur</li>
+          <li>Adipiscing elit sed do eiusmod tempor</li>
+          <li>Incididunt ut labore et dolore magna</li>
+          <li>Aliqua ut enim ad minim veniam quis</li>
+        </ul>
+
+        <!-- Callout principle -->
+        <div class="bg-brand rounded p-[1.35rem_1.5rem] my-[1.4rem] border-0">
+          <p class="font-sans font-semibold text-[.71rem] tracking-[.09em] uppercase text-white/[.68] block mb-[.38rem]">Princípio</p>
+          <p class="m-0 text-[1.05rem] font-serif font-semibold text-white leading-[1.45]">"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor."</p>
+          <p class="mt-[.45rem] mb-0 text-[.84rem] text-white/[.78]">Lorem ipsum · Art. 000/1988</p>
+        </div>
+
+        <!-- BigBtn -->
+        <div class="flex flex-col gap-4 my-[1.6rem]">
+          <button data-open-modal="modal-saiba-mais-paim"
+                  class="bigbtn bigbtn--brand flex items-center gap-[1.1rem] text-left w-full cursor-pointer p-[1.2rem_1.4rem] border-0 rounded-xl text-white shadow-md hover:-translate-y-[3px] hover:shadow-lg active:translate-y-0 transition-[transform,box-shadow] duration-200">
+            <span class="w-[2.7rem] h-[2.7rem] rounded shrink-0 bg-white/[.16] grid place-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </span>
+            <span class="flex-1 min-w-0">
+              <span class="block font-sans font-bold text-[.97rem] leading-[1.2]">Acessar material complementar</span>
+              <span class="bb-sub block text-[.83rem] opacity-[.86] leading-[1.2] mt-[.15rem]">Lorem ipsum dolor sit amet · Consectetur (2008)</span>
+            </span>
+            <span class="shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>
+          </button>
+        </div>
+      </section>
+
+      <!-- ── 1.1.3 Hotspot ──────────────────── -->
+      <section id="pontos-de-atencao" class="[scroll-margin-top:20px] mb-[2.8rem]">
+        <div class="section-h">
+          <h3 class="text-sub text-fg">1.1.3 Sed do eiusmod tempor</h3>
+        </div>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Clique nos marcadores para revelar orientações.</p>
+
+        <div class="relative rounded border border-border my-5 overflow-hidden min-h-[300px] bg-[#dfeee6]">
+          <div class="absolute inset-0 flex items-center justify-center flex-col gap-[.4rem] text-muted-fg pointer-events-none">
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>
+            <span class="text-[.8rem]">Adicionar imagem: <code>./images/modulo1-cenario.jpg</code></span>
+          </div>
+
+          <button class="hs absolute -translate-x-1/2 -translate-y-1/2 w-[2.3rem] h-[2.3rem] rounded-full border-2 border-white cursor-pointer grid place-items-center text-white font-sans font-bold text-[.9rem] bg-primary hover:bg-primary-deep z-[2] transition-colors"
+                  style="top:32%;left:22%" data-balloon="b1" aria-label="Ponto 1">1</button>
+          <div class="balloon absolute z-[20] bg-white rounded shadow-md border border-border p-[.85rem_.95rem] hidden"
+               id="b1" style="top:8%;left:22%;transform:translateX(-50%);width:min(278px,74vw)">
+            <button class="balloon__close absolute top-[.42rem] right-[.42rem] border-0 bg-transparent cursor-pointer text-muted-fg w-6 h-6 rounded grid place-items-center hover:bg-muted" aria-label="Fechar">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <span class="inline-block font-sans font-semibold text-[.63rem] tracking-[.06em] uppercase text-white bg-primary px-[.55em] py-[.22em] rounded-sm mb-[.4rem]">Lorem ipsum</span>
+            <p class="font-sans font-bold text-[.92rem] text-fg mb-[.28rem] leading-[1.2]">Lorem ipsum dolor sit amet</p>
+            <p class="m-0 text-[.84rem] leading-[1.55] text-muted-fg">Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+          </div>
+
+          <button class="hs absolute -translate-x-1/2 -translate-y-1/2 w-[2.3rem] h-[2.3rem] rounded-full border-2 border-white cursor-pointer grid place-items-center text-white font-sans font-bold text-[.9rem] bg-primary hover:bg-primary-deep z-[2] transition-colors"
+                  style="top:52%;left:52%" data-balloon="b2" aria-label="Ponto 2">2</button>
+          <div class="balloon absolute z-[20] bg-white rounded shadow-md border border-border p-[.85rem_.95rem] hidden"
+               id="b2" style="top:28%;left:38%;transform:translateX(-50%);width:min(278px,74vw)">
+            <button class="balloon__close absolute top-[.42rem] right-[.42rem] border-0 bg-transparent cursor-pointer text-muted-fg w-6 h-6 rounded grid place-items-center hover:bg-muted" aria-label="Fechar">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <span class="inline-block font-sans font-semibold text-[.63rem] tracking-[.06em] uppercase text-white bg-primary px-[.55em] py-[.22em] rounded-sm mb-[.4rem]">Consectetur</span>
+            <p class="font-sans font-bold text-[.92rem] text-fg mb-[.28rem] leading-[1.2]">Adipiscing elit sed eiusmod</p>
+            <p class="m-0 text-[.84rem] leading-[1.55] text-muted-fg">Ut labore et dolore magna aliqua ut enim ad minim veniam quis nostrud exercitation.</p>
+          </div>
+
+          <button class="hs absolute -translate-x-1/2 -translate-y-1/2 w-[2.3rem] h-[2.3rem] rounded-full border-2 border-white cursor-pointer grid place-items-center text-white font-sans font-bold text-[.9rem] bg-primary hover:bg-primary-deep z-[2] transition-colors"
+                  style="top:68%;left:74%" data-balloon="b3" aria-label="Ponto 3">3</button>
+          <div class="balloon absolute z-[20] bg-white rounded shadow-md border border-border p-[.85rem_.95rem] hidden"
+               id="b3" style="top:44%;left:50%;transform:translateX(-50%);width:min(278px,74vw)">
+            <button class="balloon__close absolute top-[.42rem] right-[.42rem] border-0 bg-transparent cursor-pointer text-muted-fg w-6 h-6 rounded grid place-items-center hover:bg-muted" aria-label="Fechar">
+              <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            </button>
+            <span class="inline-block font-sans font-semibold text-[.63rem] tracking-[.06em] uppercase text-white bg-primary px-[.55em] py-[.22em] rounded-sm mb-[.4rem]">Tempor</span>
+            <p class="font-sans font-bold text-[.92rem] text-fg mb-[.28rem] leading-[1.2]">Incididunt ut labore dolore</p>
+            <p class="m-0 text-[.84rem] leading-[1.55] text-muted-fg">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ── Referências ────────────────────── -->
+      <section id="referencias" class="[scroll-margin-top:20px] mb-[2.8rem]">
+        <div class="section-h">
+          <h2 class="text-section text-fg">Referências</h2>
+        </div>
+        <ol class="list-none p-0 m-0 flex flex-col gap-4" style="counter-reset:ref">
+          <li class="relative pl-8 text-[.9rem] leading-[1.65] text-muted-fg" style="counter-increment:ref">
+            <span class="absolute left-0 font-bold text-primary font-sans" style="content:counter(ref)'.'">[1]</span>
+            LOREM, I. <strong>Ipsum dolor sit amet, consectetur adipiscing elit</strong>. Lorem Ipsum: Dolor Sit, 1990. <a href="#" class="text-primary text-[.82rem] break-all hover:underline">Disponível em: example.org/ref1</a>
+          </li>
+          <li class="relative pl-8 text-[.9rem] leading-[1.65] text-muted-fg">
+            <span class="absolute left-0 font-bold text-primary font-sans">[2]</span>
+            LOREM, I.; CONSECTETUR, A. <strong>Sed do eiusmod tempor incididunt ut labore et dolore</strong>. Lorem: Ipsum, 2012. <a href="#" class="text-primary text-[.82rem] break-all hover:underline">Disponível em: example.org/ref2</a>
+          </li>
+          <li class="relative pl-8 text-[.9rem] leading-[1.65] text-muted-fg">
+            <span class="absolute left-0 font-bold text-primary font-sans">[3]</span>
+            LOREM, I.; CONSECTETUR, A. <strong>Magna aliqua ut enim ad minim veniam</strong>. Lorem: Ipsum, 2017.
+          </li>
+          <li class="relative pl-8 text-[.9rem] leading-[1.65] text-muted-fg">
+            <span class="absolute left-0 font-bold text-primary font-sans">[4]</span>
+            IPSUM, L. S. <strong>Dolor sit amet consectetur adipiscing elit</strong>. Lorem: Dolor; Sit: Amet, 2008. <a href="#" class="text-primary text-[.82rem] break-all hover:underline">Disponível em: example.org/ref4</a>
+          </li>
+        </ol>
+
+        <!-- BigBtn próxima unidade -->
+        <div class="flex flex-col gap-4 my-[1.6rem]">
+          <a href="#" aria-disabled="true"
+             class="bigbtn bigbtn--cta flex items-center gap-[1.1rem] text-left w-full cursor-pointer p-[1.2rem_1.4rem] border-0 rounded-xl text-white shadow-md pointer-events-none opacity-50 no-underline">
+            <span class="w-[2.7rem] h-[2.7rem] rounded shrink-0 bg-white/[.16] grid place-items-center">
+              <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+            </span>
+            <span class="flex-1 min-w-0">
+              <span class="block font-sans font-bold text-[.97rem] leading-[1.2]">Próxima unidade</span>
+              <span class="bb-sub block text-[.83rem] opacity-[.86] leading-[1.2] mt-[.15rem]">Em breve</span>
+            </span>
+            <span class="shrink-0"><svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg></span>
+          </a>
+        </div>
+      </section>
+
+    </main>
+  </div>
+</div><!-- /.page-layout -->
+
+<!-- ─── Back to top ──────────────────────────────── -->
+<button class="totop" id="totop" aria-label="Voltar ao topo">
+  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
+</button>
+
+<!-- ─── Modal: Reflexão ───────────────────────────── -->
+<div class="overlay" id="modal-reflexao" role="dialog" aria-modal="true">
+  <div class="modal w-[min(560px,100%)] bg-card rounded shadow-md overflow-hidden">
+    <div class="relative p-[1.2rem_1.4rem_1.05rem] text-white" style="background:linear-gradient(135deg,#3f56a6 0%,#2d3f7a 100%)">
+      <button class="absolute top-[.7rem] right-[.7rem] w-[1.8rem] h-[1.8rem] border-0 cursor-pointer rounded bg-white/[.14] text-white grid place-items-center hover:bg-white/[.26] transition-colors" data-close-modal="modal-reflexao" aria-label="Fechar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="mb-2"><span class="inline-flex items-center font-sans font-semibold text-[.69rem] tracking-[.05em] px-[.6em] py-[.28em] rounded-sm uppercase whitespace-nowrap bg-white/[.16] text-white border border-white/[.36]">Reflexão</span></div>
+      <p class="font-serif font-bold text-[1.15rem] leading-[1.25] m-0">Lorem ipsum dolor sit amet consectetur?</p>
+    </div>
+    <div class="p-[1.2rem_1.4rem_1.4rem] text-muted-fg">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua ut enim ad minim veniam.</p>
+      <p class="mb-0">Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor.</p>
+      <div class="mt-4 flex gap-2 flex-wrap">
+        <button class="inline-flex items-center justify-center font-sans font-semibold text-[.9rem] leading-none py-[.66em] px-[1.2em] rounded border border-primary bg-primary text-white cursor-pointer transition-colors hover:bg-primary-deep" data-close-modal="modal-reflexao">Entendi</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Modal: Saiba mais 1 ──────────────────────── -->
+<div class="overlay" id="modal-saiba-mais-pnstt" role="dialog" aria-modal="true">
+  <div class="modal w-[min(560px,100%)] bg-card rounded shadow-md overflow-hidden">
+    <div class="relative p-[1.2rem_1.4rem_1.05rem] text-white bg-brand">
+      <button class="absolute top-[.7rem] right-[.7rem] w-[1.8rem] h-[1.8rem] border-0 cursor-pointer rounded bg-white/[.14] text-white grid place-items-center hover:bg-white/[.26] transition-colors" data-close-modal="modal-saiba-mais-pnstt" aria-label="Fechar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="mb-2"><span class="inline-flex items-center font-sans font-semibold text-[.69rem] tracking-[.05em] px-[.6em] py-[.28em] rounded-sm uppercase whitespace-nowrap bg-white/[.16] text-white border border-white/[.36]">Saiba mais</span></div>
+      <p class="font-serif font-bold text-[1.15rem] leading-[1.25] m-0">Lorem ipsum dolor sit amet consectetur adipiscing</p>
+      <p class="text-[.84rem] opacity-[.84] mt-[.28rem] mb-0">Lorem Ipsum — Dolor Sit (2012)</p>
+    </div>
+    <div class="p-[1.2rem_1.4rem_1.4rem] text-muted-fg">
+      <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris.</p>
+      <div class="mt-4 flex gap-2 flex-wrap">
+        <button class="inline-flex items-center justify-center font-sans font-semibold text-[.9rem] leading-none py-[.66em] px-[1.2em] rounded border border-primary text-primary bg-transparent cursor-pointer transition-colors hover:bg-secondary" data-close-modal="modal-saiba-mais-pnstt">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Modal: Saiba mais 2 ──────────────────────── -->
+<div class="overlay" id="modal-saiba-mais-paim" role="dialog" aria-modal="true">
+  <div class="modal w-[min(560px,100%)] bg-card rounded shadow-md overflow-hidden">
+    <div class="relative p-[1.2rem_1.4rem_1.05rem] text-white bg-brand">
+      <button class="absolute top-[.7rem] right-[.7rem] w-[1.8rem] h-[1.8rem] border-0 cursor-pointer rounded bg-white/[.14] text-white grid place-items-center hover:bg-white/[.26] transition-colors" data-close-modal="modal-saiba-mais-paim" aria-label="Fechar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="mb-2"><span class="inline-flex items-center font-sans font-semibold text-[.69rem] tracking-[.05em] px-[.6em] py-[.28em] rounded-sm uppercase whitespace-nowrap bg-white/[.16] text-white border border-white/[.36]">Saiba mais</span></div>
+      <p class="font-serif font-bold text-[1.15rem] leading-[1.25] m-0">Lorem ipsum dolor sit amet consectetur adipiscing elit</p>
+      <p class="text-[.84rem] opacity-[.84] mt-[.28rem] mb-0">Lorem I. Ipsum — Dolor: Sit; Amet: Consectetur, 2008</p>
+    </div>
+    <div class="p-[1.2rem_1.4rem_1.4rem] text-muted-fg">
+      <p class="mb-0">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip.</p>
+      <div class="mt-4 flex gap-2 flex-wrap">
+        <button class="inline-flex items-center justify-center font-sans font-semibold text-[.9rem] leading-none py-[.66em] px-[1.2em] rounded border border-primary bg-primary text-white cursor-pointer transition-colors hover:bg-primary-deep">Acessar o PDF</button>
+        <button class="inline-flex items-center justify-center font-sans font-semibold text-[.9rem] leading-none py-[.66em] px-[1.2em] rounded border border-transparent text-primary bg-transparent cursor-pointer transition-colors hover:bg-secondary" data-close-modal="modal-saiba-mais-paim">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Modal: Podcast ───────────────────────────── -->
+<div class="overlay" id="modal-podcast" role="dialog" aria-modal="true">
+  <div class="modal w-[min(560px,100%)] bg-card rounded shadow-md overflow-hidden">
+    <div class="relative p-[1.2rem_1.4rem_1.05rem] text-white bg-brand">
+      <button class="absolute top-[.7rem] right-[.7rem] w-[1.8rem] h-[1.8rem] border-0 cursor-pointer rounded bg-white/[.14] text-white grid place-items-center hover:bg-white/[.26] transition-colors" data-close-modal="modal-podcast" aria-label="Fechar">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+      <div class="mb-2"><span class="inline-flex items-center font-sans font-semibold text-[.69rem] tracking-[.05em] px-[.6em] py-[.28em] rounded-sm uppercase whitespace-nowrap bg-white/[.16] text-white border border-white/[.36]">Podcast</span></div>
+      <p class="font-serif font-bold text-[1.15rem] leading-[1.25] m-0">Lorem ipsum — Episódio I</p>
+    </div>
+    <div class="p-[1.2rem_1.4rem_1.4rem] text-muted-fg">
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+      <div class="bg-secondary rounded p-4 text-center text-[.88rem] my-2">Adicionar áudio em <code class="text-[.84rem]">./audio/modulo1-podcast.mp3</code></div>
+      <div class="mt-4 flex gap-2 flex-wrap">
+        <button class="inline-flex items-center justify-center font-sans font-semibold text-[.9rem] leading-none py-[.66em] px-[1.2em] rounded border border-transparent text-primary bg-transparent cursor-pointer transition-colors hover:bg-secondary" data-close-modal="modal-podcast">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── Footer ───────────────────────────────────── -->
+<footer class="bg-white border-t border-border">
+  <div class="max-w-[1100px] mx-auto px-5 py-[2.2rem] flex items-center justify-between gap-8 flex-wrap">
+    <div class="flex flex-col gap-[.7rem]">
+      <a href="#" class="no-underline">
+        <img src="../modulo-01/images/logo_final.svg" alt="Saúde da Caminhoneira e Caminhoneiro" class="h-[52px] w-auto block">
+      </a>
+      <p class="m-0 text-[.85rem] text-muted-fg leading-[1.6] max-w-[38ch]">Curso de Atenção à Saúde da Caminhoneira e Caminhoneiro na Atenção Primária à Saúde. Material didático para formação de profissionais de saúde.</p>
+    </div>
+    <div>
+      <img src="../modulo-01/images/barra-logos.svg" alt="Logos institucionais" class="h-11 w-auto block opacity-75">
+    </div>
+  </div>
+  <div class="border-t border-border py-[.85rem] px-5">
+    <div class="max-w-[1100px] mx-auto flex items-center justify-between flex-wrap gap-2 text-[.74rem] text-muted-fg">
+      <span>© 2025 Saúde da Caminhoneira e Caminhoneiro na APS</span>
+      <span>Atenção Primária à Saúde · Material Didático</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var pf=document.getElementById('pf'),
+      tt=document.getElementById('totop'),
+      tocs=document.querySelectorAll('.toc-a'),
+      secs=document.querySelectorAll('section[id]');
+
+  function upd(){
+    var d=document.documentElement,
+        t=d.scrollTop||document.body.scrollTop,
+        h=d.scrollHeight-d.clientHeight;
+    if(pf)pf.style.width=(h>0?t/h*100:0)+'%';
+    if(tt){t>300?tt.classList.add('is-shown'):tt.classList.remove('is-shown');}
+    if(tocs.length&&secs.length){
+      var cur='';
+      secs.forEach(function(s){if(s.getBoundingClientRect().top<=120)cur=s.id;});
+      tocs.forEach(function(a){a.classList.toggle('is-active',a.getAttribute('href')==='#'+cur);});
+    }
+  }
+  window.addEventListener('scroll',upd,{passive:true});
+  if(tt)tt.addEventListener('click',function(){window.scrollTo({top:0,behavior:'smooth'});});
+  upd();
+})();
+
+function openModal(id){var o=document.getElementById(id);if(o){o.classList.add('is-open');document.body.style.overflow='hidden';}}
+function closeModal(id){var o=document.getElementById(id);if(o){o.classList.remove('is-open');document.body.style.overflow='';}}
+
+document.addEventListener('click',function(e){
+  var op=e.target.closest('[data-open-modal]');
+  if(op){openModal(op.dataset.openModal);return;}
+  var cl=e.target.closest('[data-close-modal]');
+  if(cl){closeModal(cl.dataset.closeModal);return;}
+  var ov=e.target.closest('.overlay');
+  if(ov&&e.target===ov)closeModal(ov.id);
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape')document.querySelectorAll('.overlay.is-open').forEach(function(o){closeModal(o.id);});
+});
+
+(function(){
+  var sb=document.getElementById('sidebar'),
+      tog=document.getElementById('sidebar-toggle'),
+      cls=document.getElementById('sidebar-close'),
+      ov=document.getElementById('sidebar-overlay');
+  if(!sb)return;
+  function mob(){return window.innerWidth<=920;}
+  if(tog)tog.addEventListener('click',function(){
+    if(mob()){var op=sb.classList.toggle('is-open');if(ov)ov.classList.toggle('hidden',!op);tog.setAttribute('aria-expanded',String(op));}
+    else{var closed=document.body.classList.toggle('sidebar-closed');tog.setAttribute('aria-expanded',String(!closed));}
+  });
+  if(cls)cls.addEventListener('click',function(){
+    if(mob()){sb.classList.remove('is-open');if(ov)ov.classList.add('hidden');if(tog)tog.setAttribute('aria-expanded','false');}
+    else{document.body.classList.add('sidebar-closed');if(tog)tog.setAttribute('aria-expanded','false');}
+  });
+  if(ov)ov.addEventListener('click',function(){sb.classList.remove('is-open');ov.classList.add('hidden');if(tog)tog.setAttribute('aria-expanded','false');});
+  window.addEventListener('resize',function(){if(!mob()){sb.classList.remove('is-open');if(ov)ov.classList.add('hidden');}});
+})();
+
+(function(){
+  var fig=document.querySelector('.relative.rounded.border.border-border.my-5');
+  if(!fig)return;
+  fig.querySelectorAll('.hs').forEach(function(h){
+    h.addEventListener('click',function(e){
+      e.stopPropagation();
+      var b=document.getElementById(h.dataset.balloon),open=b&&!b.classList.contains('hidden');
+      fig.querySelectorAll('.balloon').forEach(function(x){x.classList.add('hidden');});
+      fig.querySelectorAll('.hs').forEach(function(x){x.style.background='';});
+      if(b&&!open){b.classList.remove('hidden');h.style.background='#F5A623';}
+    });
+  });
+  fig.querySelectorAll('.balloon__close').forEach(function(c){
+    c.addEventListener('click',function(){
+      c.closest('.balloon').classList.add('hidden');
+      fig.querySelectorAll('.hs').forEach(function(x){x.style.background='';});
+    });
+  });
+  fig.addEventListener('click',function(e){
+    if(!e.target.closest('.hs')&&!e.target.closest('.balloon')){
+      fig.querySelectorAll('.balloon').forEach(function(x){x.classList.add('hidden');});
+      fig.querySelectorAll('.hs').forEach(function(x){x.style.background='';});
+    }
+  });
+})();
+</script>
+</body>
+</html>

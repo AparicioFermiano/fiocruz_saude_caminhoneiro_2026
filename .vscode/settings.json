@@ -1,0 +1,14 @@
+{
+    "emeraldwalk.runonsave": {
+        "commands": [
+            {
+                "match": "css/style\\.css$",
+                "cmd": "powershell -ExecutionPolicy Bypass -File \"${workspaceFolder}/scripts/minify.ps1\" -Source \"${file}\" -Dest \"${fileDirname}/style.min.css\""
+            },
+            {
+                "match": "js/modulo\\.js$",
+                "cmd": "powershell -ExecutionPolicy Bypass -File \"${workspaceFolder}/scripts/minify.ps1\" -Source \"${file}\" -Dest \"${fileDirname}/modulo.min.js\""
+            }
+        ]
+    }
+}
