@@ -1,0 +1,36 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell *)",
+      "Bash(Get-ChildItem *)",
+      "Bash(git show *)",
+      "Bash(git log *)",
+      "Bash(git status)",
+      "Bash(git diff *)",
+      "Bash(wc -l *)",
+      "Bash(head *)",
+      "Bash(tail *)"
+    ]
+  },
+  "hooks": {
+    "PostToolUse": [
+      {
+        "matcher": "Edit|Write",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "powershell -NoProfile -Command \"$f = '$CLAUDE_TOOL_RESULT_FILE'; if ($f -match 'index\\.html$' -or $f -match 'unidade-\\d+\\.html$') { $content = Get-Content $f -Raw -ErrorAction SilentlyContinue; if ($content -and $content -notmatch '<!DOCTYPE html>') { Write-Error 'AVISO: arquivo HTML sem DOCTYPE' } else { Write-Host 'HTML OK' } }\"",
+            "description": "Valida DOCTYPE em arquivos HTML editados"
+          }
+        ]
+      }
+    ]
+  },
+  "env": {
+    "MODULE_THEME_M1": "yellow",
+    "MODULE_THEME_M2": "blue",
+    "MODULE_THEME_M3": "green",
+    "MODULE_THEME_M4": "red",
+    "MODULE_THEME_M5": "black"
+  }
+}

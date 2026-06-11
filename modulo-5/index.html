@@ -1,0 +1,560 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Módulo 5 - As Violências nas Estradas</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Mukta:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.min.css">
+</head>
+<body>
+
+  <!-- Barra de Progresso Superior -->
+  <div class="progress-rail" id="progressRail">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+
+  <!-- HERO WRAP (Largura total da página) -->
+  <div class="hero-wrap" id="home">
+    <div class="hero-nav" style="--hn-color: var(--m5-primary)">
+      <div class="hero-nav__inner">
+        <span class="hero-nav__badge"><i data-lucide="graduation-cap"></i> Curso</span>
+        <span class="hero-nav__name">ATENÇÃO À SAÚDE DA CAMINHONEIRA E CAMINHONEIRO NA ATENÇÃO PRIMÁRIA</span>
+      </div>
+    </div>
+    
+    <!-- M5 Preto (fundo escuro - --hb-text: #ffffff) -->
+    <div class="hero-body" style="background: var(--grad-m5-hero); --hb-text: #ffffff;">
+      <div class="hero-body__inner">
+        <div class="hero-body__content" style="min-height: auto; padding: 0;">
+          <div>
+            <span class="hero__kicker"><i data-lucide="graduation-cap"></i> MÓDULO 5</span>
+            <h2 class="hero__title" style="margin-top: 0.8rem; margin-bottom: 2rem; color: #ffffff; line-height: 1.25;">As Violências nas Estradas no Contexto de Vida de Caminhoneiras e Caminhoneiros</h2>
+          </div>
+          <div class="hero__btns">
+            <button class="btn btn--ghost-light" onclick="openModal('modalCreditos')"><i data-lucide="users"></i> Créditos</button>
+            <button class="btn btn--ghost-light" onclick="openModal('modalInstrucoes')"><i data-lucide="info"></i> Instruções</button>
+            <button class="btn btn--cta" onclick="document.getElementById('apresentacao').scrollIntoView({behavior:'smooth'})"><i data-lucide="play"></i> Iniciar</button>
+          </div>
+        </div>
+        <div class="hero-body__logo">
+          <img src="images/logo-fundo-escuro.png" alt="Logo">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Layout com Sidebar -->
+  <div class="page-layout">
+    <aside class="sidebar">
+      <nav class="sidebar-nav" aria-label="Navegação do módulo">
+        <div class="sidebar-nav__header">Módulo 5</div>
+        <a class="sidebar-nav__link" href="#apresentacao">Apresentação</a>
+        <a class="sidebar-nav__link" href="#s5-1">5.1 Conceitos de Violência</a>
+        <a class="sidebar-nav__link" href="#s5-2">5.2 Violência de Gênero</a>
+        <a class="sidebar-nav__link" href="#s5-3">5.3 Causas Externas</a>
+        <a class="sidebar-nav__link" href="#s5-4">5.4 Acolhimento e Cuidado</a>
+        <a class="sidebar-nav__link" href="#s5-5">5.5 Manejo de Grupos</a>
+        <a class="sidebar-nav__link" href="#encerramento">Encerramento</a>
+        <a class="sidebar-nav__link" href="#referencias">Referências</a>
+      </nav>
+      <div class="sidebar-badge">
+        <span class="sidebar-badge__icon"><i data-lucide="clock"></i></span>
+        <div>
+          <span class="sidebar-badge__label">Carga Horária</span>
+          <span class="sidebar-badge__value">07 horas</span>
+        </div>
+      </div>
+    </aside>
+    <main>
+
+      <!-- SEÇÃO: Apresentação do Módulo -->
+      <section id="apresentacao" style="scroll-margin-top:80px;margin-bottom:4rem;">
+        <div style="padding-bottom:0.75rem;border-bottom:2px solid var(--border);margin-bottom:1.6rem;">
+          <h2 style="font-family:var(--font-display);font-weight:800;font-size:1.5rem;color:var(--m5-primary-deep);margin:0;">Apresentação do Módulo</h2>
+        </div>
+        <div class="intro-card" style="border-left-color:var(--m5-primary);">
+          <p>Prezado profissional estudante, chegamos à última etapa do Curso de Atenção à Saúde da Caminhoneira e Caminhoneiro na Atenção Primária. Bem-vindo ao Módulo V! Ao longo deste curso, você percorreu diferentes dimensões do cuidado à caminhoneira e ao caminhoneiro na APS, incluindo o cuidado integral, as infecções sexualmente transmissíveis, a saúde mental e as condições crônicas.</p>
+          <p>Neste módulo, abordaremos um tema transversal a todos esses aspectos: as violências no contexto das estradas. As violências constituem um fenômeno complexo, relacionado a fatores sociais, culturais e econômicos, com impactos diretos na saúde e no bem-estar. No contexto das estradas, podem se manifestar de diferentes formas: acidentes de trânsito, violências interpessoais, violências de gênero e situações de sofrimento psíquico.</p>
+          <p>Nesse cenário, a APS ocupa um papel estratégico na identificação, no acolhimento e no acompanhamento das pessoas em situação de violência. Você está pronto para seguir sua última viagem deste curso?</p>
+        </div>
+        <h3 style="font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:var(--m5-primary-deep);margin:2rem 0 1rem;">Objetivos de Aprendizagem</h3>
+        <ul class="obj-list">
+          <li><span class="obj-list__icon" style="background:var(--m5-primary);"><i data-lucide="check"></i></span>Compreender as diferentes formas de violências no contexto das estradas como fenômenos sociais e determinantes do processo saúde-doença.</li>
+          <li><span class="obj-list__icon" style="background:var(--m5-primary);"><i data-lucide="check"></i></span>Analisar as violências de gênero e os comportamentos de risco associados às masculinidades, considerando a influência de normas sociais.</li>
+          <li><span class="obj-list__icon" style="background:var(--m5-primary);"><i data-lucide="check"></i></span>Identificar causas externas dos acidentes de trânsito, homicídios e suicídios, bem como fatores de risco e proteção no contexto da APS.</li>
+          <li><span class="obj-list__icon" style="background:var(--m5-primary);"><i data-lucide="check"></i></span>Analisar estratégias de acolhimento, escuta qualificada, encaminhamento e notificação de situações de violências no âmbito da APS.</li>
+          <li><span class="obj-list__icon" style="background:var(--m5-primary);"><i data-lucide="check"></i></span>Reconhecer a importância das ações educativas e coletivas voltadas à prevenção das violências e à promoção do cuidado de caminhoneiras e caminhoneiros.</li>
+        </ul>
+      </section>
+
+      <!-- SEÇÃO 5.1: Conceitos de Violência -->
+      <!-- Bloco: Tipos de Violência -->
+      <section id="s5-1" class="block" style="scroll-margin-top:80px;margin-bottom: 4rem;">
+
+        <div class="accordion">
+          
+          <!-- Item 1: Violência física (Aberto por padrão) -->
+          <details class="acc" open>
+            <summary>
+              <span class="acc__icon"><i data-lucide="shield-alert"></i></span>
+              Violência física
+              <span class="acc__chev"><i data-lucide="chevron-down"></i></span>
+            </summary>
+            <div class="acc__body">
+              <p>qualquer conduta que ofenda a integridade ou saúde corporal.</p>
+            </div>
+          </details>
+
+          <!-- Item 2: Violência psicológica -->
+          <details class="acc">
+            <summary>
+              <span class="acc__icon"><i data-lucide="brain"></i></span>
+              Violência psicológica
+              <span class="acc__chev"><i data-lucide="chevron-down"></i></span>
+            </summary>
+            <div class="acc__body">
+              <p>ações que causem dano emocional, diminuição da autoestima ou controlem comportamentos.</p>
+            </div>
+          </details>
+
+          <!-- Item 3: Violência sexual -->
+          <details class="acc">
+            <summary>
+              <span class="acc__icon"><i data-lucide="heart-off"></i></span>
+              Violência sexual
+              <span class="acc__chev"><i data-lucide="chevron-down"></i></span>
+            </summary>
+            <div class="acc__body">
+              <p>qualquer conduta que constranja a presenciar, manter ou participar de relação sexual não desejada.</p>
+            </div>
+          </details>
+
+          <!-- Item 4: Violência patrimonial -->
+          <details class="acc">
+            <summary>
+              <span class="acc__icon"><i data-lucide="wallet"></i></span>
+              Violência patrimonial
+              <span class="acc__chev"><i data-lucide="chevron-down"></i></span>
+            </summary>
+            <div class="acc__body">
+              <p>retenção, destruição ou subtração de bens, documentos ou recursos.</p>
+            </div>
+          </details>
+
+          <!-- Item 5: Violência moral -->
+          <details class="acc">
+            <summary>
+              <span class="acc__icon"><i data-lucide="message-square"></i></span>
+              Violência moral
+              <span class="acc__chev"><i data-lucide="chevron-down"></i></span>
+            </summary>
+            <div class="acc__body">
+              <p>calúnia, difamação ou injúria.</p>
+            </div>
+          </details>
+
+        </div>
+      </section>
+
+      <!-- Destaque Textual: Compreender a relação entre violência de gênero e masculinidades -->
+      <section id="s5-2" class="block" style="scroll-margin-top:80px;margin-bottom: 4rem;">
+        <div class="hbox" style="background: var(--grad-m5-brand);">
+          <div class="hbox__row" style="align-items: center;">
+            <span class="hbox__icon" style="background: rgba(255, 255, 255, 0.15); color: #fff; flex-shrink: 0;"><i data-lucide="megaphone"></i></span>
+            <p style="margin: 0; color: #fff; font-size: 1.1rem; font-weight: 500; line-height: 1.6;">
+              Compreender a relação entre violência de gênero e masculinidades, portanto, é um passo essencial para o desenvolvimento de estratégias de prevenção e promoção da saúde que sejam efetivas, contextualizadas e comprometidas com a equidade.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bloco: Fatores de Risco e Fatores de Proteção (Flashcards) -->
+      <section class="block" style="margin-bottom: 4rem;">
+        <div class="fc-grid">
+          
+          <!-- Card 1 -->
+          <div class="fc" onclick="this.classList.toggle('is-flipped')" style="--fc-grad: var(--grad-m5-brand); --fc-accent: var(--m5-accent);">
+            <div class="fc__inner">
+              <div class="fc__front">
+                <span style="font-family: var(--font-display); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.2rem 0.6rem; border-radius: 999px; background: rgba(255, 255, 255, 0.18); color: #fff; margin-bottom: 0.5rem;">Fator de Risco</span>
+                <i data-lucide="truck"></i>
+                <span class="fc__front-title">Condições precárias de trabalho</span>
+                <span class="fc__hint"><i data-lucide="refresh-cw"></i> virar</span>
+              </div>
+              <div class="fc__back">
+                <div style="display: flex; justify-content: center; margin-bottom: 0.8rem;">
+                  <span style="font-family: var(--font-display); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.2rem 0.6rem; border-radius: 999px; background: var(--m5-surface); color: var(--m5-primary); border: 1px solid var(--m5-accent);">Fator de Proteção</span>
+                </div>
+                <div class="fc__back-content">Acesso a serviços de saúde, especialmente na APS</div>
+                <div class="fc__back-hint"><i data-lucide="refresh-cw"></i> virar</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="fc" onclick="this.classList.toggle('is-flipped')" style="--fc-grad: var(--grad-m5-brand); --fc-accent: var(--m5-accent);">
+            <div class="fc__inner">
+              <div class="fc__front">
+                <span style="font-family: var(--font-display); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.2rem 0.6rem; border-radius: 999px; background: rgba(255, 255, 255, 0.18); color: #fff; margin-bottom: 0.5rem;">Fator de Risco</span>
+                <i data-lucide="clock"></i>
+                <span class="fc__front-title">Jornadas extensas e exaustivas</span>
+                <span class="fc__hint"><i data-lucide="refresh-cw"></i> virar</span>
+              </div>
+              <div class="fc__back">
+                <div style="display: flex; justify-content: center; margin-bottom: 0.8rem;">
+                  <span style="font-family: var(--font-display); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.2rem 0.6rem; border-radius: 999px; background: var(--m5-surface); color: var(--m5-primary); border: 1px solid var(--m5-accent);">Fator de Proteção</span>
+                </div>
+                <div class="fc__back-content">Redes de apoio social e familiar</div>
+                <div class="fc__back-hint"><i data-lucide="refresh-cw"></i> virar</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="fc" onclick="this.classList.toggle('is-flipped')" style="--fc-grad: var(--grad-m5-brand); --fc-accent: var(--m5-accent);">
+            <div class="fc__inner">
+              <div class="fc__front">
+                <span style="font-family: var(--font-display); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.2rem 0.6rem; border-radius: 999px; background: rgba(255, 255, 255, 0.18); color: #fff; margin-bottom: 0.5rem;">Fator de Risco</span>
+                <i data-lucide="pill"></i>
+                <span class="fc__front-title">Uso de substâncias psicoativas</span>
+                <span class="fc__hint"><i data-lucide="refresh-cw"></i> virar</span>
+              </div>
+              <div class="fc__back">
+                <div style="display: flex; justify-content: center; margin-bottom: 0.8rem;">
+                  <span style="font-family: var(--font-display); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.2rem 0.6rem; border-radius: 999px; background: var(--m5-surface); color: var(--m5-primary); border: 1px solid var(--m5-accent);">Fator de Proteção</span>
+                </div>
+                <div class="fc__back-content">Políticas públicas voltadas à saúde do trabalhador</div>
+                <div class="fc__back-hint"><i data-lucide="refresh-cw"></i> virar</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="fc" onclick="this.classList.toggle('is-flipped')" style="--fc-grad: var(--grad-m5-brand); --fc-accent: var(--m5-accent);">
+            <div class="fc__inner">
+              <div class="fc__front">
+                <span style="font-family: var(--font-display); font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.2rem 0.6rem; border-radius: 999px; background: rgba(255, 255, 255, 0.18); color: #fff; margin-bottom: 0.5rem;">Fator de Risco</span>
+                <i data-lucide="user-x"></i>
+                <span class="fc__front-title">Isolamento social</span>
+                <span class="fc__hint"><i data-lucide="refresh-cw"></i> virar</span>
+              </div>
+              <div class="fc__back">
+                <div style="display: flex; justify-content: center; margin-bottom: 0.8rem;">
+                  <span style="font-family: var(--font-display); font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.2rem 0.6rem; border-radius: 999px; background: var(--m5-surface); color: var(--m5-primary); border: 1px solid var(--m5-accent);">Fator de Proteção</span>
+                </div>
+                <div class="fc__back-content">Ações educativas e de promoção da saúde</div>
+                <div class="fc__back-hint"><i data-lucide="refresh-cw"></i> virar</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="fc" onclick="this.classList.toggle('is-flipped')" style="--fc-grad: var(--grad-m5-brand); --fc-accent: var(--m5-accent);">
+            <div class="fc__inner">
+              <div class="fc__front">
+                <span style="font-family: var(--font-display); font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.2rem 0.6rem; border-radius: 999px; background: rgba(255, 255, 255, 0.18); color: #fff; margin-bottom: 0.5rem;">Fator de Risco</span>
+                <i data-lucide="users"></i>
+                <span class="fc__front-title">Normas de gênero que incentivam comportamentos de risco</span>
+                <span class="fc__hint"><i data-lucide="refresh-cw"></i> virar</span>
+              </div>
+              <div class="fc__back">
+                <div style="display: flex; justify-content: center; margin-bottom: 0.8rem;">
+                  <span style="font-family: var(--font-display); font-weight: 700; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.08em; padding: 0.2rem 0.6rem; border-radius: 999px; background: var(--m5-surface); color: var(--m5-primary); border: 1px solid var(--m5-accent);">Fator de Proteção</span>
+                </div>
+                <div class="fc__back-content">Espaços de escuta e acolhimento</div>
+                <div class="fc__back-hint"><i data-lucide="refresh-cw"></i> virar</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Destaque Textual: É fundamental analisar as causas externas -->
+      <section id="s5-3" class="block" style="scroll-margin-top:80px;margin-bottom: 4rem;">
+        <div class="hbox" style="background: var(--grad-m5-brand);">
+          <div class="hbox__row" style="align-items: center;">
+            <span class="hbox__icon" style="background: rgba(255, 255, 255, 0.15); color: #fff; flex-shrink: 0;"><i data-lucide="megaphone"></i></span>
+            <p style="margin: 0; color: #fff; font-size: 1.1rem; font-weight: 500; line-height: 1.6;">
+              É fundamental analisar as causas externas como fenômenos preveníveis e socialmente determinados para que ocorra o desenvolvimento de estratégias eficazes de cuidado, promoção da saúde e prevenção das violências no contexto das estradas.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bloco Saiba mais: Linha de Cuidado -->
+      <section class="block" style="margin-bottom: 4rem;">
+        <div class="bigbtns">
+          <button class="bigbtn bigbtn--brand" onclick="openModal('modalSaibaMaisLinhaCuidado')">
+            <span class="bigbtn__icon"><i data-lucide="book-open"></i></span>
+            <span class="bigbtn__txt">
+              <span class="bigbtn__title">Saiba mais</span>
+            </span>
+            <span class="bigbtn__arrow"><i data-lucide="external-link"></i></span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Bloco Reflexão: Atendimento em Situação de Violência -->
+      <section id="s5-4" class="block" style="scroll-margin-top:80px;margin-bottom: 4rem;">
+        <div class="bigbtns">
+          <button class="bigbtn bigbtn--reflexao" onclick="openModal('modalReflexaoViolencia')">
+            <span class="bigbtn__icon"><i data-lucide="message-circle"></i></span>
+            <span class="bigbtn__txt">
+              <span class="bigbtn__title">Reflexão</span>
+            </span>
+            <span class="bigbtn__arrow"><i data-lucide="external-link"></i></span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Destaque Textual: Lembre-se: a notificação permite... -->
+      <section class="block" style="margin-bottom: 4rem;">
+        <div class="hbox" style="background: var(--grad-m5-brand);">
+          <div class="hbox__row" style="align-items: center;">
+            <span class="hbox__icon" style="background: rgba(255, 255, 255, 0.15); color: #fff; flex-shrink: 0;"><i data-lucide="megaphone"></i></span>
+            <p style="margin: 0; color: #fff; font-size: 1.1rem; font-weight: 500; line-height: 1.6;">
+              <strong>Lembre-se:</strong> a notificação permite identificar padrões, grupos mais vulneráveis e territórios com maior ocorrência de violências, subsidiando ações de prevenção e organização da rede de cuidado.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ═══ SEÇÃO 5.5: Manejo de Grupos e Ações Coletivas ═══ -->
+      <section id="s5-5" class="block" style="scroll-margin-top:80px;margin-bottom: 4rem;">
+        <h2 class="block-title" style="margin-bottom: 1.5rem; font-size: 1.7rem; color: var(--m5-primary-deep);">Manejo de grupos e ações coletivas</h2>
+        <p class="block-note" style="margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.75; color: var(--fg1);">
+          A abordagem coletiva é uma estratégia fundamental para a prevenção das violências e promoção da saúde no contexto do trabalho em estradas. Grupos educativos, rodas de conversa e ações intersetoriais ampliam o alcance do cuidado e fortalecem a rede de proteção.
+        </p>
+        <div class="accordion">
+          <details class="accordion__item">
+            <summary class="accordion__summary">
+              <span>Grupos educativos e rodas de conversa</span>
+              <i data-lucide="chevron-down" class="accordion__icon"></i>
+            </summary>
+            <div class="accordion__body">
+              <p>A realização de grupos educativos voltados para caminhoneiras e caminhoneiros favorece a troca de experiências, a identificação de situações de vulnerabilidade e a construção coletiva de estratégias de enfrentamento. As rodas de conversa permitem abordar temas sensíveis como violência, saúde mental e prevenção de ISTs em um ambiente de confiança e acolhimento mútuo.</p>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary class="accordion__summary">
+              <span>Articulação intersetorial e rede de proteção</span>
+              <i data-lucide="chevron-down" class="accordion__icon"></i>
+            </summary>
+            <div class="accordion__body">
+              <p>A proteção integral de pessoas em situação de violência exige articulação entre saúde, assistência social, segurança pública, educação e outros setores. Na Atenção Primária à Saúde, é fundamental conhecer e acionar a rede de proteção local — CRAS, CREAS, serviços especializados de atendimento à mulher — e registrar os casos adequadamente para subsidiar políticas públicas.</p>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary class="accordion__summary">
+              <span>Ações de prevenção em postos e paradas</span>
+              <i data-lucide="chevron-down" class="accordion__icon"></i>
+            </summary>
+            <div class="accordion__body">
+              <p>As ações de saúde em postos de abastecimento, borracharias e paradas de caminhões representam estratégias extramuros de grande impacto. Distribuição de insumos preventivos, testagem rápida, orientações sobre violência e acionamento de serviços podem alcançar pessoas que raramente acessam as unidades de saúde convencionais.</p>
+            </div>
+          </details>
+          <details class="accordion__item">
+            <summary class="accordion__summary">
+              <span>Formação de multiplicadores e protagonismo comunitário</span>
+              <i data-lucide="chevron-down" class="accordion__icon"></i>
+            </summary>
+            <div class="accordion__body">
+              <p>Investir na formação de lideranças dentro da própria comunidade caminhoneira potencializa o alcance das ações coletivas. Caminhoneiras e caminhoneiros capacitados como multiplicadores de informação em saúde são agentes estratégicos para a prevenção das violências, a redução do estigma e a promoção do cuidado coletivo nas estradas.</p>
+            </div>
+          </details>
+        </div>
+      </section>
+
+      <!-- ═══ ENCERRAMENTO ═══ -->
+      <section id="encerramento" class="block" style="scroll-margin-top:80px;margin-bottom:2rem">
+        <h2 class="block-title" style="color:var(--m5-primary-deep);margin-bottom:1.5rem">Encerramento do Módulo</h2>
+        <div class="encerramento-card" style="background:var(--grad-m5-brand);color:#fff">
+          <p>Ao longo deste módulo você percorreu diferentes dimensões das violências no contexto das estradas: conceituação, violência de gênero e masculinidades, causas externas — acidentes de trânsito, homicídios e suicídios —, acolhimento, cuidado, encaminhamento, notificação e manejo coletivo.</p>
+          <p>Compreendeu a violência como fenômeno social e prevenível, cujo enfrentamento exige escuta qualificada, articulação em rede e compromisso com a integralidade do cuidado.</p>
+          <p style="margin:0">Esperamos que esse percurso contribua para uma prática mais sensível, articulada e comprometida com a proteção e o cuidado integral das caminhoneiras e dos caminhoneiros. Obrigado por chegar até aqui!</p>
+        </div>
+      </section>
+
+      <!-- ═══ REFERÊNCIAS BIBLIOGRÁFICAS ═══ -->
+      <section id="referencias" class="block" style="scroll-margin-top:80px;margin-bottom:2rem">
+        <h2 class="block-title" style="color:var(--m5-primary-deep);margin-bottom:1.5rem">Referências Bibliográficas</h2>
+        <ol style="padding-left:1.5rem;display:flex;flex-direction:column;gap:.85rem;color:var(--fg2);font-size:.88rem;line-height:1.65;">
+        <li style="padding-left:.25rem">BRASIL. Presidência da República. Lei nº 11.340, de 7 de agosto de 2006. Cria mecanismos para coibir a violência doméstica e familiar contra a mulher. <em>Diário Oficial da União</em>: seção 1, Brasília, DF, 8 ago. 2006a. Disponível em: <a href="https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm" target="_blank" rel="noopener noreferrer">https://www.planalto.gov.br/ccivil_03/_ato2004-2006/2006/lei/l11340.htm.</a> Acesso em: 21 maio 2026.</li>
+        <li style="padding-left:.25rem">BRASIL. Ministério da Saúde. <em>Prevenção do suicídio: manual dirigido a profissionais das equipes de saúde mental</em>. Brasília, DF: Ministério da Saúde, 2006b. Disponível em: <a href="https://cvv.org.br/wp-content/uploads/2023/08/manual_prevencao_suicidio_profissionais_saude.pdf" target="_blank" rel="noopener noreferrer">https://cvv.org.br/wp-content/uploads/2023/08/manual_prevencao_suicidio_profissionais_saude.pdf.</a> Acesso em: 21 maio 2026.</li>
+        <li style="padding-left:.25rem">BRASIL. Ministério da Saúde. <em>Linha de cuidado para a atenção integral à saúde de crianças, adolescentes e suas famílias em situação de violência: orientação para gestores e profissionais de saúde</em>. Brasília, DF: Ministério da Saúde, 2011. Disponível em: <a href="https://www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-da-crianca/publicacoes/linha-de-cuidado-para-a-atencao-integral-a-saude-de-criancas-adolescentes-e-suas-familias-em-situacao-de-violencias-orientacao-para-gestores-e-profissionais-de-saude/view" target="_blank" rel="noopener noreferrer">www.gov.br/saude/pt-br/assuntos/saude-de-a-a-z/s/saude-da-crianca/publicacoes/linha-de-cuidado-para-a-atencao-integral-a-saude-de-criancas-adolescentes-e-suas-familias-em-situacao-de-violencias-orientacao-para-gestores-e-profissionais-de-saude/view.</a> Acesso em: 21 maio 2026.</li>
+        <li style="padding-left:.25rem">BRASIL. Ministério da Saúde. Portaria de Consolidação nº 2, de 28 de setembro de 2017. Consolidação das normas sobre as políticas nacionais de saúde do Sistema Único de Saúde. Anexo VII: Política Nacional de Redução da Morbimortalidade por Acidentes e Violências. <em>Diário Oficial da União</em>: seção 1, Brasília, DF, 3 out. 2017. Disponível em: <a href="https://bvsms.saude.gov.br/bvs/saudelegis/gm/2017/prc0002_03_10_2017.html#ANEXOVII" target="_blank" rel="noopener noreferrer">https://bvsms.saude.gov.br/bvs/saudelegis/gm/2017/prc0002_03_10_2017.html#ANEXOVII.</a> Acesso em: 21 maio 2026.</li>
+        <li style="padding-left:.25rem">BRASIL. Ministério da Saúde. Secretaria de Atenção Primária à Saúde. <em>O cuidado à saúde do homem em contexto de violência e a proteção de meninas e mulheres no âmbito da APS: caderno didático do curso</em>. Brasília, DF: Ministério da Saúde, 2025. Disponível em: <a href="http://bvsms.saude.gov.br/bvs/publicacoes/cuidado_saude_homem_contexto_violencia.pdf" target="_blank" rel="noopener noreferrer">http://bvsms.saude.gov.br/bvs/publicacoes/cuidado_saude_homem_contexto_violencia.pdf.</a> Acesso em: 21 maio 2026.</li>
+        <li style="padding-left:.25rem">CONNELL, R. <em>Masculinities</em>. 2. ed. Berkeley: University of California Press, 2005.</li>
+        <li style="padding-left:.25rem">CONNELL, R. <em>Gênero em termos reais</em>. São Paulo: nVersos Editora, 2016.</li>
+        <li style="padding-left:.25rem">CONNELL, R.; PEARSE, R. <em>Gênero: uma perspectiva global</em>. São Paulo: nVersos Editora, 2015.</li>
+        <li style="padding-left:.25rem">COSTA, R. G. Saúde e masculinidade: reflexões de uma perspectiva de gênero. <em>Revista Brasileira de Estudos de População</em>, São Paulo, v. 20, n. 1, p. 79–92, 2003. Disponível em: <a href="https://rebep.org.br/revista/article/view/305" target="_blank" rel="noopener noreferrer">https://rebep.org.br/revista/article/view/305.</a> Acesso em: 21 maio 2026.</li>
+        <li style="padding-left:.25rem">MISSE, M. Violência e teoria social. <em>Dilemas: Revista de Estudos de Conflito e Controle Social</em>, Rio de Janeiro, v. 9, n. 1, p. 45–63, 2016. Disponível em: <a href="https://revistas.ufrj.br/index.php/dilemas/article/view/7672" target="_blank" rel="noopener noreferrer">https://revistas.ufrj.br/index.php/dilemas/article/view/7672.</a> Acesso em: 21 maio 2026.</li>
+        <li style="padding-left:.25rem">SCOTT, J. Gênero: uma categoria útil de análise histórica. <em>Revista Educação &amp; Realidade</em>, Porto Alegre, v. 20, n. 2, p. 71–99, 1995. Disponível em: <a href="https://archive.org/stream/scott_gender#page/n8/mode/1up" target="_blank" rel="noopener noreferrer">https://archive.org/stream/scott_gender#page/n8/mode/1up.</a> Acesso em: 21 maio 2026.</li>
+        <li style="padding-left:.25rem">TAVARES DOS SANTOS, J. V. <em>Violências e conflitualidades</em>. Porto Alegre: Tomo editorial, 2009.</li>
+        <li style="padding-left:.25rem">TONELI, M. J. F.; SOUZA, M. G. C.; MÜLLER, R. Masculinidades e práticas de saúde: retratos da experiência de pesquisa em Florianópolis/SC. <em>Physis: Revista de Saúde Coletiva</em>, Rio de Janeiro, v. 20, n. 3, p. 973–994, 2010. Disponível em: <a href="https://www.scielo.br/j/physis/a/VZK8T9ZQw5Cr6W7ZpW8wzFp/?lang=pt" target="_blank" rel="noopener noreferrer">www.scielo.br/j/physis/a/VZK8T9ZQw5Cr6W7ZpW8wzFp/?lang=pt.</a> Acesso em: 21 maio 2026.</li>
+        <li style="padding-left:.25rem">VASCONCELOS, M. F. F.; SEFFNER, F.; MELO, M. R. "Gente é mais que homem": gênero e cuidados em álcool e outras drogas. <em>Educar em Revista</em>, v. 36, e75406, 2020. Disponível em: <a href="https://pdfs.semanticscholar.org/1e17/6ee6cc7d10bb993553e11ec9bfcc3c27a474.pdf" target="_blank" rel="noopener noreferrer">https://pdfs.semanticscholar.org/1e17/6ee6cc7d10bb993553e11ec9bfcc3c27a474.pdf.</a> Acesso em: 21 maio 2026.</li>
+        </ol>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- MODAL SOBREPOSTO (SAIBA MAIS - LINHA DE CUIDADO) -->
+  <div class="overlay" id="modalSaibaMaisLinhaCuidado">
+    <div class="modal">
+      <div class="modal__head" style="background: var(--grad-m5-brand);">
+        <button class="modal__close" aria-label="Fechar" onclick="closeModal('modalSaibaMaisLinhaCuidado')"><i data-lucide="x"></i></button>
+        <span class="badge badge--orange modal__kicker">Saiba mais</span>
+        <div class="modal__title">Atenção Integral em Situação de Violência</div>
+        <div class="modal__author">Ministério da Saúde (2011)</div>
+      </div>
+      <div class="modal__body">
+        <p>
+          Acesse o material <em>Linha de Cuidado para a Atenção Integral à Saúde de Crianças, Adolescentes e suas Famílias em Situação de Violência</em>, desenvolvido pelo Ministério da Saúde do Brasil, em 2011, e conheça mais a fundo as orientações para gestores e profissionais da saúde.
+        </p>
+        <div class="modal__actions" style="margin-top: 1.8rem; justify-content: flex-start; display: flex; gap: 0.75rem;">
+          <a class="btn btn--m5" href="#" target="_blank" rel="noopener noreferrer"><i data-lucide="external-link"></i> Acesse o PDF</a>
+          <button class="btn btn--m5-ghost" onclick="closeModal('modalSaibaMaisLinhaCuidado')">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL SOBREPOSTO (REFLEXÃO - ATENDIMENTO EM SITUAÇÃO DE VIOLÊNCIA) -->
+  <div class="overlay" id="modalReflexaoViolencia">
+    <div class="modal">
+      <div class="modal__head" style="background: var(--grad-m5-brand);">
+        <button class="modal__close" aria-label="Fechar" onclick="closeModal('modalReflexaoViolencia')"><i data-lucide="x"></i></button>
+        <span class="badge badge--orange modal__kicker">Reflexão</span>
+        <div class="modal__title">Atenção Integral e Humanizada</div>
+      </div>
+      <div class="modal__body">
+        <p style="margin-bottom: 1.25rem;">
+          No cotidiano da Atenção Primária à Saúde, como você tem considerado as dimensões físicas, emocionais e sociais no atendimento dessas pessoas? De que forma sua prática tem contribuído para a construção de vínculos, o respeito às escolhas do usuário e a articulação com a rede de proteção, especialmente nos casos de violência contra a mulher?
+        </p>
+        <p style="font-weight: 500; color: var(--fg1); margin-bottom: 0;">
+          Cuidar de pessoas em situação de violência exige mais do que intervenções pontuais: requer escuta qualificada, sensibilidade e compromisso com a integralidade do cuidado.
+        </p>
+        <div class="modal__actions" style="margin-top: 1.8rem; justify-content: flex-start; display: flex;">
+          <button class="btn btn--m5-ghost" onclick="closeModal('modalReflexaoViolencia')">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Créditos -->
+  <div class="overlay" id="modalCreditos">
+    <div class="modal">
+      <div class="modal__head" style="background:var(--grad-m5-brand);color:#fff">
+        <button class="modal__close" onclick="closeModal('modalCreditos')" aria-label="Fechar"><i data-lucide="x"></i></button>
+        <span class="badge badge--soft modal__kicker">Módulo V</span>
+        <div class="modal__title" style="color:#fff">Créditos</div>
+      </div>
+      <div class="modal__body">
+        <p style="font-weight:700;color:var(--fg1);margin-bottom:.5rem">Autoras</p>
+        <p style="color:var(--fg2);margin-bottom:1.2rem">Karolayne Da Cunha Gonsalves<br>Rochele Fellini Fachinetto</p>
+        <p style="font-weight:700;color:var(--fg1);margin-bottom:.5rem">Instituição</p>
+        <p style="color:var(--fg2);margin-bottom:1.2rem">Fiocruz Mato Grosso do Sul</p>
+        <p style="font-weight:700;color:var(--fg1);margin-bottom:.5rem">Curso</p>
+        <p style="color:var(--fg2)">Atenção à Saúde da Caminhoneira e Caminhoneiro na Atenção Primária</p>
+        <div class="modal__actions" style="justify-content:flex-end">
+          <button class="btn btn--m5-ghost" onclick="closeModal('modalCreditos')">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Instruções -->
+  <div class="overlay" id="modalInstrucoes">
+    <div class="modal">
+      <div class="modal__head" style="background:var(--grad-m5-brand);color:#fff">
+        <button class="modal__close" onclick="closeModal('modalInstrucoes')" aria-label="Fechar"><i data-lucide="x"></i></button>
+        <span class="badge badge--soft modal__kicker">Como usar</span>
+        <div class="modal__title" style="color:#fff">Instruções de navegação</div>
+      </div>
+      <div class="modal__body">
+        <ul style="margin:0;padding-left:1.2rem;line-height:1.7;display:flex;flex-direction:column;gap:.7rem;color:var(--fg2)">
+          <li>Use o <strong>menu lateral esquerdo</strong> para navegar entre as seções do módulo.</li>
+          <li>Clique nos <strong>acordeões</strong> para explorar os conceitos e tipos de violência.</li>
+          <li>Interaja com os <strong>flashcards</strong> para conhecer fatores de risco e proteção.</li>
+          <li>Os botões <strong>Reflexão e Saiba mais</strong> abrem conteúdos complementares em janelas sobrepostas.</li>
+          <li>A <strong>barra de progresso</strong> no topo indica quanto do módulo você já percorreu.</li>
+          <li>A carga horária estimada para este módulo é de <strong>07 horas</strong>.</li>
+        </ul>
+        <div class="modal__actions" style="justify-content:flex-end">
+          <button class="btn btn--m5-ghost" onclick="closeModal('modalInstrucoes')">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Créditos -->
+  <div class="overlay" id="modalCreditos">
+    <div class="modal">
+      <div class="modal__head" style="background:var(--grad-m5-brand);color:#fff">
+        <button class="modal__close" onclick="closeModal('modalCreditos')" aria-label="Fechar"><i data-lucide="x"></i></button>
+        <span class="badge badge--soft modal__kicker">Módulo V</span>
+        <div class="modal__title" style="color:#fff">Créditos</div>
+      </div>
+      <div class="modal__body">
+        <p style="font-weight:700;color:var(--fg1);margin-bottom:.5rem">Autoras</p>
+        <p style="color:var(--fg2);margin-bottom:1.2rem">Karolayne Da Cunha Gonsalves<br>Rochele Fellini Fachinetto</p>
+        <p style="font-weight:700;color:var(--fg1);margin-bottom:.5rem">Instituição</p>
+        <p style="color:var(--fg2);margin-bottom:1.2rem">Fiocruz Mato Grosso do Sul</p>
+        <p style="font-weight:700;color:var(--fg1);margin-bottom:.5rem">Curso</p>
+        <p style="color:var(--fg2)">Atenção à Saúde da Caminhoneira e Caminhoneiro na Atenção Primária</p>
+        <div class="modal__actions" style="justify-content:flex-end">
+          <button class="btn btn--m5-ghost" onclick="closeModal('modalCreditos')">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Instruções -->
+  <div class="overlay" id="modalInstrucoes">
+    <div class="modal">
+      <div class="modal__head" style="background:var(--grad-m5-brand);color:#fff">
+        <button class="modal__close" onclick="closeModal('modalInstrucoes')" aria-label="Fechar"><i data-lucide="x"></i></button>
+        <span class="badge badge--soft modal__kicker">Como usar</span>
+        <div class="modal__title" style="color:#fff">Instruções de navegação</div>
+      </div>
+      <div class="modal__body">
+        <ul style="margin:0;padding-left:1.2rem;line-height:1.7;display:flex;flex-direction:column;gap:.7rem;color:var(--fg2)">
+          <li>Use o <strong>menu lateral esquerdo</strong> para navegar entre as seções do módulo.</li>
+          <li>Clique nos <strong>acordeões</strong> para explorar os conceitos e tipos de violência.</li>
+          <li>Interaja com os <strong>flashcards</strong> para conhecer fatores de risco e proteção.</li>
+          <li>Os botões <strong>Reflexão e Saiba mais</strong> abrem conteúdos complementares em janelas sobrepostas.</li>
+          <li>A <strong>barra de progresso</strong> no topo indica quanto do módulo você já percorreu.</li>
+          <li>A carga horária estimada para este módulo é de <strong>07 horas</strong>.</li>
+        </ul>
+        <div class="modal__actions" style="justify-content:flex-end">
+          <button class="btn btn--m5-ghost" onclick="closeModal('modalInstrucoes')">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lucide e Script de Progresso -->
+  <!-- Botão voltar ao topo -->
+  <button id="backToTop" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Voltar ao topo" style="background:var(--m5-primary);color:#fff">
+    <i data-lucide="chevron-up"></i>
+  </button>
+
+  <!-- Sidebar toggle (hambúrguer — visível apenas no mobile) -->
+  <button class="sidebar-toggle" onclick="openSidebar()" aria-label="Abrir menu de navegação" style="background:var(--m5-primary);color:#fff">
+    <i data-lucide="menu"></i>
+  </button>
+
+  <!-- Overlay da sidebar (mobile) -->
+  <div id="sidebarOverlay" class="sidebar-overlay" onclick="closeSidebar()"></div>
+
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="js/scripts.min.js"></script>
+
+</body>
+</html>

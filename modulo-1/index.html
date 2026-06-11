@@ -1,0 +1,1629 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Módulo 1 - O Cuidado da Caminhoneira e do Caminhoneiro na Atenção
+        Primária à Saúde</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Mukta:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.min.css">
+</head>
+
+<body>
+
+    <!-- Barra de Progresso Superior -->
+    <div class="progress-rail" id="progressRail">
+        <div class="progress-fill" id="progressFill"></div>
+    </div>
+
+    <!-- HERO -->
+    <div class="hero-wrap" id="home">
+        <div class="hero-nav" style="--hn-color: var(--m1-primary-deep)">
+            <div class="hero-nav__inner">
+                <span class="hero-nav__badge"><i data-lucide="graduation-cap"></i> Curso</span>
+                <span class="hero-nav__name">ATENÇÃO À SAÚDE DA CAMINHONEIRA
+                    E CAMINHONEIRO NA ATENÇÃO PRIMÁRIA</span>
+            </div>
+        </div>
+        <div class="hero-body hero-body--light"
+            style="background:var(--grad-m1-hero);--hb-text:var(--m1-on-primary,#524000)">
+            <div class="hero-body__inner">
+                <div class="hero-body__content" style="min-height:auto;padding:0">
+                    <div>
+                        <span class="hero__kicker hero__kicker--dark"><i data-lucide="graduation-cap"></i> MÓDULO
+                            I</span>
+                        <h2 class="hero__title" style="margin-top:.8rem;margin-bottom:2rem">O
+                            Cuidado da Caminhoneira e do<br>Caminhoneiro na
+                            Atenção Primária à Saúde</h2>
+                    </div>
+                    <div class="hero__btns">
+                        <button class="btn btn--m1-outline" onclick="openModal('modalCreditos')"><i
+                                data-lucide="users"></i> Créditos</button>
+                        <button class="btn btn--m1-outline" onclick="openModal('modalInstrucoes')"><i
+                                data-lucide="info"></i> Instruções</button>
+                        <button class="btn btn--cta"
+                            onclick="document.getElementById('apresentacao').scrollIntoView({behavior:'smooth'})"><i
+                                data-lucide="play"></i> Iniciar</button>
+                    </div>
+                </div>
+                <div class="hero-body__logo">
+                    <img src="images/logo-fundo-escuro.png" alt="Logo Fiocruz MS">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- LAYOUT COM SIDEBAR -->
+    <div class="page-layout">
+
+        <!-- SIDEBAR FIXA -->
+        <aside class="sidebar">
+            <nav class="sidebar-nav">
+                <div class="sidebar-nav__header" style="color:var(--m1-primary-deep)">Conteúdo do
+                    Módulo</div>
+                <a class="sidebar-nav__link" href="#apresentacao">Apresentação</a>
+                <a class="sidebar-nav__link" href="#s1-1">1.1 Atenção
+                    Primária à Saúde</a>
+                <a class="sidebar-nav__link" href="#s1-2">1.2 Gênero e
+                    trabalho</a>
+                <a class="sidebar-nav__link" href="#s1-3">1.3 Educação em
+                    saúde</a>
+                <a class="sidebar-nav__link" href="#s1-4">1.4 Vigilância em
+                    saúde</a>
+                <a class="sidebar-nav__link" href="#s1-5">1.5 Organização do
+                    cuidado</a>
+                <a class="sidebar-nav__link" href="#encerramento">Encerramento</a>
+                <a class="sidebar-nav__link" href="#referencias">Referências</a>
+            </nav>
+            <div class="sidebar-badge" style="background:var(--m1-surface);border-color:var(--m1-accent)">
+                <span class="sidebar-badge__icon" style="background:var(--m1-primary-deep)"><i
+                        data-lucide="clock"></i></span>
+                <div>
+                    <span class="sidebar-badge__label">Carga horária</span>
+                    <span class="sidebar-badge__value" style="color:var(--m1-primary-deep)">07 horas</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- CONTEÚDO PRINCIPAL -->
+        <main class="content-main">
+
+            <!-- ═══ APRESENTAÇÃO DO MÓDULO ═══ -->
+            <section id="apresentacao" class="block" style="margin-bottom:3.5rem">
+                <h2 class="block-title" style="color:var(--m1-primary-deep);margin-bottom:1.5rem">Apresentação
+                    do Módulo</h2>
+
+                <div class="intro-card" style="border-color:var(--m1-primary-deep)">
+                    <p>Prezado profissional estudante, é com grande
+                        satisfação que damos início ao <strong>Curso de
+                            Atenção à Saúde da Caminhoneira e Caminhoneiro
+                            na Atenção Primária</strong>. Bem-vindo ao
+                        <strong>Módulo I</strong>!
+                    </p>
+                    <p>Este módulo foi desenvolvido para apresentar a
+                        realidade das caminhoneiras e dos caminhoneiros,
+                        considerando os desafios de sua rotina, como longos
+                        períodos longe de casa, jornadas exaustivas e
+                        restrições de tempo para acessar serviços de
+                        saúde.</p>
+                    <p>O objetivo é focar o cuidado a essa população na
+                        Atenção Primária à Saúde (APS), apoiando a prática
+                        dos profissionais de saúde e integrando
+                        conhecimentos técnicos e demandas específicas desse
+                        público.</p>
+                    <p>Ao longo do módulo serão apresentados conteúdos
+                        relacionados ao acolhimento e à organização do
+                        cuidado na APS, com destaque para intervenções
+                        direcionadas às necessidades das caminhoneiras e dos
+                        caminhoneiros, bem como práticas de promoção de
+                        saúde. Também serão discutidos fatores como gênero,
+                        estilo de vida e condições de trabalho, os quais
+                        influenciam o processo saúde-doença.</p>
+                    <p>Cuidar dessa população demanda atenção, formação
+                        contínua e respeito. Por isso, esperamos que este
+                        conteúdo possa aprimorar sua prática e fortalecer
+                        todo o processo de cuidado. <strong>Vamos juntos
+                            nessa estrada?</strong></p>
+                </div>
+
+                <h2 class="block-title" style="color:var(--m1-primary-deep);margin-bottom:1.2rem;font-size:1.35rem">
+                    Objetivos
+                    de Aprendizagem</h2>
+                <ul class="obj-list">
+                    <li>
+                        <span class="obj-list__icon" style="background:var(--m1-primary-deep)"><i
+                                data-lucide="check"></i></span>
+                        Compreender os atributos da Atenção Primária à Saúde
+                        na perspectiva do cuidado à saúde das caminhoneiras
+                        e dos caminhoneiros.
+                    </li>
+                    <li>
+                        <span class="obj-list__icon" style="background:var(--m1-primary-deep)"><i
+                                data-lucide="check"></i></span>
+                        Reconhecer o papel da equipe de Saúde da Família na
+                        coordenação do cuidado em saúde das caminhoneiras e
+                        dos caminhoneiros, considerando as especificidades
+                        de acesso e circulação dessa população.
+                    </li>
+                    <li>
+                        <span class="obj-list__icon" style="background:var(--m1-primary-deep)"><i
+                                data-lucide="check"></i></span>
+                        Reconhecer o papel das equipes de Atenção Primária à
+                        Saúde no acolhimento e na promoção do cuidado
+                        integral das caminhoneiras e dos caminhoneiros.
+                    </li>
+                    <li>
+                        <span class="obj-list__icon" style="background:var(--m1-primary-deep)"><i
+                                data-lucide="check"></i></span>
+                        Compreender como os princípios e diretrizes da
+                        Política Nacional de Atenção Integral à Saúde do
+                        Homem e da Política Nacional de Atenção Integral à
+                        Saúde da Mulher se articulam na atenção à saúde da
+                        população caminhoneira.
+                    </li>
+                    <li>
+                        <span class="obj-list__icon" style="background:var(--m1-primary-deep)"><i
+                                data-lucide="check"></i></span>
+                        Compreender as estratégias de educação e de promoção
+                        da saúde como componentes do cuidado integral das
+                        caminhoneiras e dos caminhoneiros.
+                    </li>
+                    <li>
+                        <span class="obj-list__icon" style="background:var(--m1-primary-deep)"><i
+                                data-lucide="check"></i></span>
+                        Compreender a vigilância em saúde na perspectiva do
+                        cuidado na Atenção Primária à Saúde das
+                        caminhoneiras e dos caminhoneiros.
+                    </li>
+                    <li>
+                        <span class="obj-list__icon" style="background:var(--m1-primary-deep)"><i
+                                data-lucide="check"></i></span>
+                        Identificar estratégias de organização do cuidado na
+                        Atenção Primária à Saúde voltadas ao público
+                        caminhoneiro.
+                    </li>
+                    <li>
+                        <span class="obj-list__icon" style="background:var(--m1-primary-deep)"><i
+                                data-lucide="check"></i></span>
+                        Reconhecer questões de gênero que atravessam o
+                        trabalho, o viver e o cuidar em saúde das
+                        caminhoneiras e dos caminhoneiros.
+                    </li>
+                </ul>
+            </section>
+
+            <!-- ═══ SEÇÃO 1.1 ═══ -->
+            <section id="s1-1" class="block" style="margin-bottom:3.5rem">
+                <h2 class="block-title" style="color:var(--m1-primary-deep);margin-bottom:1.5rem">1.1
+                    A Atenção Primária à Saúde e o cuidado à caminhoneira e
+                    ao caminhoneiro</h2>
+
+                <p style="line-height:1.78;margin-bottom:1.2rem">A Atenção
+                    Primária à Saúde (APS) é a principal porta de entrada do
+                    Sistema Único de Saúde (SUS), sendo responsável pela
+                    coordenação do cuidado e organização da Rede de Atenção
+                    à Saúde (RAS). No Brasil, tem como modelo prioritário a
+                    Estratégia Saúde da Família (ESF), com base territorial
+                    e foco na responsabilidade sanitária.</p>
+                <p style="line-height:1.78;margin-bottom:1.2rem">Nesse
+                    contexto, compreender os atributos essenciais e
+                    derivados da APS contribui para qualificar o cuidado
+                    ofertado e fortalecer práticas integrais e coordenadas
+                    em diferentes territórios e realidades sociais.</p>
+                <p style="line-height:1.78;margin-bottom:1.8rem">É
+                    importante refletir: qual o papel da APS no cuidado
+                    dessa população e como garantir o seu acesso integral em
+                    todo o território nacional? Ao longo desta unidade,
+                    propomos uma reflexão a respeito de como os atributos da
+                    APS podem ser mobilizados no cuidado à caminhoneira e ao
+                    caminhoneiro, considerando a necessidade de uma
+                    organização do cuidado flexível e sensível às suas
+                    condições de vida e trabalho.</p>
+
+                <!-- Atributos APS -->
+                <h2 class="block-title" style="margin-bottom:1.2rem;font-size:1.35rem;color:var(--m1-primary-deep)">Você
+                    conhece os atributos essenciais e derivados da APS?</h2>
+                <div class="accordion" style="margin-bottom:2rem">
+                    <details class="acc" open>
+                        <summary>
+                            <span class="acc__icon"><i data-lucide="shield-check"></i></span>
+                            Essenciais
+                            <span class="acc__chev"><i data-lucide="chevron-down"></i></span>
+                        </summary>
+                        <div class="acc__body">
+                            <p>Acesso de 1º contato, longitudinalidade,
+                                integralidade e coordenação do cuidado.</p>
+                        </div>
+                    </details>
+                    <details class="acc">
+                        <summary>
+                            <span class="acc__icon"><i data-lucide="users"></i></span>
+                            Derivados
+                            <span class="acc__chev"><i data-lucide="chevron-down"></i></span>
+                        </summary>
+                        <div class="acc__body">
+                            <p>Orientação familiar, orientação comunitária e
+                                competência cultural.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <!-- Organização dos atributos -->
+                <h2 class="block-title" style="margin-bottom:1.2rem;font-size:1.35rem;color:var(--m1-primary-deep)">
+                    Organização
+                    dos atributos da APS no cuidado à população
+                    caminhoneira</h2>
+                <div class="accordion" style="margin-bottom:2.5rem">
+
+                    <details class="acc" open>
+                        <summary>
+                            <span class="acc__icon"><i data-lucide="door-open"></i></span>
+                            <div class="acc__txt">
+                                <span
+                                    style="font-family:var(--font-display);font-weight:700;font-size:1.08rem;display:block">Acesso
+                                    de primeiro contato</span>
+                                <span style="font-size:.88rem;color:var(--fg3);line-height:1.4;display:block">Garantia
+                                    de acesso oportuno e resolutivo a cada
+                                    nova necessidade de saúde da
+                                    população.</span>
+                            </div>
+                            <span class="acc__chev"><i data-lucide="chevron-down"></i></span>
+                        </summary>
+                        <div class="acc__body" style="display:flex;flex-direction:column;gap:1rem">
+                            <div>
+                                <p style="margin-bottom:.4rem"><strong>UBS
+                                        de referência do território
+                                        adscrito</strong></p>
+                                <p style="margin-bottom:.6rem">Garantir
+                                    acesso oportuno, com agendamento de
+                                    acordo com a rotina e agenda de
+                                    trabalho. Isso se aplica para as
+                                    consultas de rotina e exames
+                                    laboratoriais e de imagem.</p>
+                                <p
+                                    style="background:var(--bg-soft);border-left:3px solid var(--m1-primary-deep);padding:.6rem .9rem;border-radius:6px;font-style:italic;font-size:.95rem;margin:0">
+                                    <strong>Exemplo:</strong>
+                                    se existe a necessidade de realização de
+                                    exames laboratoriais solicitados pelo
+                                    médico da eSF, garantir a realização em
+                                    tempo oportuno para a avaliação da
+                                    equipe.
+                                </p>
+                            </div>
+                            <div>
+                                <p style="margin-bottom:.4rem"><strong>Qualquer
+                                        unidade de saúde em âmbito
+                                        nacional</strong></p>
+                                <p style="margin-bottom:.6rem">Garantir
+                                    acesso oportuno e resolutivo para as
+                                    queixas agudas e espontâneas, bem como
+                                    para atendimentos eletivos, se
+                                    necessários.</p>
+                                <p
+                                    style="background:var(--bg-soft);border-left:3px solid var(--m1-primary-deep);padding:.6rem .9rem;border-radius:6px;font-style:italic;font-size:.95rem;margin:0">
+                                    <strong>Exemplo:</strong>
+                                    houve busca ativa de uma pessoa
+                                    caminhoneira para renovação de receita
+                                    de medicamentos anti-hipertensivos. A
+                                    unidade deve garantir acolhimento com
+                                    escuta sensível e resolutiva, pois a
+                                    barreira de acesso pode indicar a
+                                    descontinuidade no tratamento da
+                                    hipertensão arterial sistêmica
+                                    (HAS).
+                                </p>
+                            </div>
+                        </div>
+                    </details>
+
+                    <details class="acc">
+                        <summary>
+                            <span class="acc__icon"><i data-lucide="calendar-days"></i></span>
+                            <div class="acc__txt">
+                                <span
+                                    style="font-family:var(--font-display);font-weight:700;font-size:1.08rem;display:block">Longitudinalidade</span>
+                                <span style="font-size:.88rem;color:var(--fg3);line-height:1.4;display:block">A
+                                    APS como fonte regular de atenção à
+                                    saúde ao longo do tempo, estabelecendo
+                                    vínculo e continuidade do
+                                    cuidado.</span>
+                            </div>
+                            <span class="acc__chev"><i data-lucide="chevron-down"></i></span>
+                        </summary>
+                        <div class="acc__body" style="display:flex;flex-direction:column;gap:1rem">
+                            <div>
+                                <p style="margin-bottom:.4rem"><strong>UBS
+                                        de referência do território
+                                        adscrito</strong></p>
+                                <p style="margin-bottom:.6rem">Garantir
+                                    acompanhamento contínuo da caminhoneira
+                                    e do caminhoneiro ao longo do tempo,
+                                    mesmo diante dos períodos fora do
+                                    território. A equipe deve manter
+                                    registro atualizado, acompanhar
+                                    condições crônicas, monitorar
+                                    tratamentos e organizar o plano de
+                                    cuidado de forma compatível com os
+                                    períodos em que o usuário está no
+                                    território.</p>
+                                <p
+                                    style="background:var(--bg-soft);border-left:3px solid var(--m1-primary-deep);padding:.6rem .9rem;border-radius:6px;font-style:italic;font-size:.95rem;margin:0">
+                                    <strong>Exemplo:</strong>
+                                    organizar consultas e exames em momentos
+                                    em que esteja em seu local de
+                                    residência, além de reforçar a
+                                    possibilidade de cuidado e acesso a
+                                    qualquer UBS próxima do seu local de
+                                    parada e descanso.
+                                </p>
+                            </div>
+                            <div>
+                                <p style="margin-bottom:.4rem"><strong>Qualquer
+                                        unidade de saúde em âmbito
+                                        nacional</strong></p>
+                                <p style="margin-bottom:.6rem">Garantir o
+                                    atendimento qualificado, registrando as
+                                    informações no prontuário e orientando
+                                    quanto à continuidade do cuidado.</p>
+                                <p
+                                    style="background:var(--bg-soft);border-left:3px solid var(--m1-primary-deep);padding:.6rem .9rem;border-radius:6px;font-style:italic;font-size:.95rem;margin:0">
+                                    <strong>Exemplo:</strong>
+                                    atendimento de uma pessoa caminhoneira
+                                    em outra cidade para controle de pressão
+                                    arterial, com registro da consulta e
+                                    orientação para seguimento do
+                                    cuidado.
+                                </p>
+                            </div>
+                        </div>
+                    </details>
+
+                    <details class="acc">
+                        <summary>
+                            <span class="acc__icon"><i data-lucide="stethoscope"></i></span>
+                            <div class="acc__txt">
+                                <span
+                                    style="font-family:var(--font-display);font-weight:700;font-size:1.08rem;display:block">Integralidade</span>
+                                <span style="font-size:.88rem;color:var(--fg3);line-height:1.4;display:block">Oferta
+                                    de ações de promoção, prevenção,
+                                    diagnóstico, tratamento e reabilitação,
+                                    considerando as necessidades de saúde da
+                                    pessoa de forma ampla.</span>
+                            </div>
+                            <span class="acc__chev"><i data-lucide="chevron-down"></i></span>
+                        </summary>
+                        <div class="acc__body" style="display:flex;flex-direction:column;gap:1rem">
+                            <div>
+                                <p style="margin-bottom:.4rem"><strong>UBS
+                                        de referência do território
+                                        adscrito</strong></p>
+                                <p style="margin-bottom:.6rem">Identificar e
+                                    abordar as diversas necessidades de
+                                    saúde da caminhoneira e do caminhoneiro,
+                                    considerando suas condições de vida e
+                                    trabalho, incluindo vigilância de
+                                    agravos relacionados à atividade
+                                    laboral, saúde mental, saúde sexual e
+                                    reprodutiva, doenças crônicas e agravos
+                                    agudos.</p>
+                                <p
+                                    style="background:var(--bg-soft);border-left:3px solid var(--m1-primary-deep);padding:.6rem .9rem;border-radius:6px;font-style:italic;font-size:.95rem;margin:0">
+                                    <strong>Exemplo:</strong>
+                                    realização de avaliação integral de
+                                    saúde que considere alimentação
+                                    irregular, privação de sono,
+                                    sedentarismo, risco cardiovascular e
+                                    saúde mental.
+                                </p>
+                            </div>
+                            <div>
+                                <p style="margin-bottom:.4rem"><strong>Qualquer
+                                        unidade de saúde em âmbito
+                                        nacional</strong></p>
+                                <p style="margin-bottom:.6rem">Ofertar
+                                    cuidado resolutivo frente às
+                                    necessidades apresentadas, considerando
+                                    tanto a queixa imediata quanto outros
+                                    aspectos relevantes da saúde da
+                                    população caminhoneira.</p>
+                                <p
+                                    style="background:var(--bg-soft);border-left:3px solid var(--m1-primary-deep);padding:.6rem .9rem;border-radius:6px;font-style:italic;font-size:.95rem;margin:0">
+                                    <strong>Exemplo:</strong>
+                                    durante atendimento por dor lombar,
+                                    avaliar fatores ocupacionais
+                                    relacionados à atividade de dirigir por
+                                    longos períodos e orientar medidas de
+                                    prevenção.
+                                </p>
+                            </div>
+                        </div>
+                    </details>
+
+                    <details class="acc">
+                        <summary>
+                            <span class="acc__icon"><i data-lucide="git-merge"></i></span>
+                            <div class="acc__txt">
+                                <span
+                                    style="font-family:var(--font-display);font-weight:700;font-size:1.08rem;display:block">Coordenação
+                                    do cuidado</span>
+                                <span style="font-size:.88rem;color:var(--fg3);line-height:1.4;display:block">Capacidade
+                                    da APS de organizar o cuidado do usuário
+                                    na RAS, articulando diferentes serviços
+                                    e níveis de atenção.</span>
+                            </div>
+                            <span class="acc__chev"><i data-lucide="chevron-down"></i></span>
+                        </summary>
+                        <div class="acc__body" style="display:flex;flex-direction:column;gap:1rem">
+                            <div>
+                                <p style="margin-bottom:.4rem"><strong>UBS
+                                        de referência do território
+                                        adscrito</strong></p>
+                                <p style="margin-bottom:.6rem">Assumir a
+                                    responsabilidade pela coordenação do
+                                    cuidado da pessoa caminhoneira,
+                                    organizando encaminhamentos,
+                                    acompanhando resultados de exames e
+                                    consultas especializadas e integrando
+                                    informações obtidas em atendimentos
+                                    realizados em outros serviços da
+                                    rede.</p>
+                                <p
+                                    style="background:var(--bg-soft);border-left:3px solid var(--m1-primary-deep);padding:.6rem .9rem;border-radius:6px;font-style:italic;font-size:.95rem;margin:0">
+                                    <strong>Exemplo:</strong>
+                                    quando necessário, a eSF realizará
+                                    encaminhamento para especialista — e
+                                    deve organizar essa solicitação na RAS,
+                                    de modo que seja agendada a consulta
+                                    para período em que o usuário esteja em
+                                    seu território de residência.
+                                </p>
+                            </div>
+                            <div>
+                                <p style="margin-bottom:.4rem"><strong>Qualquer
+                                        unidade de saúde em âmbito
+                                        nacional</strong></p>
+                                <p style="margin-bottom:.6rem">Realizar o
+                                    atendimento necessário e registrar as
+                                    informações de forma adequada,
+                                    orientando o usuário sobre a importância
+                                    de compartilhar essas informações com
+                                    sua equipe de referência.</p>
+                                <p
+                                    style="background:var(--bg-soft);border-left:3px solid var(--m1-primary-deep);padding:.6rem .9rem;border-radius:6px;font-style:italic;font-size:.95rem;margin:0">
+                                    <strong>Exemplo:</strong>
+                                    em atendimento em unidade de saúde
+                                    durante viagem por quadro de crise
+                                    hipertensiva, deve haver registro da
+                                    conduta adotada e orientação para
+                                    seguimento e reavaliação pela eSF de
+                                    referência no território do usuário.
+                                </p>
+                            </div>
+                        </div>
+                    </details>
+
+                    <details class="acc">
+                        <summary>
+                            <span class="acc__icon"><i data-lucide="home"></i></span>
+                            <div class="acc__txt">
+                                <span
+                                    style="font-family:var(--font-display);font-weight:700;font-size:1.08rem;display:block">Orientação
+                                    familiar</span>
+                                <span
+                                    style="font-size:.88rem;color:var(--fg3);line-height:1.4;display:block">Consideração
+                                    da família como contexto importante para
+                                    a compreensão das condições de saúde e o
+                                    planejamento do cuidado.</span>
+                            </div>
+                            <span class="acc__chev"><i data-lucide="chevron-down"></i></span>
+                        </summary>
+                        <div class="acc__body" style="display:flex;flex-direction:column;gap:1rem">
+                            <div>
+                                <p style="margin-bottom:.4rem"><strong>UBS
+                                        de referência do território
+                                        adscrito</strong></p>
+                                <p style="margin-bottom:.6rem">Considerar o
+                                    contexto familiar da caminhoneira e do
+                                    caminhoneiro no planejamento do cuidado,
+                                    identificando impactos da atividade
+                                    laboral nas relações familiares e no
+                                    apoio ao tratamento e autocuidado.</p>
+                                <p
+                                    style="background:var(--bg-soft);border-left:3px solid var(--m1-primary-deep);padding:.6rem .9rem;border-radius:6px;font-style:italic;font-size:.95rem;margin:0">
+                                    <strong>Exemplo:</strong>
+                                    orientar familiares sobre apoio ao
+                                    controle de doenças crônicas durante os
+                                    períodos em que a pessoa caminhoneira
+                                    retorna ao domicílio.
+                                </p>
+                            </div>
+                            <div>
+                                <p style="margin-bottom:.4rem"><strong>Qualquer
+                                        unidade de saúde em âmbito
+                                        nacional</strong></p>
+                                <p style="margin-bottom:.6rem">Reconhecer a
+                                    importância do contexto familiar nas
+                                    orientações de saúde e, sempre que
+                                    possível, orientar o usuário a
+                                    compartilhar informações e estratégias
+                                    de cuidado com seus familiares.</p>
+                                <p
+                                    style="background:var(--bg-soft);border-left:3px solid var(--m1-primary-deep);padding:.6rem .9rem;border-radius:6px;font-style:italic;font-size:.95rem;margin:0">
+                                    <strong>Exemplo:</strong>
+                                    orientar sobre adesão ao tratamento
+                                    medicamentoso considerando apoio
+                                    familiar.
+                                </p>
+                            </div>
+                        </div>
+                    </details>
+
+                    <details class="acc">
+                        <summary>
+                            <span class="acc__icon"><i data-lucide="map-pin"></i></span>
+                            <div class="acc__txt">
+                                <span
+                                    style="font-family:var(--font-display);font-weight:700;font-size:1.08rem;display:block">Orientação
+                                    comunitária</span>
+                                <span style="font-size:.88rem;color:var(--fg3);line-height:1.4;display:block">Capacidade
+                                    da APS de reconhecer as necessidades de
+                                    saúde da comunidade e desenvolver ações
+                                    a partir da realidade social e cultural
+                                    do território.</span>
+                            </div>
+                            <span class="acc__chev"><i data-lucide="chevron-down"></i></span>
+                        </summary>
+                        <div class="acc__body" style="display:flex;flex-direction:column;gap:1rem">
+                            <div>
+                                <p style="margin-bottom:.4rem"><strong>UBS
+                                        de referência do território
+                                        adscrito</strong></p>
+                                <p style="margin-bottom:.6rem">Reconhecer as
+                                    especificidades da população
+                                    caminhoneira presente no território e
+                                    desenvolver ações de promoção da saúde e
+                                    prevenção de agravos voltadas a esse
+                                    grupo.</p>
+                                <p
+                                    style="background:var(--bg-soft);border-left:3px solid var(--m1-primary-deep);padding:.6rem .9rem;border-radius:6px;font-style:italic;font-size:.95rem;margin:0">
+                                    <strong>Exemplo:</strong>
+                                    ações educativas sobre saúde
+                                    cardiovascular, alimentação saudável e
+                                    prevenção de IST em locais frequentados
+                                    por caminhoneiras e caminhoneiros.
+                                </p>
+                            </div>
+                            <div>
+                                <p style="margin-bottom:.4rem"><strong>Qualquer
+                                        unidade de saúde em âmbito
+                                        nacional</strong></p>
+                                <p style="margin-bottom:.6rem">Reconhecer
+                                    que o público caminhoneiro compõe um
+                                    grupo populacional com necessidades
+                                    específicas e garantir acolhimento e
+                                    orientações adequadas à sua realidade
+                                    laboral e social.</p>
+                                <p
+                                    style="background:var(--bg-soft);border-left:3px solid var(--m1-primary-deep);padding:.6rem .9rem;border-radius:6px;font-style:italic;font-size:.95rem;margin:0">
+                                    <strong>Exemplo:</strong>
+                                    realização de ações de saúde em unidades
+                                    próximas a estradas ou pontos de
+                                    parada.
+                                </p>
+                            </div>
+                        </div>
+                    </details>
+
+                    <details class="acc">
+                        <summary>
+                            <span class="acc__icon"><i data-lucide="languages"></i></span>
+                            <div class="acc__txt">
+                                <span
+                                    style="font-family:var(--font-display);font-weight:700;font-size:1.08rem;display:block">Competência
+                                    cultural</span>
+                                <span style="font-size:.88rem;color:var(--fg3);line-height:1.4;display:block">Capacidade
+                                    dos profissionais e serviços de saúde de
+                                    reconhecer e respeitar as
+                                    características culturais, sociais e os
+                                    modos de vida das populações
+                                    atendidas.</span>
+                            </div>
+                            <span class="acc__chev"><i data-lucide="chevron-down"></i></span>
+                        </summary>
+                        <div class="acc__body" style="display:flex;flex-direction:column;gap:1rem">
+                            <div>
+                                <p style="margin-bottom:.4rem"><strong>UBS
+                                        de referência do território
+                                        adscrito</strong></p>
+                                <p style="margin-bottom:.6rem">Compreender
+                                    as particularidades do modo de vida da
+                                    população caminhoneira, incluindo
+                                    rotinas de trabalho, alimentação, sono e
+                                    deslocamento constante, adaptando
+                                    estratégias de cuidado e
+                                    acompanhamento.</p>
+                                <p
+                                    style="background:var(--bg-soft);border-left:3px solid var(--m1-primary-deep);padding:.6rem .9rem;border-radius:6px;font-style:italic;font-size:.95rem;margin:0">
+                                    <strong>Exemplo:</strong>
+                                    flexibilização de agendas e organização
+                                    do acompanhamento que considere os
+                                    períodos de permanência no
+                                    território.
+                                </p>
+                            </div>
+                            <div>
+                                <p style="margin-bottom:.4rem"><strong>Qualquer
+                                        unidade de saúde em âmbito
+                                        nacional</strong></p>
+                                <p style="margin-bottom:.6rem">Oferecer
+                                    cuidado respeitoso e sensível às
+                                    condições de vida e trabalho da
+                                    caminhoneira e do caminhoneiro, evitando
+                                    julgamentos e considerando as limitações
+                                    impostas pela atividade laboral.</p>
+                                <p
+                                    style="background:var(--bg-soft);border-left:3px solid var(--m1-primary-deep);padding:.6rem .9rem;border-radius:6px;font-style:italic;font-size:.95rem;margin:0">
+                                    <strong>Exemplo:</strong>
+                                    orientar estratégias possíveis de
+                                    autocuidado durante as jornadas de
+                                    trabalho.
+                                </p>
+                            </div>
+                        </div>
+                    </details>
+
+                </div>
+
+                <!-- Hotspot: Avaliação de Risco -->
+                <p style="line-height:1.78;margin-bottom:1rem">No
+                    atendimento da APS, uma pergunta deve orientar sua ação:
+                    <strong>há risco imediato à saúde desse
+                        paciente?</strong> A classificação de risco é a
+                    ferramenta que auxilia na organização do cuidado na
+                    definição de prioridades. Essa avaliação deve considerar
+                    não apenas a gravidade clínica imediata, mas também as
+                    vulnerabilidades e o contexto de vida do usuário.
+                </p>
+                <p style="line-height:1.78;margin-bottom:1.8rem">Imagine a
+                    cena: uma pessoa caminhoneira chega na UBS dizendo que
+                    "não está se sentindo bem". Clique nos pontos abaixo
+                    para organizar a avaliação:</p>
+
+                <div class="hs-scene" style="--hs-bg:var(--m1-surface);--hs-color:var(--m1-primary-deep);height:auto">
+                    <img src="images/img01.png" alt="Pontos de atenção"
+                        style="width:100%;height:auto;display:block;border-radius:var(--r-lg);pointer-events:none" />
+                    <div class="hs-point" style="left:15%;top:30%;width:auto;height:auto">
+                        <button class="btn btn--m1 btn--hs-sm" onclick="toggleHs(this,'hs-opt-1')">Escutar</button>
+                        <div class="hs-popover" id="hs-opt-1">
+                            <button class="hs-popover__close" onclick="closeHs('hs-opt-1')"><i
+                                    data-lucide="x"></i></button>
+                            <div class="hs-popover__title">Escutar</div>
+                            <div class="hs-popover__body">O que a pessoa
+                                está sentindo? Há quanto tempo?</div>
+                        </div>
+                    </div>
+                    <div class="hs-point" style="left:48%;top:20%;width:auto;height:auto">
+                        <button class="btn btn--m1 btn--hs-sm" onclick="toggleHs(this,'hs-opt-2')">Observar
+                            sinais</button>
+                        <div class="hs-popover" id="hs-opt-2">
+                            <button class="hs-popover__close" onclick="closeHs('hs-opt-2')"><i
+                                    data-lucide="x"></i></button>
+                            <div class="hs-popover__title">Observar
+                                sinais</div>
+                            <div class="hs-popover__body">Nível de
+                                consciência, dificuldade para falar ou
+                                respirar.</div>
+                        </div>
+                    </div>
+                    <div class="hs-point" style="left:80%;top:25%;width:auto;height:auto">
+                        <button class="btn btn--m1 btn--hs-sm" onclick="toggleHs(this,'hs-opt-3')">Verificar
+                            sinais vitais</button>
+                        <div class="hs-popover" id="hs-opt-3">
+                            <button class="hs-popover__close" onclick="closeHs('hs-opt-3')"><i
+                                    data-lucide="x"></i></button>
+                            <div class="hs-popover__title">Verificar sinais
+                                vitais</div>
+                            <div class="hs-popover__body">Pressão arterial,
+                                frequência cardíaca, temperatura,
+                                glicemia.</div>
+                        </div>
+                    </div>
+                    <div class="hs-point" style="left:20%;top:75%;width:auto;height:auto">
+                        <button class="btn btn--m1 btn--hs-sm" onclick="toggleHs(this,'hs-opt-4')">Identificar
+                            sinais de alerta</button>
+                        <div class="hs-popover" id="hs-opt-4">
+                            <button class="hs-popover__close" onclick="closeHs('hs-opt-4')"><i
+                                    data-lucide="x"></i></button>
+                            <div class="hs-popover__title">Identificar
+                                sinais de alerta</div>
+                            <div class="hs-popover__body">Dor intensa, falta
+                                de ar, confusão mental, desmaios e
+                                outros.</div>
+                        </div>
+                    </div>
+                    <div class="hs-point" style="left:50%;top:65%;width:auto;height:auto">
+                        <button class="btn btn--m1 btn--hs-sm" onclick="toggleHs(this,'hs-opt-5')">Considerar
+                            se</button>
+                        <div class="hs-popover" id="hs-opt-5">
+                            <button class="hs-popover__close" onclick="closeHs('hs-opt-5')"><i
+                                    data-lucide="x"></i></button>
+                            <div class="hs-popover__title">Considerar
+                                se</div>
+                            <div class="hs-popover__body">Dormiu bem, está
+                                se alimentando, faz uso regular de
+                                medicação.</div>
+                        </div>
+                    </div>
+                    <div class="hs-point" style="left:80%;top:70%;width:auto;height:auto">
+                        <button class="btn btn--m1 btn--hs-sm" onclick="toggleHs(this,'hs-opt-6')">Definir a
+                            prioridade</button>
+                        <div class="hs-popover" id="hs-opt-6">
+                            <button class="hs-popover__close" onclick="closeHs('hs-opt-6')"><i
+                                    data-lucide="x"></i></button>
+                            <div class="hs-popover__title">Definir a
+                                prioridade do atendimento</div>
+                            <div class="hs-popover__body">Imediato,
+                                prioritário ou pode aguardar.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bigbtns" style="margin-top:2.5rem">
+                    <button class="bigbtn bigbtn--reflexao" onclick="openModal('modalReflexao')">
+                        <span class="bigbtn__icon"><i data-lucide="message-circle"></i></span>
+                        <span class="bigbtn__txt"><span class="bigbtn__title">Reflexão</span><span
+                                class="bigbtn__sub">Organização do cuidado
+                                na sua realidade de trabalho</span></span>
+                        <span class="bigbtn__arrow"><i data-lucide="external-link"></i></span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- ═══ SEÇÃO 1.2 ═══ -->
+            <section id="s1-2" class="block" style="margin-bottom:3.5rem">
+                <h2 class="block-title" style="color:var(--m1-primary-deep);margin-bottom:1.5rem">1.2
+                    Gênero, trabalho nas estradas e políticas de atenção à
+                    saúde</h2>
+
+                <p style="line-height:1.78;margin-bottom:1.2rem">Compreender
+                    as especificidades das caminhoneiras e dos caminhoneiros
+                    requer considerar que sua mobilidade constante e longas
+                    jornadas são fatores que impactam diretamente o acesso,
+                    o vínculo e a continuidade do cuidado. Nesse contexto, a
+                    perspectiva de gênero demarca experiências de
+                    adoecimento e interage com outros marcadores sociais,
+                    reproduzindo múltiplas condições de desigualdades.</p>
+                <p style="line-height:1.78;margin-bottom:1.8rem">Historicamente,
+                    o transporte rodoviário de cargas é um trabalho
+                    predominantemente masculino. Padrões de masculinidade
+                    que valorizam resistência e autossuficiência contribuem
+                    para a baixa procura por ações preventivas, de modo que
+                    a busca por cuidado ocorre, em geral, em situações
+                    agravadas. A presença crescente de mulheres
+                    caminhoneiras adiciona complexidade às demandas de
+                    cuidado, evidenciando a necessidade de abordagem
+                    sensível às questões de gênero.</p>
+
+                <h2 class="block-title" style="margin-bottom:1.5rem;font-size:1.35rem;color:var(--m1-primary-deep)">Caso
+                    clínico – Paradas na estrada</h2>
+
+                <div class="hs-scene" style="--hs-bg:var(--m1-surface);--hs-color:var(--m1-primary-deep);height:auto">
+                    <img src="images/img02.png" alt="Caso clínico"
+                        style="width:100%;height:auto;display:block;border-radius:var(--r-lg);pointer-events:none" />
+                    <div class="hs-point" style="left:10%;top:22%;width:auto;height:auto;transform:translateY(-50%)">
+                        <button class="btn btn--m1 btn--hs-sm" onclick="toggleHs(this,'hs-carlos-1')">Carlos,
+                            46 anos</button>
+                        <div class="hs-popover hs-popover--left-aligned" id="hs-carlos-1">
+                            <button class="hs-popover__close" onclick="closeHs('hs-carlos-1')"><i
+                                    data-lucide="x"></i></button>
+                            <div class="hs-popover__title">Carlos, 46
+                                anos</div>
+                            <div class="hs-popover__body">Imagine que você
+                                atenda em uma UBS: Carlos, 46 anos,
+                                caminhoneiro, em demanda espontânea, refere
+                                cefaleia, tontura e cansaço. Relata estar há
+                                15 dias na estrada, com privação de sono,
+                                alimentação irregular e uso irregular de
+                                medicação anti-hipertensiva.</div>
+                        </div>
+                    </div>
+                    <div class="hs-point" style="left:10%;top:40%;width:auto;height:auto;transform:translateY(-50%)">
+                        <button class="btn btn--m1 btn--hs-sm" onclick="toggleHs(this,'hs-carlos-2')">Exame
+                            clínico</button>
+                        <div class="hs-popover hs-popover--left-aligned" id="hs-carlos-2">
+                            <button class="hs-popover__close" onclick="closeHs('hs-carlos-2')"><i
+                                    data-lucide="x"></i></button>
+                            <div class="hs-popover__title">Exame
+                                clínico</div>
+                            <div class="hs-popover__body">PA = 178/110 mmHg;
+                                Glicemia capilar = 168 mg/dL.</div>
+                        </div>
+                    </div>
+                    <div class="hs-point" style="left:10%;top:58%;width:auto;height:auto;transform:translateY(-50%)">
+                        <button class="btn btn--m1 btn--hs-sm" onclick="toggleHs(this,'hs-carlos-3')">Avaliação
+                            de risco e conduta</button>
+                        <div class="hs-popover hs-popover--left-aligned" id="hs-carlos-3">
+                            <button class="hs-popover__close" onclick="closeHs('hs-carlos-3')"><i
+                                    data-lucide="x"></i></button>
+                            <div class="hs-popover__title">Avaliação de
+                                risco e conduta</div>
+                            <div class="hs-popover__body">Como classificar o
+                                risco? Trata-se de urgência hipertensiva?
+                                Quais condutas imediatas devem ser adotadas
+                                na APS (avaliação de sinais de alarme,
+                                manejo medicamentoso, observação e
+                                encaminhamento)?<br><br>Durante o
+                                atendimento, o usuário relata:
+                                <em>"Na estrada é difícil manter a rotina, às vezes não dá tempo nem de parar..."</em>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hs-point" style="left:10%;top:76%;width:auto;height:auto;transform:translateY(-50%)">
+                        <button class="btn btn--m1 btn--hs-sm" onclick="toggleHs(this,'hs-carlos-4')">Plano de
+                            cuidado</button>
+                        <div class="hs-popover hs-popover--left-aligned" id="hs-carlos-4">
+                            <button class="hs-popover__close" onclick="closeHs('hs-carlos-4')"><i
+                                    data-lucide="x"></i></button>
+                            <div class="hs-popover__title">Plano de
+                                cuidado</div>
+                            <div class="hs-popover__body">Como propor um
+                                plano de cuidado possível (considerando
+                                rotina irregular, mobilidade e acesso
+                                intermitente aos serviços)? Quais
+                                estratégias podem ser utilizadas para a
+                                continuidade do cuidado (registro,
+                                comunicação entre serviços e/ou uso de
+                                medicação de posologia facilitada)?</div>
+                        </div>
+                    </div>
+                    <div class="hs-point"
+                        style="right:10%;left:auto;top:31%;width:auto;height:auto;transform:translateY(-50%)">
+                        <button class="btn btn--m1 btn--hs-sm" onclick="toggleHs(this,'hs-juliana-1')">Juliana,
+                            38 anos</button>
+                        <div class="hs-popover hs-popover--right-aligned" id="hs-juliana-1">
+                            <button class="hs-popover__close" onclick="closeHs('hs-juliana-1')"><i
+                                    data-lucide="x"></i></button>
+                            <div class="hs-popover__title">Juliana, 38
+                                anos</div>
+                            <div class="hs-popover__body">No mesmo dia, você
+                                atende Juliana, 38 anos, caminhoneira, que
+                                refere cansaço persistente, ansiedade e
+                                dificuldade para dormir. Relata insegurança
+                                nas paradas em estradas e dificuldade de
+                                acesso a serviços de saúde.</div>
+                        </div>
+                    </div>
+                    <div class="hs-point"
+                        style="right:10%;left:auto;top:49%;width:auto;height:auto;transform:translateY(-50%)">
+                        <button class="btn btn--m1 btn--hs-sm" onclick="toggleHs(this,'hs-juliana-2')">Abordagem
+                            ampliada e gênero</button>
+                        <div class="hs-popover hs-popover--right-aligned" id="hs-juliana-2">
+                            <button class="hs-popover__close" onclick="closeHs('hs-juliana-2')"><i
+                                    data-lucide="x"></i></button>
+                            <div class="hs-popover__title">Abordagem
+                                ampliada e gênero</div>
+                            <div class="hs-popover__body">Quais aspectos
+                                considerar para além da queixa principal?
+                                Como incorporar questões de gênero (saúde
+                                mental, segurança, violência, sobrecarga e
+                                barreiras de acesso)? Que intervenções são
+                                possíveis na APS nesse contato?</div>
+                        </div>
+                    </div>
+                    <div class="hs-point"
+                        style="left:35%;top:92%;width:auto;height:auto;transform:translate(-50%,-50%)">
+                        <button class="btn btn--m1-bright btn--hs-sm" onclick="toggleHs(this,'hs-reflexao-final')"><i
+                                data-lucide="help-circle"></i> Reflexão
+                            final</button>
+                        <div class="hs-popover" id="hs-reflexao-final">
+                            <button class="hs-popover__close" onclick="closeHs('hs-reflexao-final')"><i
+                                    data-lucide="x"></i></button>
+                            <span class="hs-popover__badge" style="background:var(--m1-primary-deep)">Reflita</span>
+                            <div class="hs-popover__title">Reflexão
+                                final</div>
+                            <div class="hs-popover__body">Se esse fosse o
+                                único contato com essas duas pessoas, você
+                                conseguiria garantir um cuidado resolutivo e
+                                possível?</div>
+                        </div>
+                    </div>
+                    <div class="hs-point"
+                        style="left:65%;top:92%;width:auto;height:auto;transform:translate(-50%,-50%)">
+                        <button class="btn btn--m1-bright btn--hs-sm"
+                            onclick="toggleHs(this,'hs-reflexao-conclusao')"><i data-lucide="check-circle"></i> Resposta
+                            esperada</button>
+                        <div class="hs-popover" id="hs-reflexao-conclusao">
+                            <button class="hs-popover__close" onclick="closeHs('hs-reflexao-conclusao')"><i
+                                    data-lucide="x"></i></button>
+                            <span class="hs-popover__badge" style="background:var(--m1-primary-deep)">Conclusão</span>
+                            <div class="hs-popover__title">Resposta
+                                esperada</div>
+                            <div class="hs-popover__body">Carlos apresenta
+                                quadro de risco elevado, compatível com
+                                urgência hipertensiva, exigindo avaliação
+                                imediata, monitoramento, manejo
+                                medicamentoso e possível encaminhamento. No
+                                caso de Juliana, a abordagem deve ser
+                                ampliada, considerando saúde mental,
+                                privação de sono, insegurança e possíveis
+                                situações de violência. Em ambas, escuta
+                                qualificada, acolhimento e articulação com a
+                                rede quando necessário.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hbox"
+                    style="background:var(--bg-soft);color:var(--fg1);margin-top:2.5rem;border:1px solid var(--border)">
+                    <p style="margin-bottom:.8rem;color:var(--fg1)"><strong>A
+                            Política Nacional de Atenção Integral à Saúde do
+                            Homem (PNAISH)</strong> orienta a APS na
+                        organização do cuidado a homens, reconhecendo sua
+                        menor utilização dos serviços e maiores taxas de
+                        morbimortalidade por causas evitáveis. Recomenda
+                        estratégias para ampliar o acesso, fortalecer o
+                        acolhimento e considerar o trabalho como fator
+                        central na saúde e no adoecimento.</p>
+                    <p style="margin:0;color:var(--fg1)"><strong>A Política
+                            Nacional de Atenção Integral à Saúde da Mulher
+                            (PNAISM)</strong> orienta o cuidado com base em
+                        direitos, equidade e integralidade, considerando
+                        determinantes sociais, condições de trabalho, saúde
+                        mental e situações de violência. A incorporação
+                        dessas diretrizes permite à APS oferecer um cuidado
+                        integral, contínuo e equânime às caminhoneiras e aos
+                        caminhoneiros.</p>
+                </div>
+            </section>
+
+            <!-- ═══ SEÇÃO 1.3 ═══ -->
+            <section id="s1-3" class="block" style="margin-bottom:3.5rem">
+                <h2 class="block-title" style="color:var(--m1-primary-deep);margin-bottom:1.5rem">1.3
+                    Educação em saúde e promoção do cuidado</h2>
+
+                <p style="line-height:1.78;margin-bottom:1.2rem">A educação
+                    em saúde é uma estratégia central da APS para promover o
+                    cuidado integral e fortalecer a autonomia dos usuários.
+                    Mais do que transmitir informações, envolve diálogo,
+                    escuta e construção compartilhada, considerando as
+                    condições de vida e trabalho nas estradas.</p>
+                <p style="line-height:1.78;margin-bottom:1.2rem">No caso da
+                    população caminhoneira, as ações educativas podem
+                    abordar temas como doenças crônicas não transmissíveis
+                    (DCNT), saúde mental, infecções sexualmente
+                    transmissíveis (IST) e vacinação. Para serem mais
+                    efetivas, devem ir além das UBS, alcançando espaços
+                    estratégicos como postos de combustível e Pontos de
+                    Parada e Descanso (PPD).</p>
+                <p style="line-height:1.78;margin-bottom:2rem">Parcerias com
+                    o Serviço Social do Transporte e Serviço Nacional de
+                    Aprendizagem do Transporte (SEST SENAT) podem viabilizar
+                    campanhas itinerantes de vacinação e ações educativas em
+                    momentos de pausa e descanso. A articulação
+                    intersetorial com órgãos do setor de transportes,
+                    empresas de logística, sindicatos e associações é
+                    estratégica para ampliar o alcance das ações de promoção
+                    da saúde.</p>
+
+                <div class="bigbtns" style="display:flex;flex-direction:column;gap:1rem">
+                    <button class="bigbtn bigbtn--brand" onclick="openModal('modalPics')">
+                        <span class="bigbtn__icon"><i data-lucide="book-open"></i></span>
+                        <span class="bigbtn__txt"><span class="bigbtn__title">Saiba mais</span><span
+                                class="bigbtn__sub">Práticas Integrativas e
+                                Complementares (PICS) no SUS</span></span>
+                        <span class="bigbtn__arrow"><i data-lucide="external-link"></i></span>
+                    </button>
+                    <button class="bigbtn bigbtn--reflexao" onclick="openModal('modalReflexao2')">
+                        <span class="bigbtn__icon"><i data-lucide="message-circle"></i></span>
+                        <span class="bigbtn__txt"><span class="bigbtn__title">Reflexão</span><span
+                                class="bigbtn__sub">Estratégias para
+                                promover saúde na estrada</span></span>
+                        <span class="bigbtn__arrow"><i data-lucide="external-link"></i></span>
+                    </button>
+                    <button class="bigbtn bigbtn--dica" onclick="openModal('modalDica')">
+                        <span class="bigbtn__icon"><i data-lucide="lightbulb"></i></span>
+                        <span class="bigbtn__txt"><span class="bigbtn__title">Dica</span><span class="bigbtn__sub">Como
+                                adaptar a linguagem
+                                e o formato das orientações</span></span>
+                        <span class="bigbtn__arrow"><i data-lucide="external-link"></i></span>
+                    </button>
+                    <button class="bigbtn bigbtn--brand" onclick="openModal('modalSaibaMais2')">
+                        <span class="bigbtn__icon"><i data-lucide="book-open"></i></span>
+                        <span class="bigbtn__txt"><span class="bigbtn__title">Saiba mais</span><span
+                                class="bigbtn__sub">Política Nacional de
+                                Promoção da Saúde (PNPS)</span></span>
+                        <span class="bigbtn__arrow"><i data-lucide="external-link"></i></span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- ═══ SEÇÃO 1.4 ═══ -->
+            <section id="s1-4" class="block" style="margin-bottom:3.5rem">
+                <h2 class="block-title" style="color:var(--m1-primary-deep);margin-bottom:1.5rem">1.4
+                    Vigilância em saúde e a saúde do trabalhador e da
+                    trabalhadora nas estradas</h2>
+
+                <p style="line-height:1.78;margin-bottom:1.2rem">A
+                    vigilância em saúde envolve ações contínuas voltadas à
+                    identificação, análise e enfrentamento de problemas que
+                    impactam a saúde da população, articulando ações de
+                    promoção, prevenção e cuidado. Na APS, orientam o
+                    cuidado, o planejamento das equipes e a capacidade de
+                    resposta às necessidades do território.</p>
+                <p style="line-height:1.78;margin-bottom:1.2rem">No caso do
+                    público caminhoneiro, a vigilância assume papel
+                    estratégico diante dos riscos relacionados ao trabalho,
+                    ao estilo de vida e à intensa mobilidade. No dia a dia,
+                    ao atender uma caminhoneira ou um caminhoneiro, você não
+                    lida apenas com uma queixa imediata, mas também
+                    identifica riscos e contribui para a continuidade do
+                    cuidado.</p>
+
+                <div class="hbox" style="background:var(--grad-m1-brand);color:var(--m1-on-primary);margin-bottom:2rem">
+                    <div class="hbox__row">
+                        <span class="hbox__icon" style="background:rgba(82,64,0,.15)"><i
+                                data-lucide="alert-triangle"></i></span>
+                        <div>
+                            <p style="margin-bottom:.7rem;color:var(--m1-on-primary)"><strong>Mesmo
+                                    em atendimentos breves, é possível
+                                    incorporar ações de
+                                    vigilância:</strong></p>
+                            <p style="margin-bottom:.5rem;color:var(--m1-on-primary)">•
+                                Verificação da situação vacinal</p>
+                            <p style="margin-bottom:.5rem;color:var(--m1-on-primary)">•
+                                Identificação de sinais de fadiga,
+                                sofrimento mental e privação de sono</p>
+                            <p style="margin:0;color:var(--m1-on-primary)">•
+                                Estresse ocupacional e fatores de risco
+                                cardiovascular</p>
+                        </div>
+                    </div>
+                </div>
+
+                <p style="line-height:1.78;margin-bottom:1.2rem">Estudos
+                    apontam que caminhoneiras e caminhoneiros apresentam
+                    maior prevalência de DCNT, como hipertensão arterial,
+                    diabetes mellitus e obesidade, além de agravos
+                    relacionados às condições de trabalho, como distúrbios
+                    osteomusculares, fadiga crônica e problemas relacionados
+                    ao sono. Longas jornadas, privação de sono, pressão por
+                    prazos, exposição a acidentes e condições inadequadas de
+                    descanso podem gerar estresse ocupacional e problemas
+                    cardiovasculares.</p>
+                <p style="line-height:1.78;margin-bottom:1.2rem">No campo da
+                    saúde do trabalhador, a vigilância envolve identificar e
+                    acompanhar agravos relacionados ao trabalho, como:
+                    acidentes de trânsito, lesões musculoesqueléticas,
+                    estresse ocupacional e problemas de saúde mental. A APS
+                    tem papel importante na identificação desses agravos e
+                    na notificação dos casos nos sistemas de informação em
+                    saúde.</p>
+                <p style="line-height:1.78;margin-bottom:2rem">Lembre-se: a
+                    notificação no <strong>Sistema de Informação de Agravos
+                        de Notificação (SINAN)</strong> deve ser realizada
+                    independentemente do local de origem do usuário, com
+                    orientação para continuidade do cuidado.</p>
+
+                <div class="bigbtns">
+                    <button class="bigbtn bigbtn--brand" onclick="openModal('modalVigilancia')">
+                        <span class="bigbtn__icon"><i data-lucide="book-open"></i></span>
+                        <span class="bigbtn__txt"><span class="bigbtn__title">Saiba mais</span><span
+                                class="bigbtn__sub">Vigilância em Saúde —
+                                Coleção Para Entender a Gestão do
+                                SUS</span></span>
+                        <span class="bigbtn__arrow"><i data-lucide="external-link"></i></span>
+                    </button>
+                </div>
+            </section>
+
+            <!-- ═══ SEÇÃO 1.5 ═══ -->
+            <section id="s1-5" class="block" style="margin-bottom:3.5rem">
+                <h2 class="block-title" style="color:var(--m1-primary-deep);margin-bottom:1.5rem">1.5
+                    Organização do cuidado, territorialização e articulação
+                    da rede</h2>
+
+                <p style="line-height:1.78;margin-bottom:1.2rem">A APS se
+                    organiza a partir do princípio da territorialização, que
+                    estabelece a responsabilidade das equipes sobre uma
+                    população adscrita a um território definido. No caso de
+                    caminhoneiras e caminhoneiros, surge um desafio: como
+                    garantir a continuidade do cuidado para quem está em
+                    circulação constante entre diferentes regiões?</p>
+                <p style="line-height:1.78;margin-bottom:1.8rem">Embora o
+                    vínculo esteja associado ao território de residência,
+                    esses usuários frequentemente acessam serviços fora de
+                    sua área. Para isso, a APS deve adotar estratégias como
+                    flexibilização de agendas, orientação sobre serviços
+                    disponíveis e fortalecimento da comunicação entre
+                    unidades. Agora, vamos retomar o caso clínico
+                    "Paradas na estrada" para refletir sobre a continuidade
+                    do cuidado na prática:</p>
+
+                <div class="tl" style="--tl-color:var(--m1-primary-deep)">
+                    <div class="tl__item">
+                        <div class="tl__stem"><span class="tl__dot"></span><span class="tl__line"></span></div>
+                        <div class="tl__card">
+                            <span class="tl__tag">Carlos, 46 anos</span>
+                            <div class="tl__body">Você se lembra do Carlos,
+                                caminhoneiro, atendido em uma UBS com queixa
+                                de cefaleia, tontura e pressão arterial
+                                elevada? Após o manejo inicial, surge um
+                                desafio importante no seu cuidado: como
+                                garantir essa continuidade para alguém que
+                                está sempre em deslocamento?</div>
+                        </div>
+                    </div>
+                    <div class="tl__item">
+                        <div class="tl__stem"><span class="tl__dot"></span><span class="tl__line"></span></div>
+                        <div class="tl__card">
+                            <span class="tl__tag">Durante a conversa</span>
+                            <div class="tl__body">Carlos diz:
+                                "Minha unidade de saúde é em outra cidade… mas quase não paro por lá."
+                                Diante dessa situação, você precisa ir além
+                                da queixa imediata. Que informações precisam
+                                estar no registro para permitir o seguimento
+                                por outra equipe? Como você pode atuar de
+                                forma flexível diante dessa mobilidade,
+                                articulando a rede de atenção?</div>
+                        </div>
+                    </div>
+                    <div class="tl__item">
+                        <div class="tl__stem"><span class="tl__dot"></span></div>
+                        <div class="tl__card">
+                            <span class="tl__tag">Conduta esperada</span>
+                            <div class="tl__body">A conduta esperada seria:
+                                registro completo, plano de cuidado
+                                simplificado, prescrição compatível com a
+                                rotina e orientação sobre sinais de alerta.
+                                Lembre-se de que, mesmo em atendimentos
+                                pontuais, é possível atuar de forma
+                                resolutiva e fortalecer o vínculo.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hbox" style="background:var(--grad-m1-brand);color:var(--m1-on-primary);margin-top:2rem">
+                    <div class="hbox__row">
+                        <span class="hbox__icon" style="background:rgba(82,64,0,.15)"><i
+                                data-lucide="megaphone"></i></span>
+                        <div>
+                            <p style="margin-bottom:.8rem;color:var(--m1-on-primary)">A
+                                APS também atua articulada à
+                                <strong>Política Nacional de Saúde do
+                                    Trabalhador e da Trabalhadora
+                                    (PNSTT)</strong>, identificando e
+                                acompanhando agravos relacionados ao
+                                trabalho.
+                            </p>
+                            <p style="margin:0;color:var(--m1-on-primary)">Programas
+                                como <strong>Agora Tem
+                                    Especialistas</strong> ampliam o acesso
+                                à atenção especializada e fortalecem a
+                                integração da rede, favorecendo a
+                                continuidade do cuidado mesmo em contextos
+                                de mobilidade.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ═══ ENCERRAMENTO ═══ -->
+            <section id="encerramento" class="block" style="margin-bottom:2rem">
+                <h2 class="block-title" style="color:var(--m1-primary-deep);margin-bottom:1.5rem">Encerramento
+                    do Módulo</h2>
+                <div class="encerramento-card" style="background:var(--grad-m1-brand);color:var(--m1-on-primary)">
+                    <p>Ao longo deste módulo, você pôde revisitar aspectos
+                        conceituais e organizacionais de serviços da APS que
+                        são fundamentais para a promoção do cuidado integral
+                        às caminhoneiras e aos caminhoneiros, diante das
+                        suas especificidades.</p>
+                    <p>Considerando que os contatos desse público com os
+                        serviços de saúde ocorrem, na maioria das vezes, de
+                        maneira breve, toda e qualquer oportunidade é única
+                        para: <strong>acolhimento qualificado, educação em
+                            saúde, verificação da situação vacinal ou
+                            identificação de agravos relacionados ao
+                            trabalho</strong>, o que pode fazer grande
+                        diferença na trajetória de saúde dessas pessoas.</p>
+                    <p style="margin:0">Cuidar de quem vive nas estradas é,
+                        também, reconhecer a importância social do trabalho
+                        que realizam e assegurar que o direito à saúde
+                        esteja presente em todos os caminhos. Esperamos que
+                        este módulo tenha ajudado você a ampliar seu olhar
+                        sobre as necessidades da população caminhoneira e a
+                        inspirar práticas cada vez mais sensíveis,
+                        resolutivas e comprometidas com a integralidade do
+                        cuidado.</p>
+                </div>
+            </section>
+
+            <!-- ═══ REFERÊNCIAS BIBLIOGRÁFICAS ═══ -->
+            <section id="referencias" class="block" style="scroll-margin-top:80px;margin-bottom:2rem">
+                <h2 class="block-title" style="color:var(--m1-primary-deep);margin-bottom:1.5rem">Referências
+                    Bibliográficas</h2>
+                <ol
+                    style="padding-left:1.5rem;display:flex;flex-direction:column;gap:.85rem;color:var(--fg2);font-size:.88rem;line-height:1.65;">
+                    <li style="padding-left:.25rem">BRASIL. Ministério da
+                        Saúde. <em>Política Nacional de Atenção Integral à
+                            Saúde da Mulher: princípios e diretrizes</em>.
+                        Brasília, DF: Ministério da Saúde, 2004. Disponível
+                        em:
+                        <a href="https://bvsms.saude.gov.br/bvs/publicacoes/politica_nac_atencao_mulher.pdf" target="_blank" rel="noopener noreferrer">https://bvsms.saude.gov.br/bvs/publicacoes/politica_nac_atencao_mulher.pdf.</a>
+                        Acesso em: 16 mar. 2026.</li>
+                    <li style="padding-left:.25rem">BRASIL. Ministério da
+                        Saúde. Secretaria de Atenção à Saúde. <em>Política
+                            Nacional de Atenção Integral à Saúde do Homem:
+                            princípios e diretrizes</em>. Brasília, DF:
+                        Ministério da Saúde, 2008. Disponível em:
+                        <a href="https://bvsms.saude.gov.br/bvs/publicacoes/politica_nacional_atencao_saude_homem.pdf" target="_blank" rel="noopener noreferrer">https://bvsms.saude.gov.br/bvs/publicacoes/politica_nacional_atencao_saude_homem.pdf.</a>
+                        Acesso em: 16 mar. 2026.</li>
+                    <li style="padding-left:.25rem">BRASIL. Conselho
+                        Nacional de Secretários de Saúde (CONASS).
+                        <em>Vigilância em Saúde: parte 1</em>. Brasília, DF:
+                        CONASS, 2011. (Coleção Para Entender a Gestão do
+                        SUS, v. 5). Disponível em:
+                        <a href="https://www.conass.org.br/bibliotecav3/pdfs/colecao2011/livro_5.pdf" target="_blank" rel="noopener noreferrer">www.conass.org.br/bibliotecav3/pdfs/colecao2011/livro_5.pdf.</a>
+                        Acesso em: 16 mar. 2026.
+                    </li>
+                    <li style="padding-left:.25rem">BRASIL. Ministério da
+                        Saúde. Portaria nº 2.761, de 19 de novembro de 2013.
+                        Institui a Política Nacional de Educação Popular em
+                        Saúde no âmbito do Sistema Único de Saúde
+                        (PNEPS-SUS). <em>Diário Oficial da União</em>: seção
+                        1, Brasília, DF, 20 nov. 2013a. Disponível em:
+                        <a href="https://bvsms.saude.gov.br/bvs/saudelegis/gm/2013/prt2761_19_11_2013.html" target="_blank" rel="noopener noreferrer">https://bvsms.saude.gov.br/bvs/saudelegis/gm/2013/prt2761_19_11_2013.html.</a>
+                        Acesso em: 4 maio 2026.</li>
+                    <li style="padding-left:.25rem">BRASIL. Ministério da
+                        Saúde. Secretaria de Atenção à Saúde.
+                        <em>Acolhimento à demanda espontânea: Queixas mais
+                            comuns na Atenção Básica</em>. Brasília, DF:
+                        Ministério da Saúde, 2013b. (Cadernos de Atenção
+                        Básica, n. 28, v. 2). Disponível em:
+                        <a href="https://bvsms.saude.gov.br/bvs/publicacoes/acolhimento_demanda_espontanea_queixas_comuns_cab28v2.pdf" target="_blank" rel="noopener noreferrer">https://bvsms.saude.gov.br/bvs/publicacoes/acolhimento_demanda_espontanea_queixas_comuns_cab28v2.pdf.</a>
+                        Acesso em: 13 abr. 2026.
+                    </li>
+                    <li style="padding-left:.25rem">BRASIL. Ministério da
+                        Saúde. <em>Política Nacional de Promoção da Saúde
+                            (PNPS): Revisão da Portaria MS/GM nº 687, de 30
+                            de março de 2006</em>. Brasília, DF: Ministério
+                        da Saúde, 2014. Disponível em:
+                        <a href="https://bvsms.saude.gov.br/bvs/publicacoes/pnps_revisao_portaria_687.pdf" target="_blank" rel="noopener noreferrer">https://bvsms.saude.gov.br/bvs/publicacoes/pnps_revisao_portaria_687.pdf.</a>
+                        Acesso em: 16 mar. 2026.</li>
+                    <li style="padding-left:.25rem">BRASIL. Ministério da
+                        Saúde. Portaria nº 2.436, de 21 de setembro de 2017.
+                        Aprova a Política Nacional de Atenção Básica,
+                        estabelecendo a revisão de diretrizes para a
+                        organização da Atenção Básica no âmbito do Sistema
+                        Único de Saúde (SUS). <em>Diário Oficial da
+                            União</em>: seção 1, Brasília, DF, 22 set. 2017.
+                        Disponível em:
+                        <a href="https://bvsms.saude.gov.br/bvs/saudelegis/gm/2017/prt2436_22_09_2017.html" target="_blank" rel="noopener noreferrer">https://bvsms.saude.gov.br/bvs/saudelegis/gm/2017/prt2436_22_09_2017.html.</a>
+                        Acesso em: 25 maio 2026.</li>
+                    <li style="padding-left:.25rem">BRASIL. Medida
+                        Provisória nº 1.301, de 30 de maio de 2025. Institui
+                        o Programa Agora Tem Especialistas. <em>Diário
+                            Oficial da União</em>: seção 1, Brasília, DF, 31
+                        maio 2025. Disponível em:
+                        www2.camara.leg.br/legin/fed/medpro/2025/medidaprovisoria-1301-30-maio-2025-797527-publicacaooriginal-175524-pe.html.
+                        Acesso em: 25 maio 2026.</li>
+                    <li style="padding-left:.25rem">FREITAS, C. M. et al.
+                        Conquistas, limites e obstáculos à redução de riscos
+                        ambientais à saúde nos 30 anos do Sistema Único de
+                        Saúde. <em>Ciência &amp; Saúde Coletiva</em>,
+                        [online], v. 23, n. 6, p. 1981–1996, 2018.
+                        Disponível em:
+                        <a href="https://www.scielo.br/pdf/csc/v23n6/1413-8123-csc-23-06-1981.pdf" target="_blank" rel="noopener noreferrer">www.scielo.br/pdf/csc/v23n6/1413-8123-csc-23-06-1981.pdf.</a>
+                        Acesso em: 16 mar. 2026.</li>
+                    <li style="padding-left:.25rem">GIOVANELLA, L.; FRANCO,
+                        C. M.; ALMEIDA, P. F. de. Política Nacional de
+                        Atenção Básica: para onde vamos? <em>Ciência &amp;
+                            Saúde Coletiva</em>, [online], v. 25, n. 4, p.
+                        1475–1482, 2020. Disponível em:
+                        <a href="https://www.scielo.br/j/csc/a/TGQXJ7ZtSNT4BtZJgxYdjYG/?lang=pt" target="_blank" rel="noopener noreferrer">www.scielo.br/j/csc/a/TGQXJ7ZtSNT4BtZJgxYdjYG/?lang=pt.</a>
+                        Acesso em: 25 maio 2026.</li>
+                    <li style="padding-left:.25rem">SILVA, A. C. et al.
+                        <em>Saúde e qualidade de vida de caminhoneiros</em>.
+                        Curitiba: Editora Científica Digital, 2022.
+                        Disponível em:
+                        <a href="https://downloads.editoracientifica.com.br/articles/220308367.pdf" target="_blank" rel="noopener noreferrer">https://downloads.editoracientifica.com.br/articles/220308367.pdf.</a>
+                        Acesso em: 18 fev. 2026.
+                    </li>
+                    <li style="padding-left:.25rem">SOUZA, T. S.; VIRGENS,
+                        L. S. Saúde do trabalhador na Atenção Básica:
+                        interfaces e desafios. <em>Revista Brasileira de
+                            Saúde Ocupacional</em>, São Paulo, n. 38, v.
+                        128, p. 292–301, 2013. Disponível em:
+                        <a href="https://www.scielo.br/j/rbso/a/ZBBvzDsBkJ3vPFhcJjrq73G/?lang=pt" target="_blank" rel="noopener noreferrer">www.scielo.br/j/rbso/a/ZBBvzDsBkJ3vPFhcJjrq73G/?lang=pt.</a>
+                        Acesso em: 25 maio 2026.</li>
+                    <li style="padding-left:.25rem">STARFIELD, B.
+                        <em>Atenção Primária: equilíbrio entre necessidades
+                            de saúde, serviços e tecnologia</em>. Brasília,
+                        DF: UNESCO; Ministério da Saúde, 2002. Disponível
+                        em:
+                        <a href="https://www.dominiopublico.gov.br/download/texto/ue000039.pdf" target="_blank" rel="noopener noreferrer">www.dominiopublico.gov.br/download/texto/ue000039.pdf.</a>
+                        Acesso em: 16 mar. 2026.
+                    </li>
+                </ol>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- ═══════════════════ MODAIS ═══════════════════ -->
+
+    <!-- Modal: Créditos -->
+    <div class="overlay" id="modalCreditos">
+        <div class="modal">
+            <div class="modal__head" style="background:var(--grad-m1-brand);color:var(--m1-on-primary)">
+                <button class="modal__close" onclick="closeModal('modalCreditos')"
+                    style="color:var(--m1-on-primary);background:rgba(82,64,0,.12)"><i data-lucide="x"></i></button>
+                <span class="badge badge--soft modal__kicker">Módulo
+                    I</span>
+                <div class="modal__title" style="color:var(--m1-on-primary)">Créditos</div>
+            </div>
+            <div class="modal__body">
+                <p style="font-weight:700;color:var(--fg1);margin-bottom:.5rem">Autoras</p>
+                <p style="color:var(--fg2);margin-bottom:1.2rem">Ana Luiza
+                    Machado Pinto<br>Mari Ângela Carmo Valente</p>
+                <p style="font-weight:700;color:var(--fg1);margin-bottom:.5rem">Instituição</p>
+                <p style="color:var(--fg2);margin-bottom:1.2rem">Fiocruz
+                    Mato Grosso do Sul</p>
+                <p style="font-weight:700;color:var(--fg1);margin-bottom:.5rem">Curso</p>
+                <p style="color:var(--fg2)">Atenção à Saúde da Caminhoneira
+                    e Caminhoneiro na Atenção Primária</p>
+                <div class="modal__actions" style="justify-content:flex-end">
+                    <button class="btn btn--m1-ghost" onclick="closeModal('modalCreditos')">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Instruções -->
+    <div class="overlay" id="modalInstrucoes">
+        <div class="modal">
+            <div class="modal__head" style="background:var(--grad-m1-brand);color:var(--m1-on-primary)">
+                <button class="modal__close" onclick="closeModal('modalInstrucoes')"
+                    style="color:var(--m1-on-primary);background:rgba(82,64,0,.12)"><i data-lucide="x"></i></button>
+                <span class="badge badge--soft modal__kicker">Como
+                    usar</span>
+                <div class="modal__title" style="color:var(--m1-on-primary)">Instruções de
+                    navegação</div>
+            </div>
+            <div class="modal__body">
+                <ul
+                    style="margin:0;padding-left:1.2rem;line-height:1.7;display:flex;flex-direction:column;gap:.7rem;color:var(--fg2)">
+                    <li>Use o <strong>menu lateral esquerdo</strong> para
+                        navegar entre as seções do módulo.</li>
+                    <li>Clique nos <strong>acordeões</strong> para expandir
+                        e explorar os atributos da APS.</li>
+                    <li>Interaja com os <strong>pontos de atenção</strong>
+                        nas imagens para visualizar as informações.</li>
+                    <li>Os botões <strong>Reflexão, Dica e Saiba
+                            mais</strong> abrem conteúdos complementares em
+                        janelas sobrepostas.</li>
+                    <li>A <strong>barra de progresso</strong> no topo indica
+                        quanto do módulo você já percorreu.</li>
+                    <li>A carga horária estimada para este módulo é de
+                        <strong>07 horas</strong>.
+                    </li>
+                </ul>
+                <div class="modal__actions" style="justify-content:flex-end">
+                    <button class="btn btn--m1-ghost" onclick="closeModal('modalInstrucoes')">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Reflexão 1 -->
+    <div class="overlay" id="modalReflexao">
+        <div class="modal">
+            <div class="modal__head" style="background:var(--grad-m1-brand);color:var(--m1-on-primary)">
+                <button class="modal__close" onclick="closeModal('modalReflexao')"><i data-lucide="x"></i></button>
+                <span class="badge badge--orange modal__kicker">Reflexão</span>
+                <div class="modal__title">Organização do Cuidado</div>
+            </div>
+            <div class="modal__body">
+                <p style="font-weight:500;font-size:1.05rem;margin-bottom:1.2rem;color:var(--fg1)">Pensando
+                    na organização do cuidado em sua realidade de trabalho,
+                    reflita:</p>
+                <ul
+                    style="margin:0;padding-left:1.2rem;line-height:1.7;display:flex;flex-direction:column;gap:.7rem;color:var(--fg2)">
+                    <li>De que forma os serviços de saúde têm se organizado
+                        para acolher caminhoneiras e caminhoneiros?</li>
+                    <li>Como a avaliação de risco pode apoiar decisões mais
+                        adequadas no primeiro contato com esses
+                        usuários?</li>
+                    <li>Quais estratégias podem contribuir para fortalecer a
+                        continuidade e a coordenação do cuidado, mesmo
+                        quando o acompanhamento ocorre de forma
+                        intermitente?</li>
+                </ul>
+                <div class="modal__actions" style="justify-content:flex-end">
+                    <button class="btn btn--m1-ghost" onclick="closeModal('modalReflexao')">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: PICS -->
+    <div class="overlay" id="modalPics">
+        <div class="modal">
+            <div class="modal__head" style="background:var(--grad-m1-brand);color:var(--m1-on-primary)">
+                <button class="modal__close" onclick="closeModal('modalPics')"
+                    style="color:var(--m1-on-primary);background:rgba(82,64,0,.12)"><i data-lucide="x"></i></button>
+                <span class="badge badge--orange modal__kicker">Saiba
+                    mais</span>
+                <div class="modal__title" style="color:var(--m1-on-primary)">Práticas Integrativas
+                    e Complementares</div>
+            </div>
+            <div class="modal__body">
+                <p style="font-size:1.05rem;line-height:1.7;margin-bottom:1.2rem;color:var(--fg1)">As
+                    <strong>PICS</strong> (Práticas Integrativas e
+                    Complementares) fazem parte da Política Nacional de
+                    Práticas Integrativas e Complementares no SUS e incluem
+                    abordagens terapêuticas que podem contribuir para
+                    prevenção de agravos e cuidado integral das pessoas.
+                </p>
+                <p style="font-size:1.05rem;line-height:1.7;margin-bottom:1.2rem;color:var(--fg1)">Entre
+                    as práticas ofertadas no SUS estão: acupuntura,
+                    auriculoterapia, meditação, yoga, práticas corporais,
+                    fitoterapia, entre outras.</p>
+                <p
+                    style="font-size:1.05rem;line-height:1.7;margin-bottom:1.5rem;color:var(--fg1);background:var(--bg-soft);padding:1rem;border-radius:8px;border-left:3px solid var(--m1-primary-deep)">
+                    Conheça
+                    mais sobre as PICS no SUS em:<br><a href="https://www.gov.br/saude/pt-br/composicao/saps/pics"
+                        target="_blank" rel="noopener noreferrer"
+                        style="color:var(--m1-primary-deep);font-weight:bold">www.gov.br/saude/pt-br/composicao/saps/pics</a>
+                </p>
+                <div class="modal__actions" style="justify-content:flex-end">
+                    <button class="btn btn--m1-ghost" onclick="closeModal('modalPics')">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Reflexão 2 -->
+    <div class="overlay" id="modalReflexao2">
+        <div class="modal">
+            <div class="modal__head" style="background:var(--grad-m1-brand);color:var(--m1-on-primary)">
+                <button class="modal__close" onclick="closeModal('modalReflexao2')"><i data-lucide="x"></i></button>
+                <span class="badge badge--orange modal__kicker">Reflexão</span>
+                <div class="modal__title">Ações de Promoção e
+                    Prevenção</div>
+            </div>
+            <div class="modal__body">
+                <p style="font-weight:500;font-size:1.05rem;margin-bottom:1.2rem;color:var(--fg1)">Considerando
+                    a rotina de longos períodos na estrada, reflita:</p>
+                <ul
+                    style="margin:0;padding-left:1.2rem;line-height:1.7;display:flex;flex-direction:column;gap:.7rem;color:var(--fg2)">
+                    <li>Quais estratégias você adotaria para garantir que
+                        essa pessoa receba informações sobre prevenção de
+                        DCNT, saúde mental e sono, sem comprometer sua
+                        rotina?</li>
+                    <li>Quais recursos (digitais, impressos e presenciais)
+                        poderiam ampliar o alcance dessas ações?</li>
+                </ul>
+                <div class="modal__actions" style="justify-content:flex-end">
+                    <button class="btn btn--m1-ghost" onclick="closeModal('modalReflexao2')">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Dica -->
+    <div class="overlay" id="modalDica">
+        <div class="modal">
+            <div class="modal__head" style="background:var(--grad-m1-brand);color:var(--m1-on-primary)">
+                <button class="modal__close" onclick="closeModal('modalDica')"
+                    style="color:var(--m1-on-primary);background:rgba(82,64,0,.12)"><i data-lucide="x"></i></button>
+                <span class="badge badge--orange modal__kicker">Dica</span>
+                <div class="modal__title" style="color:var(--m1-on-primary)">Educação em
+                    Saúde</div>
+            </div>
+            <div class="modal__body">
+                <p style="font-size:1.05rem;line-height:1.7;margin-bottom:1.2rem;color:var(--fg1)">Ao
+                    desenvolver ações de educação em saúde com a população
+                    caminhoneira, procure adaptar a linguagem, o tempo e o
+                    formato das orientações à realidade de trabalho nas
+                    estradas.</p>
+                <p style="font-size:1.05rem;line-height:1.7;margin-bottom:1.2rem;color:var(--fg1)">Muitas
+                    vezes, o contato com os serviços de saúde ocorre durante
+                    paradas rápidas ou atendimentos pontuais. Nessas
+                    situações, orientações objetivas, materiais educativos
+                    de fácil consulta e conversas breves sobre autocuidado
+                    podem ser mais efetivas.</p>
+                <p style="font-size:1.05rem;line-height:1.7;color:var(--fg1)">Sempre
+                    que possível, aproveite o momento do atendimento para
+                    abordar temas prioritários, valorizando o diálogo e as
+                    experiências trazidas pelos próprios usuários.</p>
+                <div class="modal__actions" style="justify-content:flex-end">
+                    <button class="btn btn--m1-ghost" onclick="closeModal('modalDica')">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Saiba mais PNPS -->
+    <div class="overlay" id="modalSaibaMais2">
+        <div class="modal">
+            <div class="modal__head" style="background:var(--grad-m1-brand);color:var(--m1-on-primary)">
+                <button class="modal__close" onclick="closeModal('modalSaibaMais2')"
+                    style="color:var(--m1-on-primary);background:rgba(82,64,0,.12)"><i data-lucide="x"></i></button>
+                <span class="badge badge--orange modal__kicker">Saiba
+                    mais</span>
+                <div class="modal__title" style="color:var(--m1-on-primary)">Política Nacional de
+                    Promoção da Saúde</div>
+            </div>
+            <div class="modal__body">
+                <p style="font-size:1.05rem;line-height:1.7;margin-bottom:1.2rem;color:var(--fg1)">O
+                    Ministério da Saúde publicou a <strong>Política Nacional
+                        de Promoção da Saúde (PNPS)</strong> em 2018. Nesse
+                    documento, você poderá se orientar quanto a ações de
+                    promoção da saúde no SUS, com foco em prevenção e
+                    atenção integral à população.</p>
+                <div class="modal__actions" style="gap:.7rem;justify-content:flex-end">
+                    <a class="btn btn--m1-bright" href="media/politica_nacional_promocao_saude.pdf" target="_blank"
+                        rel="noopener noreferrer" download><i data-lucide="download"></i> Baixar
+                        PDF</a>
+                    <button class="btn btn--m1-ghost" onclick="closeModal('modalSaibaMais2')">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal: Vigilância em Saúde -->
+    <div class="overlay" id="modalVigilancia">
+        <div class="modal">
+            <div class="modal__head" style="background:var(--grad-m1-brand);color:var(--m1-on-primary)">
+                <button class="modal__close" onclick="closeModal('modalVigilancia')"
+                    style="color:var(--m1-on-primary);background:rgba(82,64,0,.12)"><i data-lucide="x"></i></button>
+                <span class="badge badge--orange modal__kicker">Saiba
+                    mais</span>
+                <div class="modal__title" style="color:var(--m1-on-primary)">Vigilância em
+                    Saúde</div>
+            </div>
+            <div class="modal__body">
+                <p style="font-size:1.05rem;line-height:1.7;margin-bottom:1.2rem;color:var(--fg1)">Consulte
+                    o livro <strong>Vigilância em Saúde</strong>, da Coleção
+                    Para Entender a Gestão do SUS, publicado pelo Conselho
+                    Nacional de Secretários de Saúde (CONASS) em 2011.</p>
+                <p style="font-size:1.05rem;line-height:1.7;margin-bottom:1.5rem;color:var(--fg1)">Nele,
+                    são apresentados conceitos de vigilância epidemiológica,
+                    sanitária e da saúde do trabalhador.</p>
+                <div class="modal__actions" style="gap:.7rem;justify-content:flex-end">
+                    <a class="btn btn--m1-bright" href="media/livro_conass_vigilancia.pdf" target="_blank"
+                        rel="noopener noreferrer" download><i data-lucide="download"></i> Baixar
+                        PDF</a>
+                    <button class="btn btn--m1-ghost" onclick="closeModal('modalVigilancia')">Fechar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Botão voltar ao topo -->
+    <button id="backToTop" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})"
+        aria-label="Voltar ao topo" style="background:var(--m1-primary);color:var(--m1-on-primary)">
+        <i data-lucide="chevron-up"></i>
+    </button>
+
+    <!-- Sidebar toggle (hambúrguer — visível apenas no mobile) -->
+    <button class="sidebar-toggle" onclick="openSidebar()" aria-label="Abrir menu de navegação"
+        style="background:var(--m1-primary);color:var(--m1-on-primary)">
+        <i data-lucide="menu"></i>
+    </button>
+
+    <!-- Overlay da sidebar (mobile) -->
+    <div id="sidebarOverlay" class="sidebar-overlay" onclick="closeSidebar()"></div>
+
+
+    <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+    <script src="js/scripts.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Módulo 3 - Saúde Mental da Caminhoneira e do Caminhoneiro</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Mukta:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.min.css">
+</head>
+<body>
+
+  <!-- Barra de Progresso Superior -->
+  <div class="progress-rail" id="progressRail">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+
+  <!-- HERO WRAP (Largura total da página) -->
+  <div class="hero-wrap" id="home">
+    <div class="hero-nav" style="--hn-color: var(--m3-primary)">
+      <div class="hero-nav__inner">
+        <span class="hero-nav__badge"><i data-lucide="graduation-cap"></i> Curso</span>
+        <span class="hero-nav__name">ATENÇÃO À SAÚDE DA CAMINHONEIRA E CAMINHONEIRO NA ATENÇÃO PRIMÁRIA</span>
+      </div>
+    </div>
+    
+    <!-- M3 Verde (fundo escuro - --hb-text: #ffffff) -->
+    <div class="hero-body" style="background: var(--grad-m3-hero); --hb-text: #ffffff;">
+      <div class="hero-body__inner">
+        <div class="hero-body__content" style="min-height: auto; padding: 0;">
+          <div>
+            <span class="hero__kicker"><i data-lucide="graduation-cap"></i> MÓDULO 3</span>
+            <h2 class="hero__title" style="margin-top: 0.8rem; margin-bottom: 2rem; color: #ffffff;">Saúde Mental da Caminhoneira<br>e do Caminhoneiro</h2>
+          </div>
+          <div class="hero__btns">
+            <button class="btn btn--ghost-light" onclick="openModal('modalCreditos')"><i data-lucide="users"></i> Créditos</button>
+            <button class="btn btn--ghost-light" onclick="openModal('modalInstrucoes')"><i data-lucide="info"></i> Instruções</button>
+            <button class="btn btn--cta" onclick="document.getElementById('apresentacao').scrollIntoView({behavior:'smooth'})"><i data-lucide="play"></i> Iniciar</button>
+          </div>
+        </div>
+        <div class="hero-body__logo">
+          <img src="images/logo-fundo-escuro.png" alt="Logo">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Layout com Sidebar -->
+  <div class="page-layout">
+    <aside class="sidebar">
+      <nav class="sidebar-nav" aria-label="Navegação do módulo">
+        <div class="sidebar-nav__header">Módulo 3</div>
+        <a class="sidebar-nav__link" href="#apresentacao">Apresentação</a>
+        <a class="sidebar-nav__link" href="#s3-1">3.1 Saúde Mental na APS</a>
+        <a class="sidebar-nav__link" href="#s3-2">3.2 Álcool e Outras Drogas</a>
+        <a class="sidebar-nav__link" href="#s3-3">3.3 Privação de Sono</a>
+        <a class="sidebar-nav__link" href="#s3-4">3.4 Família e Solidão</a>
+        <a class="sidebar-nav__link" href="#s3-5">3.5 Grupos e Ações</a>
+        <a class="sidebar-nav__link" href="#encerramento">Encerramento</a>
+        <a class="sidebar-nav__link" href="#referencias">Referências</a>
+      </nav>
+      <div class="sidebar-badge">
+        <span class="sidebar-badge__icon"><i data-lucide="clock"></i></span>
+        <div>
+          <span class="sidebar-badge__label">Carga Horária</span>
+          <span class="sidebar-badge__value">07 horas</span>
+        </div>
+      </div>
+    </aside>
+    <main>
+
+      <!-- SEÇÃO: Apresentação do Módulo -->
+      <section id="apresentacao" style="scroll-margin-top:80px;margin-bottom:4rem;">
+        <div style="padding-bottom:0.75rem;border-bottom:2px solid var(--border);margin-bottom:1.6rem;">
+          <h2 style="font-family:var(--font-display);font-weight:800;font-size:1.5rem;color:var(--m3-primary-deep);margin:0;">Apresentação do Módulo</h2>
+        </div>
+        <div class="intro-card" style="border-left-color:var(--m3-primary);">
+          <p>Bem-vindo ao Módulo III! Neste módulo, abordaremos a saúde mental da caminhoneira e do caminhoneiro — um tema ainda pouco visível, mas de enorme relevância para a prática na Atenção Primária à Saúde.</p>
+          <p>A rotina nas estradas impõe condições que afetam profundamente o bem-estar psicológico: longas jornadas, isolamento social, distância da família, privação de sono e uso de substâncias psicoativas. Compreender essas condições e desenvolver estratégias de cuidado adaptadas à realidade dessas pessoas é o propósito central deste módulo.</p>
+          <p>Ao longo das seções, você terá acesso a dados de pesquisa, reflexões sobre a prática clínica e estratégias concretas de identificação, acolhimento e cuidado em saúde mental na APS. Vamos avançar juntos nessa importante dimensão do cuidado integral?</p>
+        </div>
+        <h3 style="font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:var(--m3-primary-deep);margin:2rem 0 1rem;">Objetivos de Aprendizagem</h3>
+        <ul class="obj-list">
+          <li><span class="obj-list__icon" style="background:var(--m3-primary);"><i data-lucide="check"></i></span>Reconhecer os principais indicadores de sofrimento psíquico e transtornos mentais na população caminhoneira.</li>
+          <li><span class="obj-list__icon" style="background:var(--m3-primary);"><i data-lucide="check"></i></span>Identificar o papel do uso de álcool e outras drogas no contexto das estradas e suas implicações para a saúde.</li>
+          <li><span class="obj-list__icon" style="background:var(--m3-primary);"><i data-lucide="check"></i></span>Compreender os efeitos da privação de sono e do isolamento social sobre a saúde mental das caminhoneiras e caminhoneiros.</li>
+          <li><span class="obj-list__icon" style="background:var(--m3-primary);"><i data-lucide="check"></i></span>Aplicar estratégias de redução de danos, escuta qualificada e intervenção breve na prática da APS.</li>
+          <li><span class="obj-list__icon" style="background:var(--m3-primary);"><i data-lucide="check"></i></span>Reconhecer a importância de grupos e ações coletivas no cuidado à saúde mental da população caminhoneira.</li>
+        </ul>
+      </section>
+
+      <!-- SEÇÃO 3.1: Saúde Mental na APS -->
+      <!-- Bloco de Reflexão -->
+      <section id="s3-1" class="block" style="scroll-margin-top:80px;margin-top: 3rem; margin-bottom: 4rem;">
+        <div class="bigbtns">
+          <button class="bigbtn bigbtn--reflexao" onclick="openModal('modalReflexao')">
+            <span class="bigbtn__icon"><i data-lucide="message-circle"></i></span>
+            <span class="bigbtn__txt">
+              <span class="bigbtn__title">Reflexão</span>
+            </span>
+            <span class="bigbtn__arrow"><i data-lucide="external-link"></i></span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Bloco de Flashcards: Identificação de sofrimento em saúde mental na APS -->
+      <section class="block" style="margin-bottom: 4rem;">
+        <h2 class="block-title" style="margin-bottom: 1.5rem; font-size: 1.7rem; color: var(--m3-primary-deep);">Identificação de sofrimento em saúde mental na Atenção Primária à Saúde - Sinais de Alerta</h2>
+        <p class="block-note" style="margin-bottom: 2rem;">Clique nos cartões abaixo para virar e ver o que observar e a conduta recomendada na APS.</p>
+        
+        <div class="fc-grid">
+          
+          <!-- Cartão 1: Humor deprimido -->
+          <div class="fc" onclick="this.classList.toggle('is-flipped')"
+               style="--fc-grad: var(--grad-m3-brand); --fc-accent: var(--accent-green);">
+            <div class="fc__inner">
+              <!-- FRENTE -->
+              <div class="fc__front">
+                <i data-lucide="frown"></i>
+                <span class="fc__front-title">Humor deprimido</span>
+                <span class="fc__hint"><i data-lucide="refresh-cw"></i> virar</span>
+              </div>
+              <!-- VERSO -->
+              <div class="fc__back">
+                <div class="fc__back-label">Sinais de Alerta</div>
+                <div class="fc__back-content">
+                  <p style="margin-bottom: 0.6rem;"><strong>O que observar:</strong><br>Tristeza, irritabilidade</p>
+                  <p style="margin-bottom: 0;"><strong>Conduta na APS:</strong><br>Escuta + rastreio</p>
+                </div>
+                <div class="fc__back-hint"><i data-lucide="refresh-cw"></i> virar</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cartão 2: Ansiedade -->
+          <div class="fc" onclick="this.classList.toggle('is-flipped')"
+               style="--fc-grad: var(--grad-m3-brand); --fc-accent: var(--accent-green);">
+            <div class="fc__inner">
+              <!-- FRENTE -->
+              <div class="fc__front">
+                <i data-lucide="activity"></i>
+                <span class="fc__front-title">Ansiedade</span>
+                <span class="fc__hint"><i data-lucide="refresh-cw"></i> virar</span>
+              </div>
+              <!-- VERSO -->
+              <div class="fc__back">
+                <div class="fc__back-label">Sinais de Alerta</div>
+                <div class="fc__back-content">
+                  <p style="margin-bottom: 0.6rem;"><strong>O que observar:</strong><br>Inquietação</p>
+                  <p style="margin-bottom: 0;"><strong>Conduta na APS:</strong><br>Orientação</p>
+                </div>
+                <div class="fc__back-hint"><i data-lucide="refresh-cw"></i> virar</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cartão 3: Estresse -->
+          <div class="fc" onclick="this.classList.toggle('is-flipped')"
+               style="--fc-grad: var(--grad-m3-brand); --fc-accent: var(--accent-green);">
+            <div class="fc__inner">
+              <!-- FRENTE -->
+              <div class="fc__front">
+                <i data-lucide="battery-low"></i>
+                <span class="fc__front-title">Estresse</span>
+                <span class="fc__hint"><i data-lucide="refresh-cw"></i> virar</span>
+              </div>
+              <!-- VERSO -->
+              <div class="fc__back">
+                <div class="fc__back-label">Sinais de Alerta</div>
+                <div class="fc__back-content">
+                  <p style="margin-bottom: 0.6rem;"><strong>O que observar:</strong><br>Cansaço extremo</p>
+                  <p style="margin-bottom: 0;"><strong>Conduta na APS:</strong><br>Intervenção breve</p>
+                </div>
+                <div class="fc__back-hint"><i data-lucide="refresh-cw"></i> virar</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cartão 4: Privação de sono -->
+          <div class="fc" onclick="this.classList.toggle('is-flipped')"
+               style="--fc-grad: var(--grad-m3-brand); --fc-accent: var(--accent-green);">
+            <div class="fc__inner">
+              <!-- FRENTE -->
+              <div class="fc__front">
+                <i data-lucide="moon"></i>
+                <span class="fc__front-title">Privação de sono</span>
+                <span class="fc__hint"><i data-lucide="refresh-cw"></i> virar</span>
+              </div>
+              <!-- VERSO -->
+              <div class="fc__back">
+                <div class="fc__back-label">Sinais de Alerta</div>
+                <div class="fc__back-content">
+                  <p style="margin-bottom: 0.6rem;"><strong>O que observar:</strong><br>Fadiga</p>
+                  <p style="margin-bottom: 0;"><strong>Conduta na APS:</strong><br>Educação do sono</p>
+                </div>
+                <div class="fc__back-hint"><i data-lucide="refresh-cw"></i> virar</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cartão 5: Uso de substâncias -->
+          <div class="fc" onclick="this.classList.toggle('is-flipped')"
+               style="--fc-grad: var(--grad-m3-brand); --fc-accent: var(--accent-green);">
+            <div class="fc__inner">
+              <!-- FRENTE -->
+              <div class="fc__front">
+                <i data-lucide="pill"></i>
+                <span class="fc__front-title">Uso de substâncias</span>
+                <span class="fc__hint"><i data-lucide="refresh-cw"></i> virar</span>
+              </div>
+              <!-- VERSO -->
+              <div class="fc__back">
+                <div class="fc__back-label">Sinais de Alerta</div>
+                <div class="fc__back-content">
+                  <p style="margin-bottom: 0.6rem;"><strong>O que observar:</strong><br>Relato/suspeita</p>
+                  <p style="margin-bottom: 0;"><strong>Conduta na APS:</strong><br>Redução de danos</p>
+                </div>
+                <div class="fc__back-hint"><i data-lucide="refresh-cw"></i> virar</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Bloco Saiba mais (Video) -->
+      <section class="block" style="margin-top: 3rem; margin-bottom: 4rem;">
+        <div class="bigbtns">
+          <button class="bigbtn bigbtn--brand" onclick="openModal('modalVideo')">
+            <span class="bigbtn__icon"><i data-lucide="book-open"></i></span>
+            <span class="bigbtn__txt">
+              <span class="bigbtn__title">Saiba mais</span>
+            </span>
+            <span class="bigbtn__arrow"><i data-lucide="external-link"></i></span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Bloco de Gráfico de Barras: Consumo de Substâncias nas Rodovias -->
+      <section id="s3-2" class="block" style="scroll-margin-top:80px;margin-bottom: 4rem;">
+        
+        <p class="block-note" style="margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.75; color: var(--fg1);">
+          Você já parou para pensar por que muitas pessoas caminhoneiras fazem uso de álcool ou outras substâncias? É importante entender que não se trata de uma escolha aleatória, de modo que esse uso está diretamente relacionado às condições de trabalho: jornadas longas, cansaço acumulado, pressão por produtividade e a necessidade de permanecer acordado por horas — às vezes, dias. Os dados confirmam essa realidade.
+        </p>
+
+        <div class="card" style="padding: 2rem; background: #fff; box-shadow: var(--sh-md); border-radius: var(--r-lg);">
+          <div style="font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: var(--fg1); margin-bottom: 1.5rem; border-bottom: 2px solid var(--border); padding-bottom: 0.5rem; display: flex; align-items: center; gap: 0.5rem;">
+            <i data-lucide="bar-chart-3" style="color: var(--m3-primary);"></i>
+            Prevalência de Consumo de Álcool e Outras Substâncias (%)
+          </div>
+
+          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+            
+            <!-- Barra 1: Consumiram álcool durante viagens -->
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.95rem; margin-bottom: 0.4rem; color: var(--fg2);">
+                <span>Consumiram álcool durante viagens (Nascimento <i>et al.</i>, 2007)</span>
+                <strong style="color: var(--m3-primary-deep); font-family: var(--font-display); font-size: 1.05rem;">91.0%</strong>
+              </div>
+              <div style="height: 12px; background: var(--bg-soft); border-radius: 999px; overflow: hidden; width: 100%;">
+                <div style="height: 100%; width: 91%; background: var(--grad-m3-brand); border-radius: 999px; transition: width 1s ease-in-out;"></div>
+              </div>
+            </div>
+
+            <!-- Barra 2: Consumo recente de álcool -->
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.95rem; margin-bottom: 0.4rem; color: var(--fg2);">
+                <span>Consumo recente de álcool (Leopoldo <i>et al.</i>, 2015)</span>
+                <strong style="color: var(--m3-primary-deep); font-family: var(--font-display); font-size: 1.05rem;">67.3%</strong>
+              </div>
+              <div style="height: 12px; background: var(--bg-soft); border-radius: 999px; overflow: hidden; width: 100%;">
+                <div style="height: 100%; width: 67.3%; background: var(--grad-m3-brand); border-radius: 999px; transition: width 1s ease-in-out;"></div>
+              </div>
+            </div>
+
+            <!-- Barra 3: Uso de anfetaminas -->
+            <div>
+
+      <!-- Bloco de Gráfico de Barras: Consumo de Substâncias nas Rodovias -->
+      <section class="block" style="margin-bottom: 4rem;">
+        
+        <p class="block-note" style="margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.75; color: var(--fg1);">
+                <div style="height: 100%; width: 66%; background: var(--grad-m3-brand); border-radius: 999px; transition: width 1s ease-in-out;"></div>
+              </div>
+            </div>
+
+            <!-- Barra 4: Combinação de álcool com outras substâncias -->
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.95rem; margin-bottom: 0.4rem; color: var(--fg2);">
+                <span>Combinavam álcool com outras substâncias (Leopoldo <i>et al.</i>, 2015)</span>
+                <strong style="color: var(--m3-primary-deep); font-family: var(--font-display); font-size: 1.05rem;">54.6%</strong>
+              </div>
+              <div style="height: 12px; background: var(--bg-soft); border-radius: 999px; overflow: hidden; width: 100%;">
+                <div style="height: 100%; width: 54.6%; background: var(--grad-m3-brand); border-radius: 999px; transition: width 1s ease-in-out;"></div>
+              </div>
+            </div>
+
+            <!-- Barra 5: Consumo pesado de álcool -->
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.95rem; margin-bottom: 0.4rem; color: var(--fg2);">
+                <span>Apresentaram consumo pesado de álcool (Leopoldo <i>et al.</i>, 2015)</span>
+                <strong style="color: var(--m3-primary-deep); font-family: var(--font-display); font-size: 1.05rem;">34.6%</strong>
+              </div>
+              <div style="height: 12px; background: var(--bg-soft); border-radius: 999px; overflow: hidden; width: 100%;">
+                <div style="height: 100%; width: 34.6%; background: var(--grad-m3-brand); border-radius: 999px; transition: width 1s ease-in-out;"></div>
+              </div>
+            </div>
+
+            <!-- Barra 6: Binge drinking -->
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.95rem; margin-bottom: 0.4rem; color: var(--fg2);">
+                <span>Relataram episódios de Binge drinking (Leopoldo <i>et al.</i>, 2015)</span>
+                <strong style="color: var(--m3-primary-deep); font-family: var(--font-display); font-size: 1.05rem;">26.0%</strong>
+              </div>
+              <div style="height: 12px; background: var(--bg-soft); border-radius: 999px; overflow: hidden; width: 100%;">
+                <div style="height: 100%; width: 26%; background: var(--grad-m3-brand); border-radius: 999px; transition: width 1s ease-in-out;"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Nota de rodapé explicativa e dados adicionais -->
+          <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 0.88rem; color: var(--fg3); line-height: 1.6;">
+            <p style="margin-bottom: 0.6rem;">
+              <strong>Dados qualitativos recentes (Childhood Brasil, 2025):</strong> Há um crescimento expressivo no uso de cocaína e estimulantes (os populares "rebites"), utilizados para prolongar o tempo acordado em viagens.
+            </p>
+            <p style="margin: 0;">
+              <strong>Impacto nas Rodovias (PRF, 2023):</strong> O uso de substâncias psicoativas esteve diretamente associado a mais de 6 mil acidentes e 452 mortes em rodovias federais em um único ano.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bloco de Timeline: Redução de danos na prática -->
+      <section class="block" style="margin-bottom: 4rem; margin-top: 4rem;">
+        <h2 class="block-title" style="margin-bottom: 2rem; font-size: 1.7rem; color: var(--m3-primary-deep);">Redução de danos na prática</h2>
+
+        <div class="tl" style="--tl-color: var(--accent-green)">
+
+          <!-- Item 1: Uso de álcool -->
+          <div class="tl__item">
+            <div class="tl__stem">
+              <span class="tl__dot"></span>
+              <span class="tl__line"></span>
+            </div>
+            <div class="tl__card">
+              <span class="tl__tag">Uso de álcool</span>
+              <div class="tl__body"><strong>Abordagem na Atenção Primária à Saúde:</strong> orientar sobre riscos; evitar dirigir após consumo.</div>
+            </div>
+          </div>
+
+          <!-- Item 2: Uso de estimulantes -->
+          <div class="tl__item">
+            <div class="tl__stem">
+              <span class="tl__dot"></span>
+              <span class="tl__line"></span>
+            </div>
+            <div class="tl__card">
+              <span class="tl__tag">Uso de estimulantes</span>
+              <div class="tl__body"><strong>Abordagem na Atenção Primária à Saúde:</strong> explorar motivações; discutir alternativas.</div>
+            </div>
+          </div>
+
+          <!-- Item 3: Estresse e cansaço -->
+          <div class="tl__item">
+            <div class="tl__stem">
+              <span class="tl__dot"></span>
+              <span class="tl__line"></span>
+            </div>
+            <div class="tl__card">
+              <span class="tl__tag">Estresse e cansaço</span>
+              <div class="tl__body"><strong>Abordagem na Atenção Primária à Saúde:</strong> propor estratégias não farmacológicas.</div>
+            </div>
+          </div>
+
+          <!-- Item 4: Resistência à mudança -->
+          <div class="tl__item">
+            <div class="tl__stem">
+              <span class="tl__dot"></span>
+              <span class="tl__line"></span>
+            </div>
+            <div class="tl__card">
+              <span class="tl__tag">Resistência à mudança</span>
+              <div class="tl__body"><strong>Abordagem na Atenção Primária à Saúde:</strong> trabalhar metas graduais e possíveis.</div>
+            </div>
+          </div>
+
+          <!-- Item 5: Sofrimento associado (Último item - sem tl__line) -->
+          <div class="tl__item">
+            <div class="tl__stem">
+              <span class="tl__dot"></span>
+            </div>
+            <div class="tl__card">
+              <span class="tl__tag">Sofrimento associado</span>
+              <div class="tl__body"><strong>Abordagem na Atenção Primária à Saúde:</strong> avaliar saúde mental; acionar rede se necessário.</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+          </div>
+
+          <!-- Item 3: Estresse e cansaço -->
+          <div class="tl__item">
+            <div class="tl__stem">
+              <span class="tl__dot"></span>
+              <span class="tl__line"></span>
+            </div>
+            <div class="tl__card">
+              <span class="tl__tag">Estresse e cansaço</span>
+              <div class="tl__body"><strong>Abordagem na Atenção Primária à Saúde:</strong> propor estratégias não farmacológicas.</div>
+            </div>
+          </div>
+
+          <!-- Item 4: Resistência à mudança -->
+          <div class="tl__item">
+            <div class="tl__stem">
+              <span class="tl__dot"></span>
+              <span class="tl__line"></span>
+            </div>
+            <div class="tl__card">
+              <span class="tl__tag">Resistência à mudança</span>
+              <div class="tl__body"><strong>Abordagem na Atenção Primária à Saúde:</strong> trabalhar metas graduais e possíveis.</div>
+            </div>
+          </div>
+
+          <!-- Item 5: Sofrimento associado (Último item - sem tl__line) -->
+          <div class="tl__item">
+            <div class="tl__stem">
+              <span class="tl__dot"></span>
+            </div>
+            <div class="tl__card">
+              <span class="tl__tag">Sofrimento associado</span>
+              <div class="tl__body"><strong>Abordagem na Atenção Primária à Saúde:</strong> avaliar saúde mental; acionar rede se necessário.</div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Bloco de Gráfico de Barras: Saúde Mental dos Motoristas -->
+      <section class="block" style="margin-bottom: 4rem;">
+        
+        <p class="block-note" style="margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.75; color: var(--fg1);">
+          Você já parou para pensar em transtornos mentais de profissionais que dirigem e têm alta dificuldade de atendimento psicológico continuado? Um estudo recente da Universidade Federal de Sergipe, com apoio da Childhood Brasil, chama a atenção para esse tema pouco discutido (Viana; Feitosa; Cerqueira-Santos, 2025). A pesquisa ouviu 273 profissionais de todo o país e revelou um cenário preocupante. Os números impressionam:
+        </p>
+
+        <div class="card" style="padding: 2rem; background: #fff; box-shadow: var(--sh-md); border-radius: var(--r-lg);">
+
+          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+            
+            <!-- Barra 1: Estresse -->
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.95rem; margin-bottom: 0.4rem; color: var(--fg2);">
+                <span>Apresentaram sintomas de estresse (Viana <i>et al.</i>, 2025)</span>
+                <strong style="color: var(--m3-primary-deep); font-family: var(--font-display); font-size: 1.05rem;">71.1%</strong>
+              </div>
+              <div style="height: 12px; background: var(--bg-soft); border-radius: 999px; overflow: hidden; width: 100%;">
+                <div style="height: 100%; width: 71.1%; background: var(--grad-m3-brand); border-radius: 999px; transition: width 1s ease-in-out;"></div>
+              </div>
+            </div>
+
+            <!-- Barra 2: Ansiedade -->
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.95rem; margin-bottom: 0.4rem; color: var(--fg2);">
+                <span>Apresentaram sintomas de ansiedade (Viana <i>et al.</i>, 2025)</span>
+                <strong style="color: var(--m3-primary-deep); font-family: var(--font-display); font-size: 1.05rem;">47.3%</strong>
+              </div>
+              <div style="height: 12px; background: var(--bg-soft); border-radius: 999px; overflow: hidden; width: 100%;">
+                <div style="height: 100%; width: 47.3%; background: var(--grad-m3-brand); border-radius: 999px; transition: width 1s ease-in-out;"></div>
+              </div>
+            </div>
+
+            <!-- Barra 3: Depressão -->
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.95rem; margin-bottom: 0.4rem; color: var(--fg2);">
+                <span>Apresentaram sintomas de depressão (Viana <i>et al.</i>, 2025)</span>
+                <strong style="color: var(--m3-primary-deep); font-family: var(--font-display); font-size: 1.05rem;">41.0%</strong>
+              </div>
+              <div style="height: 12px; background: var(--bg-soft); border-radius: 999px; overflow: hidden; width: 100%;">
+                <div style="height: 100%; width: 41%; background: var(--grad-m3-brand); border-radius: 999px; transition: width 1s ease-in-out;"></div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Nota de rodapé explicativa e dados adicionais -->
+          <div style="margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); font-size: 0.88rem; color: var(--fg3); line-height: 1.6;">
+            <p style="margin-bottom: 0.6rem;">
+              Ou seja, a maioria desse público-alvo convive com alta carga emocional no dia a dia.
+            </p>
+            <p style="margin: 0;">
+              <strong>E o mais importante:</strong> esses problemas estão muito mais ligados às condições de trabalho do que a fatores pessoais, como renda ou escolaridade.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Bloco de Abas: Privação do sono -->
+      <section id="s3-3" class="block" style="scroll-margin-top:80px;margin-bottom: 4rem;">
+        <h2 class="block-title" style="margin-bottom: 1.5rem; font-size: 1.7rem; color: var(--m3-primary-deep);">Privação do sono: impactos e condutas na Atenção Primária à Saúde</h2>
+        
+        <div class="tabs" style="--tab-color: var(--m3-primary);">
+          <!-- Barra de abas -->
+          <div class="tabs__nav" role="tablist" style="margin-bottom: 1.5rem;">
+            <button class="tabs__tab is-active" type="button" role="tab" aria-selected="true" aria-controls="tab-sono-1" onclick="switchTab(this,'tab-sono-1')" style="padding: 0.8rem 1.5rem;">
+              <i data-lucide="moon" style="width: 1.25rem; height: 1.25rem; stroke-width: 2.2;"></i>
+              <span style="font-family: var(--font-display); font-weight: 700; font-size: 1.05rem;">Poucas horas de sono</span>
+            </button>
+            <button class="tabs__tab" type="button" role="tab" aria-selected="false" aria-controls="tab-sono-2" onclick="switchTab(this,'tab-sono-2')" style="padding: 0.8rem 1.5rem;">
+              <i data-lucide="activity" style="width: 1.25rem; height: 1.25rem; stroke-width: 2.2;"></i>
+              <span style="font-family: var(--font-display); font-weight: 700; font-size: 1.05rem;">Sono fragmentado</span>
+            </button>
+            <button class="tabs__tab" type="button" role="tab" aria-selected="false" aria-controls="tab-sono-3" onclick="switchTab(this,'tab-sono-3')" style="padding: 0.8rem 1.5rem;">
+              <i data-lucide="pill" style="width: 1.25rem; height: 1.25rem; stroke-width: 2.2;"></i>
+              <span style="font-family: var(--font-display); font-weight: 700; font-size: 1.05rem;">Uso de estimulantes</span>
+            </button>
+            <button class="tabs__tab" type="button" role="tab" aria-selected="false" aria-controls="tab-sono-4" onclick="switchTab(this,'tab-sono-4')" style="padding: 0.8rem 1.5rem;">
+              <i data-lucide="truck" style="width: 1.25rem; height: 1.25rem; stroke-width: 2.2;"></i>
+              <span style="font-family: var(--font-display); font-weight: 700; font-size: 1.05rem;">Jornadas longas</span>
+            </button>
+          </div>
+
+          <!-- Painel 1: Poucas horas de sono -->
+          <div class="tabs__panel is-active" id="tab-sono-1" role="tabpanel">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem;">
+              <!-- Impacto -->
+              <div style="background: #ffffff; border: 1px solid var(--border); border-radius: var(--r-md); padding: 1.5rem; box-shadow: var(--sh-sm); border-left: 4px solid var(--warning, #F5A623);">
+                <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+                  <i data-lucide="alert-triangle" style="color: var(--warning, #F5A623); width: 1.35rem; height: 1.35rem;"></i>
+                  <span style="font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: var(--fg1);">Impacto</span>
+                </div>
+                <p style="margin: 0; color: var(--fg2); font-size: 1rem; line-height: 1.6;">
+                  Fadiga, irritabilidade.
+                </p>
+              </div>
+              <!-- Conduta na APS -->
+              <div style="background: #ffffff; border: 1px solid var(--border); border-radius: var(--r-md); padding: 1.5rem; box-shadow: var(--sh-sm); border-left: 4px solid var(--m3-primary);">
+                <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+                  <i data-lucide="clipboard-check" style="color: var(--m3-primary); width: 1.35rem; height: 1.35rem;"></i>
+                  <span style="font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: var(--fg1);">Conduta na Atenção Primária à Saúde</span>
+                </div>
+                <p style="margin: 0; color: var(--fg2); font-size: 1rem; line-height: 1.6;">
+                  Orientar pausas e descanso.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Painel 2: Sono fragmentado -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <section class="block" style="margin-bottom: 4rem;">
+        
+        <p class="block-note" style="margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.75; color: var(--fg1);">
+          Você já parou para pensar em transtornos mentais de profissionais que dirigem e têm alta dificuldade de atendimento psicológico continuado? Um estudo recente da Universidade Federal de Sergipe, com apoio da Childhood Brasil, chama a atenção para esse tema pouco discutido (Viana; Feitosa; Cerqueira-Santos, 2025). A pesquisa ouviu 273 profissionais de todo o país e revelou um cenário preocupante. Os números impressionam:
+        </p>
+
+        <div class="card" style="padding: 2rem; background: #fff; box-shadow: var(--sh-md); border-radius: var(--r-lg);">
+
+          <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+            
+            <!-- Barra 1: Estresse -->
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.95rem; margin-bottom: 0.4rem; color: var(--fg2);">
+                <span>Apresentaram sintomas de estresse (Viana <i>et al.</i>, 2025)</span>
+                <strong style="color: var(--m3-primary-deep); font-family: var(--font-display); font-size: 1.05rem;">71.1%</strong>
+              </div>
+              <div style="height: 12px; background: var(--bg-soft); border-radius: 999px; overflow: hidden; width: 100%;">
+                <div style="height: 100%; width: 71.1%; background: var(--grad-m3-brand); border-radius: 999px; transition: width 1s ease-in-out;"></div>
+              </div>
+            </div>
+
+            <!-- Barra 2: Ansiedade -->
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.95rem; margin-bottom: 0.4rem; color: var(--fg2);">
+                <span>Apresentaram sintomas de ansiedade (Viana <i>et al.</i>, 2025)</span>
+                <strong style="color: var(--m3-primary-deep); font-family: var(--font-display); font-size: 1.05rem;">47.3%</strong>
+              </div>
+              <div style="height: 12px; background: var(--bg-soft); border-radius: 999px; overflow: hidden; width: 100%;">
+                <div style="height: 100%; width: 47.3%; background: var(--grad-m3-brand); border-radius: 999px; transition: width 1s ease-in-out;"></div>
+              </div>
+            </div>
+
+            <!-- Barra 3: Depressão -->
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.95rem; margin-bottom: 0.4rem; color: var(--fg2);">
+                <span>Apresentaram sintomas de depressão (Viana <i>et al.</i>, 2025)</span>
+                <strong style="color: var(--m3-primary-deep); font-family: var(--font-display); font-size: 1.05rem;">41.0%</strong>
+              </div>
+              <div style="height: 12px; background: var(--bg-soft); border-radius: 999px; overflow: hidden; width: 100%;">
+                <div style="height: 100%; width: 41%; background: var(--grad-m3-brand); border-radius: 999px; transition: width 1s ease-in-out;"></div>
+                  <span style="font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: var(--fg1);">Impacto</span>
+                </div>
+                <p style="margin: 0; color: var(--fg2); font-size: 1rem; line-height: 1.6;">
+                  Estresse crônico.
+                </p>
+              </div>
+              <!-- Conduta na APS -->
+              <div style="background: #ffffff; border: 1px solid var(--border); border-radius: var(--r-md); padding: 1.5rem; box-shadow: var(--sh-sm); border-left: 4px solid var(--m3-primary);">
+                <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+                  <i data-lucide="clipboard-check" style="color: var(--m3-primary); width: 1.35rem; height: 1.35rem;"></i>
+                  <span style="font-family: var(--font-display); font-weight: 700; font-size: 1.1rem; color: var(--fg1);">Conduta na Atenção Primária à Saúde</span>
+                </div>
+                <p style="margin: 0; color: var(--fg2); font-size: 1rem; line-height: 1.6;">
+                  Sensibilização e escuta.
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Bloco de Reflexão: Qualidade do Sono -->
+      <section class="block" style="margin-bottom: 4rem;">
+        <div class="bigbtns">
+          <button class="bigbtn bigbtn--reflexao" onclick="openModal('modalReflexaoSono')">
+            <span class="bigbtn__icon"><i data-lucide="message-circle"></i></span>
+            <span class="bigbtn__txt">
+              <span class="bigbtn__title">Reflexão</span>
+            </span>
+            <span class="bigbtn__arrow"><i data-lucide="external-link"></i></span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Bloco de Flashcards: Fatores Psicossociais -->
+      <section id="s3-4" class="block" style="scroll-margin-top:80px;margin-bottom: 4rem;">
+        <h2 class="block-title" style="margin-bottom: 1.5rem; font-size: 1.7rem; color: var(--m3-primary-deep);">Fatores psicossociais e impactos na saúde mental</h2>
+        <p class="block-note" style="margin-bottom: 2rem;">Clique nos cartões abaixo para virar e ver os impactos associados a cada fator psicossocial.</p>
+        
+        <div class="fc-grid">
+          
+          <!-- Cartão 1: Distância familiar prolongada -->
+          <div class="fc" onclick="this.classList.toggle('is-flipped')"
+               style="--fc-grad: var(--grad-m3-brand); --fc-accent: var(--accent-green);">
+            <div class="fc__inner">
+              <!-- FRENTE -->
+              <div class="fc__front">
+                <i data-lucide="users"></i>
+                <span class="fc__front-title">Distância familiar prolongada</span>
+                <span class="fc__hint"><i data-lucide="refresh-cw"></i> virar</span>
+              </div>
+              <!-- VERSO -->
+              <div class="fc__back">
+                <div class="fc__back-label">Impactos na Saúde Mental</div>
+                <div class="fc__back-content" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+                  <p style="margin: 0; font-size: 1.15rem; color: var(--fg1); line-height: 1.5; font-family: var(--font-display); font-weight: 700; text-align: center;">
+                    Solidão; saudade; culpa
+                  </p>
+                </div>
+                <div class="fc__back-hint"><i data-lucide="refresh-cw"></i> virar</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cartão 2: Longos períodos fora de casa -->
+          <div class="fc" onclick="this.classList.toggle('is-flipped')"
+               style="--fc-grad: var(--grad-m3-brand); --fc-accent: var(--accent-green);">
+            <div class="fc__inner">
+              <!-- FRENTE -->
+              <div class="fc__front">
+                <i data-lucide="map-pin"></i>
+                <span class="fc__front-title">Longos períodos fora de casa</span>
+                <span class="fc__hint"><i data-lucide="refresh-cw"></i> virar</span>
+              </div>
+              <!-- VERSO -->
+              <div class="fc__back">
+                <div class="fc__back-label">Impactos na Saúde Mental</div>
+                <div class="fc__back-content" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+                  <p style="margin: 0; font-size: 1.15rem; color: var(--fg1); line-height: 1.5; font-family: var(--font-display); font-weight: 700; text-align: center;">
+                    Isolamento; depressão
+                  </p>
+                </div>
+                <div class="fc__back-hint"><i data-lucide="refresh-cw"></i> virar</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cartão 3: Pressão por produtividade -->
+          <div class="fc" onclick="this.classList.toggle('is-flipped')"
+               style="--fc-grad: var(--grad-m3-brand); --fc-accent: var(--accent-green);">
+            <div class="fc__inner">
+              <!-- FRENTE -->
+              <div class="fc__front">
+                <i data-lucide="gauge"></i>
+                <span class="fc__front-title">Pressão por produtividade</span>
+                <span class="fc__hint"><i data-lucide="refresh-cw"></i> virar</span>
+              </div>
+              <!-- VERSO -->
+              <div class="fc__back">
+                <div class="fc__back-label">Impactos na Saúde Mental</div>
+                <div class="fc__back-content" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+                  <p style="margin: 0; font-size: 1.15rem; color: var(--fg1); line-height: 1.5; font-family: var(--font-display); font-weight: 700; text-align: center;">
+                    Ansiedade; estresse
+                  </p>
+                </div>
+                <div class="fc__back-hint"><i data-lucide="refresh-cw"></i> virar</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cartão 4: Espera prolongada -->
+          <div class="fc" onclick="this.classList.toggle('is-flipped')"
+               style="--fc-grad: var(--grad-m3-brand); --fc-accent: var(--accent-green);">
+            <div class="fc__inner">
+              <!-- FRENTE -->
+              <div class="fc__front">
+                <i data-lucide="hourglass"></i>
+                <span class="fc__front-title">Espera prolongada</span>
+                <span class="fc__hint"><i data-lucide="refresh-cw"></i> virar</span>
+              </div>
+              <!-- VERSO -->
+              <div class="fc__back">
+                <div class="fc__back-label">Impactos na Saúde Mental</div>
+                <div class="fc__back-content" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+                  <p style="margin: 0; font-size: 1.15rem; color: var(--fg1); line-height: 1.5; font-family: var(--font-display); font-weight: 700; text-align: center;">
+                    Frustração; irritabilidade
+                  </p>
+                </div>
+                <div class="fc__back-hint"><i data-lucide="refresh-cw"></i> virar</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Cartão 5: Normas de masculinidade -->
+          <div class="fc" onclick="this.classList.toggle('is-flipped')"
+               style="--fc-grad: var(--grad-m3-brand); --fc-accent: var(--accent-green);">
+            <div class="fc__inner">
+              <!-- FRENTE -->
+              <div class="fc__front">
+                <i data-lucide="shield"></i>
+                <span class="fc__front-title">Normas de masculinidade</span>
+                <span class="fc__hint"><i data-lucide="refresh-cw"></i> virar</span>
+              </div>
+              <!-- VERSO -->
+              <div class="fc__back">
+                <div class="fc__back-label">Impactos na Saúde Mental</div>
+                <div class="fc__back-content" style="display: flex; flex-direction: column; justify-content: center; height: 100%;">
+                  <p style="margin: 0; font-size: 1.15rem; color: var(--fg1); line-height: 1.5; font-family: var(--font-display); font-weight: 700; text-align: center;">
+                    Baixa busca por cuidado
+                  </p>
+                </div>
+                <div class="fc__back-hint"><i data-lucide="refresh-cw"></i> virar</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Bloco de Podcast -->
+      <section id="s3-5" class="block" style="scroll-margin-top:80px;margin-bottom: 4rem;">
+        <div class="bigbtns">
+          <button class="bigbtn bigbtn--cta" onclick="openModal('modalPodcast')">
+            <span class="bigbtn__icon"><i data-lucide="headphones"></i></span>
+            <span class="bigbtn__txt">
+              <span class="bigbtn__title">Podcast</span>
+            </span>
+            <span class="bigbtn__arrow"><i data-lucide="external-link"></i></span>
+          </button>
+        </div>
+      </section>
+
+      <!-- Bloco Saiba mais (Link) -->
+      <section class="block" style="margin-bottom: 4rem;">
+        <div class="bigbtns">
+          <button class="bigbtn bigbtn--brand" onclick="openModal('modalSaibaMaisLink')">
+            <span class="bigbtn__icon"><i data-lucide="book-open"></i></span>
+            <span class="bigbtn__txt">
+              <span class="bigbtn__title">Saiba mais</span>
+            </span>
+            <span class="bigbtn__arrow"><i data-lucide="external-link"></i></span>
+          </button>
+        </div>
+      </section>
+
+      <!-- ═══ ENCERRAMENTO ═══ -->
+      <section id="encerramento" class="block" style="scroll-margin-top:80px;margin-bottom:2rem">
+        <h2 class="block-title" style="color:var(--m3-primary-deep);margin-bottom:1.5rem">Encerramento do Módulo</h2>
+        <div class="encerramento-card" style="background:var(--grad-m3-brand);color:#fff">
+          <p>Ao longo deste módulo, você explorou os principais desafios relacionados à saúde mental das caminhoneiras e dos caminhoneiros: uso de substâncias psicoativas, privação de sono, fatores psicossociais e isolamento.</p>
+          <p>Compreendeu estratégias de redução de danos, cuidado territorial e o papel fundamental da Atenção Primária à Saúde na promoção do bem-estar mental dessa população.</p>
+          <p style="margin:0">Esperamos que este módulo tenha ampliado sua capacidade de reconhecer o sofrimento psíquico no contexto das estradas e de construir vínculos de cuidado comprometidos com a integralidade e a humanização.</p>
+        </div>
+      </section>
+
+      >
+
+      <!-- ═══ REFERÊNCIAS BIBLIOGRÁFICAS ═══ -->
+      <section id="referencias" class="block" style="scroll-margin-top:80px;margin-bottom:2rem">
+        <h2 class="block-title" style="color:var(--m3-primary-deep);margin-bottom:1.5rem">Referências Bibliográficas</h2>
+        <ol style="padding-left:1.5rem;display:flex;flex-direction:column;gap:.85rem;color:var(--fg2);font-size:.88rem;line-height:1.65;">
+        <li style="padding-left:.25rem">APA (ASSOCIAÇÃO AMERICANA DE PSIQUIATRIA). <em>Manual diagnóstico e estatístico de transtornos mentais</em>. Tradução de Maria Inês Corrêa Nascimento et al. 5. ed. Porto Alegre: Artmed, 2014. Disponível em: <a href="https://membros.analysispsicologia.com.br/wp-content/uploads/2024/06/DSM-V.pdf" target="_blank" rel="noopener noreferrer">https://membros.analysispsicologia.com.br/wp-content/uploads/2024/06/DSM-V.pdf.</a> Acesso em: 27 maio 2026.</li>
+        <li style="padding-left:.25rem">BRASIL. Lei nº 13.103, de 2 de março de 2015. Dispõe sobre o exercício da profissão de motorista; altera a Consolidação das Leis do Trabalho (CLT) e outras legislações. <em>Diário Oficial da União</em>: seção 1, Brasília, DF, p. 1, 3 mar. 2015. Disponível em: www2.camara.leg.br/legin/fed/lei/2015/lei-13103-2-marco-2015-780193-norma-pl.html. Acesso em: 27 maio 2026.</li>
+        <li style="padding-left:.25rem">BRASIL. Ministério da Saúde. Portaria nº 3.088, de 23 de dezembro de 2011. Institui a Rede de Atenção Psicossocial para pessoas com sofrimento ou transtorno mental e com necessidades decorrentes do uso de crack, álcool e outras drogas, no âmbito do SUS. <em>Diário Oficial da União</em>: seção 1, Brasília, DF, p. 59, 26 dez. 2011. Disponível em: <a href="https://bvsms.saude.gov.br/bvs/saudelegis/gm/2011/prt3088_23_12_2011_rep.html" target="_blank" rel="noopener noreferrer">https://bvsms.saude.gov.br/bvs/saudelegis/gm/2011/prt3088_23_12_2011_rep.html.</a> Acesso em: 27 maio 2026.</li>
+        <li style="padding-left:.25rem">CERQUEIRA, E. S.; SANTANA, M. V. M. Satisfação no trabalho entre profissionais do transporte rodoviário: estudo comparativo entre autônomos e empregados. <em>Revista de Psicologia</em>, v. 5, n. 1, p. 109–120, 2014. Disponível em: <a href="https://dialnet.unirioja.es/servlet/articulo?codigo=8086132" target="_blank" rel="noopener noreferrer">https://dialnet.unirioja.es/servlet/articulo?codigo=8086132.</a> Acesso em: 19 fev. 2026.</li>
+        <li style="padding-left:.25rem">CHILDHOOD BRASIL. <em>O Perfil do Caminhoneiro Brasileiro</em>. 5. ed. São Paulo: Childhood Brasil; Programa Na Mão Certa, 2025. Disponível em: <a href="https://namaocerta.org.br/pesquisas-e-publicacoes/o-perfil-do-caminhoneiro-brasileiro-2025/" target="_blank" rel="noopener noreferrer">https://namaocerta.org.br/pesquisas-e-publicacoes/o-perfil-do-caminhoneiro-brasileiro-2025/.</a> Acesso em: 27 maio 2026.</li>
+        <li style="padding-left:.25rem">KNAUTH, D. R. et al. Manter-se acordado: a vulnerabilidade dos caminhoneiros no Rio Grande do Sul. <em>Revista de Saúde Pública</em>, v. 46, n. 5, p. 886–893, 2012. Disponível em: <a href="https://www.scielo.br/j/rsp/a/qqzWhf4Mp6TTysBf6pZCXfz/?lang=pt" target="_blank" rel="noopener noreferrer">www.scielo.br/j/rsp/a/qqzWhf4Mp6TTysBf6pZCXfz/?lang=pt.</a> Acesso em: 19 fev. 2026.</li>
+        <li style="padding-left:.25rem">LEOPOLDO, K.; LEYTON, V.; OLIVEIRA, L. G. Uso exclusivo de álcool e em associação a outras drogas entre motoristas de caminhão que trafegam por rodovias do Estado de São Paulo, Brasil: um estudo transversal. <em>Cadernos de Saúde Pública</em>, v. 31, n. 9, 2015. Disponível em: <a href="https://www.scielo.br/j/csp/a/vvmfh6xvtDT9xGx4xkmh4Qq/abstract/?lang=pt" target="_blank" rel="noopener noreferrer">www.scielo.br/j/csp/a/vvmfh6xvtDT9xGx4xkmh4Qq/abstract/?lang=pt.</a> Acesso em: 27 maio 2026.</li>
+        <li style="padding-left:.25rem">MASSON, V. A.; MONTEIRO, M. I. Estilo de vida, aspectos de saúde e trabalho de motoristas de caminhão. <em>Revista Brasileira de Enfermagem</em>, v. 63, n. 4, p. 533–540, 2010. Disponível em: <a href="https://www.scielo.br/j/reben/a/SfX3fnBfK7bfVtFbFzMHtPD/?lang=pt" target="_blank" rel="noopener noreferrer">www.scielo.br/j/reben/a/SfX3fnBfK7bfVtFbFzMHtPD/?lang=pt.</a> Acesso em: 19 fev. 2026.</li>
+        <li style="padding-left:.25rem">NASCIMENTO, E. C.; NASCIMENTO, E.; SILVA, J. P. Uso de álcool e anfetaminas entre caminhoneiros de estrada. <em>Revista de Saúde Pública</em>, São Paulo, v. 41, n. 2, p. 290–293, 2007. Disponível em: <a href="https://www.scielo.br/j/rsp/a/b9vVFYzYSf6fCH9djV9s6nH/?lang=pt" target="_blank" rel="noopener noreferrer">www.scielo.br/j/rsp/a/b9vVFYzYSf6fCH9djV9s6nH/?lang=pt.</a> Acesso em: 27 maio 2026.</li>
+        <li style="padding-left:.25rem">POLÍCIA RODOVIÁRIA FEDERAL (PRF). <em>Anuário Estatístico de Acidentes de Trânsito nas Rodovias Federais</em>. Brasília: PRF, 2023. Disponível em: <a href="https://www.gov.br/prf/pt-br/acesso-a-informacao/dados-abertos/diest-arquivos/anuario-2023_final.html" target="_blank" rel="noopener noreferrer">www.gov.br/prf/pt-br/acesso-a-informacao/dados-abertos/diest-arquivos/anuario-2023_final.html.</a> Acesso em: 27 maio 2026.</li>
+        <li style="padding-left:.25rem">VIANA, S.; FEITOSA, J.; CERQUEIRA-SANTOS, E. Saúde mental de caminhoneiros: preditores demográficos e condições de trabalho. <em>Revista Saúde e Desenvolvimento Humano</em>, Canoas, v. 13, n. 2, 2025. Disponível em: <a href="https://revistas.unilasalle.edu.br/index.php/saude_desenvolvimento/article/view/12894" target="_blank" rel="noopener noreferrer">https://revistas.unilasalle.edu.br/index.php/saude_desenvolvimento/article/view/12894.</a> Acesso em: 19 fev. 2026.</li>
+        </ol>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- MODAL SOBREPOSTO (REFLEXÃO) -->
+  <div class="overlay" id="modalReflexao">
+    <div class="modal">
+      <div class="modal__head modal__head--brand">
+        <button class="modal__close" aria-label="Fechar" onclick="closeModal('modalReflexao')"><i data-lucide="x"></i></button>
+        <span class="badge badge--orange modal__kicker">Reflexão</span>
+        <div class="modal__title">Saúde Mental nas Estradas</div>
+      </div>
+      <div class="modal__body">
+        <p>Você já pensou como seria possível aplicar esses princípios e orientações considerando no contexto de vida e trabalho da população caminhoneira?</p>
+        <p>Para isso, seria preciso flexibilizar estratégias de acesso, fortalecer ações extramuros, articular parcerias intersetoriais e considerar a itinerância como elemento estruturante do cuidado.</p>
+        <div class="modal__actions" style="margin-top: 1.8rem; justify-content: flex-end; display: flex;">
+          <button class="btn btn--ghost" onclick="closeModal('modalReflexao')">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL SOBREPOSTO (SAIBA MAIS - VÍDEO) -->
+  <div class="overlay" id="modalVideo">
+    <div class="modal">
+      <div class="modal__head modal__head--brand">
+        <button class="modal__close" aria-label="Fechar" onclick="closeModal('modalVideo')"><i data-lucide="x"></i></button>
+        <span class="badge badge--orange modal__kicker">Saiba mais</span>
+        <div class="modal__title">Vídeo Introdutório</div>
+        <div class="modal__author">Prof. Elder</div>
+      </div>
+      <div class="modal__body">
+        <p>Assista ao vídeo introdutório com duração de 1 min, gravado pelo Prof. Elder com o objetivo de justificar e argumentar a relevância e especificidade do tema. Nele, você conhecerá dados de pesquisa e intervenção em saúde, bem como de comportamento das caminhoneiras e dos caminhoneiros.</p>
+        
+        <!-- Player de Vídeo -->
+        <div class="video-placeholder" style="margin-top: 1.5rem; border-radius: var(--r-md); overflow: hidden; background: #000; aspect-ratio: 16/9; display: grid; place-items: center; border: 1px solid var(--border);">
+          <video controls style="width: 100%; height: 100%; display: block;">
+            <source src="video.mp4" type="video/mp4">
+            Seu navegador não suporta a exibição de vídeos.
+          </video>
+        </div>
+
+        <div class="modal__actions" style="margin-top: 1.8rem; justify-content: flex-end; display: flex;">
+          <button class="btn btn--ghost" onclick="closeModal('modalVideo')">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL SOBREPOSTO (REFLEXÃO - QUALIDADE DO SONO) -->
+  <div class="overlay" id="modalReflexaoSono">
+    <div class="modal">
+      <div class="modal__head modal__head--brand">
+        <button class="modal__close" aria-label="Fechar" onclick="closeModal('modalReflexaoSono')"><i data-lucide="x"></i></button>
+        <span class="badge badge--orange modal__kicker">Reflexão</span>
+        <div class="modal__title">Qualidade do Sono</div>
+      </div>
+      <div class="modal__body">
+        <p>Quando você atende uma pessoa caminhoneira na APS, costuma perguntar apenas “quantas horas dorme”, ou também investiga como ela dorme, isto é, a qualidade desse sono?</p>
+        <p>Essa diferença pode ser decisiva no cuidado.</p>
+        <div class="modal__actions" style="margin-top: 1.8rem; justify-content: flex-end; display: flex;">
+          <button class="btn btn--ghost" onclick="closeModal('modalReflexaoSono')">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL SOBREPOSTO (PODCAST) -->
+  <div class="overlay" id="modalPodcast">
+    <div class="modal">
+      <div class="modal__head modal__head--brand">
+        <button class="modal__close" aria-label="Fechar" onclick="closeModal('modalPodcast')"><i data-lucide="x"></i></button>
+        <span class="badge badge--orange modal__kicker">Podcast</span>
+        <div class="modal__title">Efeitos da Solidão na Saúde Mental</div>
+        <div class="modal__author">Prof. Elder Cerqueira-Santos e Prof. João Paulo Feitosa</div>
+      </div>
+      <div class="modal__body">
+        <p>Ouça o podcast que tem duração de 10 min, com participação dos professores Elder Cerqueira-Santos e João Paulo Feitosa em entrevista que aborda os efeitos da solidão na saúde mental.</p>
+        
+        <!-- Player de Áudio HTML5 -->
+        <div style="margin-top: 1.5rem; background: var(--bg-soft); border-radius: var(--r-md); padding: 1rem; border: 1px solid var(--border); display: flex; justify-content: center; align-items: center;">
+          <audio controls style="width: 100%;">
+            <source src="podcast.mp3" type="audio/mpeg">
+            Seu navegador não suporta o elemento de áudio.
+          </audio>
+        </div>
+
+        <div class="modal__actions" style="margin-top: 1.8rem; justify-content: flex-end; display: flex;">
+          <button class="btn btn--ghost" onclick="closeModal('modalPodcast')">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL SOBREPOSTO (SAIBA MAIS - LINK) -->
+  <div class="overlay" id="modalSaibaMaisLink">
+    <div class="modal">
+      <div class="modal__head modal__head--brand">
+        <button class="modal__close" aria-label="Fechar" onclick="closeModal('modalSaibaMaisLink')"><i data-lucide="x"></i></button>
+        <span class="badge badge--orange modal__kicker">Saiba mais</span>
+        <div class="modal__title">Programa Na Mão Certa</div>
+        <div class="modal__author">Childhood Brasil</div>
+      </div>
+      <div class="modal__body">
+        <p>Como recurso complementar para aprofundar sua compreensão, sugerimos que você conheça o material do Programa Na Mão Certa (Childhood Brasil), uma iniciativa que conecta diretamente temas como caminhoneirismo, violência e sexualidade.</p>
+        
+        <div class="modal__actions" style="margin-top: 1.8rem; display: flex; gap: 0.75rem; justify-content: flex-end; align-items: center;">
+          <button class="btn btn--ghost" onclick="closeModal('modalSaibaMaisLink')">Fechar</button>
+          <a href="https://www.namaocerta.org.br" target="_blank" rel="noopener" class="btn btn--primary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 0.5rem; color: #fff;">
+            <i data-lucide="external-link"></i> Acesse o link
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Créditos -->
+  <div class="overlay" id="modalCreditos">
+    <div class="modal">
+      <div class="modal__head" style="background:var(--grad-m3-brand);color:#fff">
+        <button class="modal__close" onclick="closeModal('modalCreditos')" aria-label="Fechar"><i data-lucide="x"></i></button>
+        <span class="badge badge--soft modal__kicker">Módulo III</span>
+        <div class="modal__title" style="color:#fff">Créditos</div>
+      </div>
+      <div class="modal__body">
+        <p style="font-weight:700;color:var(--fg1);margin-bottom:.5rem">Autor</p>
+        <p style="color:var(--fg2);margin-bottom:1.2rem">Elder Cerqueira-Santos</p>
+        <p style="font-weight:700;color:var(--fg1);margin-bottom:.5rem">Instituição</p>
+        <p style="color:var(--fg2);margin-bottom:1.2rem">Fiocruz Mato Grosso do Sul</p>
+        <p style="font-weight:700;color:var(--fg1);margin-bottom:.5rem">Curso</p>
+        <p style="color:var(--fg2)">Atenção à Saúde da Caminhoneira e Caminhoneiro na Atenção Primária</p>
+        <div class="modal__actions" style="justify-content:flex-end">
+          <button class="btn btn--ghost" onclick="closeModal('modalCreditos')">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Instruções -->
+  <div class="overlay" id="modalInstrucoes">
+    <div class="modal">
+      <div class="modal__head" style="background:var(--grad-m3-brand);color:#fff">
+        <button class="modal__close" onclick="closeModal('modalInstrucoes')" aria-label="Fechar"><i data-lucide="x"></i></button>
+        <span class="badge badge--soft modal__kicker">Como usar</span>
+        <div class="modal__title" style="color:#fff">Instruções de navegação</div>
+      </div>
+      <div class="modal__body">
+        <ul style="margin:0;padding-left:1.2rem;line-height:1.7;display:flex;flex-direction:column;gap:.7rem;color:var(--fg2)">
+          <li>Use o <strong>menu lateral esquerdo</strong> para navegar entre as seções do módulo.</li>
+          <li>Explore os <strong>gráficos de barras</strong> para visualizar dados sobre saúde mental e uso de substâncias.</li>
+          <li>Clique nas <strong>abas</strong> para conhecer os diferentes impactos da privação de sono.</li>
+          <li>Interaja com os <strong>flashcards</strong> para explorar fatores psicossociais e seus efeitos.</li>
+          <li>Os botões <strong>Reflexão, Podcast e Saiba mais</strong> abrem conteúdos complementares em janelas sobrepostas.</li>
+          <li>A carga horária estimada para este módulo é de <strong>07 horas</strong>.</li>
+        </ul>
+        <div class="modal__actions" style="justify-content:flex-end">
+          <button class="btn btn--ghost" onclick="closeModal('modalInstrucoes')">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Lucide e Script de Progresso -->
+  <!-- Botão voltar ao topo -->
+  <button id="backToTop" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Voltar ao topo" style="background:var(--m3-primary);color:#fff">
+    <i data-lucide="chevron-up"></i>
+  </button>
+
+  <!-- Sidebar toggle (hambúrguer — visível apenas no mobile) -->
+  <button class="sidebar-toggle" onclick="openSidebar()" aria-label="Abrir menu de navegação" style="background:var(--m3-primary);color:#fff">
+    <i data-lucide="menu"></i>
+  </button>
+
+  <!-- Overlay da sidebar (mobile) -->
+  <div id="sidebarOverlay" class="sidebar-overlay" onclick="closeSidebar()"></div>
+
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="js/scripts.min.js"></script>
+
+</body>
+</html>

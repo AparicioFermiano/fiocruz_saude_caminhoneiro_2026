@@ -1,0 +1,1518 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Módulo 4 - Cuidado Integral à Caminhoneira e ao Caminhoneiro com Doenças Crônicas e Outras Afecções</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Mukta:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.min.css">
+</head>
+<body>
+
+  <!-- Barra de Progresso Superior -->
+  <div class="progress-rail" id="progressRail">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+
+  <!-- HERO WRAP (Largura total da página) -->
+  <div class="hero-wrap" id="home">
+    <div class="hero-nav" style="--hn-color: var(--m4-primary)">
+      <div class="hero-nav__inner">
+        <span class="hero-nav__badge"><i data-lucide="graduation-cap"></i> Curso</span>
+        <span class="hero-nav__name">ATENÇÃO À SAÚDE DA CAMINHONEIRA E CAMINHONEIRO NA ATENÇÃO PRIMÁRIA</span>
+      </div>
+    </div>
+    
+    <!-- M4 Vermelho (fundo escuro - --hb-text: #ffffff) -->
+    <div class="hero-body" style="background: var(--grad-m4-hero); --hb-text: #ffffff;">
+      <div class="hero-body__inner">
+        <div class="hero-body__content" style="min-height: auto; padding: 0;">
+          <div>
+            <span class="hero__kicker"><i data-lucide="graduation-cap"></i> MÓDULO 4</span>
+            <h2 class="hero__title" style="margin-top: 0.8rem; margin-bottom: 2rem; color: #ffffff; line-height: 1.25;">Cuidado Integral à Caminhoneira e ao Caminhoneiro<br>com Doenças Crônicas e Outras Afecções</h2>
+          </div>
+          <div class="hero__btns">
+            <button class="btn btn--ghost-light" onclick="openModal('modalCreditos')"><i data-lucide="users"></i> Créditos</button>
+            <button class="btn btn--ghost-light" onclick="openModal('modalInstrucoes')"><i data-lucide="info"></i> Instruções</button>
+            <button class="btn btn--cta" onclick="document.getElementById('apresentacao').scrollIntoView({behavior:'smooth'})"><i data-lucide="play"></i> Iniciar</button>
+          </div>
+        </div>
+        <div class="hero-body__logo">
+          <img src="images/logo-fundo-escuro.png" alt="Logo">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Layout com Sidebar -->
+  <div class="page-layout">
+    <aside class="sidebar">
+      <nav class="sidebar-nav" aria-label="Navegação do módulo">
+        <div class="sidebar-nav__header">Módulo 4</div>
+        <a class="sidebar-nav__link" href="#apresentacao">Apresentação</a>
+        <a class="sidebar-nav__link" href="#s4-1">4.1 Perfil Epidemiológico e DCNT</a>
+        <a class="sidebar-nav__link" href="#s4-2">4.2 Detecção Precoce e Manejo</a>
+        <a class="sidebar-nav__link" href="#s4-3">4.3 Promoção da Saúde</a>
+        <a class="sidebar-nav__link" href="#encerramento">Encerramento</a>
+        <a class="sidebar-nav__link" href="#referencias">Referências</a>
+      </nav>
+      <div class="sidebar-badge">
+        <span class="sidebar-badge__icon"><i data-lucide="clock"></i></span>
+        <div>
+          <span class="sidebar-badge__label">Carga Horária</span>
+          <span class="sidebar-badge__value">07 horas</span>
+        </div>
+      </div>
+    </aside>
+    <main>
+
+      <!-- SEÇÃO: Apresentação do Módulo -->
+      <section id="apresentacao" style="scroll-margin-top:80px;margin-bottom:4rem;">
+        <div style="padding-bottom:0.75rem;border-bottom:2px solid var(--border);margin-bottom:1.6rem;">
+          <h2 style="font-family:var(--font-display);font-weight:800;font-size:1.5rem;color:var(--m4-primary-deep);margin:0;">Apresentação do Módulo</h2>
+        </div>
+        <div class="intro-card" style="border-left-color:var(--m4-primary);">
+          <p>Seja bem-vindo ao Módulo IV! Considerando todo o contexto e as especificidades já estudadas até aqui, daremos continuidade às reflexões e adicionaremos uma nova camada. Neste módulo, vamos compreender as Doenças Crônicas Não Transmissíveis (DCNT) no contexto de trabalho das caminhoneiras e dos caminhoneiros, e discutir estratégias práticas de cuidado na Atenção Primária à Saúde (APS).</p>
+          <p>Você sabia que o Brasil apresenta uma extensa malha rodoviária que ultrapassa 1,72 milhão de km? Nesse cenário, mais de 1,23 milhão de pessoas caminhoneiras sustentam a logística nacional. Entretanto, esses trabalhadores enfrentam barreiras importantes: longas jornadas, distância da família, alimentação inadequada, pouco acesso à saúde e exposição a fatores de risco.</p>
+          <p>Por isso, convidamos você a se perguntar: como podemos ser mais resolutivos no atendimento das caminhoneiras e dos caminhoneiros e ajudá-los a cuidar da própria saúde?</p>
+        </div>
+        <h3 style="font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:var(--m4-primary-deep);margin:2rem 0 1rem;">Objetivos de Aprendizagem</h3>
+        <ul class="obj-list">
+          <li><span class="obj-list__icon" style="background:var(--m4-primary);"><i data-lucide="check"></i></span>Reconhecer o perfil epidemiológico das DCNT nas caminhoneiras e caminhoneiros, identificando fatores de risco associados ao contexto laboral.</li>
+          <li><span class="obj-list__icon" style="background:var(--m4-primary);"><i data-lucide="check"></i></span>Identificar critérios clínicos e estratégias de rastreamento que orientam a detecção precoce de hipertensão arterial e diabetes mellitus na APS.</li>
+          <li><span class="obj-list__icon" style="background:var(--m4-primary);"><i data-lucide="check"></i></span>Analisar estratégias de manejo e acompanhamento das DCNT na APS, considerando acolhimento, vínculo e cuidado longitudinal.</li>
+          <li><span class="obj-list__icon" style="background:var(--m4-primary);"><i data-lucide="check"></i></span>Reconhecer sinais de alerta e situações clínicas relacionadas às DCNT que demandam encaminhamento oportuno.</li>
+          <li><span class="obj-list__icon" style="background:var(--m4-primary);"><i data-lucide="check"></i></span>Identificar ações de promoção da saúde e prevenção voltadas a afecções frequentes como doenças osteomusculares e câncer de pele.</li>
+          <li><span class="obj-list__icon" style="background:var(--m4-primary);"><i data-lucide="check"></i></span>Analisar estratégias que ampliem a resolutividade e a continuidade do cuidado das DCNT, considerando a mobilidade e os desafios de vinculação territorial.</li>
+        </ul>
+      </section>
+
+      <!-- SEÇÃO 4.1: Perfil Epidemiológico e DCNT -->
+        <!-- Bloco de Reflexão -->
+        <section id="s4-1" class="block" style="scroll-margin-top:80px;margin-top: 3rem; margin-bottom: 4rem;">
+          <div class="bigbtns">
+            <button class="bigbtn bigbtn--reflexao" onclick="openModal('modalReflexao')">
+              <span class="bigbtn__icon"><i data-lucide="message-circle"></i></span>
+              <span class="bigbtn__txt">
+                <span class="bigbtn__title">Reflexão</span>
+              </span>
+              <span class="bigbtn__arrow"><i data-lucide="external-link"></i></span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Bloco de Carrossel: Fatores de risco à saúde no contexto do trabalho -->
+        <section class="block" style="margin-bottom: 4rem;">
+          <h2 class="block-title" style="margin-bottom: 1.5rem; font-size: 1.7rem; color: var(--m4-primary-deep);">Fatores de risco à saúde no contexto do trabalho das caminhoneiras e dos caminhoneiros</h2>
+          <p class="block-note" style="margin-bottom: 2rem;">Veja no carrossel abaixo os principais fatores comportamentais, suas manifestações na rotina das estradas e as implicações para a saúde das caminhoneiras e caminhoneiros.</p>
+          
+          <div class="carousel" style="--cr-color: var(--m4-primary);">
+
+            <!-- Overlay de navegação (setas + contador) -->
+            <div class="carousel__img-nav" aria-hidden="true">
+              <button class="carousel__prev" onclick="crNav(this,-1)"><i data-lucide="chevron-left"></i></button>
+              <button class="carousel__next" onclick="crNav(this,1)"><i data-lucide="chevron-right"></i></button>
+              <span class="carousel__counter">1 / 3</span>
+            </div>
+
+            <!-- SLIDE 1 -->
+            <div class="carousel__slide is-active">
+              <div class="carousel__img-wrap">
+                <img class="carousel__img" src="images/img01.png" alt="Comportamental">
+              </div>
+              <div class="carousel__caption">
+                <div class="carousel__caption-title">Comportamental</div>
+                <p class="carousel__caption-body">Categoria 1</p>
+              </div>
+
+              <!-- Botões com balões -->
+              <div class="carousel__actions">
+                <div class="carousel__btn-wrap">
+                  <button class="btn btn--m4-bright btn--sm" onclick="toggleCrPop(this,'cr-pop-1-1')">
+                    <i data-lucide="alert-triangle"></i> Fatores de risco
+                  </button>
+                  <div class="hs-popover" id="cr-pop-1-1">
+                    <button class="hs-popover__close" onclick="closeCrPop('cr-pop-1-1')"><i data-lucide="x"></i></button>
+                    <span class="hs-popover__badge" style="background-color: var(--m4-primary);">Fatores de risco</span>
+                    <div class="hs-popover__body">
+                      <ul style="margin: 0; padding-left: 1.1rem; line-height: 1.6;">
+                        <li>Alimentação inadequada</li>
+                        <li>Sedentarismo</li>
+                        <li>Tabagismo</li>
+                        <li>Consumo de álcool</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel__btn-wrap">
+                  <button class="btn btn--m4-bright btn--sm" onclick="toggleCrPop(this,'cr-pop-1-2')">
+                    <i data-lucide="truck"></i> Manifestação no contexto das estradas
+                  </button>
+                  <div class="hs-popover" id="cr-pop-1-2">
+                    <button class="hs-popover__close" onclick="closeCrPop('cr-pop-1-2')"><i data-lucide="x"></i></button>
+                    <span class="hs-popover__badge" style="background-color: var(--m4-primary);">Contexto das estradas</span>
+                    <div class="hs-popover__body">
+                      <ul style="margin: 0; padding-left: 1.1rem; line-height: 1.6;">
+                        <li>Refeições com baixa qualidade nutricional</li>
+                        <li>Longos períodos sem atividade física</li>
+                        <li>Uso de cigarro para lidar com o estresse</li>
+                        <li>Consumo de álcool em momentos de descanso</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel__btn-wrap">
+                  <button class="btn btn--m4-bright btn--sm" onclick="toggleCrPop(this,'cr-pop-1-3')">
+                    <i data-lucide="heart-pulse"></i> Implicações para a saúde
+                  </button>
+                  <div class="hs-popover" id="cr-pop-1-3">
+                    <button class="hs-popover__close" onclick="closeCrPop('cr-pop-1-3')"><i data-lucide="x"></i></button>
+                    <span class="hs-popover__badge" style="background-color: var(--m4-primary);">Implicações para a saúde</span>
+                    <div class="hs-popover__body">
+                      <ul style="margin: 0; padding-left: 1.1rem; line-height: 1.6;">
+                        <li>Aumento do risco de obesidade</li>
+                        <li>Hipertensão arterial</li>
+                        <li>Diabetes mellitus</li>
+                        <li>Doenças cardiovasculares</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 2 -->
+            <div class="carousel__slide">
+              <div class="carousel__img-wrap">
+                <img class="carousel__img" src="images/img02.png" alt="Ambiental">
+              </div>
+              <div class="carousel__caption">
+                <div class="carousel__caption-title">Ambiental</div>
+                <p class="carousel__caption-body">Categoria 2</p>
+              </div>
+
+              <!-- Botões com balões -->
+              <div class="carousel__actions">
+                <div class="carousel__btn-wrap">
+                  <button class="btn btn--m4-bright btn--sm" onclick="toggleCrPop(this,'cr-pop-2-1')">
+                    <i data-lucide="alert-triangle"></i> Fatores de risco
+                  </button>
+                  <div class="hs-popover" id="cr-pop-2-1">
+                    <button class="hs-popover__close" onclick="closeCrPop('cr-pop-2-1')"><i data-lucide="x"></i></button>
+                    <span class="hs-popover__badge" style="background-color: var(--m4-primary);">Fatores de risco</span>
+                    <div class="hs-popover__body">
+                      <ul style="margin: 0; padding-left: 1.1rem; line-height: 1.6;">
+                        <li>Poluição atmosférica</li>
+                        <li>Exposição solar prolongada</li>
+                        <li>Ruído constante</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel__btn-wrap">
+                  <button class="btn btn--m4-bright btn--sm" onclick="toggleCrPop(this,'cr-pop-2-2')">
+                    <i data-lucide="truck"></i> Manifestação no contexto das estradas
+                  </button>
+                  <div class="hs-popover" id="cr-pop-2-2">
+                    <button class="hs-popover__close" onclick="closeCrPop('cr-pop-2-2')"><i data-lucide="x"></i></button>
+                    <span class="hs-popover__badge" style="background-color: var(--m4-primary);">Contexto das estradas</span>
+                    <div class="hs-popover__body">
+                      <ul style="margin: 0; padding-left: 1.1rem; line-height: 1.6;">
+                        <li>Permanência em rodovias com alta emissão de poluentes</li>
+                        <li>Exposição ao sol enquanto dirigem e também durante carga/descarga</li>
+                        <li>Ambientes ruidosos e estressantes</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel__btn-wrap">
+                  <button class="btn btn--m4-bright btn--sm" onclick="toggleCrPop(this,'cr-pop-2-3')">
+                    <i data-lucide="heart-pulse"></i> Implicações para a saúde
+                  </button>
+                  <div class="hs-popover" id="cr-pop-2-3">
+                    <button class="hs-popover__close" onclick="closeCrPop('cr-pop-2-3')"><i data-lucide="x"></i></button>
+                    <span class="hs-popover__badge" style="background-color: var(--m4-primary);">Implicações para a saúde</span>
+                    <div class="hs-popover__body">
+                      <ul style="margin: 0; padding-left: 1.1rem; line-height: 1.6;">
+                        <li>Doenças respiratórias</li>
+                        <li>Câncer de pele</li>
+                        <li>Estresse crônico</li>
+                        <li>Perda Auditiva Induzida pelo Ruído (PAIR)</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- SLIDE 3 -->
+            <div class="carousel__slide">
+              <div class="carousel__img-wrap">
+                <img class="carousel__img" src="images/img03.png" alt="Ocupacional">
+              </div>
+              <div class="carousel__caption">
+                <div class="carousel__caption-title">Ocupacional</div>
+                <p class="carousel__caption-body">Categoria 3</p>
+              </div>
+
+              <!-- Botões com balões -->
+              <div class="carousel__actions">
+                <div class="carousel__btn-wrap">
+                  <button class="btn btn--m4-bright btn--sm" onclick="toggleCrPop(this,'cr-pop-3-1')">
+                    <i data-lucide="alert-triangle"></i> Fatores de risco
+                  </button>
+                  <div class="hs-popover" id="cr-pop-3-1">
+                    <button class="hs-popover__close" onclick="closeCrPop('cr-pop-3-1')"><i data-lucide="x"></i></button>
+                    <span class="hs-popover__badge" style="background-color: var(--m4-primary);">Fatores de risco</span>
+                    <div class="hs-popover__body">
+                      <ul style="margin: 0; padding-left: 1.1rem; line-height: 1.6;">
+                        <li>Jornadas prolongadas</li>
+                        <li>Privação de sono</li>
+                        <li>Estresse</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="carousel__btn-wrap">
+                  <button class="btn btn--m4-bright btn--sm" onclick="toggleCrPop(this,'cr-pop-3-2')">
+                    <i data-lucide="truck"></i> Manifestação no contexto das estradas
+                  </button>
+                  <div class="hs-popover" id="cr-pop-3-2">
+                    <button class="hs-popover__close" onclick="closeCrPop('cr-pop-3-2')"><i data-lucide="x"></i></button>
+                    <span class="hs-popover__badge" style="background-color: var(--m4-primary);">Contexto das estradas</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Bloco de Dica 1: Abordagem na prática -->
+        <section id="s4-2" class="block" style="scroll-margin-top:80px;margin-bottom: 4rem;">
+          <div class="bigbtns">
+            <button class="bigbtn bigbtn--dica" onclick="openModal('modalDica1')">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <!-- Bloco Saiba mais: Plano de DCNT -->
+        <section class="block" style="margin-bottom: 4rem;">
+          <div class="bigbtns">
+            <button class="bigbtn bigbtn--brand" onclick="openModal('modalSaibaMaisDcnt')">
+              <span class="bigbtn__icon"><i data-lucide="book-open"></i></span>
+              <span class="bigbtn__txt">
+                <span class="bigbtn__title">Saiba mais</span>
+              </span>
+              <span class="bigbtn__arrow"><i data-lucide="external-link"></i></span>
+            </button>
+          </div>
+        </section>
+
+        <!-- Bloco de Accordion: Principais agravos e doenças crônicas -->
+        <section class="block" style="margin-bottom: 4rem;">
+          <p class="block-note" style="margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.75; color: var(--fg1);">
+            Quando analisamos a saúde das caminhoneiras e dos caminhoneiros, um aspecto chama atenção: a elevada carga de DCNT, muitas vezes associadas entre si e, frequentemente, subdiagnosticadas. Mas, afinal, o que os estudos mostram sobre isso?
+          </p>
+          
+          <div class="accordion">
+            
+            <!-- Item 1: Hipertensão arterial (Aberto por padrão) -->
+            <details class="acc" open>
+              <summary>
+                <span class="acc__icon"><i data-lucide="activity"></i></span>
+                Hipertensão arterial
+                <span class="acc__chev"><i data-lucide="chevron-down"></i></span>
+              </summary>
+              <div class="acc__body">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </p>
+
+        <!-- Bloco: Alimentação e Atividade Física -->
+        <section id="s4-3" class="block" style="scroll-margin-top:80px;margin-bottom: 4rem;">
+          <div class="accordion">
+            
+            <!-- Item 1: Alimentação saudável possível (Aberto por padrão) -->
+            <details class="acc" open>
+              <summary>
+                <span class="acc__icon"><i data-lucide="utensils"></i></span>
+                Alimentação saudável possível
+                <span class="acc__chev"><i data-lucide="chevron-down"></i></span>
+              </summary>
+              <div class="acc__body">
+                <p>deve ser orientada considerando as limitações de oferta alimentar nas rodovias. Algumas estratégias viáveis são: priorizar refeições com alimentos <em>in natura</em> ou minimamente processados, quando disponíveis; reduzir consumo de frituras, ultraprocessados e bebidas açucaradas; incentivar hidratação regular; orientar planejamento alimentar, quando possível. O foco deve ser na melhoria progressiva, e não na perfeição alimentar.</p>
+              </div>
+            </details>
+
+            <!-- Item 2: Atividade física adaptada -->
+            <details class="acc">
+              <summary>
+                <span class="acc__icon"><i data-lucide="dumbbell"></i></span>
+                Atividade física adaptada
+                <span class="acc__chev"><i data-lucide="chevron-down"></i></span>
+              </summary>
+              <div class="acc__body">
+                <p>deve ser integrada à rotina da estrada. Algumas recomendações práticas são: alongamentos durante pausas; caminhadas curtas em paradas; movimentos simples fora do veículo. Mesmo as pequenas atividades contribuem para redução do risco cardiovascular, controle do peso e melhora do bem-estar. Para isso, a atividade física deve ser <strong>possível, breve e incorporada ao cotidiano</strong>.</p>
+              </div>
+            </details>
+
+          </div>
+        </section>
+
+        <!-- Bloco Saiba Mais: Vídeos de Caminhoneiras e Caminhoneiros (Inline com gradiente) -->
+        <section class="block" style="margin-bottom: 4rem;">
+          <div class="hbox" style="background: var(--grad-m4-brand); padding: 2rem;">
+            
+            <div class="hbox__row" style="margin-bottom: 1.5rem; align-items: flex-start;">
+              <span class="hbox__icon" style="background: rgba(255, 255, 255, 0.2); color: #fff; margin-top: 0;">
+                <i data-lucide="book-open"></i>
+              </span>
+              <div style="flex: 1;">
+                <div style="display: flex; align-items: center; min-height: 40px; margin-bottom: 0.5rem;">
+                  <span class="badge badge--orange" style="margin: 0;">Saiba mais</span>
+                </div>
+                <p style="margin: 0; color: #fff; font-size: 1.1rem; line-height: 1.6; font-weight: 500;">
+                  Há vários vídeos de caminhoneiras e caminhoneiros nas redes sociais, incentivando outros colegas de profissão a deixarem o sedentarismo e mostrando que, mesmo com uma jornada puxada, é possível implementar exercícios físicos na rotina diária. Inspire-se nas experiências compartilhadas por esses profissionais assistindo aos vídeos:
+                </p>
+              </div>
+            </div>
+
+            <!-- Lista de Vídeos / Botões -->
+            <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem; border-top: 1px solid rgba(255,255,255,0.15); padding-top: 1.5rem;">
+              
+              <!-- Vídeo 1 -->
+              <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                <button class="btn btn--ghost-light btn--sm" onclick="openModal('modalVideo1')">
+                  <i data-lucide="video"></i> Caminhoneiro QRA Sobrinho
+                </button>
+                <span class="badge" style="background: rgba(255,255,255,0.15); color: #fff; font-size: 0.75rem; border: 1px solid rgba(255,255,255,0.25);">4:26 min.</span>
+                <span style="color: rgba(255, 255, 255, 0.9); font-size: 0.95rem;">Caminhoneiro resolve fazer atividades físicas</span>
+              </div>
+
+              <!-- Vídeo 2 -->
+              <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                <button class="btn btn--ghost-light btn--sm" onclick="openModal('modalVideo2')">
+                  <i data-lucide="video"></i> Caminhoneiro Vinicius Amorim
+                </button>
+                <span class="badge" style="background: rgba(255,255,255,0.15); color: #fff; font-size: 0.75rem; border: 1px solid rgba(255,255,255,0.25);">12:30 min.</span>
+                <span style="color: rgba(255, 255, 255, 0.9); font-size: 0.95rem;">Treinando no caminhão - Caminhoneiro na Europa</span>
+              </div>
+
+              <!-- Vídeo 3 -->
+              <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                <button class="btn btn--ghost-light btn--sm" onclick="openModal('modalVideo3')">
+                  <i data-lucide="video"></i> Caminhoneiro Professor Truckado
+                </button>
+                <span class="badge" style="background: rgba(255,255,255,0.15); color: #fff; font-size: 0.75rem; border: 1px solid rgba(255,255,255,0.25);">5:56 min.</span>
+                <span style="color: rgba(255, 255, 255, 0.9); font-size: 0.95rem;">Exercícios físicos de um caminhoneiro</span>
+              </div>
+
+              <!-- Vídeo 4 -->
+              <div style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap;">
+                <button class="btn btn--ghost-light btn--sm" onclick="openModal('modalVideo4')">
+                  <i data-lucide="video"></i> Ginástica Laboral — Programa Brasil Saudável
+                </button>
+                <span style="color: rgba(255, 255, 255, 0.9); font-size: 0.95rem;">Exercícios para praticar durante o trabalho</span>
+              </div>
+
+            </div>
+
+          </div>
+        </section>
+
+        <!-- Destaque Textual: A continuidade do cuidado é um dos maiores desafios -->
+        <section class="block" style="margin-bottom: 4rem;">
+          <div class="hbox" style="background: var(--grad-m4-brand);">
+            <div class="hbox__row" style="align-items: center;">
+              <span class="hbox__icon" style="background: rgba(255, 255, 255, 0.15); color: #fff; flex-shrink: 0;"><i data-lucide="megaphone"></i></span>
+              <p style="margin: 0; color: #fff; font-size: 1.1rem; font-weight: 500; line-height: 1.6;">
+                A continuidade do cuidado é um dos maiores desafios nessa população. Para garanti-la, é necessário registro em prontuário eletrônico, orientação clara para seguimento, estímulo ao autocuidado e articulação com diferentes pontos da Rede de Atenção à Saúde local. O cuidado não pode depender apenas da presença física: ele precisa ser transferível e acessível.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ═══ ENCERRAMENTO ═══ -->
+        <section id="encerramento" class="block" style="scroll-margin-top:80px;margin-bottom:2rem">
+          <h2 class="block-title" style="color:var(--m4-primary-deep);margin-bottom:1.5rem">Encerramento do Módulo</h2>
+          <div class="encerramento-card" style="background:var(--grad-m4-brand);color:#fff">
+            <p>Neste módulo, você refletiu sobre os principais desafios no cuidado às caminhoneiras e aos caminhoneiros, considerando o perfil epidemiológico, a presença das Doenças Crônicas Não Transmissíveis — como Hipertensão Arterial, Diabetes Mellitus e Obesidade — e as estratégias de detecção precoce e manejo na Atenção Primária à Saúde.</p>
+            <p>Explorou também ações de promoção da saúde adaptadas à realidade das estradas, como orientações alimentares e práticas de atividade física viáveis para a rotina itinerante.</p>
+            <p style="margin:0">Cada consulta na APS representa uma janela de oportunidade única para vincular essa população ao cuidado integral e continuado. Esperamos que este módulo fortaleça sua prática e seu compromisso com a saúde de quem sustenta as estradas do Brasil.</p>
+          </div>
+        </section>
+
+        >
+
+      </main>
+  </div>
+
+  <!-- MODAL VÍDEO 1 -->
+  <div class="overlay" id="modalVideo1">
+    <div class="modal">
+      <div class="modal__head" style="background: var(--grad-m4-brand);">
+        <button class="modal__close" aria-label="Fechar" onclick="closeModal('modalVideo1')"><i data-lucide="x"></i></button>
+        <span class="badge badge--orange modal__kicker">Vídeo</span>
+        <div class="modal__title">Caminhoneiro QRA Sobrinho</div>
+        <div class="modal__author">Duração: 4:26 min.</div>
+      </div>
+            <p>Neste módulo, você refletiu sobre os principais desafios no cuidado às caminhoneiras e aos caminhoneiros, considerando o perfil epidemiológico, a presença das Doenças Crônicas Não Transmissíveis — como Hipertensão Arterial, Diabetes Mellitus e Obesidade — e as estratégias de detecção precoce e manejo na Atenção Primária à Saúde.</p>
+            <p>Explorou também ações de promoção da saúde adaptadas à realidade das estradas, como orientações alimentares e práticas de atividade física viáveis para a rotina itinerante.</p>
+            <p style="margin:0">Cada consulta na APS representa uma janela de oportunidade única para vincular essa população ao cuidado integral e continuado. Esperamos que este módulo fortaleça sua prática e seu compromisso com a saúde de quem sustenta as estradas do Brasil.</p>
+          </div>
+        </section>
+
+        <!-- ═══ REFERÊNCIAS BIBLIOGRÁFICAS ═══ -->
+        <section id="referencias" class="block" style="scroll-margin-top:80px;margin-bottom:2rem">
+          <h2 class="block-title" style="color:var(--m4-primary-deep);margin-bottom:1.5rem">Referências Bibliográficas</h2>
+          <ol style="padding-left:1.5rem;display:flex;flex-direction:column;gap:.85rem;color:var(--fg2);font-size:.88rem;line-height:1.65;">
+          <li style="padding-left:.25rem">BRASIL. Ministério da Saúde. Portaria nº 2.336, de 21 de setembro de 2017. Aprova a Política Nacional de Atenção Básica, estabelecendo a revisão de diretrizes para a organização da Atenção Básica, no âmbito do Sistema Único de Saúde (SUS). <em>Diário Oficial da União</em>: seção 1, Brasília, DF, 22 set. 2017. Disponível em: <a href="https://bvsms.saude.gov.br/bvs/saudelegis/gm/2017/prt2436_22_09_2017.html" target="_blank" rel="noopener noreferrer">https://bvsms.saude.gov.br/bvs/saudelegis/gm/2017/prt2436_22_09_2017.html.</a> Acesso em: 20 fev. 2026.</li>
+          <li style="padding-left:.25rem">BRASIL. Ministério da Saúde. Secretaria de Atenção à Saúde. <em>Estratégias para o cuidado da pessoa com doença crônica</em>. Brasília, DF: Ministério da Saúde, 2014. (Cadernos de Atenção Básica, n. 35). Disponível em: <a href="https://bvsms.saude.gov.br/bvs/publicacoes/estrategias_cuidado_pessoa_doenca_cronica_cab35.pdf" target="_blank" rel="noopener noreferrer">https://bvsms.saude.gov.br/bvs/publicacoes/estrategias_cuidado_pessoa_doenca_cronica_cab35.pdf.</a> Acesso em: 20 fev. 2026.</li>
+          <li style="padding-left:.25rem">BRASIL. Ministério da Saúde. Secretaria de Vigilância em Saúde. <em>Plano de Ações Estratégicas para o Enfrentamento das Doenças Crônicas e Agravos não Transmissíveis no Brasil 2021–2030</em>. Brasília, DF: Ministério da Saúde, 2021a. Disponível em: <a href="https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/doencas-cronicas-nao-transmissiveis-dcnt/09-plano-de-dant-2022_2030.pdf" target="_blank" rel="noopener noreferrer">www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/doencas-cronicas-nao-transmissiveis-dcnt/09-plano-de-dant-2022_2030.pdf.</a> Acesso em: 20 fev. 2026.</li>
+          <li style="padding-left:.25rem">BRASIL. Ministério da Saúde. Secretaria de Atenção Primária à Saúde. <em>Manual de atenção às pessoas com sobrepeso e obesidade no âmbito da Atenção Primária à Saúde do Sistema Único de Saúde</em>. Brasília, DF: Ministério da Saúde, 2021b. Disponível em: <a href="https://bvsms.saude.gov.br/bvs/publicacoes/manual_atencao_pessoas_sobrepeso_obesidade.pdf" target="_blank" rel="noopener noreferrer">https://bvsms.saude.gov.br/bvs/publicacoes/manual_atencao_pessoas_sobrepeso_obesidade.pdf.</a> Acesso em: 1 mar. 2026.</li>
+          <li style="padding-left:.25rem">BRASIL. Ministério da Saúde. <em>Protocolo Clínico e Diretrizes Terapêuticas Diabete Melito Tipo 2</em>. Brasília, DF: Ministério da Saúde, 2022. Disponível em: <a href="https://www.gov.br/saude/pt-br/assuntos/pcdt/d/diabete-melito-tipo-2.pdf/view" target="_blank" rel="noopener noreferrer">www.gov.br/saude/pt-br/assuntos/pcdt/d/diabete-melito-tipo-2.pdf/view.</a> Acesso em: 20 fev. 2026.</li>
+          <li style="padding-left:.25rem">BRASIL. Instituto Nacional de Câncer (INCA). <em>Câncer de pele não melanoma</em>. Rio de Janeiro: INCA, atualizado em 27 maio 2025. Disponível em: <a href="https://www.gov.br/inca/pt-br/assuntos/cancer/tipos/pele-nao-melanoma" target="_blank" rel="noopener noreferrer">www.gov.br/inca/pt-br/assuntos/cancer/tipos/pele-nao-melanoma.</a> Acesso em: 15 maio 2026.</li>
+          <li style="padding-left:.25rem">CHILDHOOD BRASIL. <em>O Perfil do Caminhoneiro Brasileiro</em>. 5. ed. São Paulo: Childhood Brasil; Programa Na Mão Certa, 2025. Disponível em: <a href="https://namaocerta.org.br/pesquisas-e-publicacoes/o-perfil-do-caminhoneiro-brasileiro-2025/" target="_blank" rel="noopener noreferrer">https://namaocerta.org.br/pesquisas-e-publicacoes/o-perfil-do-caminhoneiro-brasileiro-2025/.</a> Acesso em: 20 fev. 2026.</li>
+          <li style="padding-left:.25rem">KRISHNAMOORTHY, Y.; SARVESWARAN, G.; SAKTHIVEL, M. Prevalence of hypertension among professional drivers: Evidence from 2000 to 2017: A systematic review and meta-analysis. <em>Journal of Postgraduated Medicine</em>, v. 66, n. 2, p. 81–89, 2020. Disponível em: <a href="https://journals.lww.com/jopm/fulltext/2020/66020/prevalence_of_hypertension_among_professional.6.aspx" target="_blank" rel="noopener noreferrer">https://journals.lww.com/jopm/fulltext/2020/66020/prevalence_of_hypertension_among_professional.6.aspx.</a> Acesso em: 20 maio 2026.</li>
+          <li style="padding-left:.25rem">REIS, L. A. P. et al. Obesity, hypertension and diabetes among truck drivers in the middle-west, Brazil. <em>Bioscience Journal</em>, Uberlândia, v. 33, n. 2, p. 485–493, 2017. Disponível em: <a href="https://www.researchgate.net/publication/315920374_Obesity_hypertension_and_diabetes_among_truck_drivers_in_the_middle-west_Brazil" target="_blank" rel="noopener noreferrer">www.researchgate.net/publication/315920374_Obesity_hypertension_and_diabetes_among_truck_drivers_in_the_middle-west_Brazil.</a> Acesso em: 20 maio 2026.</li>
+          <li style="padding-left:.25rem">SBD (SOCIEDADE BRASILEIRA DE DIABETES). <em>Diretriz da Sociedade Brasileira de Diabetes – Edição 2025</em>. [S. l.], 2025. Disponível em: <a href="https://diretriz.diabetes.org.br/" target="_blank" rel="noopener noreferrer">https://diretriz.diabetes.org.br/.</a> Acesso em: 20 maio 2026.</li>
+          <li style="padding-left:.25rem">ZAMPARONI VICTORINO, S. V. et al. A look through Latin America truck drivers' health, a systematic review and meta-analysis. <em>BMC Public Health</em>, v. 23, 2023. Disponível em: <a href="https://link.springer.com/article/10.1186/s12889-022-14902-2" target="_blank" rel="noopener noreferrer">https://link.springer.com/article/10.1186/s12889-022-14902-2.</a> Acesso em: 20 maio 2026.</li>
+          </ol>
+        </section>
+
+      </main>
+  </div>
+
+  <!-- MODAL VÍDEO 1 -->
+  <div class="overlay" id="modalVideo1">
+    <div class="modal">
+      <div class="modal__head" style="background: var(--grad-m4-brand);">
+        <button class="modal__close" aria-label="Fechar" onclick="closeModal('modalVideo1')"><i data-lucide="x"></i></button>
+        <span class="badge badge--orange modal__kicker">Vídeo</span>
+        <div class="modal__title">Caminhoneiro QRA Sobrinho</div>
+        <div class="modal__author">Duração: 4:26 min.</div>
+            Seu navegador não suporta a exibição de vídeos.
+          </video>
+        </div>
+
+        <div class="modal__actions" style="margin-top: 1.5rem; justify-content: flex-end; display: flex;">
+          <button class="btn btn--m4-ghost" onclick="closeModal('modalVideo1')">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL VÍDEO 2 -->
+  <div class="overlay" id="modalVideo2">
+    <div class="modal">
+      <div class="modal__head" style="background: var(--grad-m4-brand);">
+        <button class="modal__close" aria-label="Fechar" onclick="closeModal('modalVideo2')"><i data-lucide="x"></i></button>
+        <span class="badge badge--orange modal__kicker">Vídeo</span>
+        <div class="modal__title">Caminhoneiro Vinicius Amorim</div>
+        <div class="modal__author">Duração: 12:30 min.</div>
+      </div>
+      <div class="modal__body" style="padding: 1.25rem;">
+        <p style="margin-bottom: 1rem; font-weight: 500; color: var(--fg1); font-size: 0.98rem;">Treinando no caminhão - Caminhoneiro na Europa</p>
+
+        <!-- Video Player -->
+        <div class="video-wrapper" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; border-radius: var(--r-sm); box-shadow: var(--sh-md);">
+          <video controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" poster="">
+            <source src="media/treinando_no_caminhao_vinicius_amorim.mp4" type="video/mp4">
+            Seu navegador não suporta a exibição de vídeos.
+          </video>
+        </div>
+
+        <div class="modal__actions" style="margin-top: 1.5rem; justify-content: flex-end; display: flex;">
+          <button class="btn btn--m4-ghost" onclick="closeModal('modalVideo2')">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL VÍDEO 3 -->
+  <div class="overlay" id="modalVideo3">
+    <div class="modal">
+      <div class="modal__head" style="background: var(--grad-m4-brand);">
+        <button class="modal__close" aria-label="Fechar" onclick="closeModal('modalVideo3')"><i data-lucide="x"></i></button>
+        <span class="badge badge--orange modal__kicker">Vídeo</span>
+        <div class="modal__title">Caminhoneiro Professor Truckado</div>
+        <div class="modal__author">Duração: 5:56 min.</div>
+      </div>
+      <div class="modal__body" style="padding: 1.25rem;">
+        <p style="margin-bottom: 1rem; font-weight: 500; color: var(--fg1); font-size: 0.98rem;">Exercícios físicos de um caminhoneiro</p>
+
+        <!-- Video Player -->
+        <div class="video-wrapper" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; border-radius: var(--r-sm); box-shadow: var(--sh-md);">
+          <video controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" poster="">
+            <source src="media/exercicios_fisicos_professor_truckado.mp4" type="video/mp4">
+            Seu navegador não suporta a exibição de vídeos.
+          </video>
+        </div>
+
+        <!-- Video Player -->
+        <div class="video-wrapper" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; border-radius: var(--r-sm); box-shadow: var(--sh-md);">
+          <video controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" poster="">
+            <source src="media/exercicios_fisicos_professor_truckado.mp4" type="video/mp4">
+            Seu navegador não suporta a exibição de vídeos.
+          </video>
+        </div>
+
+        <div class="modal__actions" style="margin-top: 1.5rem; justify-content: flex-end; display: flex;">
+          <button class="btn btn--m4-ghost" onclick="closeModal('modalVideo3')">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL VÍDEO 4 -->
+  <div class="overlay" id="modalVideo4">
+    <div class="modal">
+      <div class="modal__head" style="background: var(--grad-m4-brand);">
+        <button class="modal__close" aria-label="Fechar" onclick="closeModal('modalVideo4')"><i data-lucide="x"></i></button>
+        <span class="badge badge--orange modal__kicker">Vídeo</span>
+        <div class="modal__title">Ginástica Laboral — Programa Brasil Saudável</div>
+        <div class="modal__author">Exercícios para praticar durante o trabalho</div>
+      </div>
+      <div class="modal__body" style="padding: 1.25rem;">
+        <p style="margin-bottom: 1rem; font-weight: 500; color: var(--fg1); font-size: 0.98rem;">Vídeo de autoria do Programa Brasil Saudável com exercícios de ginástica laboral adaptados ao contexto da estrada.</p>
+
+        <!-- Video Player -->
+        <div class="video-wrapper" style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: #000; border-radius: var(--r-sm); box-shadow: var(--sh-md);">
+          <video controls style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0;" poster="">
+            <source src="media/gincana_laboral_brasil_saudavel.mp4" type="video/mp4">
+            Seu navegador não suporta a exibição de vídeos.
+          </video>
+        </div>
+
+        <div class="modal__actions" style="margin-top: 1.5rem; justify-content: flex-end; display: flex;">
+          <button class="btn btn--m4-ghost" onclick="closeModal('modalVideo4')">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL SOBREPOSTO (REFLEXÃO) -->
+  <div class="overlay" id="modalReflexao">
+    <div class="modal">
+      <div class="modal__head" style="background: var(--grad-m4-brand);">
+        <button class="modal__close" aria-label="Fechar" onclick="closeModal('modalReflexao')"><i data-lucide="x"></i></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL SOBREPOSTO (DICA 1) -->
+  <div class="overlay" id="modalDica1">
+    <div class="modal">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="modal__body">
+        <p>Aprofunde seus conhecimentos lendo o Plano De Ações Estratégicas Para o Enfrentamento das Doenças Crônicas e Agravos não Transmissíveis no Brasil 2021-2030. Um excelente material elaborado pelo Departamento de Análise em Saúde e Vigilância de Doenças Não Transmissíveis.</p>
+        <div class="modal__actions" style="margin-top: 1.8rem; justify-content: flex-start; display: flex; gap: 0.75rem;">
+          <a class="btn btn--m4" href="https://www.gov.br/saude/pt-br/centrais-de-conteudo/publicacoes/svsa/doencas-cronicas-nao-transmissiveis-dcnt/09-plano-de-dant-2022_2030.pdf" target="_blank" rel="noopener noreferrer"><i data-lucide="external-link"></i> Acessar o PDF</a>
+          <button class="btn btn--m4-ghost" onclick="closeModal('modalSaibaMaisDcnt')">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL SOBREPOSTO (SAIBA MAIS - PROTOCOLOS CARDIOLOGIA/DIABETES) -->
+  <div class="overlay" id="modalSaibaMaisAbc">
+    <div class="modal">
+      <div class="modal__head" style="background: var(--grad-m4-brand);">
+        <button class="modal__close" aria-label="Fechar" onclick="closeModal('modalSaibaMaisAbc')"><i data-lucide="x"></i></button>
+        <span class="badge badge--orange modal__kicker">Saiba mais</span>
+        <div class="modal__title">Protocolos e Guia de Diagnóstico</div>
+      </div>
+      <div class="modal__body">
+        <p>Aprofunde seus conhecimentos sobre o diagnóstico de HAS, dislipidemias e diabetes mellitus, acessando os conteúdos da Associação Brasileira de Cardiologia atualizado em 2020. Lá, estão detalhados os protocolos e guias para diagnóstico, manejo e tratamento.</p>
+        <div class="modal__actions" style="margin-top: 1.8rem; justify-content: flex-start; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+        </div>
+
+        <div class="modal__actions" style="margin-top: 1.8rem; justify-content: flex-start; display: flex;">
+          <button class="btn btn--m4-ghost" onclick="closeModal('modalDica2')">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL SOBREPOSTO (SAIBA MAIS - PLANO DCNT) -->
+  <div class="overlay" id="modalSaibaMaisDcnt">
+    <div class="modal">
+      <div class="modal__head" style="background: var(--grad-m4-brand);">
+        <button class="modal__close" aria-label="Fechar" onclick="closeModal('modalSaibaMaisDcnt')"><i data-lucide="x"></i></button>
+        <span class="badge badge--orange modal__kicker">Saiba mais</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <span class="badge badge--orange modal__kicker">Saiba mais</span>
+        <div class="modal__title">Protocolos e Guia de Diagnóstico</div>
+      </div>
+      <div class="modal__body">
+        <p>Aprofunde seus conhecimentos sobre o diagnóstico de HAS, dislipidemias e diabetes mellitus, acessando os conteúdos da Associação Brasileira de Cardiologia atualizado em 2020. Lá, estão detalhados os protocolos e guias para diagnóstico, manejo e tratamento.</p>
+        <div class="modal__actions" style="margin-top: 1.8rem; justify-content: flex-start; display: flex; gap: 0.75rem; flex-wrap: wrap;">
+          <a class="btn btn--m4" href="https://abccardiol.org/" target="_blank" rel="noopener noreferrer"><i data-lucide="external-link"></i> Acesse ABC Cardiol</a>
+          <a class="btn btn--m4" href="http://departamentos.cardiol.br/sbc-dha/profissional/pdf/Diretriz-HAS-2020.pdf" target="_blank" rel="noopener noreferrer"><i data-lucide="external-link"></i> Acesse Diretriz HAS 2020</a>
+          <a class="btn btn--m4" href="https://www.gov.br/saude/pt-br/composicao/saps/ecv/publicacoes/protocolo-clinico-de-diretrizes-terapeuticas-pcdt-para-diabetes-mellitus-tipo-ii" target="_blank" rel="noopener noreferrer"><i data-lucide="external-link"></i> Protocolo Clínico</a>
+          <button class="btn btn--m4-ghost" onclick="closeModal('modalSaibaMaisAbc')">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Créditos -->
+  <div class="overlay" id="modalCreditos">
+    <div class="modal">
+      <div class="modal__head" style="background:var(--grad-m4-brand);color:#fff">
+        <button class="modal__close" onclick="closeModal('modalCreditos')" aria-label="Fechar"><i data-lucide="x"></i></button>
+        <span class="badge badge--soft modal__kicker">Módulo IV</span>
+        <div class="modal__title" style="color:#fff">Créditos</div>
+      </div>
+      <div class="modal__body">
+        <p style="font-weight:700;color:var(--fg1);margin-bottom:.5rem">Autores</p>
+        <p style="color:var(--fg2);margin-bottom:1.2rem">Dijon Hosana Souza Silva<br>Alessandra Aparecida Vieira Machado</p>
+        <p style="font-weight:700;color:var(--fg1);margin-bottom:.5rem">Instituição</p>
+        <p style="color:var(--fg2);margin-bottom:1.2rem">Fiocruz Mato Grosso do Sul</p>
+        <p style="font-weight:700;color:var(--fg1);margin-bottom:.5rem">Curso</p>
+        <p style="color:var(--fg2)">Atenção à Saúde da Caminhoneira e Caminhoneiro na Atenção Primária</p>
+        <div class="modal__actions" style="justify-content:flex-end">
+          <button class="btn btn--m4-ghost" onclick="closeModal('modalCreditos')">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Instruções -->
+  <div class="overlay" id="modalInstrucoes">
+    <div class="modal">
+      <div class="modal__head" style="background:var(--grad-m4-brand);color:#fff">
+        <button class="modal__close" onclick="closeModal('modalInstrucoes')" aria-label="Fechar"><i data-lucide="x"></i></button>
+        <span class="badge badge--soft modal__kicker">Como usar</span>
+        <div class="modal__title" style="color:#fff">Instruções de navegação</div>
+      </div>
+      <div class="modal__body">
+        <ul style="margin:0;padding-left:1.2rem;line-height:1.7;display:flex;flex-direction:column;gap:.7rem;color:var(--fg2)">
+          <li>Use o <strong>menu lateral esquerdo</strong> para navegar entre as seções do módulo.</li>
+          <li>Explore o <strong>carrossel</strong> para conhecer os fatores de risco à saúde dos caminhoneiros.</li>
+          <li>Clique nos <strong>acordeões</strong> para expandir informações sobre HAS, DM2 e outras condições.</li>
+          <li>Os botões <strong>Dica e Saiba mais</strong> abrem conteúdos complementares em janelas sobrepostas.</li>
+          <li>A <strong>barra de progresso</strong> no topo indica quanto do módulo você já percorreu.</li>
+          <li>A carga horária estimada para este módulo é de <strong>07 horas</strong>.</li>
+        </ul>
+        <div class="modal__actions" style="justify-content:flex-end">
+          <button class="btn btn--m4-ghost" onclick="closeModal('modalInstrucoes')">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- MODAL SOBREPOSTO (DICA 2) -->
+  <div class="overlay" id="modalDica2">
+    <div class="modal">
+      <div class="modal__head" style="background: var(--grad-m4-brand);">
+        <button class="modal__close" aria-label="Fechar" onclick="closeModal('modalDica2')"><i data-lucide="x"></i></button>
+        <span class="badge badge--orange modal__kicker">Dica 2</span>
+        <div class="modal__title">Estratégias de abordagem na prática</div>
+      </div>
+      <div class="modal__body">
+        <p>Veja algumas estratégias possíveis:</p>
+        <div style="margin-top: 1rem; display: flex; flex-direction: column; gap: 1.25rem;">
+          <div style="border-left: 3px solid var(--m4-primary); padding-left: 1rem;">
+            <p style="margin: 0 0 0.4rem; font-weight: 700; color: var(--fg1);">✔ 1. Negociar, em vez de prescrever</p>
+            <p style="margin: 0 0 0.5rem; color: var(--fg2);">Em vez de orientar mudanças rígidas, busque construir acordos possíveis:</p>
+            <ul style="margin: 0; padding-left: 1.2rem; color: var(--fg2); line-height: 1.6;">
+              <li><em>"Dentro da sua rotina, o que você acha que conseguiria mudar primeiro?"</em></li>
+              <li><em>"Entre essas opções, qual seria mais viável para você na estrada?"</em></li>
+            </ul>
+            <p style="margin: 0.5rem 0 0; font-size: 0.95rem; color: var(--fg3);">Isso aumenta a adesão e respeita a autonomia do paciente.</p>
+          </div>
+          <div style="border-left: 3px solid var(--m4-primary); padding-left: 1rem;">
+            <p style="margin: 0 0 0.4rem; font-weight: 700; color: var(--fg1);">✔ 2. Adaptar a alimentação à realidade da estrada</p>
+            <p style="margin: 0 0 0.5rem; color: var(--fg2);">Em vez de recomendar "alimentação ideal", oriente escolhas possíveis, como:</p>
+            <ul style="margin: 0; padding-left: 1.2rem; color: var(--fg2); line-height: 1.6;">
+              <li style="margin-bottom: 0.3rem;">Priorizar refeições como arroz, feijão e proteína, quando disponíveis;</li>
+              <li style="margin-bottom: 0.3rem;">Evitar excesso de frituras sempre que possível;</li>
+              <li style="margin-bottom: 0.3rem;">Incentivar o consumo de água ao longo do dia;</li>
+              <li>Sugerir a redução progressiva do número de cigarros e, também, sugerir fortemente o uso do álcool apenas nos momentos de descanso prolongados ou em casa.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="modal__actions" style="margin-top: 1.8rem; justify-content: flex-start; display: flex;">
+          <button class="btn btn--m4-ghost" onclick="closeModal('modalDica2')">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Botão voltar ao topo -->
+  <button id="backToTop" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Voltar ao topo" style="background:var(--m4-primary);color:#fff">
+    <i data-lucide="chevron-up"></i>
+  </button>
+
+  <!-- Sidebar toggle (hambúrguer — visível apenas no mobile) -->
+  <button class="sidebar-toggle" onclick="openSidebar()" aria-label="Abrir menu de navegação" style="background:var(--m4-primary);color:#fff">
+    <i data-lucide="menu"></i>
+  </button>
+
+  <!-- Overlay da sidebar (mobile) -->
+  <div id="sidebarOverlay" class="sidebar-overlay" onclick="closeSidebar()"></div>
+
+  <!-- Lucide e Script de Progresso -->
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="js/scripts.min.js"></script>
+
+</body>
+</html>

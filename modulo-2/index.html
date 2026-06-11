@@ -1,0 +1,1338 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Módulo 2 - Cuidado Integral nas Infecções Sexualmente Transmissíveis (IST)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Mukta:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.min.css">
+</head>
+<body>
+
+  <!-- Barra de Progresso Superior -->
+  <div class="progress-rail" id="progressRail">
+    <div class="progress-fill" id="progressFill"></div>
+  </div>
+
+  <!-- HERO WRAP (Largura total da página) -->
+  <div class="hero-wrap" id="home">
+    <div class="hero-nav" style="--hn-color: var(--m2-primary)">
+      <div class="hero-nav__inner">
+        <span class="hero-nav__badge"><i data-lucide="graduation-cap"></i> Curso</span>
+        <span class="hero-nav__name">ATENÇÃO À SAÚDE DA CAMINHONEIRA E CAMINHONEIRO NA ATENÇÃO PRIMÁRIA</span>
+      </div>
+    </div>
+    
+    <!-- M2 Azul (fundo escuro - --hb-text: #ffffff) -->
+    <div class="hero-body" style="background: var(--grad-m2-hero); --hb-text: #ffffff;">
+      <div class="hero-body__inner">
+        <div class="hero-body__content" style="min-height: auto; padding: 0;">
+          <div>
+            <span class="hero__kicker"><i data-lucide="graduation-cap"></i> MÓDULO 2</span>
+            <h2 class="hero__title" style="margin-top: 0.8rem; margin-bottom: 2rem; color: #ffffff;">Cuidado Integral nas Infecções<br>Sexualmente Transmissíveis (IST)</h2>
+          </div>
+          <div class="hero__btns">
+            <button class="btn btn--ghost-light" onclick="openModal('modalCreditos')"><i data-lucide="users"></i> Créditos</button>
+            <button class="btn btn--ghost-light" onclick="openModal('modalInstrucoes')"><i data-lucide="info"></i> Instruções</button>
+            <button class="btn btn--cta" onclick="document.getElementById('apresentacao').scrollIntoView({behavior:'smooth'})"><i data-lucide="play"></i> Iniciar</button>
+          </div>
+        </div>
+        <div class="hero-body__logo">
+          <img src="images/logo-fundo-escuro.png" alt="Logo">
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Layout com Sidebar -->
+  <div class="page-layout">
+    <aside class="sidebar">
+      <nav class="sidebar-nav" aria-label="Navegação do módulo">
+        <div class="sidebar-nav__header">Módulo 2</div>
+        <a class="sidebar-nav__link" href="#apresentacao">Apresentação</a>
+        <a class="sidebar-nav__link" href="#s2-1">2.1 IST mais comuns</a>
+        <a class="sidebar-nav__link" href="#s2-2">2.2 Epidemiologia</a>
+        <a class="sidebar-nav__link" href="#s2-3">2.3 Testagem Rápida</a>
+        <a class="sidebar-nav__link" href="#s2-4">2.5 Métodos de Prevenção</a>
+        <a class="sidebar-nav__link" href="#s2-5">2.7 Abordagem Sindrômica</a>
+        <a class="sidebar-nav__link" href="#encerramento">Encerramento</a>
+        <a class="sidebar-nav__link" href="#referencias">Referências</a>
+      </nav>
+      <div class="sidebar-badge">
+        <span class="sidebar-badge__icon"><i data-lucide="clock"></i></span>
+        <div>
+          <span class="sidebar-badge__label">Carga Horária</span>
+          <span class="sidebar-badge__value">07 horas</span>
+        </div>
+      </div>
+    </aside>
+    <main>
+
+      <!-- SEÇÃO: Apresentação do Módulo -->
+      <section id="apresentacao" style="scroll-margin-top:80px;margin-bottom:4rem;">
+        <div style="padding-bottom:0.75rem;border-bottom:2px solid var(--border);margin-bottom:1.6rem;">
+          <h2 style="font-family:var(--font-display);font-weight:800;font-size:1.5rem;color:var(--m2-primary-deep);margin:0;">Apresentação do Módulo</h2>
+        </div>
+        <div class="intro-card" style="border-left-color:var(--m2-primary);">
+          <p>Agora que você já conhece a realidade e os principais desafios enfrentados pelo público caminhoneiro, damos boas-vindas ao Módulo II! Aqui, convidamos você a aprofundar seus conhecimentos sobre o cuidado integral à caminhoneira e ao caminhoneiro nas Infecções Sexualmente Transmissíveis (IST).</p>
+          <p>Ao longo do módulo, serão abordados aspectos relacionados à epidemiologia, prevenção, diagnóstico, manejo clínico e estratégias de ampliação do acesso aos serviços de saúde. A proposta é fortalecer sua atuação na promoção da saúde, contribuindo para o diagnóstico precoce, o tratamento oportuno e a redução das vulnerabilidades no contexto das estradas.</p>
+          <p>Assim, esse é o momento de dar o próximo passo: que tal iniciar este módulo com um olhar atento e comprometido com a realidade das estradas? Ao avançar, você terá a oportunidade de refletir sobre sua prática e ampliar seu potencial de cuidado. Vamos começar?</p>
+        </div>
+        <h3 style="font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:var(--m2-primary-deep);margin:2rem 0 1rem;">Objetivos de Aprendizagem</h3>
+        <ul class="obj-list">
+          <li><span class="obj-list__icon" style="background:var(--m2-primary);"><i data-lucide="check"></i></span>Conhecer os aspectos epidemiológicos das IST e hepatites virais, incluindo prevalências, fatores de risco e vulnerabilidades associadas à alta mobilidade geográfica.</li>
+          <li><span class="obj-list__icon" style="background:var(--m2-primary);"><i data-lucide="check"></i></span>Identificar estratégias de ampliação de acesso e oferta das testagens para IST na população caminhoneira.</li>
+          <li><span class="obj-list__icon" style="background:var(--m2-primary);"><i data-lucide="check"></i></span>Reconhecer a importância do cuidado integral às pessoas diagnosticadas com IST e hepatites virais.</li>
+          <li><span class="obj-list__icon" style="background:var(--m2-primary);"><i data-lucide="check"></i></span>Compreender a relevância do acesso às diferentes tecnologias de prevenção de IST, incluindo a PrEP e a PEP.</li>
+          <li><span class="obj-list__icon" style="background:var(--m2-primary);"><i data-lucide="check"></i></span>Reconhecer os protocolos de manejo, fluxos de notificação e vigilância epidemiológica que garantem a continuidade do cuidado.</li>
+        </ul>
+      </section>
+
+      <!-- SEÇÃO 2.1: IST mais comuns -->
+      <!-- BLOCO: Informações importantes sobre a sífilis -->
+      <section id="s2-1" class="block" style="scroll-margin-top:80px;margin-bottom: 4rem;">
+        <h2 class="block-title" style="margin-bottom: 2rem; font-size: 1.7rem; color: var(--m2-primary-deep);">Informações importantes sobre a sífilis</h2>
+        
+        <div class="fc-grid">
+          <!-- Card 1: Sinais e sintomas -->
+          <div class="fc" onclick="this.classList.toggle('is-flipped')" style="--fc-grad: var(--grad-m2-brand); --fc-accent: var(--m2-primary-deep);">
+            <div class="fc__inner">
+              <!-- FRENTE -->
+              <div class="fc__front">
+                <i data-lucide="eye"></i>
+                <span class="fc__front-title">Sinais e sintomas</span>
+                <span class="fc__hint"><i data-lucide="refresh-cw"></i> virar</span>
+              </div>
+              <!-- VERSO -->
+              <div class="fc__back">
+                <div class="fc__back-label">Módulo 2 · Sífilis</div>
+                <div class="fc__back-content">Os sinais e sintomas surgem e desaparecem, mas a doença continua no corpo e, sem tratamento, pode evoluir para complicações.</div>
+                <div class="fc__back-hint"><i data-lucide="refresh-cw"></i> virar</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2: Cura -->
+          <div class="fc" onclick="this.classList.toggle('is-flipped')" style="--fc-grad: var(--grad-m2-brand); --fc-accent: var(--m2-primary-deep);">
+            <div class="fc__inner">
+              <!-- FRENTE -->
+              <div class="fc__front">
+                <i data-lucide="shield-check"></i>
+                <span class="fc__front-title">Cura</span>
+                <span class="fc__hint"><i data-lucide="refresh-cw"></i> virar</span>
+              </div>
+              <!-- VERSO -->
+              <div class="fc__back">
+                <div class="fc__back-label">Módulo 2 · Sífilis</div>
+                <div class="fc__back-content"><strong>A sífilis tem CURA!</strong><br><br>Mas, como não existe imunidade protetora, os indivíduos que foram curados podem se reinfectar se tiverem contato com o treponema novamente.</div>
+                <div class="fc__back-hint"><i data-lucide="refresh-cw"></i> virar</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3: Pessoas sexualmente ativas -->
+          <div class="fc" onclick="this.classList.toggle('is-flipped')" style="--fc-grad: var(--grad-m2-brand); --fc-accent: var(--m2-primary-deep);">
+            <div class="fc__inner">
+              <!-- FRENTE -->
+              <div class="fc__front">
+                <i data-lucide="heart"></i>
+                <span class="fc__front-title">Pessoas sexualmente ativas</span>
+                <span class="fc__hint"><i data-lucide="refresh-cw"></i> virar</span>
+              </div>
+              <!-- VERSO -->
+              <div class="fc__back">
+                <div class="fc__back-label">Módulo 2 · Sífilis</div>
+                <div class="fc__back-content">Pessoas sexualmente ativas devem realizar a testagem de rotina.<br><br>Todos(as) os(as) parceiros(as) sexuais devem ser tratados para evitar reinfecção caso tenham contato com o treponema novamente.</div>
+                <div class="fc__back-hint"><i data-lucide="refresh-cw"></i> virar</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOCO: Estágios e manifestações da sífilis -->
+      <section class="block" style="margin-bottom: 4rem;">
+        <h2 class="block-title" style="margin-bottom: 2rem; font-size: 1.7rem; color: var(--m2-primary-deep);">Estágios e manifestações clínicas da sífilis</h2>
+        
+        <div class="tabs" style="--tab-color: var(--m2-primary);">
+          <!-- Barra de abas -->
+          <div class="tabs__nav" role="tablist" style="margin-bottom: 1.5rem;">
+            <button class="tabs__tab is-active" type="button" role="tab" aria-selected="true" aria-controls="tab-m2-1" onclick="switchTab(this,'tab-m2-1')" style="padding: 0.8rem 1.5rem;">
+              <i data-lucide="clock" style="width: 1.35rem; height: 1.35rem; stroke-width: 2.2;"></i>
+              <div style="display: flex; flex-direction: column; text-align: left; line-height: 1.25;">
+                <span style="font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; display: block;">Sífilis recente</span>
+                <span style="font-family: var(--font-body); font-weight: 400; font-size: 0.8rem; opacity: 0.85; display: block;">(menos de 2 anos de duração)</span>
+              </div>
+            </button>
+            <button class="tabs__tab" type="button" role="tab" aria-selected="false" aria-controls="tab-m2-2" onclick="switchTab(this,'tab-m2-2')" style="padding: 0.8rem 1.5rem;">
+              <i data-lucide="hourglass" style="width: 1.35rem; height: 1.35rem; stroke-width: 2.2;"></i>
+              <div style="display: flex; flex-direction: column; text-align: left; line-height: 1.25;">
+                <span style="font-family: var(--font-display); font-weight: 700; font-size: 1.05rem; display: block;">Sífilis tardia</span>
+                <span style="font-family: var(--font-body); font-weight: 400; font-size: 0.8rem; opacity: 0.85; display: block;">(mais de 2 anos de duração)</span>
+              </div>
+            </button>
+          </div>
+
+          <!-- Painel 1: Sífilis recente -->
+          <div class="tabs__panel is-active" id="tab-m2-1" role="tabpanel">
+            <!-- Subtitulo 1: Manifestações clínicas -->
+            <h3 style="font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: var(--m2-primary-deep); margin-bottom: 1.2rem; border-bottom: 2px solid var(--border); padding-bottom: 0.4rem;">Manifestações clínicas</h3>
+            
+            <div style="display: grid; grid-template-columns: 1fr; gap: 1.25rem; margin-bottom: 2.5rem;">
+              <!-- Primária -->
+              <div style="background: #ffffff; border: 1px solid var(--border); border-radius: var(--r-md); padding: 1.25rem; box-shadow: var(--sh-sm);">
+                <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+                  <span class="badge" style="background: var(--m2-primary); color: #fff;">Primária</span>
+                </div>
+                <ul style="margin: 0; padding-left: 1.2rem; line-height: 1.6; color: var(--fg2);">
+                  <li style="margin-bottom: 0.4rem;">Úlcera genital única (cancro duro) indolor, com base endurecida e fundo limpo.</li>
+                  <li style="margin-bottom: 0.4rem;">Aparece em órgãos genitais e extragenitais.</li>
+                  <li style="margin-bottom: 0;">Linfonodos regionais indolores que não formam úlceras.</li>
+                </ul>
+              </div>
+
+              <!-- Secundária -->
+              <div style="background: #ffffff; border: 1px solid var(--border); border-radius: var(--r-md); padding: 1.25rem; box-shadow: var(--sh-sm);">
+                <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+                  <span class="badge" style="background: var(--m2-primary); color: #fff;">Secundária</span>
+                </div>
+                <ul style="margin: 0; padding-left: 1.2rem; line-height: 1.6; color: var(--fg2);">
+                  <li style="margin-bottom: 0.4rem;">Lesões cutaneomucosas sintomáticas (indolores e não pruriginosas).</li>
+                  <li style="margin-bottom: 0.4rem;">Sintomas gerais (mal-estar, anorexia, cefaleia, artralgia, febre) e micropoliadenopatia (íngua).</li>
+                  <li style="margin-bottom: 0.4rem;">Pode acometer olhos (uveíte), rins (síndrome nefrótica), fígado, baço, coração, ossos, articulação e SNC.</li>
+                  <li style="margin-bottom: 0;">Latente recente.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Subtitulo 2: Estágios da sífilis adquirida -->
+            <h3 style="font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: var(--m2-primary-deep); margin-bottom: 1.2rem; border-bottom: 2px solid var(--border); padding-bottom: 0.4rem;">Estágios da sífilis adquirida</h3>
+            
+            <div style="display: grid; grid-template-columns: 1fr; gap: 1.25rem;">
+              <!-- Estágio Primário (Infectante) -->
+              <div style="background: #ffffff; border: 1px solid var(--border); border-radius: var(--r-md); padding: 1.25rem; box-shadow: var(--sh-sm);">
+                <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+                  <span class="badge" style="background: var(--cta-orange); color: #fff;"><i data-lucide="info" style="width:1em; height:1em;"></i> Infectante</span>
+                </div>
+                <p style="margin: 0; font-size: 0.95rem; color: var(--fg2); line-height: 1.6;">
+                  O cancro duro surge, em média, três semanas após o contato, e desaparece sem cicatriz em 2 a 6 semanas, com ou sem tratamento.
+                </p>
+              </div>
+
+              <!-- Estágio Secundário (Infectante) -->
+              <div style="background: #ffffff; border: 1px solid var(--border); border-radius: var(--r-md); padding: 1.25rem; box-shadow: var(--sh-sm);">
+                <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+                  <span class="badge" style="background: var(--cta-orange); color: #fff;"><i data-lucide="info" style="width:1em; height:1em;"></i> Infectante</span>
+                </div>
+                <p style="margin: 0 0 0.8rem; font-size: 0.95rem; color: var(--fg2); line-height: 1.6;">
+                  As lesões aparecem de 6 semanas a 6 meses após o contato, e desaparecem espontaneamente, sem cicatrizes, em 4 a 12 semanas. Podem reaparecer na fase latente, em intervalos não definidos.
+                </p>
+                <div style="border-top: 1px solid var(--border); padding-top: 0.8rem;">
+                  <p style="margin: 0; font-size: 0.95rem; color: var(--fg2); line-height: 1.6;">
+                    Assintomática com reaparecimento das lesões da sífilis secundária.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Painel 2: Sífilis tardia -->
+          <div class="tabs__panel" id="tab-m2-2" role="tabpanel">
+            <!-- Subtitulo 1: Manifestações clínicas -->
+            <h3 style="font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: var(--m2-primary-deep); margin-bottom: 1.2rem; border-bottom: 2px solid var(--border); padding-bottom: 0.4rem;">Manifestações clínicas</h3>
+            
+            <div style="display: grid; grid-template-columns: 1fr; gap: 1.25rem; margin-bottom: 2.5rem;">
+              <!-- Terciária -->
+              <div style="background: #ffffff; border: 1px solid var(--border); border-radius: var(--r-md); padding: 1.25rem; box-shadow: var(--sh-sm);">
+                <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+                  <span class="badge" style="background: var(--m2-primary); color: #fff;">Terciária</span>
+                </div>
+                <ul style="margin: 0; padding-left: 1.2rem; line-height: 1.6; color: var(--fg2);">
+                  <li style="margin-bottom: 0.4rem;">Quadro cutâneo destrutivo e formação de gomas sifilíticas que podem ocorrer em qualquer órgão.</li>
+                  <li style="margin-bottom: 0.4rem;">Acometimento cardiovascular, neurológico e ósseo.</li>
+                  <li style="margin-bottom: 0;">Latente tardia.</li>
+                </ul>
+              </div>
+            </div>
+
+            <!-- Subtitulo 2: Estágios da sífilis adquirida -->
+            <h3 style="font-family: var(--font-display); font-weight: 700; font-size: 1.25rem; color: var(--m2-primary-deep); margin-bottom: 1.2rem; border-bottom: 2px solid var(--border); padding-bottom: 0.4rem;">Estágios da sífilis adquirida</h3>
+            
+            <div style="display: grid; grid-template-columns: 1fr; gap: 1.25rem;">
+              <!-- Pouco infectante -->
+              <div style="background: #ffffff; border: 1px solid var(--border); border-radius: var(--r-md); padding: 1.25rem; box-shadow: var(--sh-sm);">
+                <div style="display: flex; align-items: center; gap: 0.6rem; margin-bottom: 0.8rem;">
+                  <span class="badge" style="background: var(--m2-accent); color: var(--m2-primary-deep); font-weight: 700;"><i data-lucide="shield" style="width:1em; height:1em;"></i> Pouco infectante</span>
+                </div>
+                <ul style="margin: 0; padding-left: 1.2rem; line-height: 1.6; color: var(--fg2);">
+                  <li style="margin-bottom: 0.4rem;">Aparecem de 2 a 40 anos após o contato.</li>
+                  <li style="margin-bottom: 0;">Assintomática.</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOCO: Saiba mais (Curso AVASUS) -->
+      <section class="block" style="margin-top: 3rem; margin-bottom: 4rem;">
+        <div class="bigbtns">
+          <button class="bigbtn bigbtn--brand" onclick="openModal('modalCursoAvasus')">
+            <span class="bigbtn__icon"><i data-lucide="book-open"></i></span>
+            <span class="bigbtn__txt">
+              <span class="bigbtn__title">Saiba mais</span>
+            </span>
+            <span class="bigbtn__arrow"><i data-lucide="external-link"></i></span>
+          </button>
+        </div>
+      </section>
+
+      <!-- BLOCO: Carrossel de ISTs -->
+      <section class="block" style="margin-bottom: 4rem;">
+        <h2 class="block-title" style="margin-bottom: 2rem; font-size: 1.7rem; color: var(--m2-primary-deep);">Infecções Sexualmente Transmissíveis</h2>
+        
+        <div class="carousel" style="--cr-color: var(--m2-primary);">
+          <!-- Overlay de navegação (setas + contador) -->
+          <div class="carousel__img-nav" aria-hidden="true">
+            <button class="carousel__prev" onclick="crNav(this,-1)"><i data-lucide="chevron-left"></i></button>
+            <button class="carousel__next" onclick="crNav(this,1)"><i data-lucide="chevron-right"></i></button>
+             <span class="carousel__counter">1 / 5</span>
+          </div>
+
+          <!-- SLIDE 1 (Uretrite / Corrimento uretral) -->
+          <div class="carousel__slide is-active">
+            <div class="carousel__img-wrap">
+              <img class="carousel__img" src="images/microorganismos_img1.png" alt="Síndrome/IST associada">
+              <span class="carousel__img-badge carousel__img-badge--left"><i>Neisseria gonorrhoeae</i></span>
+              <span class="carousel__img-badge carousel__img-badge--right"><i>Chlamydia trachomatis</i></span>
+            </div>
+            <div class="carousel__caption">
+              <div class="carousel__caption-title">Corrimento uretral (gonorreia e clamídia)</div>
+              <p class="carousel__caption-body">Síndrome/IST associada</p>
+            </div>
+
+            <!-- Botões com balões -->
+            <div class="carousel__actions">
+              <!-- Agente(s) etiológico(s) -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-1-1')">
+                  Agente(s) etiológico(s)
+                </button>
+                <div class="hs-popover" id="cr-pop-1-1">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-1-1')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Agente(s) etiológico(s)</span>
+                  <div class="hs-popover__body">
+                    Neisseria gonorrhoeae e Chlamydia trachomatis
+                  </div>
+                </div>
+              </div>
+
+              <!-- Transmissão -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-1-2')">
+                  Transmissão
+                </button>
+                <div class="hs-popover" id="cr-pop-1-2">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-1-2')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Transmissão</span>
+                  <div class="hs-popover__body">
+                    <ul style="margin: 0; padding-left: 1.1rem; line-height: 1.5;">
+                      <li style="margin-bottom: 0.3rem;">Contato sexual com secreções infectadas.</li>
+                      <li>Contato da mãe para a criança (perinatal).</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Principais sintomas/órgãos acometidos -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-1-3')">
+                  Principais sintomas/órgãos acometidos
+                </button>
+                <div class="hs-popover" id="cr-pop-1-3">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-1-3')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Principais sintomas/órgãos</span>
+                  <div class="hs-popover__body">
+                    <ul style="margin: 0; padding-left: 1.1rem; line-height: 1.5;">
+                      <li style="margin-bottom: 0.4rem;">Secreção purulenta no epitélio da uretra e colo uterino (endocervicite), faringe, reto (relação oral ou anal) e/ou conjuntiva.</li>
+                      <li>Quando não tratadas, podem evoluir para doença inflamatória pélvica (DIP), gravidez ectópica e infertilidade nas mulheres, epididimite unilateral, prostatite e infertilidade nos homens, ou infecção gonocócica disseminada (IGD).</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Curiosidades -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-1-4')">
+                  Curiosidades
+                </button>
+                <div class="hs-popover" id="cr-pop-1-4">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-1-4')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Curiosidades</span>
+                  <div class="hs-popover__body">
+                    <ul style="margin: 0; padding-left: 1.1rem; line-height: 1.5;">
+                      <li style="margin-bottom: 0.3rem;">A maioria das mulheres são assintomáticas (cerca de 90%).</li>
+                      <li>Nos homens, as taxas variam de 56% a 87%, sendo a uretrite aguda a manifestação mais comum.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tratamento -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-1-5')">
+                  Tratamento
+                </button>
+                <div class="hs-popover" id="cr-pop-1-5">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-1-5')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Tratamento</span>
+                  <div class="hs-popover__body">
+                    <ul style="margin: 0; padding-left: 1.1rem; line-height: 1.5;">
+                      <li style="margin-bottom: 0.3rem;">Tratamento empírico com ceftriaxona + azitromicina/doxiciclina.</li>
+                      <li>Quanto à gonorreia, a resistência farmacológica é um problema crescente.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Referência -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-1-6')">
+                  Referência
+                </button>
+                <div class="hs-popover" id="cr-pop-1-6">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-1-6')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Referência</span>
+                  <div class="hs-popover__body">
+                    <ul style="margin: 0; padding-left: 1.1rem; line-height: 1.5;">
+                      <li style="margin-bottom: 0.2rem;">Handsfield; Sparling, 1995.</li>
+                      <li style="margin-bottom: 0.2rem;">Rowley et. al., 2019.</li>
+                      <li>Brasil, 2022.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 2 (Úlcera genital) -->
+          <div class="carousel__slide">
+            <div class="carousel__img-wrap">
+              <img class="carousel__img" src="images/microorganismos_img2.png" alt="Síndrome/IST associada">
+              <span class="carousel__img-badge carousel__img-badge--left"><i>Haemophilus ducreyi</i></span>
+              <span class="carousel__img-badge carousel__img-badge--right"><i>Herpes simplex</i></span>
+            </div>
+            <div class="carousel__caption">
+              <div class="carousel__caption-title">Úlcera genital (cancro mole e herpes genital)</div>
+              <p class="carousel__caption-body">Síndrome/IST associada</p>
+            </div>
+
+            <!-- Botões com balões -->
+            <div class="carousel__actions">
+              <!-- Agente(s) etiológico(s) -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-2-1')">
+                  Agente(s) etiológico(s)
+                </button>
+                <div class="hs-popover" id="cr-pop-2-1">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-2-1')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Agente(s) etiológico(s)</span>
+                  <div class="hs-popover__body">
+                    Haemophilus ducreyi e Vírus do Herpes simplex (HSV)
+                  </div>
+                </div>
+              </div>
+
+              <!-- Transmissão -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-2-2')">
+                  Transmissão
+                </button>
+                <div class="hs-popover" id="cr-pop-2-2">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-2-2')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Transmissão</span>
+                  <div class="hs-popover__body">
+                    Contato com a superfície cutânea (oral e/ou genital).
+                  </div>
+                </div>
+              </div>
+
+              <!-- Principais sintomas/órgãos acometidos -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-2-3')">
+                  Principais sintomas/órgãos acometidos
+                </button>
+                <div class="hs-popover" id="cr-pop-2-3">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-2-3')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Principais sintomas/órgãos</span>
+                  <div class="hs-popover__body">
+                    <ul style="margin: 0; padding-left: 1.1rem; line-height: 1.5;">
+                      <li style="margin-bottom: 0.4rem;">Após 3–7 dias de incubação, surgem pequenas pápulas dolorosas na pele genital ou mucosas, que rapidamente se rompem, formando úlceras múltiplas, acompanhadas ou não de dor, ardor, prurido, drenagem de material mucopurulento, sangramento e linfadenopatia regional.</li>
+                      <li>No cancro, as lesões podem apresentar exsudato necrótico, amarelado e com odor fétido.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Curiosidades -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-2-4')">
+                  Curiosidades
+                </button>
+                <div class="hs-popover" id="cr-pop-2-4">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-2-4')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Curiosidades</span>
+                  <div class="hs-popover__body">
+                    <ul style="margin: 0; padding-left: 1.1rem; line-height: 1.5;">
+                      <li style="margin-bottom: 0.3rem;">O cancro é mais comum em homens, e provoca úlceras cutâneas na pele e nas mucosas genitais.</li>
+                      <li>Tanto o HSV‐1 quanto o HSV‐2 podem causar lesões genitais, devido ao aumento de práticas sexuais orais sem proteção; entretanto, o HSV-2 é mais frequentemente associado à recorrência.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tratamento -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-2-5')">
+                  Tratamento
+                </button>
+                <div class="hs-popover" id="cr-pop-2-5">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-2-5')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Tratamento</span>
+                  <div class="hs-popover__body">
+                    Tratamento com antivirais (HSV) e/ou antibióticos (azitromicina/ceftriaxona).
+                  </div>
+                </div>
+              </div>
+
+              <!-- Referência -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-2-6')">
+                  Referência
+                </button>
+                <div class="hs-popover" id="cr-pop-2-6">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-2-6')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Referência</span>
+                  <div class="hs-popover__body">
+                    <ul style="margin: 0; padding-left: 1.1rem; line-height: 1.5;">
+                      <li style="margin-bottom: 0.2rem;">Brasil, 2016.</li>
+                      <li>Sauerbrei, 2016.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 3 (Corrimento vaginal/cervicite) -->
+          <div class="carousel__slide">
+            <div class="carousel__img-wrap">
+              <img class="carousel__img" src="images/microorganismos_img3.png" alt="Síndrome/IST associada">
+              <span class="carousel__img-badge carousel__img-badge--left"><i>Chlamydia trachomatis</i></span>
+              <span class="carousel__img-badge carousel__img-badge--center"><i>Neisseria gonorrhoeae</i></span>
+              <span class="carousel__img-badge carousel__img-badge--right"><i>Trichomonas vaginalis</i></span>
+            </div>
+            <div class="carousel__caption">
+              <div class="carousel__caption-title">Corrimento vaginal/cervicite</div>
+              <p class="carousel__caption-body">Síndrome/IST associada</p>
+            </div>
+
+            <!-- Botões com balões -->
+            <div class="carousel__actions">
+              <!-- Agente(s) etiológico(s) -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-3-1')">
+                  Agente(s) etiológico(s)
+                </button>
+                <div class="hs-popover" id="cr-pop-3-1">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-3-1')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Agente(s) etiológico(s)</span>
+                  <div class="hs-popover__body">
+                    Chlamydia trachomatis, Neisseria gonorrhoeae e Trichomonas vaginalis.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Transmissão -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-3-2')">
+                  Transmissão
+                </button>
+                <div class="hs-popover" id="cr-pop-3-2">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-3-2')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Transmissão</span>
+                  <div class="hs-popover__body">
+                    Contato sexual.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Principais sintomas/órgãos acometidos -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-3-3')">
+                  Principais sintomas/órgãos acometidos
+                </button>
+                <div class="hs-popover" id="cr-pop-3-3">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-3-3')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Principais sintomas/órgãos</span>
+                  <div class="hs-popover__body">
+                    <ul style="margin: 0; padding-left: 1.1rem; line-height: 1.5;">
+                      <li style="margin-bottom: 0.4rem;">Corrimento vaginal intenso, amarelo-esverdeado, por vezes acinzentado, bolhoso e espumoso, acompanhado de odor com presença de microulcerações que dão ao colo uterino um aspecto de morango ou framboesa.</li>
+                      <li>Dor pélvica e sangramento.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Curiosidades -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-3-4')">
+                  Curiosidades
+                </button>
+                <div class="hs-popover" id="cr-pop-3-4">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-3-4')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Curiosidades</span>
+                  <div class="hs-popover__body">
+                    <ul style="margin: 0; padding-left: 1.1rem; line-height: 1.5;">
+                      <li style="margin-bottom: 0.3rem;">Infecta mais mulheres do que homens.</li>
+                      <li style="margin-bottom: 0.3rem;">Pode ser assintomática.</li>
+                      <li>Coinfecção com gonorreia e outras IST é um achado comum.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tratamento -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-3-5')">
+                  Tratamento
+                </button>
+                <div class="hs-popover" id="cr-pop-3-5">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-3-5')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Tratamento</span>
+                  <div class="hs-popover__body">
+                    Tratamento conforme avaliação clínica e fatores de risco; pode incluir ceftriaxona, azitromicina/doxiciclina e metronidazol (via oral).
+                  </div>
+                </div>
+              </div>
+
+              <!-- Referência -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-3-6')">
+                  Referência
+                </button>
+                <div class="hs-popover" id="cr-pop-3-6">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-3-6')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Referência</span>
+                  <div class="hs-popover__body">
+                    Rowley et. al., 2019.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 4 (Verrugas anogenitais) -->
+          <div class="carousel__slide">
+            <div class="carousel__img-wrap">
+              <img class="carousel__img" src="images/microorganismos_img4.png" alt="Síndrome/IST associada">
+              <span class="carousel__img-badge carousel__img-badge--left"><i>Papilomavírus humano (HPV)</i></span>
+            </div>
+            <div class="carousel__caption">
+              <div class="carousel__caption-title">Verrugas anogenitais (HPV)</div>
+              <p class="carousel__caption-body">Síndrome/IST associada</p>
+            </div>
+
+            <!-- Botões com balões -->
+            <div class="carousel__actions">
+              <!-- Agente(s) etiológico(s) -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-4-1')">
+                  Agente(s) etiológico(s)
+                </button>
+                <div class="hs-popover" id="cr-pop-4-1">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-4-1')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Agente(s) etiológico(s)</span>
+                  <div class="hs-popover__body">
+                    Papilomavírus humano (HPV)
+                  </div>
+                </div>
+              </div>
+
+              <!-- Transmissão -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-4-2')">
+                  Transmissão
+                </button>
+                <div class="hs-popover" id="cr-pop-4-2">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-4-2')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Transmissão</span>
+                  <div class="hs-popover__body">
+                    <ul style="margin: 0; padding-left: 1.1rem; line-height: 1.5;">
+                      <li style="margin-bottom: 0.3rem;">Contato direto (pele ou mucosa infectada).</li>
+                      <li>Contato indireto (superfícies contaminadas).</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Principais sintomas/órgãos acometidos -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-4-3')">
+                  Principais sintomas/órgãos acometidos
+                </button>
+                <div class="hs-popover" id="cr-pop-4-3">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-4-3')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Principais sintomas/órgãos</span>
+                  <div class="hs-popover__body">
+                    <ul style="margin: 0; padding-left: 1.1rem; line-height: 1.5;">
+                      <li style="margin-bottom: 0.4rem;">Pode causar desde manifestações subclínicas, passando por várias doenças benignas da pele e mucosas, e culminando com lesões pré‐malignas e neoplasias.</li>
+                      <li>As verrugas na região genital e anal são conhecidas como condilomas acuminados.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Curiosidades -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-4-4')">
+                  Curiosidades
+                </button>
+                <div class="hs-popover" id="cr-pop-4-4">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-4-4')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Curiosidades</span>
+                  <div class="hs-popover__body">
+                    <ul style="margin: 0; padding-left: 1.1rem; line-height: 1.5;">
+                      <li style="margin-bottom: 0.4rem;">Há mais de 200 tipos que infectam humanos.</li>
+                      <li>Os tipos 16 e 18 são de alto risco oncogênico: responsáveis por, aproximadamente, 70% dos cânceres cervicais, além de outros cânceres como de vulva, vagina, pênis, ânus e orofaringe.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tratamento -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-4-5')">
+                  Tratamento
+                </button>
+                <div class="hs-popover" id="cr-pop-4-5">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-4-5')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Tratamento</span>
+                  <div class="hs-popover__body">
+                    Conheça mais sobre tratamento e vacinação acessando o curso <a href="https://avasus.ufrn.br/local/avasplugin/cursos/curso.php?id=386" target="_blank" rel="noopener noreferrer" style="color: var(--m2-primary); text-decoration: underline; font-weight: 700;">“Infecção pelo HPV”</a>, de 3 horas, elaborado pela UFRN/UNA-SUS em 2020.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Referência -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-4-6')">
+                  Referência
+                </button>
+                <div class="hs-popover" id="cr-pop-4-6">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-4-6')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Referência</span>
+                  <div class="hs-popover__body">
+                    <ul style="margin: 0; padding-left: 1.1rem; line-height: 1.5;">
+                      <li style="margin-bottom: 0.2rem;">Magalhães et al., 2021.</li>
+                      <li>Brasil, 2024a.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- SLIDE 5 (IST viral sistêmica - HTLV-1) -->
+          <div class="carousel__slide">
+            <div class="carousel__img-wrap">
+              <img class="carousel__img" src="images/microorganismos_img5.png" alt="Síndrome/IST associada">
+              <span class="carousel__img-badge carousel__img-badge--left"><i>Vírus T-linfotrópico humano tipo 1</i></span>
+            </div>
+            <div class="carousel__caption">
+              <div class="carousel__caption-title">IST viral sistêmica (HTLV-1)</div>
+              <p class="carousel__caption-body">Síndrome/IST associada</p>
+            </div>
+
+            <!-- Botões com balões -->
+            <div class="carousel__actions">
+              <!-- Agente(s) etiológico(s) -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-5-1')">
+                  Agente(s) etiológico(s)
+                </button>
+                <div class="hs-popover" id="cr-pop-5-1">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-5-1')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Agente(s) etiológico(s)</span>
+                  <div class="hs-popover__body">
+                    Vírus T-linfotrópico humano tipo 1
+                  </div>
+                </div>
+              </div>
+
+              <!-- Transmissão -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-5-2')">
+                  Transmissão
+                </button>
+                <div class="hs-popover" id="cr-pop-5-2">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-5-2')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Transmissão</span>
+                  <div class="hs-popover__body">
+                    <ul style="margin: 0; padding-left: 1.1rem; line-height: 1.5;">
+                      <li style="margin-bottom: 0.3rem;">Contato com sangue.</li>
+                      <li style="margin-bottom: 0.3rem;">Contato sexual.</li>
+                      <li>De mãe para filho (durante gestação, parto ou amamentação).</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Principais sintomas/órgãos acometidos -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-5-3')">
+                  Principais sintomas/órgãos acometidos
+                </button>
+                <div class="hs-popover" id="cr-pop-5-3">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-5-3')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Principais sintomas/órgãos</span>
+                  <div class="hs-popover__body">
+                    <ul style="margin: 0; padding-left: 1.1rem; line-height: 1.5;">
+                      <li style="margin-bottom: 0.4rem;">Geralmente assintomática.</li>
+                      <li>Pode causar doenças graves como a leucemia/linfoma de células T adulto (LTA) e mielopatia associada ao HTLV (HAM), além de outros quadros inflamatórios como uveíte e dermatites.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Curiosidades -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-5-4')">
+                  Curiosidades
+                </button>
+                <div class="hs-popover" id="cr-pop-5-4">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-5-4')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Curiosidades</span>
+                  <div class="hs-popover__body">
+                    O Brasil é o país com maior número absoluto de pessoas vivendo com HTLV (PVHTLV) no mundo.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Tratamento -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-5-5')">
+                  Tratamento
+                </button>
+                <div class="hs-popover" id="cr-pop-5-5">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-5-5')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Tratamento</span>
+                  <div class="hs-popover__body">
+                    <ul style="margin: 0; padding-left: 1.1rem; line-height: 1.5;">
+                      <li style="margin-bottom: 0.4rem;">Não existe vacina nem tratamento que proporcione a cura.</li>
+                      <li>A adoção de medidas de controle e prevenção, similares às do HIV, são essenciais para interromper a transmissão.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Referência -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-5-6')">
+                  Referência
+                </button>
+                <div class="hs-popover" id="cr-pop-5-6">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-5-6')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Referência</span>
+                  <div class="hs-popover__body">
+                    Brasil, 2022.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Dots -->
+          <div class="carousel__dots">
+            <button class="carousel__dot is-active" onclick="crGoTo(this,0)"></button>
+            <button class="carousel__dot" onclick="crGoTo(this,1)"></button>
+            <button class="carousel__dot" onclick="crGoTo(this,2)"></button>
+            <button class="carousel__dot" onclick="crGoTo(this,3)"></button>
+                </div>
+              </div>
+
+              <!-- Tratamento -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-5-5')">
+                  Tratamento
+                </button>
+                <div class="hs-popover" id="cr-pop-5-5">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-5-5')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Tratamento</span>
+                  <div class="hs-popover__body">
+                    <ul style="margin: 0; padding-left: 1.1rem; line-height: 1.5;">
+                      <li style="margin-bottom: 0.4rem;">Não existe vacina nem tratamento que proporcione a cura.</li>
+                      <li>A adoção de medidas de controle e prevenção, similares às do HIV, são essenciais para interromper a transmissão.</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Referência -->
+              <div class="carousel__btn-wrap">
+                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-5-6')">
+                  Referência
+                </button>
+                <div class="hs-popover" id="cr-pop-5-6">
+                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-5-6')"><i data-lucide="x"></i></button>
+                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Referência</span>
+                  <div class="hs-popover__body">
+                    Brasil, 2022.
+                  <path d="M0,0 L0,6 L9,3 Z" fill="#428C84" />
+                </marker>
+              </defs>
+              <!-- Arrow Lines -->
+              <line x1="400" y1="220" x2="400" y2="135" stroke="#DE6847" stroke-width="4" marker-end="url(#arrow-n1)" />
+              <line x1="480" y1="240" x2="550" y2="205" stroke="#C84E5F" stroke-width="4" marker-end="url(#arrow-n2)" />
+              <line x1="480" y1="310" x2="550" y2="345" stroke="#A35272" stroke-width="4" marker-end="url(#arrow-n3)" />
+              <line x1="400" y1="330" x2="400" y2="415" stroke="#7F6291" stroke-width="4" marker-end="url(#arrow-n4)" />
+              <line x1="320" y1="310" x2="250" y2="345" stroke="#557497" stroke-width="4" marker-end="url(#arrow-n5)" />
+              <line x1="320" y1="240" x2="250" y2="205" stroke="#428C84" stroke-width="4" marker-end="url(#arrow-n6)" />
+            </svg>
+
+            <!-- Central Hub -->
+            <div class="vuln-hub-center">
+              PESSOAS CAMINHONEIRAS
+            </div>
+
+            <!-- Surrounding Nodes -->
+            <div class="vuln-node vuln-node--1">
+              Múltiplos parceiros sexuais
+            </div>
+            <div class="vuln-node vuln-node--2">
+              Antecedente prisional
+            </div>
+            <div class="vuln-node vuln-node--3">
+              Uso irregular preservativo
+            </div>
+            <div class="vuln-node vuln-node--4">
+              Consumo de álcool/drogas ilícitas
+            </div>
+            <div class="vuln-node vuln-node--5">
+              Baixa percepção de vulnerabilidade às ISTs
+            </div>
+            <div class="vuln-node vuln-node--6">
+              Relações sexuais com profissionais do sexo
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOCO: Saiba Mais (Prevalências) -->
+      <section class="block" style="margin-bottom: 4rem;">
+        <div class="bigbtns">
+          <button class="bigbtn bigbtn--brand" onclick="openModal('modalPrevalencias')">
+            <span class="bigbtn__icon"><i data-lucide="book-open"></i></span>
+            <span class="bigbtn__txt">
+              <span class="bigbtn__title">Saiba mais</span>
+            </span>
+            <span class="bigbtn__arrow"><i data-lucide="chevron-right"></i></span>
+          </button>
+        </div>
+      </section>
+
+      <!-- BLOCO: Etapas do Processo de Testagem Rápida -->
+      <section id="s2-3" class="block" style="scroll-margin-top:80px;margin-bottom: 4rem;">
+        <h2 class="block-title" style="margin-bottom: 2rem; font-size: 1.7rem; color: var(--m2-primary-deep);">Etapas da testagem rápida</h2>
+        
+        <div class="tabs" style="--tab-color: var(--m2-primary);">
+          <!-- Barra de abas -->
+          <div class="tabs__nav" role="tablist" style="margin-bottom: 1.5rem;">
+            <button class="tabs__tab is-active" type="button" role="tab" aria-selected="true" aria-controls="tab-test-1" onclick="switchTab(this,'tab-test-1')" style="padding: 0.8rem 1.5rem; font-size: 1.05rem;">
+              <i data-lucide="clipboard-list" style="width: 1.35rem; height: 1.35rem; stroke-width: 2.2;"></i>
+              Pré-teste
+            </button>
+            <button class="tabs__tab" type="button" role="tab" aria-selected="false" aria-controls="tab-test-2" onclick="switchTab(this,'tab-test-2')" style="padding: 0.8rem 1.5rem; font-size: 1.05rem;">
+              <i data-lucide="flask-conical" style="width: 1.35rem; height: 1.35rem; stroke-width: 2.2;"></i>
+              Teste
+            </button>
+            <button class="tabs__tab" type="button" role="tab" aria-selected="false" aria-controls="tab-test-3" onclick="switchTab(this,'tab-test-3')" style="padding: 0.8rem 1.5rem; font-size: 1.05rem;">
+              <i data-lucide="clipboard-check" style="width: 1.35rem; height: 1.35rem; stroke-width: 2.2;"></i>
+              Pós-teste
+            </button>
+          </div>
+
+          <!-- Painel 1: Pré-teste -->
+          <div class="tabs__panel is-active" id="tab-test-1" role="tabpanel">
+            <p style="margin: 0; color: var(--fg2); line-height: 1.75; font-size: 1.025rem;">Os procedimentos de pré-teste envolvem um conjunto de etapas que devem ser realizadas antes da execução do teste rápido para garantir segurança, qualidade e acolhimento adequado ao usuário. Nessa fase, é necessário que o profissional esteja capacitado, verifique os componentes e a validade dos kits, assegure o armazenamento correto dos insumos e organize adequadamente a área de trabalho com todos os materiais necessários. Também inclui o acolhimento do usuário de forma cordial e sigilosa, esclarecendo dúvidas, explicando como será realizada a coleta e o tempo para obtenção do resultado. Além disso, devem ser investigados aspectos importantes do histórico da pessoa, como exposições de risco, testagens anteriores e possibilidade de janela imunológica, bem como fornecer orientações sobre prevenção, possibilidade de resultados reagentes ou não reagentes e os encaminhamentos necessários após a testagem.</p>
+          </div>
+
+          <!-- Painel 2: Teste -->
+          <div class="tabs__panel" id="tab-test-2" role="tabpanel">
+            <p style="margin: 0; color: var(--fg2); line-height: 1.75; font-size: 1.025rem;">A etapa de testagem corresponde à execução do teste rápido propriamente dita e deve ser realizada seguindo rigorosamente as orientações do fabricante e os protocolos do serviço de saúde. Inicialmente, o profissional deve utilizar os equipamentos de proteção individual (EPI) e preparar o dispositivo de teste, identificando-o corretamente. Em seguida, realiza-se a coleta da amostra, geralmente por punção digital, garantindo o volume adequado de sangue e evitando contaminações ou presença de bolhas de ar na pipeta coletora. A amostra é aplicada no dispositivo e o diluente é adicionado conforme as instruções do kit. É fundamental controlar o tempo de leitura indicado pelo fabricante e, quando mais de um teste for realizado, respeitar a sequência e os volumes de amostra específicos de cada teste, garantindo a qualidade e a confiabilidade dos resultados.</p>
+          </div>
+
+          <!-- Painel 3: Pós-teste -->
+          <div class="tabs__panel" id="tab-test-3" role="tabpanel">
+            <p style="margin: 0; color: var(--fg2); line-height: 1.75; font-size: 1.025rem;">A etapa de pós-teste envolve a interpretação dos resultados, a comunicação ao usuário e os encaminhamentos necessários na rede de atenção à saúde. O profissional deve verificar a presença da linha de controle para confirmar a validade do teste e interpretar o resultado como reagente ou não reagente conforme as linhas observadas no dispositivo. Em caso de resultado reagente, é necessário seguir os fluxogramas diagnósticos recomendados pelo Ministério da Saúde e encaminhar o usuário para realização de testes complementares e acompanhamento nos serviços de referência. Além disso, devem ser fornecidas orientações sobre prevenção, tratamento disponível no SUS e a importância da testagem de parcerias. Também é fundamental registrar adequadamente os resultados e estar atento a possíveis intercorrências, como testes inválidos ou suspeita de resultados falsos, adotando as medidas recomendadas nesses casos.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOCO: Dica (Adesão à testagem) -->
+      <section class="block" style="margin-top: 3rem; margin-bottom: 4rem;">
+      </section>
+
+      <!-- BLOCO: Etapas do Processo de Testagem Rápida -->
+      <section class="block" style="margin-bottom: 4rem;">
+        <h2 class="block-title" style="margin-bottom: 2rem; font-size: 1.7rem; color: var(--m2-primary-deep);">Etapas da testagem rápida</h2>
+        
+            <span class="bigbtn__arrow"><i data-lucide="chevron-right"></i></span>
+          </button>
+        </div>
+      </section>
+
+      <!-- BLOCO: Destaque Textual (Articulação Intersetorial) -->
+      <section class="block" style="margin-bottom: 4rem;">
+        <div class="hbox" style="background: var(--grad-m2-brand); color: var(--m2-on-primary);">
+          <div class="hbox__row" style="align-items: center;">
+            <span class="hbox__icon" style="margin-top: 0; background: rgba(255, 255, 255, 0.15); color: var(--m2-on-primary);"><i data-lucide="megaphone"></i></span>
+            <p style="margin: 0; line-height: 1.6; color: var(--m2-on-primary);">
+              A efetividade dessas ações também depende da <strong>articulação intersetorial</strong> entre saúde, setor de transporte, empresas, sindicatos e concessionárias das estradas, para ampliar o acesso à prevenção, testagem e cuidado entre caminhoneiros.
+            </p>
+          </div>
+        </div>
+      </section>
+
+
+      <!-- BLOCO: Hotspot Preservativo (Sem título) -->
+      <section id="s2-4" class="block" style="scroll-margin-top:80px;margin-bottom: 4rem;">
+        <div class="hs-scene" style="--hs-bg: var(--m2-surface); --hs-color: var(--m2-primary); height: auto;">
+          <!-- Imagem de Fundo Real (img01.png) -->
+          <img src="images/img01.png" alt="Recomendações do preservativo" style="width: 100%; height: auto; display: block; border-radius: var(--r-lg); pointer-events: none;" />
+
+          <!-- Ponto 1: Armazenamento -->
+          <div class="hs-point" style="left: 12%; top: 32%; width: auto; height: auto;">
+            <button class="hs-btn hs-btn--plus" onclick="toggleHs(this,'hs-prev-1')">+</button>
+            <div class="hs-popover hs-popover--left-aligned" id="hs-prev-1">
+              <button class="hs-popover__close" onclick="closeHs('hs-prev-1')"><i data-lucide="x"></i></button>
+              <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Armazenamento</span>
+              <div class="hs-popover__title">Calor Excessivo</div>
+              <div class="hs-popover__body">Não armazenar o preservativo em locais com calor excessivo (por exemplo, porta-luvas do caminhão).</div>
+            </div>
+          </div>
+
+          <!-- Ponto 2: Validade e Embalagem -->
+          <div class="hs-point" style="left: 45%; top: 22%; width: auto; height: auto;">
+            <button class="hs-btn hs-btn--plus" onclick="toggleHs(this,'hs-prev-2')">+</button>
+            <div class="hs-popover" id="hs-prev-2">
+              <button class="hs-popover__close" onclick="closeHs('hs-prev-2')"><i data-lucide="x"></i></button>
+              <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Verificação</span>
+              <div class="hs-popover__title">Validade e Integridade</div>
+              <div class="hs-popover__body">Verificar sempre o prazo de validade e integridade da embalagem antes do uso.</div>
+            </div>
+          </div>
+
+          <!-- Ponto 3: Momento de uso -->
+          <div class="hs-point" style="left: 78%; top: 27%; width: auto; height: auto;">
+            <button class="hs-btn hs-btn--plus" onclick="toggleHs(this,'hs-prev-3')">+</button>
+            <div class="hs-popover hs-popover--right-aligned" id="hs-prev-3">
+              <button class="hs-popover__close" onclick="closeHs('hs-prev-3')"><i data-lucide="x"></i></button>
+              <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Momento de Uso</span>
+              <div class="hs-popover__title">Colocação</div>
+              <div class="hs-popover__body">Colocar o preservativo externo apenas com ereção peniana e antes de qualquer penetração.</div>
+            </div>
+          </div>
+
+          <!-- Ponto 4: Lubrificação -->
+
+
+      <!-- BLOCO: Hotspot Preservativo (Sem título) -->
+      <section class="block" style="margin-bottom: 4rem;">
+        <div class="hs-scene" style="--hs-bg: var(--m2-surface); --hs-color: var(--m2-primary); height: auto;">
+          <!-- Imagem de Fundo Real (img01.png) -->
+              <div class="hs-popover__body">Utilizar apenas lubrificantes à base de água, uma vez que produtos à base de óleo podem danificar o material.</div>
+            </div>
+          </div>
+
+          <!-- Ponto 5: Ruptura e Retirada -->
+          <div class="hs-point" style="left: 52%; top: 62%; width: auto; height: auto;">
+            <button class="hs-btn hs-btn--plus" onclick="toggleHs(this,'hs-prev-5')">+</button>
+            <div class="hs-popover" id="hs-prev-5">
+              <button class="hs-popover__close" onclick="closeHs('hs-prev-5')"><i data-lucide="x"></i></button>
+              <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Cuidados Especiais</span>
+              <div class="hs-popover__title">Ruptura e Ejaculação</div>
+              <div class="hs-popover__body">Em caso de ruptura, substituir o preservativo imediatamente por um novo; após ejaculação, retirar o preservativo com o pênis ainda ereto, segurando a base para evitar vazamentos.</div>
+            </div>
+          </div>
+
+          <!-- Ponto 6: Descarte -->
+          <div class="hs-point" style="left: 82%; top: 68%; width: auto; height: auto;">
+            <button class="hs-btn hs-btn--plus" onclick="toggleHs(this,'hs-prev-6')">+</button>
+            <div class="hs-popover hs-popover--right-aligned" id="hs-prev-6">
+              <button class="hs-popover__close" onclick="closeHs('hs-prev-6')"><i data-lucide="x"></i></button>
+              <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Reutilização</span>
+              <div class="hs-popover__title">Uso Único</div>
+              <div class="hs-popover__body">Não reutilizar preservativos (Brasil, 2022).</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- BLOCO: Reflexão (Vulnerabilidade e Ações Educativas) -->
+      <section id="s2-5" class="block" style="scroll-margin-top:80px;margin-top: 3rem; margin-bottom: 4rem;">
+        <div class="bigbtns">
+          <button class="bigbtn bigbtn--reflexao" onclick="openModal('modalReflexao')">
+            <span class="bigbtn__icon"><i data-lucide="message-circle"></i></span>
+            <span class="bigbtn__txt">
+              <span class="bigbtn__title">Reflexão</span>
+            </span>
+            <span class="bigbtn__arrow"><i data-lucide="chevron-right"></i></span>
+          </button>
+        </div>
+      </section>
+
+      <!-- BLOCO: Saiba mais (Abordagem Sindrômica) -->
+      <section class="block" style="margin-top: 3rem; margin-bottom: 4rem;">
+        <div class="bigbtns">
+          <button class="bigbtn bigbtn--brand" onclick="openModal('modalAbordagemSindromica')">
+            <span class="bigbtn__icon"><i data-lucide="book-open"></i></span>
+            <span class="bigbtn__txt">
+              <span class="bigbtn__title">Saiba mais</span>
+            </span>
+            <span class="bigbtn__arrow"><i data-lucide="chevron-right"></i></span>
+          </button>
+        </div>
+      </section>
+
+      <!-- ═══ ENCERRAMENTO ═══ -->
+      <section id="encerramento" class="block" style="scroll-margin-top:80px;margin-bottom:2rem">
+        <h2 class="block-title" style="color:var(--m2-primary-deep);margin-bottom:1.5rem">Encerramento do Módulo</h2>
+        <div class="encerramento-card" style="background:var(--grad-m2-brand);color:#fff">
+          <p>Ao longo deste módulo, você aprofundou seus conhecimentos sobre as Infecções Sexualmente Transmissíveis mais prevalentes no contexto do trabalho das caminhoneiras e dos caminhoneiros.</p>
+          <p>Refletiu sobre os fatores de vulnerabilidade, as estratégias de prevenção combinada, o processo de testagem rápida para sífilis, gonorreia, clamídia e HIV, e as abordagens de manejo disponíveis na Atenção Primária à Saúde.</p>
+          <p style="margin:0">Esperamos que este módulo tenha contribuído para uma prática clínica mais sensível e efetiva, reconhecendo as especificidades dessa população e fortalecendo o acesso ao cuidado integral em saúde sexual.</p>
+        </div>
+      </section>
+
+      >
+
+      <!-- ═══ REFERÊNCIAS BIBLIOGRÁFICAS ═══ -->
+      <section id="referencias" class="block" style="scroll-margin-top:80px;margin-bottom:2rem">
+        <h2 class="block-title" style="color:var(--m2-primary-deep);margin-bottom:1.5rem">Referências Bibliográficas</h2>
+        <ol style="padding-left:1.5rem;display:flex;flex-direction:column;gap:.85rem;color:var(--fg2);font-size:.88rem;line-height:1.65;">
+        <li style="padding-left:.25rem">AVASUS. <em>Sífilis: diagnóstico e tratamento</em>. Módulo/curso de 30 h oferecido pela Universidade Federal do Rio Grande do Norte/UNA-SUS desde 2023. Disponível em: <a href="https://avasus.ufrn.br/local/avasplugin/cursos/curso.php?id=526" target="_blank" rel="noopener noreferrer">https://avasus.ufrn.br/local/avasplugin/cursos/curso.php?id=526.</a> Acesso em: 15 abr. 2026.</li>
+        <li style="padding-left:.25rem">AVASUS. <em>Infecção pelo HPV</em>. Universidade Federal do Rio Grande do Norte/UNA-SUS, 2020. Disponível em: <a href="https://avasus.ufrn.br/local/avasplugin/cursos/curso.php?id=386" target="_blank" rel="noopener noreferrer">https://avasus.ufrn.br/local/avasplugin/cursos/curso.php?id=386.</a> Acesso em: 21 maio 2026.</li>
+        <li style="padding-left:.25rem">BRASIL. Ministério da Saúde. Secretaria de Atenção Primária à Saúde. Nota Técnica nº 8/2020. Trata da apresentação e implementação do Cartão de Saúde do Caminhoneiro e da Caminhoneira. Brasília: Ministério da Saúde, 2020. Disponível em: <a href="https://egestorab.saude.gov.br/image/?file=20210430_N_SEI25000.156178202097_1396110966499381938.pdf" target="_blank" rel="noopener noreferrer">https://egestorab.saude.gov.br/image/?file=20210430_N_SEI25000.156178202097_1396110966499381938.pdf.</a> Acesso em: 21 maio 2026.</li>
+        <li style="padding-left:.25rem">BRASIL. Ministério da Saúde. Secretaria de Vigilância em Saúde. <em>Protocolo clínico e diretrizes terapêuticas para atenção integral às pessoas com infecções sexualmente transmissíveis (IST)</em>. Brasília: Ministério da Saúde, 2022. Disponível em: <a href="https://www.gov.br/aids/pt-br/central-de-conteudo/pcdts/2022/ist/pcdt-ist-2022_isbn-1.pdf/@@display-file/file" target="_blank" rel="noopener noreferrer">www.gov.br/aids/pt-br/central-de-conteudo/pcdts/2022/ist/pcdt-ist-2022_isbn-1.pdf/@@display-file/file.</a> Acesso em: 21 maio 2026.</li>
+        <li style="padding-left:.25rem">BRASIL. Ministério da Saúde. <em>Ministério da Saúde volta a distribuir gel lubrificante</em>. [online]: Ministério da Saúde, 7 nov. 2023a. Disponível em: <a href="https://www.gov.br/aids/pt-br/assuntos/noticias/2023/outubro/ministerio-da-saude-volta-a-distribuir-gel-lubrificante" target="_blank" rel="noopener noreferrer">www.gov.br/aids/pt-br/assuntos/noticias/2023/outubro/ministerio-da-saude-volta-a-distribuir-gel-lubrificante.</a> Acesso em: 5 mar. 2026.</li>
+        <li style="padding-left:.25rem">BRASIL. Ministério da Saúde. Secretaria de Vigilância em Saúde e Ambiente. <em>Manual dos Centros de Referência para Imunobiológicos Especiais</em>. 6. ed. Brasília: Ministério da Saúde, 2023b. Disponível em: <a href="http://bvsms.saude.gov.br/bvs/publicacoes/manual_centros_referencia_imunobiologicos_6ed.pdf" target="_blank" rel="noopener noreferrer">http://bvsms.saude.gov.br/bvs/publicacoes/manual_centros_referencia_imunobiologicos_6ed.pdf.</a> Acesso em: 5 mar. 2026.</li>
+        <li style="padding-left:.25rem">BRASIL. Ministério da Saúde. <em>HPV: informações sobre a infecção</em>. [online]: Ministério da Saúde, 15 jul. 2024a. Disponível em: <a href="https://www.gov.br/aids/pt-br/assuntos/ist/hpv" target="_blank" rel="noopener noreferrer">www.gov.br/aids/pt-br/assuntos/ist/hpv.</a> Acesso em: 5 mar. 2026.</li>
+        <li style="padding-left:.25rem">BRASIL. Ministério da Saúde. <em>Pacientes com papilomatose respiratória recorrente são incluídos no grupo prioritário para vacina do HPV</em>. [online]: Ministério da Saúde, 27 abr. 2024b. Disponível em: <a href="https://www.gov.br/saude/pt-br/assuntos/noticias/2024/abril/pacientes-com-papilomatose-respiratoria-recorrente-sao-incluidos-no-grupo-prioritario-para-vacina-do-hpv" target="_blank" rel="noopener noreferrer">www.gov.br/saude/pt-br/assuntos/noticias/2024/abril/pacientes-com-papilomatose-respiratoria-recorrente-sao-incluidos-no-grupo-prioritario-para-vacina-do-hpv.</a> Acesso em: 10 maio 2026.</li>
+        <li style="padding-left:.25rem">BRASIL. Ministério da Saúde. <em>Protocolo Clínico e Diretrizes Terapêuticas para Manejo da Infecção pelo HIV em Adultos</em>. Brasília: Ministério da Saúde, 2024c. Disponível em: <a href="https://www.gov.br/aids/pt-br/central-de-conteudo/pcdts/pcdt_hiv_modulo_1_2024.pdf" target="_blank" rel="noopener noreferrer">www.gov.br/aids/pt-br/central-de-conteudo/pcdts/pcdt_hiv_modulo_1_2024.pdf.</a> Acesso em: 21 maio 2026.</li>
+        <li style="padding-left:.25rem">BRASIL. Ministério da Saúde. Secretaria de Ciência, Tecnologia, Inovação e Complexo da Saúde; Secretaria de Vigilância em Saúde e Ambiente. <em>Protocolo Clínico e Diretrizes Terapêuticas para Profilaxia Pós-Exposição de Risco (PEP) à Infecção por HIV, ISTs e Hepatites Virais</em>. Brasília: Ministério da Saúde, 2024d. Disponível em: <a href="https://www.gov.br/aids/pt-br/central-de-conteudo/pcdts/2021/hiv-aids/prot_clinico_diretrizes_terap_pep_-risco_infeccao_hiv_ist_hv_2021.pdf/@@display-file/file" target="_blank" rel="noopener noreferrer">www.gov.br/aids/pt-br/central-de-conteudo/pcdts/2021/hiv-aids/prot_clinico_diretrizes_terap_pep_-risco_infeccao_hiv_ist_hv_2021.pdf/@@display-file/file.</a> Acesso em: 21 maio 2026.</li>
+        <li style="padding-left:.25rem">BRASIL. Ministério da Saúde. Secretaria de Vigilância em Saúde e Ambiente. <em>Guia de vigilância em saúde</em>. vol. 2. 6. ed. rev. Brasília: Ministério da Saúde, 2024e. Disponível em: <a href="https://bvsms.saude.gov.br/bvs/publicacoes/guia_vigilancia_saude_v2_6edrev.pdf" target="_blank" rel="noopener noreferrer">https://bvsms.saude.gov.br/bvs/publicacoes/guia_vigilancia_saude_v2_6edrev.pdf.</a> Acesso em: 13 mar. 2026.</li>
+        <li style="padding-left:.25rem">BRASIL. Ministério da Saúde. Secretaria de Ciência, Tecnologia, Inovação e Complexo da Saúde; Secretaria de Vigilância em Saúde e Ambiente. <em>Protocolo Clínico e Diretrizes Terapêuticas para Profilaxia Pré-Exposição (PrEP) Oral à Infecção pelo HIV</em>. Brasília: Ministério da Saúde, 2025a. Disponível em: <a href="https://www.gov.br/aids/pt-br/central-de-conteudo/pcdts/protocolo-clinico-e-diretrizes-terapeuticas-para-profilaxia-pre-exposicao-prep-oral-a-infeccao-pelo-hiv.pdf/@@display-file/file" target="_blank" rel="noopener noreferrer">www.gov.br/aids/pt-br/central-de-conteudo/pcdts/protocolo-clinico-e-diretrizes-terapeuticas-para-profilaxia-pre-exposicao-prep-oral-a-infeccao-pelo-hiv.pdf/@@display-file/file.</a> Acesso em: 21 maio 2026.</li>
+        <li style="padding-left:.25rem">BRASIL. Ministério da Saúde. <em>Ministério da Saúde amplia vacinação contra hepatite A para usuários de PrEP</em>. [online]: Ministério da Saúde, 2 maio 2025b. Disponível em: <a href="https://www.gov.br/saude/pt-br/assuntos/noticias/2025/maio/ministerio-da-saude-amplia-vacinacao-contra-hepatite-a-para-usuarios-de-prep" target="_blank" rel="noopener noreferrer">www.gov.br/saude/pt-br/assuntos/noticias/2025/maio/ministerio-da-saude-amplia-vacinacao-contra-hepatite-a-para-usuarios-de-prep.</a> Acesso em: 5 mar. 2026.</li>
+        <li style="padding-left:.25rem">BRASIL. Ministério da Saúde. <em>Campanha de Carnaval do Ministério da Saúde reforça uso de camisinha na prevenção de doenças</em>. [online]: Ministério da Saúde, 13 fev. 2026a. Disponível em: <a href="https://www.gov.br/saude/pt-br/assuntos/noticias/2026/fevereiro/campanha-de-carnaval-do-ministerio-da-saude-reforca-uso-de-camisinha-na-prevencao-de-doencas-adesao-ao-preservativo-esta-em-queda" target="_blank" rel="noopener noreferrer">www.gov.br/saude/pt-br/assuntos/noticias/2026/fevereiro/campanha-de-carnaval-do-ministerio-da-saude-reforca-uso-de-camisinha-na-prevencao-de-doencas-adesao-ao-preservativo-esta-em-queda.</a> Acesso em: 5 mar. 2026.</li>
+        <li style="padding-left:.25rem">BRASIL. Ministério da Saúde. <em>Instrução Normativa do Calendário Nacional de Vacinação 2026</em>. Brasília: Ministério da Saúde, 2026b. Disponível em: <a href="https://www.gov.br/saude/pt-br/vacinacao/publicacoes/instrucao-normativa-que-instrui-o-calendario-nacional-de-vacinacao-2026.pdf" target="_blank" rel="noopener noreferrer">www.gov.br/saude/pt-br/vacinacao/publicacoes/instrucao-normativa-que-instrui-o-calendario-nacional-de-vacinacao-2026.pdf.</a> Acesso em: 5 mar. 2026.</li>
+        <li style="padding-left:.25rem">CENTERS FOR DISEASE CONTROL AND PREVENTION. <em>Preventing HIV with Condoms</em>. [online]: CDC, 24 abr. 2024. Disponível em: <a href="https://www.cdc.gov/hiv/prevention/condoms.html" target="_blank" rel="noopener noreferrer">www.cdc.gov/hiv/prevention/condoms.html.</a> Acesso em: 5 mar. 2026.</li>
+        <li style="padding-left:.25rem">HANDSFIELD, H. H.; SPARLING, P. F. Neisseria Gonnorrhoea. In: MANDELL, G. L.; BENNETT, J. E.; DOLIN, R. <em>Mandell, Douglas, and Bennett's principles and practice of infectious diseases</em>. 4. ed. Nova York: Churchill Livingstone, 1995. p. 1909–1927.</li>
+        <li style="padding-left:.25rem">LO RE, V. 3RD. et al. State-of-the-Art Review: Hepatitis C. <em>Clinical Infectious Diseases</em>, v. 81, n. 2, p. e15–e26, 2025. Disponível em: <a href="https://pubmed.ncbi.nlm.nih.gov/40971900/" target="_blank" rel="noopener noreferrer">https://pubmed.ncbi.nlm.nih.gov/40971900/.</a> Acesso em: 14 mar. 2026.</li>
+        <li style="padding-left:.25rem">MAGALHÃES, G. M. et al. Update on human papillomavirus - part I: epidemiology, pathogenesis, and clinical spectrum. <em>Anais Brasileiros de Dermatologia</em>, Rio de Janeiro, v. 96, n. 1, p. 1–16, 2021. Disponível em: <a href="https://pubmed.ncbi.nlm.nih.gov/33341319/" target="_blank" rel="noopener noreferrer">https://pubmed.ncbi.nlm.nih.gov/33341319/.</a> Acesso em: 21 maio 2026.</li>
+        <li style="padding-left:.25rem">MCCREE, D. H. et al. Sexual and drugs use risk behaviors of long-haul truck drivers and their commercial sex contacts in New Mexico. <em>Public Health Reports</em>, Thousand Oaks, v. 125, n. 1, p. 52–60, 2010. Disponível em: <a href="https://journals.sagepub.com/doi/10.1177/003335491012500108" target="_blank" rel="noopener noreferrer">https://journals.sagepub.com/doi/10.1177/003335491012500108.</a> Acesso em: 21 maio 2026.</li>
+        <li style="padding-left:.25rem">OLIVEIRA, F. D. B.; ARAÚJO, M. A. L. Sexual behavior and preventive practices among truck drivers to prevent sexually transmitted infections. <em>Revista Gaúcha de Enfermagem</em>, v. 46, n. spe1, 2025. Disponível em: <a href="https://www.scielo.br/j/rgenf/a/VhZDqQry6YCxKDP7t9qc7bf/?lang=en" target="_blank" rel="noopener noreferrer">www.scielo.br/j/rgenf/a/VhZDqQry6YCxKDP7t9qc7bf/?lang=en.</a> Acesso em: 5 mar. 2026.</li>
+        <li style="padding-left:.25rem">RIBEIRO, M. Secretaria Estadual da Saúde (RS). <em>Comando de saúde preventivo realiza ação com caminhoneiros em Osório</em>. [online]: Secretaria da Saúde (RS), 10 mar. 2025. Disponível em: <a href="https://saude.rs.gov.br/comando-de-saude-preventivo-realiza-acao-com-caminhoneiros-em-osorio" target="_blank" rel="noopener noreferrer">https://saude.rs.gov.br/comando-de-saude-preventivo-realiza-acao-com-caminhoneiros-em-osorio.</a> Acesso em: 1 abr. 2026.</li>
+        <li style="padding-left:.25rem">ROWLEY, J. et al. Chlamydia, gonorrhea, trichomoniasis and syphilis: global prevalence and incidence estimates, 2016. <em>Bulletin of the World Health Organization</em>, Genebra, v. 97, n. 8, p. 548–562, 2019. Disponível em: <a href="https://pmc.ncbi.nlm.nih.gov/articles/PMC6653813/pdf/BLT.18.228486.pdf" target="_blank" rel="noopener noreferrer">https://pmc.ncbi.nlm.nih.gov/articles/PMC6653813/pdf/BLT.18.228486.pdf.</a> Acesso em: 14 mar. 2026.</li>
+        <li style="padding-left:.25rem">SANTOS, M. C. Q. et al. Marcadores de vulnerabilidade em saúde sexual: uma análise comparativa entre caminhoneiros e a população brasileira. <em>Cadernos Cajuína</em>, v. 11, n. 4, 2026. Disponível em: <a href="https://v3.cadernoscajuina.pro.br/index.php/revista/article/view/2534" target="_blank" rel="noopener noreferrer">https://v3.cadernoscajuina.pro.br/index.php/revista/article/view/2534.</a> Acesso em: 14 abr. 2026.</li>
+        <li style="padding-left:.25rem">SAUERBREI, A. Herpes Genitalis: Diagnosis, Treatment and Prevention. <em>Geburtshilfe Frauenheilkd</em>, Stuttgart, v. 76, n. 12, p. 1310–1317, 2016. Disponível em: <a href="https://pubmed.ncbi.nlm.nih.gov/28017972/" target="_blank" rel="noopener noreferrer">https://pubmed.ncbi.nlm.nih.gov/28017972/.</a> Acesso em: 14 mar. 2026.</li>
+        <li style="padding-left:.25rem">STELA, D. Prefeitura Municipal de Sinop. Secretaria Municipal de Saúde. <em>Saúde faz distribuição de preservativos em pontos estratégicos com foco na prevenção de IST</em>. [online]: Prefeitura de Sinop, 28 jun. 2023. Disponível em: <a href="https://www.sinop.mt.gov.br/portal/noticias/0/3/920/saude-faz-distribuicao-de-preservativos-em-pontos-estrategicos-com-foco-na-prevencao-de-ists" target="_blank" rel="noopener noreferrer">www.sinop.mt.gov.br/portal/noticias/0/3/920/saude-faz-distribuicao-de-preservativos-em-pontos-estrategicos-com-foco-na-prevencao-de-ists.</a> Acesso em: 5 mar. 2026.</li>
+        <li style="padding-left:.25rem">VILLARINHO, L. et al. Caminhoneiros de rota curta e sua vulnerabilidade ao HIV, Santos, SP. <em>Revista de Saúde Pública</em>, São Paulo, v. 36, n. 4, p. 61–67, 2002. Disponível em: <a href="https://www.scielo.br/j/rsp/a/phXRzW38VG6d5khG8sJtTJv/abstract/?lang=pt" target="_blank" rel="noopener noreferrer">www.scielo.br/j/rsp/a/phXRzW38VG6d5khG8sJtTJv/abstract/?lang=pt.</a> Acesso em: 5 mar. 2026.</li>
+        <li style="padding-left:.25rem">WHO (WORLD HEALTH ORGANIZATION). <em>Use and procurement of additional lubricants for male and female condoms: advisory note</em>. Geneva: WHO/UNFPA/FHI360, 2012. Disponível em: <a href="https://iris.who.int/handle/10665/76580" target="_blank" rel="noopener noreferrer">https://iris.who.int/handle/10665/76580.</a> Acesso em: 5 mar. 2026.</li>
+        <li style="padding-left:.25rem">WHO (WORLD HEALTH ORGANIZATION). <em>Consolidated guidelines on HIV prevention, diagnosis, treatment and care for key populations: 2016 update</em>. Genebra: WHO, 2016. Disponível em: <a href="https://iris.who.int/server/api/core/bitstreams/918a4a9a-5116-49d7-9074-e7bcf295d0b6/content" target="_blank" rel="noopener noreferrer">https://iris.who.int/server/api/core/bitstreams/918a4a9a-5116-49d7-9074-e7bcf295d0b6/content.</a> Acesso em: 21 maio 2026.</li>
+        <li style="padding-left:.25rem">WHO (WORLD HEALTH ORGANIZATION). <em>Sexually Transmitted Infections (STIs)</em>. [online]: World Health Organization, 10 set. 2025. Disponível em: <a href="https://www.who.int/news-room/fact-sheets/detail/sexually-transmitted-infections-(stis" target="_blank" rel="noopener noreferrer">www.who.int/news-room/fact-sheets/detail/sexually-transmitted-infections-(stis).</a> Acesso em: 14 mar. 2026.</li>
+        </ol>
+      </section>
+
+    </main>
+  </div>
+
+  <!-- MODAL: Curso AVASUS -->
+  <div class="overlay" id="modalCursoAvasus">
+    <div class="modal">
+      <div class="modal__head" style="background: var(--grad-m2-brand); color: #fff;">
+        <button class="modal__close" onclick="closeModal('modalCursoAvasus')" aria-label="Fechar"><i data-lucide="x"></i></button>
+        <span class="badge badge--orange modal__kicker">Saiba mais</span>
+        <div class="modal__title">Curso “Sífilis: Diagnóstico e Tratamento”</div>
+        <div class="modal__author">AVASUS · UFRN / Ministério da Saúde (2023)</div>
+      </div>
+      <div class="modal__body">
+        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.2rem; color: var(--fg1);">
+          Para mais informações sobre a sífilis, assista ao curso **“Sífilis: Diagnóstico e Tratamento”**, de 30 horas.
+      </section>
+
+      <!-- BLOCO: Reflexão (Vulnerabilidade e Ações Educativas) -->
+      <section class="block" style="margin-top: 3rem; margin-bottom: 4rem;">
+        <div class="bigbtns">
+          <button class="bigbtn bigbtn--reflexao" onclick="openModal('modalReflexao')">
+            <i data-lucide="external-link"></i> Acessar o Curso
+          </a>
+          <button class="btn btn--m2-ghost" onclick="closeModal('modalCursoAvasus')">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Prevalências de ISTs -->
+  <div class="overlay" id="modalPrevalencias">
+    <div class="modal" style="width: min(800px, 100%);">
+      <div class="modal__head" style="background: var(--grad-m2-brand); color: #fff;">
+        <button class="modal__close" onclick="closeModal('modalPrevalencias')" aria-label="Fechar"><i data-lucide="x"></i></button>
+            <span class="bigbtn__icon"><i data-lucide="book-open"></i></span>
+            <span class="bigbtn__txt">
+              <span class="bigbtn__title">Saiba mais</span>
+            </span>
+            <span class="bigbtn__arrow"><i data-lucide="chevron-right"></i></span>
+          </button>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- MODAL: Curso AVASUS -->
+  <div class="overlay" id="modalCursoAvasus">
+    <div class="modal">
+      <div class="modal__head" style="background: var(--grad-m2-brand); color: #fff;">
+        <button class="modal__close" onclick="closeModal('modalCursoAvasus')" aria-label="Fechar"><i data-lucide="x"></i></button>
+        <span class="badge badge--orange modal__kicker">Saiba mais</span>
+        <div class="modal__title">Curso “Sífilis: Diagnóstico e Tratamento”</div>
+        <div class="modal__author">AVASUS · UFRN / Ministério da Saúde (2023)</div>
+      </div>
+      <div class="modal__body">
+        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.2rem; color: var(--fg1);">
+          Para mais informações sobre a sífilis, assista ao curso **“Sífilis: Diagnóstico e Tratamento”**, de 30 horas.
+        </p>
+        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.2rem; color: var(--fg1);">
+          Ele é oferecido pela AVASUS e foi elaborado pela UFRN em parceria com o Ministério da Saúde, em 2023.
+        </p>
+        <div class="modal__actions" style="margin-top: 1.8rem; justify-content: flex-end; display: flex; gap: 0.7rem;">
+          <a class="btn btn--m2-bright" href="https://avasus.ufrn.br/local/avasplugin/cursos/curso.php?id=526" target="_blank" rel="noopener noreferrer">
+            <i data-lucide="external-link"></i> Acessar o Curso
+        </p>
+        <div class="modal__actions" style="margin-top: 1.8rem; justify-content: flex-end; display: flex; gap: 0.7rem;">
+          <button class="btn btn--m2-ghost" onclick="closeModal('modalDicaTestagem')">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Reflexão (Vulnerabilidade e Ações Educativas) -->
+  <div class="overlay" id="modalReflexao">
+    <div class="modal" style="width: min(600px, 100%);">
+      <div class="modal__head" style="background: var(--grad-m2-brand); color: #fff;">
+        <button class="modal__close" onclick="closeModal('modalReflexao')" aria-label="Fechar"><i data-lucide="x"></i></button>
+        <span class="badge badge--orange modal__kicker">Reflexão</span>
+        <div class="modal__title">Vulnerabilidade e Ações Educativas</div>
+      </div>
+      <div class="modal__body">
+        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.2rem; color: var(--fg1);">
+          Deu para entender melhor como a população caminhoneira pode estar mais vulnerável à transmissão de ISTs, certo?
+        </p>
+        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem; color: var(--fg1); font-weight: 500;">
+          Sabendo disso, como você pode, em sua prática, desenvolver ações educativas que sensibilizem esse grupo e contribuam para mudanças de comportamento?
+        </p>
+        <div class="modal__actions" style="margin-top: 1.8rem; justify-content: flex-end; display: flex; gap: 0.7rem;">
+          <button class="btn btn--m2-ghost" onclick="closeModal('modalReflexao')">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Saiba mais (Abordagem Sindrômica) -->
+  <div class="overlay" id="modalAbordagemSindromica">
+    <div class="modal" style="width: min(600px, 100%);">
+      <div class="modal__head" style="background: var(--grad-m2-brand); color: #fff;">
+        <button class="modal__close" onclick="closeModal('modalAbordagemSindromica')" aria-label="Fechar"><i data-lucide="x"></i></button>
+        <span class="badge badge--orange modal__kicker">Saiba mais</span>
+        <div class="modal__title">Abordagem Sindrômica</div>
+      </div>
+      <div class="modal__body">
+        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.5rem; color: var(--fg1);">
+          Para mais informações sobre a abordagem sindrômica, acesse o **Protocolo Clínico de Diretrizes Terapêuticas para Atenção Integral às Pessoas com Infecções Sexualmente Transmissíveis (IST)** do Ministério da Saúde, publicado em 2022.
+        </p>
+        <div class="modal__actions" style="margin-top: 1.8rem; justify-content: flex-end; display: flex; gap: 0.7rem;">
+          <a class="btn btn--m2-bright" href="media/pcdt_ist_2022.pdf" target="_blank" rel="noopener noreferrer" download>
+            <i data-lucide="download"></i> Baixar PDF
+          </a>
+          <button class="btn btn--m2-ghost" onclick="closeModal('modalAbordagemSindromica')">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Créditos -->
+  <div class="overlay" id="modalCreditos">
+    <div class="modal">
+      <div class="modal__head" style="background:var(--grad-m2-brand);color:#fff">
+        <button class="modal__close" onclick="closeModal('modalCreditos')" aria-label="Fechar"><i data-lucide="x"></i></button>
+        <span class="badge badge--soft modal__kicker">Módulo II</span>
+        <div class="modal__title" style="color:#fff">Créditos</div>
+      </div>
+      <div class="modal__body">
+        <p style="font-weight:700;color:var(--fg1);margin-bottom:.5rem">Autoras</p>
+        <p style="color:var(--fg2);margin-bottom:1.2rem">Ana Rita Coimbra Motta de Castro<br>Larissa Melo Bandeira<br>Carolina Amianti</p>
+        <p style="font-weight:700;color:var(--fg1);margin-bottom:.5rem">Instituição</p>
+        <p style="color:var(--fg2);margin-bottom:1.2rem">Fiocruz Mato Grosso do Sul</p>
+        <p style="font-weight:700;color:var(--fg1);margin-bottom:.5rem">Curso</p>
+        <p style="color:var(--fg2)">Atenção à Saúde da Caminhoneira e Caminhoneiro na Atenção Primária</p>
+        <div class="modal__actions" style="justify-content:flex-end">
+          <button class="btn btn--m2-ghost" onclick="closeModal('modalCreditos')">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal: Instruções -->
+  <div class="overlay" id="modalInstrucoes">
+    <div class="modal">
+      <div class="modal__head" style="background:var(--grad-m2-brand);color:#fff">
+        <button class="modal__close" onclick="closeModal('modalInstrucoes')" aria-label="Fechar"><i data-lucide="x"></i></button>
+        <span class="badge badge--soft modal__kicker">Como usar</span>
+        <div class="modal__title" style="color:#fff">Instruções de navegação</div>
+      </div>
+      <div class="modal__body">
+        <ul style="margin:0;padding-left:1.2rem;line-height:1.7;display:flex;flex-direction:column;gap:.7rem;color:var(--fg2)">
+          <li>Use o <strong>menu lateral esquerdo</strong> para navegar entre as seções do módulo.</li>
+          <li>Clique nos <strong>flashcards</strong> para girar e ver informações complementares sobre cada IST.</li>
+          <li>Interaja com os <strong>pontos de atenção</strong> nas imagens para visualizar detalhes sobre prevenção.</li>
+          <li>Explore as <strong>abas</strong> para acompanhar o passo a passo da testagem rápida.</li>
+          <li>Os botões <strong>Reflexão, Dica e Saiba mais</strong> abrem conteúdos complementares em janelas sobrepostas.</li>
+          <li>A carga horária estimada para este módulo é de <strong>07 horas</strong>.</li>
+        </ul>
+        <div class="modal__actions" style="justify-content:flex-end">
+          <button class="btn btn--m2-ghost" onclick="closeModal('modalInstrucoes')">Fechar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Botão voltar ao topo -->
+  <button id="backToTop" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Voltar ao topo" style="background:var(--m2-primary);color:#fff">
+    <i data-lucide="chevron-up"></i>
+  </button>
+
+  <!-- Sidebar toggle (hambúrguer — visível apenas no mobile) -->
+  <button class="sidebar-toggle" onclick="openSidebar()" aria-label="Abrir menu de navegação" style="background:var(--m2-primary);color:#fff">
+    <i data-lucide="menu"></i>
+  </button>
+
+  <!-- Overlay da sidebar (mobile) -->
+  <div id="sidebarOverlay" class="sidebar-overlay" onclick="closeSidebar()"></div>
+
+
+  <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
+  <script src="js/scripts.min.js"></script>
+
+</body>
+</html>
