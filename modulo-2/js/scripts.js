@@ -154,3 +154,9 @@ if (sidebarLinks.length) {
   );
   sections.forEach(s => obs.observe(s));
 }
+
+/* ── Vuln popover (migrated from inline) ── */
+
+  window.toggleVuln=function(btn,id){document.querySelectorAll('[id^="vf-"]').forEach(function(p){if(p.id!==id)p.style.display='none';});var p=document.getElementById(id);if(!p)return;p.style.display=p.style.display==='block'?'none':'block';};
+  window.closeVuln=function(id){var p=document.getElementById(id);if(p)p.style.display='none';};
+  

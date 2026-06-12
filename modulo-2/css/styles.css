@@ -1401,3 +1401,216 @@ img {
 .encerramento-card p{margin:0 0 1rem;line-height:1.72}
 .encerramento-card p:last-child{margin:0}
 @media(max-width:900px){.page-layout{grid-template-columns:1fr}.sidebar{position:static}}
+
+/* ── Responsive & Overflow Fixes (migrated from inline) ── */
+
+    /* ── M2: Missing Component Styles ──────────────────────────────── */
+
+    /* Carousel image-wrap needs position:relative for badge overlays */
+    .carousel__img-wrap {
+      position: relative;
+    }
+
+    /* Badge overlays on carousel images (organism name labels) */
+    .carousel__img-badge {
+      position: absolute;
+      bottom: .6rem;
+      background: rgba(0,0,0,.55);
+      color: #fff;
+      font-size: .72rem;
+      font-style: italic;
+      padding: .22rem .65rem;
+      border-radius: 999px;
+      backdrop-filter: blur(3px);
+      white-space: nowrap;
+      max-width: 45%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      pointer-events: none;
+    }
+    .carousel__img-badge--left  { left: .6rem; }
+    .carousel__img-badge--right { right: .6rem; }
+    .carousel__img-badge--center {
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 60%;
+    }
+
+    /* ── M2 Overflow & Responsiveness Fixes ────────────────────────── */
+
+    /* Root: prevent any element from widening the page beyond the viewport */
+    html, body {
+      overflow-x: clip;
+    }
+
+    /* Grid/flex items can overflow their track when min-width is auto (default).
+       Setting min-width:0 on <main> constrains it to its 1fr grid column. */
+    .page-layout > main {
+      min-width: 0;
+    }
+
+    /* Sidebar fixa no desktop após o hero */
+    @media (min-width: 901px) {
+      .sidebar {
+        position: sticky;
+        top: 1rem;
+        align-self: start;
+        max-height: calc(100vh - 2rem);
+        overflow-y: auto;
+      }
+    }
+
+    /* Break long words and URLs so they don't cause horizontal overflow */
+    main,
+    .modal__body,
+    .hbox,
+    .tl__body,
+    .hs-popover__body,
+    .acc__body,
+    .tabs__panel,
+    .referencias-list li,
+    .intro-card {
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    /* Override inline display:flex so <li> reverts to list-item block boxes,
+       which breaks long URLs correctly via word-break below. */
+    #referencias ol {
+      display: block !important;
+    }
+    #referencias ol > li + li {
+      margin-top: .85rem;
+    }
+    #referencias ol li {
+      min-width: 0;
+      overflow-wrap: anywhere;
+      word-break: break-all;
+    }
+
+    /* 1. Carousel btn-wrap: must be position:relative so .hs-popover is
+          positioned relative to its own button, not the whole carousel */
+    .carousel__btn-wrap {
+      position: relative;
+    }
+
+    /* 2. Constrain popover width on narrow screens to prevent overflow */
+    @media (max-width: 600px) {
+      .hs-popover {
+        width: min(280px, 85vw) !important;
+        max-width: 85vw;
+      }
+      /* for default (center-anchored) popovers, anchor left and drop the
+         translateX so they don't bleed off the right edge */
+      .hs-popover:not(.hs-popover--left-aligned):not(.hs-popover--right-aligned) {
+        left: 0 !important;
+        transform: none !important;
+      }
+      .hs-popover:not(.hs-popover--left-aligned):not(.hs-popover--right-aligned)::after {
+        left: 20px !important;
+        transform: none !important;
+      }
+    }
+
+    /* 3. Hero nav: prevent course-name overflow on very small screens */
+    @media (max-width: 420px) {
+      .hero-nav__inner {
+        flex-wrap: wrap;
+        gap: .35rem;
+      }
+      .hero-nav__badge {
+        font-size: .65rem;
+      }
+      .hero-nav__name {
+        font-size: .72rem;
+        white-space: normal;
+        word-break: break-word;
+        text-align: center;
+        width: 100%;
+      }
+    }
+
+    /* 4. Make carousel prev/next buttons a full 48 px tap target on mobile */
+    @media (max-width: 600px) {
+      .carousel__prev,
+      .carousel__next {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+
+    /* 5. Bigbtn: reduce large padding on very narrow screens */
+    @media (max-width: 400px) {
+      .bigbtn {
+        padding: 1rem 1rem;
+        gap: .75rem;
+      }
+      .bigbtn__icon {
+        width: 2.8rem;
+        height: 2.8rem;
+      }
+      .bigbtn__title {
+        font-size: 1rem;
+      }
+    }
+
+    /* 6. Tabs: responsive on mobile
+          - Remove nowrap + flex-shrink:0 so buttons can compress
+          - flex:1 gives each tab an equal share of the row
+          - white-space:normal lets the subtitle text wrap inside the button */
+    @media (max-width: 600px) {
+      .tabs__nav {
+        flex-wrap: wrap;
+        gap: .4rem;
+        padding-bottom: .4rem;
+        overflow-x: visible;
+      }
+      .tabs__tab {
+        white-space: normal !important;
+        flex-shrink: 1 !important;
+        flex: 1 1 0 !important;
+        min-width: 0 !important;
+        padding: .55rem .65rem !important;
+        font-size: .82rem !important;
+        gap: .35em;
+        text-align: left;
+      }
+      /* Override inline font-size on spans inside tab labels */
+      .tabs__tab span {
+        font-size: .82rem !important;
+        line-height: 1.3;
+      }
+      /* Shrink lucide icons inside tab buttons */
+      .tabs__tab [data-lucide] {
+        width: 1rem !important;
+        height: 1rem !important;
+        flex-shrink: 0;
+      }
+    }
+
+    /* 7. Encerramento card: reduce side padding on mobile */
+    @media (max-width: 480px) {
+      .encerramento-card {
+        padding: 1.4rem 1.4rem;
+      }
+    }
+
+    /* Long URLs inside content areas must break to avoid horizontal overflow */
+    main a,
+    .modal__body a,
+    .acc__body a,
+    .tabs__panel a,
+    .hbox a,
+    .tl__body a,
+    .referencias-list a,
+    .intro-card a {
+      overflow-wrap: anywhere;
+      word-break: break-all;
+    }
+
+    /* Higher-specificity rule for references links (flex-item context) */
+    #referencias ol li a {
+      overflow-wrap: anywhere !important;
+      word-break: break-all !important;
+    }
+  

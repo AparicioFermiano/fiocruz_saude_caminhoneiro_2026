@@ -1433,3 +1433,46 @@ img {
 .encerramento-card p{margin:0 0 1rem;line-height:1.72}
 .encerramento-card p:last-child{margin:0}
 @media(max-width:900px){.page-layout{grid-template-columns:1fr}.sidebar{position:static}}
+
+/* ── Responsive & Overflow Fixes (migrated from inline) ── */
+
+    html, body { overflow-x: clip; }
+    .page-layout > main { min-width: 0; }
+
+    @media (min-width: 901px) {
+      .sidebar {
+        position: sticky;
+        top: 1rem;
+        align-self: start;
+        max-height: calc(100vh - 2rem);
+        overflow-y: auto;
+      }
+    }
+
+    main, .modal__body, .hbox, .tl__body, .hs-popover__body,
+    .acc__body, .tabs__panel, .referencias-list li, .intro-card {
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    #referencias ol { display: block !important; }
+    #referencias ol > li + li { margin-top: .85rem; }
+    #referencias ol li { min-width: 0; overflow-wrap: anywhere; word-break: break-all; }
+
+    @media (max-width: 600px) {
+      .tabs__nav { flex-wrap: wrap; gap: .4rem; padding-bottom: .4rem; overflow-x: visible; }
+      .tabs__tab { white-space: normal !important; flex-shrink: 1 !important; flex: 1 1 0 !important; min-width: 0 !important; padding: .55rem .65rem !important; font-size: .82rem !important; gap: .35em; text-align: left; }
+      .tabs__tab span { font-size: .82rem !important; line-height: 1.3; }
+      .tabs__tab [data-lucide] { width: 1rem !important; height: 1rem !important; flex-shrink: 0; }
+    }
+
+    @media (max-width: 420px) {
+      .hero-nav__inner { flex-wrap: wrap; gap: .35rem; }
+      .hero-nav__name { font-size: .72rem; white-space: normal; word-break: break-word; text-align: center; width: 100%; }
+    }
+
+    main a, .modal__body a, .acc__body a, .tabs__panel a, .hbox a, .tl__body a,
+    .referencias-list a, .intro-card a { overflow-wrap: anywhere; word-break: break-all; }
+
+    #referencias ol li a { overflow-wrap: anywhere !important; word-break: break-all !important; }
+  
