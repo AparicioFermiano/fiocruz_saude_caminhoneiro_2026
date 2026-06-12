@@ -45,13 +45,24 @@
 
     /* Root: prevent any element from widening the page beyond the viewport */
     html, body {
-      overflow-x: hidden;
+      overflow-x: clip;
     }
 
     /* Grid/flex items can overflow their track when min-width is auto (default).
        Setting min-width:0 on <main> constrains it to its 1fr grid column. */
     .page-layout > main {
       min-width: 0;
+    }
+
+    /* Sidebar fixa no desktop após o hero */
+    @media (min-width: 901px) {
+      .sidebar {
+        position: sticky;
+        top: 1rem;
+        align-self: start;
+        max-height: calc(100vh - 2rem);
+        overflow-y: auto;
+      }
     }
 
     /* Break long words and URLs so they don't cause horizontal overflow */
