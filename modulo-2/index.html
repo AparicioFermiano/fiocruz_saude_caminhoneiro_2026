@@ -8,6 +8,206 @@
   <link rel="dns-prefetch" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Mukta:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.min.css">
+  <style>
+    /* ── M2: Missing Component Styles ──────────────────────────────── */
+
+    /* Carousel image-wrap needs position:relative for badge overlays */
+    .carousel__img-wrap {
+      position: relative;
+    }
+
+    /* Badge overlays on carousel images (organism name labels) */
+    .carousel__img-badge {
+      position: absolute;
+      bottom: .6rem;
+      background: rgba(0,0,0,.55);
+      color: #fff;
+      font-size: .72rem;
+      font-style: italic;
+      padding: .22rem .65rem;
+      border-radius: 999px;
+      backdrop-filter: blur(3px);
+      white-space: nowrap;
+      max-width: 45%;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      pointer-events: none;
+    }
+    .carousel__img-badge--left  { left: .6rem; }
+    .carousel__img-badge--right { right: .6rem; }
+    .carousel__img-badge--center {
+      left: 50%;
+      transform: translateX(-50%);
+      max-width: 60%;
+    }
+
+    /* ── M2 Overflow & Responsiveness Fixes ────────────────────────── */
+
+    /* Root: prevent any element from widening the page beyond the viewport */
+    html, body {
+      overflow-x: hidden;
+    }
+
+    /* Grid/flex items can overflow their track when min-width is auto (default).
+       Setting min-width:0 on <main> constrains it to its 1fr grid column. */
+    .page-layout > main {
+      min-width: 0;
+    }
+
+    /* Break long words and URLs so they don't cause horizontal overflow */
+    main,
+    .modal__body,
+    .hbox,
+    .tl__body,
+    .hs-popover__body,
+    .acc__body,
+    .tabs__panel,
+    .referencias-list li,
+    .intro-card {
+      overflow-wrap: break-word;
+      word-break: break-word;
+    }
+
+    /* Override inline display:flex so <li> reverts to list-item block boxes,
+       which breaks long URLs correctly via word-break below. */
+    #referencias ol {
+      display: block !important;
+    }
+    #referencias ol > li + li {
+      margin-top: .85rem;
+    }
+    #referencias ol li {
+      min-width: 0;
+      overflow-wrap: anywhere;
+      word-break: break-all;
+    }
+
+    /* 1. Carousel btn-wrap: must be position:relative so .hs-popover is
+          positioned relative to its own button, not the whole carousel */
+    .carousel__btn-wrap {
+      position: relative;
+    }
+
+    /* 2. Constrain popover width on narrow screens to prevent overflow */
+    @media (max-width: 600px) {
+      .hs-popover {
+        width: min(280px, 85vw) !important;
+        max-width: 85vw;
+      }
+      /* for default (center-anchored) popovers, anchor left and drop the
+         translateX so they don't bleed off the right edge */
+      .hs-popover:not(.hs-popover--left-aligned):not(.hs-popover--right-aligned) {
+        left: 0 !important;
+        transform: none !important;
+      }
+      .hs-popover:not(.hs-popover--left-aligned):not(.hs-popover--right-aligned)::after {
+        left: 20px !important;
+        transform: none !important;
+      }
+    }
+
+    /* 3. Hero nav: prevent course-name overflow on very small screens */
+    @media (max-width: 420px) {
+      .hero-nav__inner {
+        flex-wrap: wrap;
+        gap: .35rem;
+      }
+      .hero-nav__badge {
+        font-size: .65rem;
+      }
+      .hero-nav__name {
+        font-size: .72rem;
+        white-space: normal;
+        word-break: break-word;
+        text-align: center;
+        width: 100%;
+      }
+    }
+
+    /* 4. Make carousel prev/next buttons a full 48 px tap target on mobile */
+    @media (max-width: 600px) {
+      .carousel__prev,
+      .carousel__next {
+        width: 3rem;
+        height: 3rem;
+      }
+    }
+
+    /* 5. Bigbtn: reduce large padding on very narrow screens */
+    @media (max-width: 400px) {
+      .bigbtn {
+        padding: 1rem 1rem;
+        gap: .75rem;
+      }
+      .bigbtn__icon {
+        width: 2.8rem;
+        height: 2.8rem;
+      }
+      .bigbtn__title {
+        font-size: 1rem;
+      }
+    }
+
+    /* 6. Tabs: responsive on mobile
+          - Remove nowrap + flex-shrink:0 so buttons can compress
+          - flex:1 gives each tab an equal share of the row
+          - white-space:normal lets the subtitle text wrap inside the button */
+    @media (max-width: 600px) {
+      .tabs__nav {
+        flex-wrap: wrap;
+        gap: .4rem;
+        padding-bottom: .4rem;
+        overflow-x: visible;
+      }
+      .tabs__tab {
+        white-space: normal !important;
+        flex-shrink: 1 !important;
+        flex: 1 1 0 !important;
+        min-width: 0 !important;
+        padding: .55rem .65rem !important;
+        font-size: .82rem !important;
+        gap: .35em;
+        text-align: left;
+      }
+      /* Override inline font-size on spans inside tab labels */
+      .tabs__tab span {
+        font-size: .82rem !important;
+        line-height: 1.3;
+      }
+      /* Shrink lucide icons inside tab buttons */
+      .tabs__tab [data-lucide] {
+        width: 1rem !important;
+        height: 1rem !important;
+        flex-shrink: 0;
+      }
+    }
+
+    /* 7. Encerramento card: reduce side padding on mobile */
+    @media (max-width: 480px) {
+      .encerramento-card {
+        padding: 1.4rem 1.4rem;
+      }
+    }
+
+    /* Long URLs inside content areas must break to avoid horizontal overflow */
+    main a,
+    .modal__body a,
+    .acc__body a,
+    .tabs__panel a,
+    .hbox a,
+    .tl__body a,
+    .referencias-list a,
+    .intro-card a {
+      overflow-wrap: anywhere;
+      word-break: break-all;
+    }
+
+    /* Higher-specificity rule for references links (flex-item context) */
+    #referencias ol li a {
+      overflow-wrap: anywhere !important;
+      word-break: break-all !important;
+    }
+  </style>
 </head>
 <body>
 
@@ -21,7 +221,7 @@
     <div class="hero-nav" style="--hn-color: var(--m2-primary)">
       <div class="hero-nav__inner">
         <span class="hero-nav__badge"><i data-lucide="graduation-cap"></i> Curso</span>
-        <span class="hero-nav__name">ATENÇÃO À SAÚDE DA CAMINHONEIRA E CAMINHONEIRO NA ATENÇÃO PRIMÁRIA</span>
+        <span class="hero-nav__name">ATENÇÃO À SAÚDE DA CAMINHONEIRA E DO CAMINHONEIRO NA ATENÇÃO PRIMÁRIA</span>
       </div>
     </div>
     
@@ -97,7 +297,7 @@
         
         <div class="fc-grid">
           <!-- Card 1: Sinais e sintomas -->
-          <div class="fc" onclick="this.classList.toggle('is-flipped')" style="--fc-grad: var(--grad-m2-brand); --fc-accent: var(--m2-primary-deep);">
+          <div class="fc" onclick="this.classList.toggle('is-flipped')" style="--fc-grad: var(--grad-m2-brand); --fc-accent: var(--m2-primary-deep); height: 280px;">
             <div class="fc__inner">
               <!-- FRENTE -->
               <div class="fc__front">
@@ -115,7 +315,7 @@
           </div>
 
           <!-- Card 2: Cura -->
-          <div class="fc" onclick="this.classList.toggle('is-flipped')" style="--fc-grad: var(--grad-m2-brand); --fc-accent: var(--m2-primary-deep);">
+          <div class="fc" onclick="this.classList.toggle('is-flipped')" style="--fc-grad: var(--grad-m2-brand); --fc-accent: var(--m2-primary-deep); height: 280px;">
             <div class="fc__inner">
               <!-- FRENTE -->
               <div class="fc__front">
@@ -133,7 +333,7 @@
           </div>
 
           <!-- Card 3: Pessoas sexualmente ativas -->
-          <div class="fc" onclick="this.classList.toggle('is-flipped')" style="--fc-grad: var(--grad-m2-brand); --fc-accent: var(--m2-primary-deep);">
+          <div class="fc" onclick="this.classList.toggle('is-flipped')" style="--fc-grad: var(--grad-m2-brand); --fc-accent: var(--m2-primary-deep); height: 280px;">
             <div class="fc__inner">
               <!-- FRENTE -->
               <div class="fc__front">
@@ -721,7 +921,7 @@
                   <button class="hs-popover__close" onclick="closeCrPop('cr-pop-4-5')"><i data-lucide="x"></i></button>
                   <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Tratamento</span>
                   <div class="hs-popover__body">
-                    Conheça mais sobre tratamento e vacinação acessando o curso <a href="https://avasus.ufrn.br/local/avasplugin/cursos/curso.php?id=386" target="_blank" rel="noopener noreferrer" style="color: var(--m2-primary); text-decoration: underline; font-weight: 700;">“Infecção pelo HPV”</a>, de 3 horas, elaborado pela UFRN/UNA-SUS em 2020.
+                    Conheça mais sobre tratamento e vacinação acessando o curso <a href="https://avasus.ufrn.br/local/avasplugin/cursos/curso.php?id=386" target="_blank" rel="noopener noreferrer" style="color: var(--m2-primary); text-decoration: underline; font-weight: 700;">"Infecção pelo HPV"</a>, de 3 horas, elaborado pela UFRN/UNA-SUS em 2020.
                   </div>
                 </div>
               </div>
@@ -860,73 +1060,92 @@
             <button class="carousel__dot" onclick="crGoTo(this,1)"></button>
             <button class="carousel__dot" onclick="crGoTo(this,2)"></button>
             <button class="carousel__dot" onclick="crGoTo(this,3)"></button>
-                </div>
-              </div>
+            <button class="carousel__dot" onclick="crGoTo(this,4)"></button>
+          </div>
+        </div>
+      </section>
 
-              <!-- Tratamento -->
-              <div class="carousel__btn-wrap">
-                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-5-5')">
-                  Tratamento
-                </button>
-                <div class="hs-popover" id="cr-pop-5-5">
-                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-5-5')"><i data-lucide="x"></i></button>
-                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Tratamento</span>
-                  <div class="hs-popover__body">
-                    <ul style="margin: 0; padding-left: 1.1rem; line-height: 1.5;">
-                      <li style="margin-bottom: 0.4rem;">Não existe vacina nem tratamento que proporcione a cura.</li>
-                      <li>A adoção de medidas de controle e prevenção, similares às do HIV, são essenciais para interromper a transmissão.</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
+      <!-- BLOCO: Fatores de vulnerabilidade -->
+      <section id="s2-2" class="block" style="scroll-margin-top:80px;margin-bottom:4rem;">
+        <h2 class="block-title" style="margin-bottom:2rem;font-size:1.7rem;color:var(--m2-primary-deep);">Fatores de vulnerabilidade das pessoas caminhoneiras</h2>
+        <div style="display:flex;justify-content:center;margin-bottom:1.75rem">
+          <div style="background:var(--grad-m2-brand);color:#fff;padding:.75rem 2.5rem;border-radius:999px;font-family:var(--font-display);font-weight:800;font-size:.92rem;letter-spacing:.07em;text-transform:uppercase;box-shadow:0 4px 20px rgba(63,86,166,.3)">PESSOAS CAMINHONEIRAS</div>
+        </div>
+        <p style="text-align:center;font-size:.82rem;color:var(--fg3);margin-bottom:1.25rem;margin-top:-.5rem">Clique em cada fator para saber mais</p>
+        <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:1rem">
 
-              <!-- Referência -->
-              <div class="carousel__btn-wrap">
-                <button class="btn btn--m2-outline btn--sm" onclick="toggleCrPop(this,'cr-pop-5-6')">
-                  Referência
-                </button>
-                <div class="hs-popover" id="cr-pop-5-6">
-                  <button class="hs-popover__close" onclick="closeCrPop('cr-pop-5-6')"><i data-lucide="x"></i></button>
-                  <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Referência</span>
-                  <div class="hs-popover__body">
-                    Brasil, 2022.
-                  <path d="M0,0 L0,6 L9,3 Z" fill="#428C84" />
-                </marker>
-              </defs>
-              <!-- Arrow Lines -->
-              <line x1="400" y1="220" x2="400" y2="135" stroke="#DE6847" stroke-width="4" marker-end="url(#arrow-n1)" />
-              <line x1="480" y1="240" x2="550" y2="205" stroke="#C84E5F" stroke-width="4" marker-end="url(#arrow-n2)" />
-              <line x1="480" y1="310" x2="550" y2="345" stroke="#A35272" stroke-width="4" marker-end="url(#arrow-n3)" />
-              <line x1="400" y1="330" x2="400" y2="415" stroke="#7F6291" stroke-width="4" marker-end="url(#arrow-n4)" />
-              <line x1="320" y1="310" x2="250" y2="345" stroke="#557497" stroke-width="4" marker-end="url(#arrow-n5)" />
-              <line x1="320" y1="240" x2="250" y2="205" stroke="#428C84" stroke-width="4" marker-end="url(#arrow-n6)" />
-            </svg>
-
-            <!-- Central Hub -->
-            <div class="vuln-hub-center">
-              PESSOAS CAMINHONEIRAS
-            </div>
-
-            <!-- Surrounding Nodes -->
-            <div class="vuln-node vuln-node--1">
-              Múltiplos parceiros sexuais
-            </div>
-            <div class="vuln-node vuln-node--2">
-              Antecedente prisional
-            </div>
-            <div class="vuln-node vuln-node--3">
-              Uso irregular preservativo
-            </div>
-            <div class="vuln-node vuln-node--4">
-              Consumo de álcool/drogas ilícitas
-            </div>
-            <div class="vuln-node vuln-node--5">
-              Baixa percepção de vulnerabilidade às ISTs
-            </div>
-            <div class="vuln-node vuln-node--6">
-              Relações sexuais com profissionais do sexo
+          <div style="position:relative">
+            <button onclick="toggleVuln(this,'vf-1')" style="width:100%;display:flex;align-items:center;gap:.75rem;padding:.8rem 1rem;background:var(--card);border:2px solid #e2e8f0;border-radius:var(--r-md);cursor:pointer;text-align:left;box-shadow:var(--sh-sm);transition:border-color .2s">
+              <span style="background:#DE6847;color:#fff;border-radius:50%;min-width:1.75rem;height:1.75rem;display:inline-flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:800;flex-shrink:0">1</span>
+              <span style="font-size:.88rem;color:var(--fg1);line-height:1.4;flex:1;font-weight:600">M&#xFA;ltiplos parceiros sexuais</span>
+              <i data-lucide="info" style="width:.9rem;height:.9rem;flex-shrink:0;color:#94a3b8"></i>
+            </button>
+            <div id="vf-1" style="display:none;position:absolute;top:calc(100% + 6px);left:0;right:0;background:#fff;border:1.5px solid #e2e8f0;border-radius:var(--r-md);padding:.9rem 1rem 1rem;box-shadow:0 8px 28px rgba(0,0,0,.13);z-index:40;font-size:.84rem;color:var(--fg2);line-height:1.65">
+              <button onclick="closeVuln('vf-1')" style="float:right;margin:-.1rem -.2rem .3rem .5rem;background:none;border:none;cursor:pointer;color:#94a3b8;padding:.15rem"><i data-lucide="x" style="width:.8rem;height:.8rem"></i></button>
+              A mobilidade profissional e os longos per&#xED;odos afastados de casa aumentam as chances de rela&#xE7;&#xF5;es com parceiros eventuais, elevando significativamente o risco de ISTs.
             </div>
           </div>
+
+          <div style="position:relative">
+            <button onclick="toggleVuln(this,'vf-2')" style="width:100%;display:flex;align-items:center;gap:.75rem;padding:.8rem 1rem;background:var(--card);border:2px solid #e2e8f0;border-radius:var(--r-md);cursor:pointer;text-align:left;box-shadow:var(--sh-sm);transition:border-color .2s">
+              <span style="background:#C84E5F;color:#fff;border-radius:50%;min-width:1.75rem;height:1.75rem;display:inline-flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:800;flex-shrink:0">2</span>
+              <span style="font-size:.88rem;color:var(--fg1);line-height:1.4;flex:1;font-weight:600">Antecedente prisional</span>
+              <i data-lucide="info" style="width:.9rem;height:.9rem;flex-shrink:0;color:#94a3b8"></i>
+            </button>
+            <div id="vf-2" style="display:none;position:absolute;top:calc(100% + 6px);left:0;right:0;background:#fff;border:1.5px solid #e2e8f0;border-radius:var(--r-md);padding:.9rem 1rem 1rem;box-shadow:0 8px 28px rgba(0,0,0,.13);z-index:40;font-size:.84rem;color:var(--fg2);line-height:1.65">
+              <button onclick="closeVuln('vf-2')" style="float:right;margin:-.1rem -.2rem .3rem .5rem;background:none;border:none;cursor:pointer;color:#94a3b8;padding:.15rem"><i data-lucide="x" style="width:.8rem;height:.8rem"></i></button>
+              A passagem por sistemas prisionais est&#xE1; associada &#xE0; maior exposi&#xE7;&#xE3;o a ISTs, em raz&#xE3;o das condi&#xE7;&#xF5;es de vulnerabilidade social e menor acesso a a&#xE7;&#xF5;es de preven&#xE7;&#xE3;o.
+            </div>
+          </div>
+
+          <div style="position:relative">
+            <button onclick="toggleVuln(this,'vf-3')" style="width:100%;display:flex;align-items:center;gap:.75rem;padding:.8rem 1rem;background:var(--card);border:2px solid #e2e8f0;border-radius:var(--r-md);cursor:pointer;text-align:left;box-shadow:var(--sh-sm);transition:border-color .2s">
+              <span style="background:#A35272;color:#fff;border-radius:50%;min-width:1.75rem;height:1.75rem;display:inline-flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:800;flex-shrink:0">3</span>
+              <span style="font-size:.88rem;color:var(--fg1);line-height:1.4;flex:1;font-weight:600">Uso irregular de preservativo</span>
+              <i data-lucide="info" style="width:.9rem;height:.9rem;flex-shrink:0;color:#94a3b8"></i>
+            </button>
+            <div id="vf-3" style="display:none;position:absolute;top:calc(100% + 6px);left:0;right:0;background:#fff;border:1.5px solid #e2e8f0;border-radius:var(--r-md);padding:.9rem 1rem 1rem;box-shadow:0 8px 28px rgba(0,0,0,.13);z-index:40;font-size:.84rem;color:var(--fg2);line-height:1.65">
+              <button onclick="closeVuln('vf-3')" style="float:right;margin:-.1rem -.2rem .3rem .5rem;background:none;border:none;cursor:pointer;color:#94a3b8;padding:.15rem"><i data-lucide="x" style="width:.8rem;height:.8rem"></i></button>
+              A baixa ades&#xE3;o ao uso do preservativo nas rela&#xE7;&#xF5;es espor&#xE1;dicas &#xE9; fator de risco diretamente associado &#xE0; transmiss&#xE3;o de ISTs nessa popula&#xE7;&#xE3;o.
+            </div>
+          </div>
+
+          <div style="position:relative">
+            <button onclick="toggleVuln(this,'vf-4')" style="width:100%;display:flex;align-items:center;gap:.75rem;padding:.8rem 1rem;background:var(--card);border:2px solid #e2e8f0;border-radius:var(--r-md);cursor:pointer;text-align:left;box-shadow:var(--sh-sm);transition:border-color .2s">
+              <span style="background:#7F6291;color:#fff;border-radius:50%;min-width:1.75rem;height:1.75rem;display:inline-flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:800;flex-shrink:0">4</span>
+              <span style="font-size:.88rem;color:var(--fg1);line-height:1.4;flex:1;font-weight:600">Consumo de &#xE1;lcool/drogas il&#xED;citas</span>
+              <i data-lucide="info" style="width:.9rem;height:.9rem;flex-shrink:0;color:#94a3b8"></i>
+            </button>
+            <div id="vf-4" style="display:none;position:absolute;top:calc(100% + 6px);left:0;right:0;background:#fff;border:1.5px solid #e2e8f0;border-radius:var(--r-md);padding:.9rem 1rem 1rem;box-shadow:0 8px 28px rgba(0,0,0,.13);z-index:40;font-size:.84rem;color:var(--fg2);line-height:1.65">
+              <button onclick="closeVuln('vf-4')" style="float:right;margin:-.1rem -.2rem .3rem .5rem;background:none;border:none;cursor:pointer;color:#94a3b8;padding:.15rem"><i data-lucide="x" style="width:.8rem;height:.8rem"></i></button>
+              O uso de subst&#xE2;ncias psicoativas prejudica a percep&#xE7;&#xE3;o de risco e a tomada de decis&#xE3;o, levando a comportamentos sexuais de maior risco.
+            </div>
+          </div>
+
+          <div style="position:relative">
+            <button onclick="toggleVuln(this,'vf-5')" style="width:100%;display:flex;align-items:center;gap:.75rem;padding:.8rem 1rem;background:var(--card);border:2px solid #e2e8f0;border-radius:var(--r-md);cursor:pointer;text-align:left;box-shadow:var(--sh-sm);transition:border-color .2s">
+              <span style="background:#557497;color:#fff;border-radius:50%;min-width:1.75rem;height:1.75rem;display:inline-flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:800;flex-shrink:0">5</span>
+              <span style="font-size:.88rem;color:var(--fg1);line-height:1.4;flex:1;font-weight:600">Baixa percep&#xE7;&#xE3;o de vulnerabilidade &#xE0;s ISTs</span>
+              <i data-lucide="info" style="width:.9rem;height:.9rem;flex-shrink:0;color:#94a3b8"></i>
+            </button>
+            <div id="vf-5" style="display:none;position:absolute;top:calc(100% + 6px);left:0;right:0;background:#fff;border:1.5px solid #e2e8f0;border-radius:var(--r-md);padding:.9rem 1rem 1rem;box-shadow:0 8px 28px rgba(0,0,0,.13);z-index:40;font-size:.84rem;color:var(--fg2);line-height:1.65">
+              <button onclick="closeVuln('vf-5')" style="float:right;margin:-.1rem -.2rem .3rem .5rem;background:none;border:none;cursor:pointer;color:#94a3b8;padding:.15rem"><i data-lucide="x" style="width:.8rem;height:.8rem"></i></button>
+              Muitos caminhoneiros n&#xE3;o se reconhecem como grupo vulner&#xE1;vel, o que reduz a procura espont&#xE2;nea por servi&#xE7;os de testagem e preven&#xE7;&#xE3;o.
+            </div>
+          </div>
+
+          <div style="position:relative">
+            <button onclick="toggleVuln(this,'vf-6')" style="width:100%;display:flex;align-items:center;gap:.75rem;padding:.8rem 1rem;background:var(--card);border:2px solid #e2e8f0;border-radius:var(--r-md);cursor:pointer;text-align:left;box-shadow:var(--sh-sm);transition:border-color .2s">
+              <span style="background:#428C84;color:#fff;border-radius:50%;min-width:1.75rem;height:1.75rem;display:inline-flex;align-items:center;justify-content:center;font-size:.72rem;font-weight:800;flex-shrink:0">6</span>
+              <span style="font-size:.88rem;color:var(--fg1);line-height:1.4;flex:1;font-weight:600">Rela&#xE7;&#xF5;es sexuais com profissionais do sexo</span>
+              <i data-lucide="info" style="width:.9rem;height:.9rem;flex-shrink:0;color:#94a3b8"></i>
+            </button>
+            <div id="vf-6" style="display:none;position:absolute;top:calc(100% + 6px);left:0;right:0;background:#fff;border:1.5px solid #e2e8f0;border-radius:var(--r-md);padding:.9rem 1rem 1rem;box-shadow:0 8px 28px rgba(0,0,0,.13);z-index:40;font-size:.84rem;color:var(--fg2);line-height:1.65">
+              <button onclick="closeVuln('vf-6')" style="float:right;margin:-.1rem -.2rem .3rem .5rem;background:none;border:none;cursor:pointer;color:#94a3b8;padding:.15rem"><i data-lucide="x" style="width:.8rem;height:.8rem"></i></button>
+              O contato frequente com profissionais do sexo em pontos de parada nas rodovias representa um importante fator de exposi&#xE7;&#xE3;o &#xE0;s ISTs.
+            </div>
+          </div>
+
         </div>
       </section>
 
@@ -978,19 +1197,6 @@
           <div class="tabs__panel" id="tab-test-3" role="tabpanel">
             <p style="margin: 0; color: var(--fg2); line-height: 1.75; font-size: 1.025rem;">A etapa de pós-teste envolve a interpretação dos resultados, a comunicação ao usuário e os encaminhamentos necessários na rede de atenção à saúde. O profissional deve verificar a presença da linha de controle para confirmar a validade do teste e interpretar o resultado como reagente ou não reagente conforme as linhas observadas no dispositivo. Em caso de resultado reagente, é necessário seguir os fluxogramas diagnósticos recomendados pelo Ministério da Saúde e encaminhar o usuário para realização de testes complementares e acompanhamento nos serviços de referência. Além disso, devem ser fornecidas orientações sobre prevenção, tratamento disponível no SUS e a importância da testagem de parcerias. Também é fundamental registrar adequadamente os resultados e estar atento a possíveis intercorrências, como testes inválidos ou suspeita de resultados falsos, adotando as medidas recomendadas nesses casos.</p>
           </div>
-        </div>
-      </section>
-
-      <!-- BLOCO: Dica (Adesão à testagem) -->
-      <section class="block" style="margin-top: 3rem; margin-bottom: 4rem;">
-      </section>
-
-      <!-- BLOCO: Etapas do Processo de Testagem Rápida -->
-      <section class="block" style="margin-bottom: 4rem;">
-        <h2 class="block-title" style="margin-bottom: 2rem; font-size: 1.7rem; color: var(--m2-primary-deep);">Etapas da testagem rápida</h2>
-        
-            <span class="bigbtn__arrow"><i data-lucide="chevron-right"></i></span>
-          </button>
         </div>
       </section>
 
@@ -1047,12 +1253,12 @@
           </div>
 
           <!-- Ponto 4: Lubrificação -->
-
-
-      <!-- BLOCO: Hotspot Preservativo (Sem título) -->
-      <section class="block" style="margin-bottom: 4rem;">
-        <div class="hs-scene" style="--hs-bg: var(--m2-surface); --hs-color: var(--m2-primary); height: auto;">
-          <!-- Imagem de Fundo Real (img01.png) -->
+          <div class="hs-point" style="left: 25%; top: 60%; width: auto; height: auto;">
+            <button class="hs-btn hs-btn--plus" onclick="toggleHs(this,'hs-prev-4')">+</button>
+            <div class="hs-popover" id="hs-prev-4">
+              <button class="hs-popover__close" onclick="closeHs('hs-prev-4')"><i data-lucide="x"></i></button>
+              <span class="hs-popover__badge" style="background-color: var(--m2-primary);">Lubrificação</span>
+              <div class="hs-popover__title">Lubrificantes Adequados</div>
               <div class="hs-popover__body">Utilizar apenas lubrificantes à base de água, uma vez que produtos à base de óleo podem danificar o material.</div>
             </div>
           </div>
@@ -1117,8 +1323,6 @@
         </div>
       </section>
 
-      >
-
       <!-- ═══ REFERÊNCIAS BIBLIOGRÁFICAS ═══ -->
       <section id="referencias" class="block" style="scroll-margin-top:80px;margin-bottom:2rem">
         <h2 class="block-title" style="color:var(--m2-primary-deep);margin-bottom:1.5rem">Referências Bibliográficas</h2>
@@ -1159,46 +1363,29 @@
     </main>
   </div>
 
-  <!-- MODAL: Curso AVASUS -->
-  <div class="overlay" id="modalCursoAvasus">
-    <div class="modal">
-      <div class="modal__head" style="background: var(--grad-m2-brand); color: #fff;">
-        <button class="modal__close" onclick="closeModal('modalCursoAvasus')" aria-label="Fechar"><i data-lucide="x"></i></button>
-        <span class="badge badge--orange modal__kicker">Saiba mais</span>
-        <div class="modal__title">Curso “Sífilis: Diagnóstico e Tratamento”</div>
-        <div class="modal__author">AVASUS · UFRN / Ministério da Saúde (2023)</div>
-      </div>
-      <div class="modal__body">
-        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.2rem; color: var(--fg1);">
-          Para mais informações sobre a sífilis, assista ao curso **“Sífilis: Diagnóstico e Tratamento”**, de 30 horas.
-      </section>
-
-      <!-- BLOCO: Reflexão (Vulnerabilidade e Ações Educativas) -->
-      <section class="block" style="margin-top: 3rem; margin-bottom: 4rem;">
-        <div class="bigbtns">
-          <button class="bigbtn bigbtn--reflexao" onclick="openModal('modalReflexao')">
-            <i data-lucide="external-link"></i> Acessar o Curso
-          </a>
-          <button class="btn btn--m2-ghost" onclick="closeModal('modalCursoAvasus')">Fechar</button>
-        </div>
-      </div>
-    </div>
-  </div>
-
   <!-- MODAL: Prevalências de ISTs -->
   <div class="overlay" id="modalPrevalencias">
     <div class="modal" style="width: min(800px, 100%);">
       <div class="modal__head" style="background: var(--grad-m2-brand); color: #fff;">
         <button class="modal__close" onclick="closeModal('modalPrevalencias')" aria-label="Fechar"><i data-lucide="x"></i></button>
-            <span class="bigbtn__icon"><i data-lucide="book-open"></i></span>
-            <span class="bigbtn__txt">
-              <span class="bigbtn__title">Saiba mais</span>
-            </span>
-            <span class="bigbtn__arrow"><i data-lucide="chevron-right"></i></span>
-          </button>
+        <span class="badge badge--orange modal__kicker">Saiba mais</span>
+        <div class="modal__title">Prevalências de ISTs entre caminhoneiros</div>
+      </div>
+      <div class="modal__body">
+        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.2rem; color: var(--fg1);">
+          Estudos revelam que caminhoneiros apresentam maior prevalência de ISTs em comparação com a população geral, em função dos múltiplos fatores de vulnerabilidade associados à sua rotina de trabalho.
+        </p>
+        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.2rem; color: var(--fg1);">
+          Santos et al. (2026) identificaram marcadores de vulnerabilidade em saúde sexual significativamente mais presentes nessa população, incluindo maior frequência de relações sexuais com parceiros eventuais e menor adesão ao uso de preservativos.
+        </p>
+        <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 0; color: var(--fg1);">
+          A estimativa global de Rowley et al. (2019) aponta que mais de 374 milhões de novas infecções por clamídia, gonorreia, sífilis e tricomoníase ocorrem anualmente entre pessoas de 15 a 49 anos — evidenciando a magnitude do problema e a importância das ações preventivas direcionadas a populações vulneráveis, como caminhoneiros.
+        </p>
+        <div class="modal__actions" style="margin-top: 1.8rem; justify-content: flex-end; display: flex; gap: 0.7rem;">
+          <button class="btn btn--m2-ghost" onclick="closeModal('modalPrevalencias')">Fechar</button>
         </div>
-      </section>
-    </main>
+      </div>
+    </div>
   </div>
 
   <!-- MODAL: Curso AVASUS -->
@@ -1207,12 +1394,12 @@
       <div class="modal__head" style="background: var(--grad-m2-brand); color: #fff;">
         <button class="modal__close" onclick="closeModal('modalCursoAvasus')" aria-label="Fechar"><i data-lucide="x"></i></button>
         <span class="badge badge--orange modal__kicker">Saiba mais</span>
-        <div class="modal__title">Curso “Sífilis: Diagnóstico e Tratamento”</div>
+        <div class="modal__title">Curso "Sífilis: Diagnóstico e Tratamento"</div>
         <div class="modal__author">AVASUS · UFRN / Ministério da Saúde (2023)</div>
       </div>
       <div class="modal__body">
         <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.2rem; color: var(--fg1);">
-          Para mais informações sobre a sífilis, assista ao curso **“Sífilis: Diagnóstico e Tratamento”**, de 30 horas.
+          Para mais informações sobre a sífilis, assista ao curso <strong>"Sífilis: Diagnóstico e Tratamento"</strong>, de 30 horas.
         </p>
         <p style="font-size: 1.05rem; line-height: 1.7; margin-bottom: 1.2rem; color: var(--fg1);">
           Ele é oferecido pela AVASUS e foi elaborado pela UFRN em parceria com o Ministério da Saúde, em 2023.
@@ -1220,9 +1407,8 @@
         <div class="modal__actions" style="margin-top: 1.8rem; justify-content: flex-end; display: flex; gap: 0.7rem;">
           <a class="btn btn--m2-bright" href="https://avasus.ufrn.br/local/avasplugin/cursos/curso.php?id=526" target="_blank" rel="noopener noreferrer">
             <i data-lucide="external-link"></i> Acessar o Curso
-        </p>
-        <div class="modal__actions" style="margin-top: 1.8rem; justify-content: flex-end; display: flex; gap: 0.7rem;">
-          <button class="btn btn--m2-ghost" onclick="closeModal('modalDicaTestagem')">Fechar</button>
+          </a>
+          <button class="btn btn--m2-ghost" onclick="closeModal('modalCursoAvasus')">Fechar</button>
         </div>
       </div>
     </div>
@@ -1286,7 +1472,7 @@
         <p style="font-weight:700;color:var(--fg1);margin-bottom:.5rem">Instituição</p>
         <p style="color:var(--fg2);margin-bottom:1.2rem">Fiocruz Mato Grosso do Sul</p>
         <p style="font-weight:700;color:var(--fg1);margin-bottom:.5rem">Curso</p>
-        <p style="color:var(--fg2)">Atenção à Saúde da Caminhoneira e Caminhoneiro na Atenção Primária</p>
+        <p style="color:var(--fg2)">ATENÇÃO À SAÚDE DA CAMINHONEIRA E DO CAMINHONEIRO NA ATENÇÃO PRIMÁRIA</p>
         <div class="modal__actions" style="justify-content:flex-end">
           <button class="btn btn--m2-ghost" onclick="closeModal('modalCreditos')">Fechar</button>
         </div>
@@ -1334,5 +1520,9 @@
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>
   <script src="js/scripts.min.js"></script>
 
+  <script>
+  window.toggleVuln=function(btn,id){document.querySelectorAll('[id^="vf-"]').forEach(function(p){if(p.id!==id)p.style.display='none';});var p=document.getElementById(id);if(!p)return;p.style.display=p.style.display==='block'?'none':'block';};
+  window.closeVuln=function(id){var p=document.getElementById(id);if(p)p.style.display='none';};
+  </script>
 </body>
 </html>
