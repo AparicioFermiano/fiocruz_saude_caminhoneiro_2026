@@ -1,0 +1,6 @@
+MOD1: 1 <p> com parágrafos fundidos
+
+HTML<p>: A coordenação do cuidado pela APS deve ser central, integrando informações entre serviços 
+   DI▸ Caso clínico – Paradas na estrada
+   DI▸ A coordenação do cuidado pela APS deve ser central, integrando informações entre serviços 
+
