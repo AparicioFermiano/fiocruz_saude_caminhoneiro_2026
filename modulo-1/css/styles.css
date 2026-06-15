@@ -53,11 +53,11 @@
   --card-foreground:#1e2a23;
   --popover:#ffffff;
   --popover-foreground:#1e2a23;
-  --primary:#187848;
-  --primary-deep:#0e6238;
+  --primary:#d4aa00;
+  --primary-deep:#a88500;
   --primary-foreground:#ffffff;
-  --secondary:#eaf6ef;
-  --secondary-foreground:#0e6238;
+  --secondary:#fffada;
+  --secondary-foreground:#a88500;
   --accent-green:#43b64a;
   --cta:#f5a623;
   --cta-deep:#e08c0e;
@@ -214,7 +214,7 @@ p {
 }
 
 a {
-  color:var(--primary);
+  color:var(--primary-deep);
   text-decoration:none
 }
 
@@ -1735,4 +1735,5 @@ h2.block-title {
       overflow-wrap: anywhere !important;
       word-break: break-all !important;
     }
-  
+::selection{background:var(--primary-deep);color:#fff}::-moz-selection{background:var(--primary-deep);color:#fff}
+.list-bar{list-style:none;margin:0 0 1.2rem;padding:0;display:flex;flex-direction:column;gap:.5rem}.list-bar>li{position:relative;padding:.6rem .9rem .6rem 1.6rem;background:var(--bg-soft);border-left:3px solid var(--bar-color,var(--primary));border-radius:0 8px 8px 0;line-height:1.6;color:var(--fg1)}.list-bar>li::before{content:"";position:absolute;left:.7rem;top:1.05rem;width:7px;height:7px;border-radius:50%;background:var(--bar-color,var(--primary))}
