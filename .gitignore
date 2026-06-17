@@ -1,0 +1,5 @@
+# Pacotes/backups grandes — não versionar (excedem limites do GitHub)
+*.zip
+
+# Temporários
+.tmp-di/
