@@ -781,6 +781,9 @@ img {
   font-weight:300;
   line-height:1
 }
+  .carousel__btn-wrap {
+  position:relative;
+}
   .hs-popover {
   position:absolute;
   bottom:calc(100% + 16px);
