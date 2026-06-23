@@ -109,7 +109,6 @@ for mod, items in results.items():
     for i in fail:
         print(f"  FAIL: {i['file']} -> {i['status']}")
 
-# Save results for HTML update step
 with open(BASE / "scripts" / "pdf_results.json", "w") as f:
     json.dump(results, f, indent=2)
 print("\nResults saved to scripts/pdf_results.json")

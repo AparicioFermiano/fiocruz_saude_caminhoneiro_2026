@@ -16,8 +16,6 @@ MODULES = {
     5: {"var": "m5", "on": "#fff"},
 }
 
-# ─── M2: Encerramento + Material de Apoio ────────────────────────────────────
-
 M2_ENCERRAMENTO_BLOCK = '''
       <!-- ═══ ENCERRAMENTO ═══ -->
       <section id="encerramento" class="block" style="scroll-margin-top:80px;margin-bottom:2rem">
@@ -72,7 +70,6 @@ M2_ENCERRAMENTO_BLOCK = '''
         </div>
       </section>'''
 
-
 def mobile_elements(mod_num):
     m = MODULES[mod_num]
     var = m["var"]
@@ -93,16 +90,13 @@ def mobile_elements(mod_num):
 
 '''
 
-
 def apply_to_module(mod_num, path):
     content = path.read_text(encoding='utf-8')
     original_len = len(content)
     changes = []
 
-    # ── 1. M2 only: add encerramento before </main> ──────────────────────────
     if mod_num == 2 and 'id="encerramento"' not in content:
-        # Find the last </section> before </main>
-        # Unique: the Saiba mais section closes then </main>
+
         old = '      </section>\n\n    </main>\n  </div>\n\n  <!-- MODAL SOBREPOSTO (REFLEXÃO) -->'
         if old in content:
             new = M2_ENCERRAMENTO_BLOCK + '\n\n    </main>\n  </div>\n\n  <!-- MODAL SOBREPOSTO (REFLEXÃO) -->'
@@ -111,10 +105,9 @@ def apply_to_module(mod_num, path):
         else:
             changes.append('M2 encerramento: old_string NOT FOUND')
 
-    # ── 2. All modules: add mobile elements (back-to-top, toggle, overlay) ───
     if 'id="backToTop"' not in content:
         elements = mobile_elements(mod_num)
-        # Insert BEFORE </body>
+
         if '</body>' in content:
             content = content.replace('</body>', elements + '</body>', 1)
             changes.append('Mobile elements (back-to-top, sidebar-toggle, overlay) added')
@@ -128,7 +121,6 @@ def apply_to_module(mod_num, path):
             print(f"  OK: {c}")
     else:
         print(f"M{mod_num}: no changes needed ({len(content)} chars)")
-
 
 for mod_num in range(1, 6):
     path = BASE / f"modulo {mod_num}" / "index.html"

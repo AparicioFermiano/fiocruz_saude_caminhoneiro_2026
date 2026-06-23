@@ -7,8 +7,6 @@ from pathlib import Path
 
 BASE = Path(r"c:\Users\AparicioJunior\workspace\saude-caminhoneiros")
 
-# ─── Reference data per module ───────────────────────────────────────────────
-
 REFS = {
     1: [
         "BRASIL. Ministério da Saúde. <em>Política Nacional de Atenção Integral à Saúde da Mulher: princípios e diretrizes</em>. Brasília, DF: Ministério da Saúde, 2004. Disponível em: https://bvsms.saude.gov.br/bvs/publicacoes/politica_nac_atencao_mulher.pdf. Acesso em: 16 mar. 2026.",
@@ -101,10 +99,7 @@ REFS = {
     ],
 }
 
-# Module-specific CSS variable prefix
 MOD_VARS = {1: "m1", 2: "m2", 3: "m3", 4: "m4", 5: "m5"}
-
-# ─── Build section HTML ───────────────────────────────────────────────────────
 
 def build_section(mod_num, indent="      "):
     mv = MOD_VARS[mod_num]
@@ -123,8 +118,6 @@ def build_section(mod_num, indent="      "):
         f'{indent}</section>\n'
     )
 
-# ─── Apply to each module ─────────────────────────────────────────────────────
-
 for mod_num in range(1, 6):
     path = BASE / f"modulo {mod_num}" / "index.html"
     content = path.read_text(encoding="utf-8")
@@ -133,14 +126,11 @@ for mod_num in range(1, 6):
         print(f"M{mod_num}: already has referencias section, skipping")
         continue
 
-    # 1. Insert section — find last </section> immediately before </main>
-    #    Pattern: </section>\n\n    </main>  (with varying indent)
     pattern = r'(</section>\n)\n(\s*</main>)'
-    # Use rfind approach: split on last occurrence
-    # Find all matches and use the last one
+
     matches = list(re.finditer(pattern, content))
     if not matches:
-        # Try without blank line
+
         pattern = r'(</section>\n)(\s*</main>)'
         matches = list(re.finditer(pattern, content))
 
@@ -148,8 +138,8 @@ for mod_num in range(1, 6):
         print(f"M{mod_num}: ERROR — could not find </section>...</main> pattern")
         continue
 
-    m = matches[-1]  # last occurrence = after Material de Apoio
-    # Determine indentation from what's before </section>
+    m = matches[-1]
+
     before = content[:m.start()]
     last_newline = before.rfind('\n')
     indent = ""
@@ -160,11 +150,10 @@ for mod_num in range(1, 6):
         indent = "      "
 
     section_html = build_section(mod_num, indent)
-    # Insert after the closing </section>, before </main>
+
     insert_pos = m.start() + len(m.group(1))
     content = content[:insert_pos] + section_html + content[insert_pos:]
 
-    # 2. Add sidebar link after href="#encerramento"
     old_link = '<a class="sidebar-nav__link" href="#encerramento">Encerramento</a>'
     new_link = (
         '<a class="sidebar-nav__link" href="#encerramento">Encerramento</a>\n'

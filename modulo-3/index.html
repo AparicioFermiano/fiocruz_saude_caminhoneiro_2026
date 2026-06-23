@@ -9,18 +9,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Mukta:wght@300;400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.min.css">
   <style>
-    /* Revisão editorial: justificar os textos do conteúdo (parágrafos e listas) */
+
     main p, main li { text-align: justify; }
   </style>
 </head>
 <body>
 
-  <!-- Barra de Progresso Superior -->
   <div class="progress-rail" id="progressRail">
     <div class="progress-fill" id="progressFill"></div>
   </div>
 
-  <!-- HERO WRAP (Largura total da página) -->
   <div class="hero-wrap" id="home">
     <div class="hero-nav" style="--hn-color: var(--m3-primary)">
       <div class="hero-nav__inner">
@@ -29,7 +27,6 @@
       </div>
     </div>
 
-    <!-- M3 Verde (fundo escuro - --hb-text: #ffffff) -->
     <div class="hero-body" style="background: var(--grad-m3-hero); --hb-text: #ffffff;">
       <div class="hero-body__inner">
         <div class="hero-body__content" style="min-height: auto; padding: 0;">
@@ -50,7 +47,6 @@
     </div>
   </div>
 
-  <!-- Layout com Sidebar -->
   <div class="page-layout">
     <aside class="sidebar">
       <nav class="sidebar-nav" aria-label="Navegação do módulo">
@@ -75,7 +71,6 @@
     </aside>
     <main>
 
-      <!-- ═══ APRESENTAÇÃO ═══ -->
       <section id="apresentacao" style="scroll-margin-top:80px;margin-bottom:4rem;">
         <div style="margin-bottom:1.6rem;">
           <h2 style="font-family:var(--font-display);font-weight:800;font-size:1.7rem;color:var(--m3-primary-deep);margin:0;">Apresentação do Módulo</h2>
@@ -97,7 +92,6 @@
         </ul>
       </section>
 
-      <!-- ═══ SEÇÃO 3.1: Saúde Mental na APS ═══ -->
       <section id="s3-1" class="block" style="scroll-margin-top:80px;margin-bottom:4rem;">
         <div style="margin-bottom:1.6rem;">
           <h2 style="font-family:var(--font-display);font-weight:800;font-size:1.7rem;color:var(--m3-primary-deep);margin:0;">3.1 O cuidado em saúde mental da caminhoneira e do caminhoneiro na Atenção Primária à Saúde</h2>
@@ -109,7 +103,6 @@
 
         <p style="margin-bottom:1.2rem;line-height:1.75;color:var(--fg1);">Então, o que fazer diante desse cenário? Nesse ponto, a APS ocupa posição estratégica! Como principal porta de entrada do SUS, ela deve operar segundo os princípios da integralidade, longitudinalidade e coordenação do cuidado. A Política Nacional de Saúde Mental (PNSM) orienta que o cuidado em saúde mental seja territorial, comunitário e centrado na pessoa, superando modelos exclusivamente hospitalocêntricos.</p>
 
-        <!-- Reflexão -->
         <div class="bigbtns" style="margin-bottom:1.2rem;">
           <button class="bigbtn bigbtn--reflexao" onclick="openModal('modalReflexao')">
             <span class="bigbtn__icon"><i data-lucide="message-circle"></i></span>
@@ -124,13 +117,12 @@
 
         <p style="margin-bottom:2rem;line-height:1.75;color:var(--fg1);">Saiba que, no caso de caminhoneiras e caminhoneiros, o vínculo pode ser fortalecido por meio de escuta qualificada e rastreamento de sintomas relacionados a estresse, depressão, ansiedade e uso de álcool e outras drogas, além da oferta de ações educativas em saúde voltadas à higiene do sono, redução de danos e promoção de estilos de vida mais saudáveis. A seguir, é possível visualizar um esquema para orientar melhor essa identificação.</p>
 
-        <!-- Quadro 1 — Flashcards: Sinais de Alerta -->
         <h3 style="font-family:var(--font-display);font-weight:700;font-size:1.2rem;color:var(--m3-primary-deep);margin-bottom:0.5rem;">Identificação de sofrimento em saúde mental na Atenção Primária à Saúde — Sinais de Alerta</h3>
         <p class="block-note" style="margin-bottom:2rem;">Clique nos cartões abaixo para virar e ver o que observar e a conduta recomendada na APS.</p>
 
+        <p style="font-size:.85rem;color:var(--fg2);font-style:italic;margin:0 0 .9rem;">Clique nos itens para acessar o conteúdo.</p>
         <div class="fc-grid">
 
-          <!-- Cartão 1: Humor deprimido -->
           <div class="fc" onclick="this.classList.toggle('is-flipped')"
                style="--fc-grad: var(--grad-m3-brand); --fc-accent: var(--accent-green);">
             <div class="fc__inner">
@@ -150,7 +142,6 @@
             </div>
           </div>
 
-          <!-- Cartão 2: Ansiedade -->
           <div class="fc" onclick="this.classList.toggle('is-flipped')"
                style="--fc-grad: var(--grad-m3-brand); --fc-accent: var(--accent-green);">
             <div class="fc__inner">
@@ -170,7 +161,6 @@
             </div>
           </div>
 
-          <!-- Cartão 3: Estresse -->
           <div class="fc" onclick="this.classList.toggle('is-flipped')"
                style="--fc-grad: var(--grad-m3-brand); --fc-accent: var(--accent-green);">
             <div class="fc__inner">
@@ -190,7 +180,6 @@
             </div>
           </div>
 
-          <!-- Cartão 4: Privação de sono -->
           <div class="fc" onclick="this.classList.toggle('is-flipped')"
                style="--fc-grad: var(--grad-m3-brand); --fc-accent: var(--accent-green);">
             <div class="fc__inner">
@@ -210,7 +199,6 @@
             </div>
           </div>
 
-          <!-- Cartão 5: Uso de substâncias -->
           <div class="fc" onclick="this.classList.toggle('is-flipped')"
                style="--fc-grad: var(--grad-m3-brand); --fc-accent: var(--accent-green);">
             <div class="fc__inner">
@@ -236,7 +224,6 @@
         <p style="margin-top:2rem;margin-bottom:2rem;line-height:1.75;color:var(--fg1);">É fundamental reconhecer que o cuidado em saúde mental da caminhoneira e do caminhoneiro não se limita ao tratamento de transtornos diagnosticados; ele envolve a compreensão das condições concretas de trabalho, da solidão nas estradas, do distanciamento familiar e da pressão produtiva que atravessam o cotidiano profissional. Nesse sentido, a APS pode atuar tanto na dimensão clínica quanto na promoção da saúde, organizando grupos educativos, rodas de conversa e estratégias itinerantes nos Pontos de Parada e Descanso (PPD), contribuindo para a construção de redes de apoio e para o fortalecimento do protagonismo desses trabalhadores.</p>
         <p style="margin-bottom:2rem;line-height:1.75;color:var(--fg1);">Assim, o cuidado em saúde mental de caminhoneiras na APS demanda sensibilidade às singularidades do trabalho rodoviário, articulação com a legislação vigente e integração efetiva à RAPS. Ao reconhecer esses sujeitos como trabalhadores de direitos e como pessoas inseridas em contextos complexos de vida e trabalho, a APS reafirma seu papel nuclear na promoção da saúde, na prevenção de agravos e na produção de cuidado integral no SUS.</p>
 
-        <!-- Saiba mais — Vídeo -->
         <div class="bigbtns">
           <button class="bigbtn bigbtn--brand" onclick="openModal('modalVideo')">
             <span class="bigbtn__icon"><i data-lucide="book-open"></i></span>
@@ -248,7 +235,6 @@
         </div>
       </section>
 
-      <!-- ═══ SEÇÃO 3.2: Álcool e Outras Drogas ═══ -->
       <section id="s3-2" class="block" style="scroll-margin-top:80px;margin-bottom:4rem;">
         <div style="margin-bottom:1.6rem;">
           <h2 style="font-family:var(--font-display);font-weight:800;font-size:1.7rem;color:var(--m3-primary-deep);margin:0;">3.2 O uso de álcool e outras drogas no contexto das rodovias, com ênfase na redução de danos</h2>
@@ -258,7 +244,6 @@
 
         <p style="margin-bottom:2rem;line-height:1.75;color:var(--fg1);">Os dados confirmam essa realidade. Em rodovias do estado de São Paulo, 67,3% das pessoas caminhoneiras relataram consumo recente de álcool; 34,6% apresentaram consumo pesado e 26% relataram episódios de <em>binge drinking</em> (beber grande quantidade de álcool de uma só vez). Além disso, 54,6% combinavam álcool com outras substâncias, como tabaco e energéticos (Leopoldo; Leyton; Oliveira, 2015). Estudos anteriores já apontavam que até 91% consumiram álcool durante viagens e 66% admitiram usar anfetaminas para aguentar o ritmo de trabalho (Nascimento; Nascimento; Silva, 2007).</p>
 
-        <!-- Quadro 2 — Gráfico de Barras -->
         <div class="card" style="padding:2rem;background:#fff;box-shadow:var(--sh-md);border-radius:var(--r-lg);margin-bottom:2rem;">
           <div style="font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:var(--fg1);margin-bottom:1.5rem;border-bottom:2px solid var(--border);padding-bottom:0.5rem;display:flex;align-items:center;gap:0.5rem;">
             <i data-lucide="bar-chart-3" style="color:var(--m3-primary);"></i>
@@ -266,7 +251,6 @@
           </div>
           <div style="display:flex;flex-direction:column;gap:1.5rem;">
 
-            <!-- Barra 1 -->
             <div>
               <div style="display:flex;justify-content:space-between;font-size:0.95rem;margin-bottom:0.4rem;color:var(--fg2);">
                 <span>Consumiram álcool durante viagens (Nascimento <i>et al.</i>, 2007)</span>
@@ -277,7 +261,6 @@
               </div>
             </div>
 
-            <!-- Barra 2 -->
             <div>
               <div style="display:flex;justify-content:space-between;font-size:0.95rem;margin-bottom:0.4rem;color:var(--fg2);">
                 <span>Consumo recente de álcool (Leopoldo <i>et al.</i>, 2015)</span>
@@ -288,7 +271,6 @@
               </div>
             </div>
 
-            <!-- Barra 3 -->
             <div>
               <div style="display:flex;justify-content:space-between;font-size:0.95rem;margin-bottom:0.4rem;color:var(--fg2);">
                 <span>Admitiram uso de anfetaminas (Nascimento <i>et al.</i>, 2007)</span>
@@ -299,7 +281,6 @@
               </div>
             </div>
 
-            <!-- Barra 4 -->
             <div>
               <div style="display:flex;justify-content:space-between;font-size:0.95rem;margin-bottom:0.4rem;color:var(--fg2);">
                 <span>Combinavam álcool com outras substâncias (Leopoldo <i>et al.</i>, 2015)</span>
@@ -310,7 +291,6 @@
               </div>
             </div>
 
-            <!-- Barra 5 -->
             <div>
               <div style="display:flex;justify-content:space-between;font-size:0.95rem;margin-bottom:0.4rem;color:var(--fg2);">
                 <span>Apresentaram consumo pesado de álcool (Leopoldo <i>et al.</i>, 2015)</span>
@@ -321,7 +301,6 @@
               </div>
             </div>
 
-            <!-- Barra 6 -->
             <div>
               <div style="display:flex;justify-content:space-between;font-size:0.95rem;margin-bottom:0.4rem;color:var(--fg2);">
                 <span>Relataram episódios de <em>Binge drinking</em> (Leopoldo <i>et al.</i>, 2015)</span>
@@ -334,13 +313,12 @@
 
           </div>
           <div style="margin-top:2rem;padding-top:1rem;border-top:1px solid var(--border);font-size:0.88rem;color:var(--fg3);line-height:1.6;">
-            <p style="margin:0;">Dados mais recentes indicam crescimento no uso de cocaína e outros estimulantes, muitas vezes chamados de "rebites", usados com frequência para não dormir (Childhood Brasil, 2025) — substâncias estas associadas a mais de 6 mil acidentes e 452 mortes em rodovias federais em um único ano (PRF, 2023).</p>
+            <p style="margin:0;">Dados mais recentes indicam crescimento no uso de cocaína e outros estimulantes, muitas vezes chamados de "rebites", usados com frequência para não dormir (Childhood Brasil, 2025) — substâncias estas associadas a mais de 6 mil acidentes e 452 mortes em rodovias federais em um único <span class="ipop" tabindex="0">ano<span class="ipop__box">Para obter dados mais atualizados do Anuário Estatístico de Acidentes de Trânsito nas Rodovias Federais, acesse o link do <a href="https://www.gov.br/prf/pt-br/noticias/nacionais/2026/maio/prf-divulga-anuario-estatistico-de-2025-com-aumento-de-infracoes-e-reducao-de-mortes-nas-rodovias-federais" target="_blank" rel="noopener noreferrer">Anuário Estatístico da PRF</a>.</span></span> (PRF, 2023).</p>
           </div>
         </div>
 
         <p style="margin-bottom:2rem;line-height:1.75;color:var(--fg1);">Diante desse cenário, qual é o papel da APS? A abordagem mais adequada é a <strong>redução de danos</strong>: uma estratégia ética, realista e não moralizante, centrada na compreensão das experiências e necessidades de cada pessoa. Em vez de julgamento, oferece orientação, acolhimento e construção conjunta de possibilidades, mesmo que a mudança seja gradual. Conheça algumas estratégias a seguir.</p>
 
-        <!-- Quadro 2 — Timeline: Redução de danos na prática -->
         <h3 style="font-family:var(--font-display);font-weight:700;font-size:1.2rem;color:var(--m3-primary-deep);margin-bottom:1.5rem;">Redução de danos na prática</h3>
         <div class="tl" style="--tl-color: var(--accent-green);">
 
@@ -389,7 +367,6 @@
         <p style="margin-top:2rem;line-height:1.75;color:var(--fg1);">É importante saber que a redução de danos não exige que a pessoa abandone imediatamente o uso de substâncias; ela propõe que cada passo em direção ao menor risco já seja um avanço, e que o cuidado começa no vínculo, não no julgamento.</p>
       </section>
 
-      <!-- ═══ SEÇÃO 3.3: Principais Transtornos ═══ -->
       <section id="s3-3" class="block" style="scroll-margin-top:80px;margin-bottom:4rem;">
         <div style="margin-bottom:1.6rem;">
           <h2 style="font-family:var(--font-display);font-weight:800;font-size:1.7rem;color:var(--m3-primary-deep);margin:0;">3.3 Principais transtornos relacionados à saúde mental nas estradas</h2>
@@ -397,7 +374,6 @@
 
         <p style="margin-bottom:1.2rem;line-height:1.75;color:var(--fg1);">Você já parou para pensar em transtornos mentais de profissionais que dirigem e têm alta dificuldade de atendimento psicológico continuado? Um estudo recente da Universidade Federal de Sergipe, com apoio da Childhood Brasil, chama a atenção para esse tema pouco discutido (Viana; Feitosa; Cerqueira-Santos, 2025). A pesquisa ouviu 273 profissionais de todo o país e revelou um cenário preocupante. Os números impressionam: 41% apresentaram sintomas de depressão, 47,3% de ansiedade e 71,1% de estresse. Ou seja, a maioria desse público-alvo convive com alta carga emocional no dia a dia. E o mais importante: esses problemas estão muito mais ligados às condições de trabalho do que a fatores pessoais, como renda ou escolaridade.</p>
 
-        <!-- Gráfico de barras: transtornos mentais -->
         <div class="card" style="padding:2rem;background:#fff;box-shadow:var(--sh-md);border-radius:var(--r-lg);margin-bottom:2rem;">
           <div style="font-family:var(--font-display);font-weight:700;font-size:1.1rem;color:var(--fg1);margin-bottom:1.5rem;border-bottom:2px solid var(--border);padding-bottom:0.5rem;display:flex;align-items:center;gap:0.5rem;">
             <i data-lucide="brain" style="color:var(--m3-primary);"></i>
@@ -445,7 +421,6 @@
         <p style="line-height:1.75;color:var(--fg1);">Na prática, o cuidado passa por reconhecer sinais precoces, acolher sem julgamento, facilitar o acesso e articular com a rede quando necessário, lembrando sempre que, mais do que diagnosticar, é preciso que você, como profissional, compreenda o contexto de vida de quem está na sua frente.</p>
       </section>
 
-      <!-- ═══ SEÇÃO 3.4: Privação do Sono ═══ -->
       <section id="s3-4" class="block" style="scroll-margin-top:80px;margin-bottom:4rem;">
         <div style="margin-bottom:1.6rem;">
           <h2 style="font-family:var(--font-display);font-weight:800;font-size:1.7rem;color:var(--m3-primary-deep);margin:0;">3.4 A relação entre privação do sono e saúde mental</h2>
@@ -457,9 +432,9 @@
 
         <p style="margin-bottom:1.2rem;line-height:1.75;color:var(--fg1);">As consequências ultrapassam o cansaço físico, uma vez que o sono regula emoções, atenção e tomada de decisão. Quando é reduzido ou fragmentado, surgem irritabilidade, lapsos de memória, dificuldade de concentração e maior propensão a sintomas ansiosos e depressivos. Para contornar isso, muitas pessoas recorrem a estimulantes, criando um ciclo perigoso: menos sono, mais desgaste, maior dependência de substâncias para continuar dirigindo. Observe alguns desses impactos e as condutas a serem seguidas na APS.</p>
 
-        <!-- Quadro 3 — Abas: impactos e condutas -->
         <h3 style="font-family:var(--font-display);font-weight:700;font-size:1.2rem;color:var(--m3-primary-deep);margin-bottom:1.5rem;">Privação do sono: impactos e condutas na Atenção Primária à Saúde</h3>
 
+        <p style="font-size:.85rem;color:var(--fg2);font-style:italic;margin:0 0 .9rem;">Clique nos itens para acessar o conteúdo.</p>
         <div class="tabs" style="--tab-color: var(--m3-primary);">
           <div class="tabs__nav" role="tablist" style="margin-bottom:1.5rem;flex-wrap:wrap;">
             <button class="tabs__tab is-active" type="button" role="tab" aria-selected="true" aria-controls="tab-sono-1" onclick="switchTab(this,'tab-sono-1')" style="padding:0.8rem 1.5rem;">
@@ -480,7 +455,6 @@
             </button>
           </div>
 
-          <!-- Painel 1: Poucas horas de sono -->
           <div class="tabs__panel is-active" id="tab-sono-1" role="tabpanel">
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;">
               <div style="background:#fff;border:1px solid var(--border);border-radius:var(--r-md);padding:1.5rem;box-shadow:var(--sh-sm);border-left:4px solid var(--warning,#F5A623);">
@@ -500,7 +474,6 @@
             </div>
           </div>
 
-          <!-- Painel 2: Sono fragmentado -->
           <div class="tabs__panel" id="tab-sono-2" role="tabpanel">
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;">
               <div style="background:#fff;border:1px solid var(--border);border-radius:var(--r-md);padding:1.5rem;box-shadow:var(--sh-sm);border-left:4px solid var(--warning,#F5A623);">
@@ -520,7 +493,6 @@
             </div>
           </div>
 
-          <!-- Painel 3: Uso de estimulantes -->
           <div class="tabs__panel" id="tab-sono-3" role="tabpanel">
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;">
               <div style="background:#fff;border:1px solid var(--border);border-radius:var(--r-md);padding:1.5rem;box-shadow:var(--sh-sm);border-left:4px solid var(--warning,#F5A623);">
@@ -540,7 +512,6 @@
             </div>
           </div>
 
-          <!-- Painel 4: Jornadas longas -->
           <div class="tabs__panel" id="tab-sono-4" role="tabpanel">
             <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1.5rem;">
               <div style="background:#fff;border:1px solid var(--border);border-radius:var(--r-md);padding:1.5rem;box-shadow:var(--sh-sm);border-left:4px solid var(--warning,#F5A623);">
@@ -565,7 +536,6 @@
         <p style="font-size:.8rem;color:var(--fg3);font-style:italic;margin:0 0 2rem">Fonte: elaboração do autor, 2026.</p>
         <p style="margin-top:2rem;margin-bottom:2rem;line-height:1.75;color:var(--fg1);">Promover saúde mental entre caminhoneiras e caminhoneiros exige, portanto, incluir o sono como eixo central do cuidado. Não se trata apenas de orientar a "dormir mais", mas de criar condições reais para que o descanso seja possível, o que envolve políticas, pausas efetivas e locais adequados de repouso.</p>
 
-        <!-- Reflexão: Qualidade do Sono -->
         <div class="bigbtns">
           <button class="bigbtn bigbtn--reflexao" onclick="openModal('modalReflexaoSono')">
             <span class="bigbtn__icon"><i data-lucide="message-circle"></i></span>
@@ -577,7 +547,6 @@
         </div>
       </section>
 
-      <!-- ═══ SEÇÃO 3.5: Família e Solidão ═══ -->
       <section id="s3-5" class="block" style="scroll-margin-top:80px;margin-bottom:4rem;">
         <div style="margin-bottom:1.6rem;">
           <h2 style="font-family:var(--font-display);font-weight:800;font-size:1.7rem;color:var(--m3-primary-deep);margin:0;">3.5 Família, solidão e distanciamento social</h2>
@@ -591,10 +560,10 @@
 
         <p style="margin-bottom:2rem;line-height:1.75;color:var(--fg1);">Existe ainda uma tensão silenciosa e frequente: a necessidade de prover financeiramente a família, vista por muitos como expressão de responsabilidade e identidade, exige justamente o afastamento da convivência com ela. Esse <strong>conflito entre prover e estar presente</strong> pode gerar sofrimento que raramente é nomeado ou reconhecido. Observe, a seguir, alguns fatores psicossociais e impactos na saúde mental no contexto dessa população.</p>
 
-        <!-- Quadro 4 — Flashcards: Fatores Psicossociais -->
         <h3 style="font-family:var(--font-display);font-weight:700;font-size:1.2rem;color:var(--m3-primary-deep);margin-bottom:0.5rem;">Fatores psicossociais e impactos na saúde mental</h3>
         <p class="block-note" style="margin-bottom:2rem;">Clique nos cartões abaixo para virar e ver os impactos associados a cada fator psicossocial.</p>
 
+        <p style="font-size:.85rem;color:var(--fg2);font-style:italic;margin:0 0 .9rem;">Clique nos itens para acessar o conteúdo.</p>
         <div class="fc-grid">
 
           <div class="fc" onclick="this.classList.toggle('is-flipped')"
@@ -692,7 +661,6 @@
         <p style="font-size:.8rem;color:var(--fg3);font-style:italic;margin:0 0 2rem">Fonte: elaboração do autor, 2026.</p>
         <p style="margin-top:2rem;margin-bottom:2rem;line-height:1.75;color:var(--fg1);">Consequentemente, o cuidado em saúde mental precisa incluir a dimensão relacional: fortalecer vínculos, criar espaços de escuta, usar tecnologias como apoio à comunicação familiar e desenvolver ações voltadas à saúde do homem e da mulher são caminhos concretos que a APS pode percorrer. Reduzir o impacto da solidão não é apenas uma questão afetiva; é uma estratégia de promoção de saúde.</p>
 
-        <!-- Podcast -->
         <div class="bigbtns">
           <button class="bigbtn bigbtn--cta" onclick="openModal('modalPodcast')">
             <span class="bigbtn__icon"><i data-lucide="headphones"></i></span>
@@ -704,7 +672,6 @@
         </div>
       </section>
 
-      <!-- ═══ SEÇÃO 3.6: Grupos e Ações ═══ -->
       <section id="s3-6" class="block" style="scroll-margin-top:80px;margin-bottom:4rem;">
         <div style="margin-bottom:1.6rem;">
           <h2 style="font-family:var(--font-display);font-weight:800;font-size:1.7rem;color:var(--m3-primary-deep);margin:0;">3.6 A importância dos grupos e da educação em saúde na abordagem à saúde mental</h2>
@@ -722,7 +689,6 @@
 
         <p style="margin-bottom:2rem;line-height:1.75;color:var(--fg1);">Além disso, grupos e ações educativas também podem fortalecer a autonomia. Ao compreender melhor os impactos da privação de sono, do isolamento social e da sobrecarga de trabalho, a pessoa caminhoneira passa a ter mais elementos para reivindicar melhores condições, negociar pausas e cuidar de si dentro das possibilidades reais de sua rotina.</p>
 
-        <!-- Saiba mais — Na Mão Certa -->
         <div class="bigbtns">
           <button class="bigbtn bigbtn--brand" onclick="openModal('modalSaibaMaisLink')">
             <span class="bigbtn__icon"><i data-lucide="external-link"></i></span>
@@ -734,7 +700,6 @@
         </div>
       </section>
 
-      <!-- ═══ ENCERRAMENTO ═══ -->
       <section id="encerramento" class="block" style="scroll-margin-top:80px;margin-bottom:2rem;">
         <h2 class="block-title" style="color:var(--m3-primary-deep);margin-bottom:1.5rem;">Encerramento do Módulo</h2>
         <div style="line-height:1.75;color:var(--fg1)">
@@ -744,7 +709,6 @@
         </div>
       </section>
 
-      <!-- ═══ REFERÊNCIAS BIBLIOGRÁFICAS ═══ -->
       <section id="referencias" class="block" style="scroll-margin-top:80px;margin-bottom:2rem;">
         <h2 class="block-title" style="color:var(--m3-primary-deep);margin-bottom:1.5rem;">Referências Bibliográficas</h2>
         <ol style="padding-left:1.5rem;display:flex;flex-direction:column;gap:.85rem;color:var(--fg2);font-size:.88rem;line-height:1.65;overflow-wrap:anywhere;word-break:break-word;">
@@ -757,14 +721,13 @@
           <li style="padding-left:.25rem">LEOPOLDO, K.; LEYTON, V.; OLIVEIRA, L. G. Uso exclusivo de álcool e em associação a outras drogas entre motoristas de caminhão que trafegam por rodovias do Estado de São Paulo, Brasil: um estudo transversal. <em>Cadernos de Saúde Pública</em>, v. 31, n. 9, 2015. Disponível em: <a href="https://www.scielo.br/j/csp/a/vvmfh6xvtDT9xGx4xkmh4Qq/abstract/?lang=pt" target="_blank" rel="noopener noreferrer">www.scielo.br/j/csp/a/vvmfh6xvtDT9xGx4xkmh4Qq/abstract/?lang=pt.</a> Acesso em: 27 maio 2026.</li>
           <li style="padding-left:.25rem">MASSON, V. A.; MONTEIRO, M. I. Estilo de vida, aspectos de saúde e trabalho de motoristas de caminhão. <em>Revista Brasileira de Enfermagem</em>, v. 63, n. 4, p. 533–540, 2010. Disponível em: <a href="https://www.scielo.br/j/reben/a/SfX3fnBfK7bfVtFbFzMHtPD/?lang=pt" target="_blank" rel="noopener noreferrer">www.scielo.br/j/reben/a/SfX3fnBfK7bfVtFbFzMHtPD/?lang=pt.</a> Acesso em: 19 fev. 2026.</li>
           <li style="padding-left:.25rem">NASCIMENTO, E. C.; NASCIMENTO, E.; SILVA, J. P. Uso de álcool e anfetaminas entre caminhoneiros de estrada. <em>Revista de Saúde Pública</em>, São Paulo, v. 41, n. 2, p. 290–293, 2007. Disponível em: <a href="https://www.scielo.br/j/rsp/a/b9vVFYzYSf6fCH9djV9s6nH/?lang=pt" target="_blank" rel="noopener noreferrer">www.scielo.br/j/rsp/a/b9vVFYzYSf6fCH9djV9s6nH/?lang=pt.</a> Acesso em: 27 maio 2026.</li>
-          <li style="padding-left:.25rem">POLÍCIA RODOVIÁRIA FEDERAL (PRF). <em>PRF divulga anuário estatístico de 2025 com aumento de infrações e redução de mortes nas rodovias federais</em>. Brasília: PRF, 2026. Disponível em: <a href="https://www.gov.br/prf/pt-br/noticias/nacionais/2026/maio/prf-divulga-anuario-estatistico-de-2025-com-aumento-de-infracoes-e-reducao-de-mortes-nas-rodovias-federais" target="_blank" rel="noopener noreferrer">www.gov.br/prf/pt-br/noticias/nacionais/2026/maio/prf-divulga-anuario-estatistico-de-2025-com-aumento-de-infracoes-e-reducao-de-mortes-nas-rodovias-federais.</a> Acesso em: 20 jun. 2026.</li>
+          <li style="padding-left:.25rem">POLÍCIA RODOVIÁRIA FEDERAL (PRF). <em>Anuário Estatístico de Acidentes de Trânsito nas Rodovias Federais</em>. Brasília: PRF, 2023. Disponível em: <a href="https://www.gov.br/prf/pt-br/acesso-a-informacao/dados-abertos/diest-arquivos/anuario-2023_final.html" target="_blank" rel="noopener noreferrer">www.gov.br/prf/pt-br/acesso-a-informacao/dados-abertos/diest-arquivos/anuario-2023_final.html.</a> Acesso em: 27 maio 2026.</li>
         </ol>
       </section>
 
     </main>
   </div>
 
-  <!-- MODAL SOBREPOSTO (REFLEXÃO) -->
   <div class="overlay" id="modalReflexao">
     <div class="modal">
       <div class="modal__head modal__head--brand">
@@ -782,7 +745,6 @@
     </div>
   </div>
 
-  <!-- MODAL SOBREPOSTO (SAIBA MAIS - VÍDEO) -->
   <div class="overlay" id="modalVideo">
     <div class="modal">
       <div class="modal__head modal__head--brand">
@@ -807,7 +769,6 @@
     </div>
   </div>
 
-  <!-- MODAL SOBREPOSTO (REFLEXÃO - QUALIDADE DO SONO) -->
   <div class="overlay" id="modalReflexaoSono">
     <div class="modal">
       <div class="modal__head modal__head--brand">
@@ -825,7 +786,6 @@
     </div>
   </div>
 
-  <!-- MODAL SOBREPOSTO (PODCAST) -->
   <div class="overlay" id="modalPodcast">
     <div class="modal">
       <div class="modal__head modal__head--brand">
@@ -849,7 +809,6 @@
     </div>
   </div>
 
-  <!-- MODAL SOBREPOSTO (SAIBA MAIS - LINK) -->
   <div class="overlay" id="modalSaibaMaisLink">
     <div class="modal">
       <div class="modal__head modal__head--brand">
@@ -870,7 +829,6 @@
     </div>
   </div>
 
-  <!-- Modal: Créditos -->
   <div class="overlay" id="modalCreditos">
     <div class="modal">
       <div class="modal__head" style="background:var(--grad-m3-brand);color:#fff">
@@ -973,7 +931,6 @@
     </div>
   </div>
 
-  <!-- Modal: Instruções -->
   <div class="overlay" id="modalInstrucoes">
     <div class="modal">
       <div class="modal__head" style="background:var(--grad-m3-brand);color:#fff">
@@ -997,17 +954,14 @@
     </div>
   </div>
 
-  <!-- Botão voltar ao topo -->
   <button id="backToTop" class="back-to-top" onclick="window.scrollTo({top:0,behavior:'smooth'})" aria-label="Voltar ao topo" style="background:var(--m3-primary);color:#fff">
     <i data-lucide="chevron-up"></i>
   </button>
 
-  <!-- Sidebar toggle (hambúrguer — visível apenas no mobile) -->
   <button class="sidebar-toggle" onclick="openSidebar()" aria-label="Abrir menu de navegação" style="background:var(--m3-primary);color:#fff">
     <i data-lucide="menu"></i>
   </button>
 
-  <!-- Overlay da sidebar (mobile) -->
   <div id="sidebarOverlay" class="sidebar-overlay" onclick="closeSidebar()"></div>
 
   <script src="https://unpkg.com/lucide@latest/dist/umd/lucide.min.js"></script>

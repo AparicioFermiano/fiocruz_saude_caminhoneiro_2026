@@ -1604,7 +1604,6 @@ h2.block-title {
   height:.78rem
 }
 
-/* -- Sidebar layout --------------------------------------- */
 .page-layout{max-width:1140px;margin:0 auto;padding:3rem 1.5rem 6rem;display:grid;grid-template-columns:240px 1fr;gap:2.5rem;align-items:start}
 .sidebar{position:sticky;top:16px}
 .sidebar-nav{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-sm)}
@@ -1630,10 +1629,6 @@ h2.block-title {
 .encerramento-card p:last-child{margin:0}
 @media(max-width:900px){.page-layout{grid-template-columns:1fr}.sidebar{position:static}}
 
-/* ── Responsive & Overflow Fixes (migrated from inline) ── */
-
-    /* ── Overflow & Mobile Responsiveness Fixes ──────────────────────── */
-
     html, body {
       overflow-x: clip;
     }
@@ -1642,7 +1637,6 @@ h2.block-title {
       min-width: 0;
     }
 
-    /* Sidebar fixa no desktop após o hero */
     @media (min-width: 901px) {
       .sidebar {
         position: sticky;
@@ -1666,8 +1660,6 @@ h2.block-title {
       word-break: break-word;
     }
 
-    /* Override inline display:flex so <li> reverts to list-item block boxes,
-       which breaks long URLs correctly via word-break below. */
     #referencias ol {
       display: block !important;
     }
@@ -1677,10 +1669,8 @@ h2.block-title {
     #referencias ol li {
       min-width: 0;
       overflow-wrap: anywhere;
-      word-break: break-all;
     }
 
-    /* Tabs: allow buttons to wrap/shrink on mobile so they don't overflow */
     @media (max-width: 600px) {
       .tabs__nav {
         flex-wrap: wrap;
@@ -1709,7 +1699,6 @@ h2.block-title {
       }
     }
 
-    /* Hero nav: prevent long course name overflow on very small screens */
     @media (max-width: 420px) {
       .hero-nav__inner {
         flex-wrap: wrap;
@@ -1724,7 +1713,6 @@ h2.block-title {
       }
     }
 
-    /* Long URLs inside content areas must break to avoid horizontal overflow */
     main a,
     .modal__body a,
     .acc__body a,

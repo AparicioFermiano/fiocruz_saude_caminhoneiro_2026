@@ -22,8 +22,6 @@ print(f"Cutting at char {cut} (line ~{content[:cut].count(chr(10))+1})")
 
 clean = content[:cut].rstrip()
 
-# Ensure main is closed before the modals close properly
-# The clean body content should end with </div> (closing the page-layout div)
 print(f"Last 200 chars of clean body:\n{clean[-200:]!r}")
 
 CLOSING = """

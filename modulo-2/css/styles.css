@@ -1,4 +1,3 @@
-/* ── Design System: Tokens ─────────────────────────────────── */
   :root {
       --brand-green:#187848;
   --brand-green-deep:#0E6238;
@@ -1183,7 +1182,7 @@ img {
   color:var(--primary);
   margin:0 0 .3rem
 }
-  /* ── Módulo 2 · Layout e Tema Azul ──────────────────────── */
+
   .hero-wrap {
   width:100%;
   border-radius:0;
@@ -1218,7 +1217,7 @@ img {
   max-width:800px;
   margin:0 auto
 }
-  /* Hotspot helpers */
+
   .btn--hs-sm {
   font-size:0.8rem !important;
   padding:0.5rem 0.9rem !important
@@ -1359,7 +1358,7 @@ img {
   width:.78rem;
   height:.78rem
 }
-/* Vulnerability Diagram */
+
 .vuln-container {
     width: 100%;
     overflow: visible;
@@ -1393,7 +1392,6 @@ img {
 .vuln-node--6{top:166px;left:45px;border-color:#428C84}
 @media(max-width:860px){.vuln-container{overflow-x:auto}}
 
-/* -- Sidebar layout --------------------------------------- */
 .page-layout{max-width:1140px;margin:0 auto;padding:3rem 1.5rem 6rem;display:grid;grid-template-columns:240px 1fr;gap:2.5rem;align-items:start}
 .sidebar{position:sticky;top:16px}
 .sidebar-nav{background:var(--card);border:1px solid var(--border);border-radius:var(--r-lg);overflow:hidden;box-shadow:var(--sh-sm)}
@@ -1419,16 +1417,10 @@ img {
 .encerramento-card p:last-child{margin:0}
 @media(max-width:900px){.page-layout{grid-template-columns:1fr}.sidebar{position:static}}
 
-/* ── Responsive & Overflow Fixes (migrated from inline) ── */
-
-    /* ── M2: Missing Component Styles ──────────────────────────────── */
-
-    /* Carousel image-wrap needs position:relative for badge overlays */
     .carousel__img-wrap {
       position: relative;
     }
 
-    /* Badge overlays on carousel images (organism name labels) */
     .carousel__img-badge {
       position: absolute;
       bottom: .6rem;
@@ -1453,20 +1445,14 @@ img {
       max-width: 60%;
     }
 
-    /* ── M2 Overflow & Responsiveness Fixes ────────────────────────── */
-
-    /* Root: prevent any element from widening the page beyond the viewport */
     html, body {
       overflow-x: clip;
     }
 
-    /* Grid/flex items can overflow their track when min-width is auto (default).
-       Setting min-width:0 on <main> constrains it to its 1fr grid column. */
     .page-layout > main {
       min-width: 0;
     }
 
-    /* Sidebar fixa no desktop após o hero */
     @media (min-width: 901px) {
       .sidebar {
         position: sticky;
@@ -1477,7 +1463,6 @@ img {
       }
     }
 
-    /* Break long words and URLs so they don't cause horizontal overflow */
     main,
     .modal__body,
     .hbox,
@@ -1491,8 +1476,6 @@ img {
       word-break: break-word;
     }
 
-    /* Override inline display:flex so <li> reverts to list-item block boxes,
-       which breaks long URLs correctly via word-break below. */
     #referencias ol {
       display: block !important;
     }
@@ -1502,23 +1485,18 @@ img {
     #referencias ol li {
       min-width: 0;
       overflow-wrap: anywhere;
-      word-break: break-all;
     }
 
-    /* 1. Carousel btn-wrap: must be position:relative so .hs-popover is
-          positioned relative to its own button, not the whole carousel */
     .carousel__btn-wrap {
       position: relative;
     }
 
-    /* 2. Constrain popover width on narrow screens to prevent overflow */
     @media (max-width: 600px) {
       .hs-popover {
         width: min(280px, 85vw) !important;
         max-width: 85vw;
       }
-      /* for default (center-anchored) popovers, anchor left and drop the
-         translateX so they don't bleed off the right edge */
+
       .hs-popover:not(.hs-popover--left-aligned):not(.hs-popover--right-aligned) {
         left: 0 !important;
         transform: none !important;
@@ -1529,7 +1507,6 @@ img {
       }
     }
 
-    /* 3. Hero nav: prevent course-name overflow on very small screens */
     @media (max-width: 420px) {
       .hero-nav__inner {
         flex-wrap: wrap;
@@ -1547,7 +1524,6 @@ img {
       }
     }
 
-    /* 4. Make carousel prev/next buttons a full 48 px tap target on mobile */
     @media (max-width: 600px) {
       .carousel__prev,
       .carousel__next {
@@ -1556,7 +1532,6 @@ img {
       }
     }
 
-    /* 5. Bigbtn: reduce large padding on very narrow screens */
     @media (max-width: 400px) {
       .bigbtn {
         padding: 1rem 1rem;
@@ -1571,10 +1546,6 @@ img {
       }
     }
 
-    /* 6. Tabs: responsive on mobile
-          - Remove nowrap + flex-shrink:0 so buttons can compress
-          - flex:1 gives each tab an equal share of the row
-          - white-space:normal lets the subtitle text wrap inside the button */
     @media (max-width: 600px) {
       .tabs__nav {
         flex-wrap: wrap;
@@ -1592,12 +1563,12 @@ img {
         gap: .35em;
         text-align: left;
       }
-      /* Override inline font-size on spans inside tab labels */
+
       .tabs__tab span {
         font-size: .82rem !important;
         line-height: 1.3;
       }
-      /* Shrink lucide icons inside tab buttons */
+
       .tabs__tab [data-lucide] {
         width: 1rem !important;
         height: 1rem !important;
@@ -1605,14 +1576,12 @@ img {
       }
     }
 
-    /* 7. Encerramento card: reduce side padding on mobile */
     @media (max-width: 480px) {
       .encerramento-card {
         padding: 1.4rem 1.4rem;
       }
     }
 
-    /* Long URLs inside content areas must break to avoid horizontal overflow */
     main a,
     .modal__body a,
     .acc__body a,
@@ -1625,7 +1594,6 @@ img {
       word-break: break-all;
     }
 
-    /* Higher-specificity rule for references links (flex-item context) */
     #referencias ol li a {
       overflow-wrap: anywhere !important;
       word-break: break-all !important;

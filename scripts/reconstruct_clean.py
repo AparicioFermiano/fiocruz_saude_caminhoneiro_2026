@@ -23,7 +23,7 @@ def parse_read_content(raw):
             lines_dict[int(m.group(1))] = m.group(2)
     return lines_dict
 
-ORIGINAL_SESSION_END = 1600  # Recovery session starts at ~1614; stop before broken reads
+ORIGINAL_SESSION_END = 1600
 
 def get_reads_after(mod, after_jsonl, before_jsonl=ORIGINAL_SESSION_END):
     """Get all Read results for a module after a specific JSONL line."""
@@ -41,19 +41,17 @@ def get_reads_after(mod, after_jsonl, before_jsonl=ORIGINAL_SESSION_END):
                     if isinstance(item, dict) and item.get('type') == 'tool_use' and item.get('name') == 'Read':
                         fp = item.get('input', {}).get('file_path', '')
                         if f'modulo {mod}' in fp.lower() and 'index.html' in fp:
-                            # Get the corresponding tool_result
-                            # It should be in the SAME user message that follows
-                            # (tool_use id matching)
+
                             tool_id = item.get('id', '')
                             offset = item.get('input', {}).get('offset', 0)
                             limit = item.get('input', {}).get('limit', '?')
-                            # Search next few lines for matching tool_result
+
                             for j in range(i+1, min(i+6, len(all_lines))):
                                 res_obj = json.loads(all_lines[j])
                                 msg2 = res_obj.get('message', {})
                                 for ritem in msg2.get('content', []):
                                     if isinstance(ritem, dict) and ritem.get('type') == 'tool_result':
-                                        # Check tool_use_id matches if available
+
                                         rid = ritem.get('tool_use_id', '')
                                         if tool_id and rid and rid != tool_id:
                                             continue
@@ -97,7 +95,6 @@ def reconstruct(mod, first_edit_jsonl):
         print("No reads found!")
         return None
 
-    # Show coverage
     for jsonl_line, d, offset, limit in sorted(reads, key=lambda x: x[0])[:10]:
         if d:
             min_ln, max_ln = min(d.keys()), max(d.keys())
@@ -107,8 +104,6 @@ def reconstruct(mod, first_edit_jsonl):
     if len(reads) > 10:
         print(f"  ... and {len(reads)-10} more reads")
 
-    # Stitch using "later read wins" for each line
-    # combined[line_num] = (content, jsonl_line)
     combined = {}
     for jsonl_line, d, offset, limit in sorted(reads, key=lambda x: x[0]):
         for ln, content_line in d.items():
@@ -122,7 +117,6 @@ def reconstruct(mod, first_edit_jsonl):
     min_line = min(combined.keys())
     print(f"\nCoverage: lines {min_line}-{max_line}")
 
-    # Find gaps
     gaps = []
     in_gap = False
     gap_start = None
@@ -145,18 +139,16 @@ def reconstruct(mod, first_edit_jsonl):
         if len(gaps) > 10:
             print(f"  ... and {len(gaps)-10} more gaps")
 
-    # Build result
     result_lines = []
     for i in range(1, max_line + 1):
         if i in combined:
             result_lines.append(combined[i][0])
         else:
-            result_lines.append('')  # empty placeholder for gap
+            result_lines.append('')
 
     stitched = '\n'.join(result_lines)
     print(f"\nStitched: {len(result_lines)} lines, {len(stitched)} chars")
 
-    # Apply ALL edits in order (deduplicated by old_string prefix)
     all_edits = get_all_edits(mod)
     print(f"Total edits: {len(all_edits)}")
 
@@ -183,7 +175,6 @@ def reconstruct(mod, first_edit_jsonl):
     print(f"</html>: {'</html>' in content}")
     print(f"<main>: {'<main' in content}")
 
-    # Show first and last 10 lines
     lines = content.split('\n')
     print(f"\nFirst 10 lines:")
     for i, l in enumerate(lines[:10]):
@@ -194,16 +185,12 @@ def reconstruct(mod, first_edit_jsonl):
 
     return content
 
-# M2: first edit at JSONL 216
 m2_content = reconstruct(2, 216)
 
-# M3: first edit at JSONL 218
 m3_content = reconstruct(3, 218)
 
-# M4: first edit at JSONL 227
 m4_content = reconstruct(4, 227)
 
-# Save if valid
 for mod, content in [(2, m2_content), (3, m3_content), (4, m4_content)]:
     if content and '<!DOCTYPE html>' in content and content.count('\n') > 50:
         path = BASE / f'modulo {mod}' / 'index.html'

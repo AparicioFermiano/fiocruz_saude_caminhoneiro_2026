@@ -9,22 +9,19 @@ from pathlib import Path
 
 BASE = Path(r"c:\Users\AparicioJunior\workspace\saude-caminhoneiros")
 
-# ─── Task 1: add hyperlinks to referencias ───────────────────────────────────
-
 URL_RE = re.compile(
-    r'(?<!["\'])'                      # not inside an existing href/src
-    r'(https?://\S+|www\.\S+)',        # http/https or www URLs
+    r'(?<!["\'])'
+    r'(https?://\S+|www\.\S+)',
     re.IGNORECASE
 )
 
 def clean_href(url: str) -> str:
     """Strip trailing punctuation and add https:// if needed."""
-    # Remove trailing sentence punctuation (. , ; )
+
     cleaned = url.rstrip('.,;)')
     if cleaned.lower().startswith('www.'):
         cleaned = 'https://' + cleaned
     return cleaned
-
 
 def linkify_referencias(content: str, mod_label: str) -> str:
     """
@@ -37,7 +34,6 @@ def linkify_referencias(content: str, mod_label: str) -> str:
         print(f"  {mod_label}: references section not found")
         return content
 
-    # Find closing </section> for this block (depth tracking)
     depth = 0
     sec_end = None
     for m in re.finditer(r'<(/?section)\b', content[sec_start:]):
@@ -57,7 +53,7 @@ def linkify_referencias(content: str, mod_label: str) -> str:
 
     def replace_url(match):
         url = match.group(1)
-        # Skip if already preceded by href=" or src="
+
         start = match.start()
         preceding = section_html[max(0, start - 8):start]
         if 'href=' in preceding or 'src=' in preceding:
@@ -71,7 +67,6 @@ def linkify_referencias(content: str, mod_label: str) -> str:
 
     return content[:sec_start] + new_section + content[sec_end:]
 
-
 for mod_num in range(1, 6):
     path = BASE / f"modulo {mod_num}" / "index.html"
     original = path.read_text(encoding="utf-8")
@@ -79,10 +74,6 @@ for mod_num in range(1, 6):
     if fixed != original:
         path.write_text(fixed, encoding="utf-8")
 
-
-# ─── Task 2: rename files with uppercase ──────────────────────────────────────
-
-# Rename DSM-V.pdf → dsm-v.pdf in modulo 3
 dsm_old = BASE / "modulo 3" / "media" / "DSM-V.pdf"
 dsm_new = BASE / "modulo 3" / "media" / "dsm-v.pdf"
 if dsm_old.exists():
@@ -90,9 +81,6 @@ if dsm_old.exists():
     print(f"\nRenamed: DSM-V.pdf → dsm-v.pdf")
 else:
     print(f"\nDSM-V.pdf already renamed or not found")
-
-
-# ─── Task 3: rename "modulo X" folders → "modulo-X" ──────────────────────────
 
 print()
 for mod_num in range(1, 6):
@@ -106,9 +94,6 @@ for mod_num in range(1, 6):
     else:
         print(f"WARNING: neither 'modulo {mod_num}' nor 'modulo-{mod_num}' found")
 
-
-# ─── Verify ──────────────────────────────────────────────────────────────────
-
 print("\n=== Verification ===")
 for mod_num in range(1, 6):
     path = BASE / f"modulo-{mod_num}" / "index.html"
@@ -117,7 +102,7 @@ for mod_num in range(1, 6):
         continue
     c = path.read_text(encoding="utf-8")
     refs_links = c.count('href=', c.find('<section id="referencias"'))
-    # Count only within referencias section
+
     sec_start = c.find('<section id="referencias"')
     sec_end = c.find('</section>', sec_start) + len('</section>')
     links_in_refs = c[sec_start:sec_end].count('<a href=')

@@ -6,8 +6,6 @@ JSONL = Path(r"C:\Users\AparicioJunior\.claude\projects\c--Users-AparicioJunior-
 with open(JSONL, encoding='utf-8') as f:
     all_lines = f.readlines()
 
-# Look for Read tool_use that reads module HTML files
-# Then check the subsequent tool_result for the content
 reads = {}
 for i, line in enumerate(all_lines):
     try:
@@ -25,7 +23,7 @@ for i, line in enumerate(all_lines):
 
 print("Read operations for module HTML files:")
 for line_idx, (mod, fp) in reads.items():
-    # The result should be in the NEXT few lines
+
     for j in range(line_idx+1, min(line_idx+5, len(all_lines))):
         try:
             res_obj = json.loads(all_lines[j])

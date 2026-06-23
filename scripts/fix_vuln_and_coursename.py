@@ -8,8 +8,6 @@ from pathlib import Path
 
 BASE = Path(r"c:\Users\AparicioJunior\workspace\saude-caminhoneiros")
 
-# ─── 1. M2: Replace vuln section ─────────────────────────────────────────────
-
 NEW_VULN = '''      <!-- BLOCO: Fatores de vulnerabilidade -->
       <section id="s2-2" class="block" style="scroll-margin-top:80px;margin-bottom:4rem;">
         <h2 class="block-title" style="margin-bottom:2rem;font-size:1.7rem;color:var(--m2-primary-deep);">Fatores de vulnerabilidade das pessoas caminhoneiras</h2>
@@ -103,7 +101,6 @@ NEW_VULN_JS = '''  <script>
 m2_path = BASE / "modulo-2" / "index.html"
 m2 = m2_path.read_text(encoding="utf-8")
 
-# Replace the vuln section using regex (handles any whitespace variations)
 m2_new = re.sub(
     r'[ \t]*<!-- BLOCO: Fatores de vulnerabilidade -->.*?</section>',
     NEW_VULN,
@@ -116,7 +113,6 @@ if m2_new == m2:
 else:
     print(f"M2 vuln section replaced. Old length: {len(m2)}, New length: {len(m2_new)}")
 
-# Add JS before </body>
 if 'window.toggleVuln' not in m2_new:
     m2_new = m2_new.replace('</body>', NEW_VULN_JS + '</body>')
     print("M2: toggleVuln JS added")
@@ -125,16 +121,12 @@ else:
 
 m2_path.write_text(m2_new, encoding="utf-8")
 
-# ─── 2. Course name replacement in all modules ───────────────────────────────
-
 NEW_FULL = "ATENÇÃO À SAÚDDE DA CAMINHONEIRA E DO CAMINHONEIRO NA ATENÇÃO PRIMÁRIA"
 NEW_SHORT = "ATENÇÃO À SAÚDDE DA CAMINHONEIRA E DO CAMINHONEIRO"
 
-# Fix: correcting the accents
 NEW_FULL   = "ATENÇÃO À SAÚDE DA CAMINHONEIRA E DO CAMINHONEIRO NA ATENÇÃO PRIMÁRIA"
 NEW_SHORT  = "ATENÇÃO À SAÚDE DA CAMINHONEIRA E DO CAMINHONEIRO"
 
-# Actually let's just use the plain string
 NEW_FULL  = "ATENÇÃO À SAÚDE DA CAMINHONEIRA E DO CAMINHONEIRO NA ATENÇÃO PRIMÁRIA"
 NEW_SHORT = "ATENÇÃO À SAÚDE DA CAMINHONEIRA E DO CAMINHONEIRO"
 
@@ -148,22 +140,21 @@ for path in files:
     content = path.read_text(encoding="utf-8")
     original = content
 
-    # Pattern A: multiline "e Caminhoneiro\n...na Atenção Primária"
     content = re.sub(
         r'Atenção à Saúde da Caminhoneira e Caminhoneiro\s*\n\s*na Atenção Primária',
         NEW_FULL, content
     )
-    # Pattern B: multiline "Caminhoneira\n...e Caminhoneiro na Atenção Primária"
+
     content = re.sub(
         r'Atenção à Saúde da Caminhoneira\s*\n\s*e Caminhoneiro na Atenção Primária',
         NEW_FULL, content
     )
-    # Pattern C: single line full name
+
     content = content.replace(
         "Atenção à Saúde da Caminhoneira e Caminhoneiro na Atenção Primária",
         NEW_FULL
     )
-    # Pattern D: single line without "na Atenção Primária" (sidebar brand)
+
     content = content.replace(
         "Atenção à Saúde da Caminhoneira e Caminhoneiro",
         NEW_SHORT
@@ -174,8 +165,6 @@ for path in files:
         print(f"Updated course name: {path.parent.name}/{path.name}")
     else:
         print(f"No course name changes: {path.parent.name}/{path.name}")
-
-# ─── 3. Verification ─────────────────────────────────────────────────────────
 
 print("\n=== Verification ===")
 for path in files:

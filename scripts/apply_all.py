@@ -3,7 +3,6 @@ from pathlib import Path
 
 BASE = Path(r'c:\Users\AparicioJunior\workspace\saude-caminhoneiros')
 
-# ── Referências por módulo ──────────────────────────────────────
 def ref(text, pdf=None):
     icon = (
         f' <a href="media/{pdf}" download title="Baixar PDF" '
@@ -131,11 +130,9 @@ MOD_MAIN_CLOSE = {
 for mod in range(1, 6):
     folder = BASE / f'modulo {mod}'
 
-    # HTML
     html_path = folder / 'index.html'
     content = html_path.read_text(encoding='utf-8')
 
-    # Remove Material de Apoio
     content = re.sub(
         r'\s*<!-- .*?MATERIAL DE APOIO.*?-->.*?</section>',
         '',
@@ -143,12 +140,10 @@ for mod in range(1, 6):
         flags=re.DOTALL
     )
 
-    # Insert Referências before </main>
     main_close = MOD_MAIN_CLOSE[mod]
     refs_html = build_refs_section(mod)
     content = content.replace(main_close, refs_html + main_close, 1)
 
-    # Add sidebar-overlay + hamburger before back-to-top button
     hamburger = (
         '\n  <div class="sidebar-overlay" id="sidebarOverlay" onclick="closeSidebar()"></div>'
         '\n  <button class="sidebar-toggle" aria-label="Menu" onclick="openSidebar()">'
@@ -164,7 +159,6 @@ for mod in range(1, 6):
     html_path.write_text(content, encoding='utf-8')
     print(f'M{mod} HTML ok')
 
-    # CSS
     css_path = folder / 'css/styles.min.css'
     css = css_path.read_text(encoding='utf-8')
     if '.referencias-list' not in css:
@@ -173,7 +167,6 @@ for mod in range(1, 6):
     else:
         print(f'M{mod} CSS  skip (already present)')
 
-    # JS
     js_path = folder / 'js/scripts.min.js'
     js = js_path.read_text(encoding='utf-8')
     if 'openSidebar' not in js:

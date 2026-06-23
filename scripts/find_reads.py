@@ -8,8 +8,7 @@ with open(JSONL, encoding='utf-8') as f:
 
 print(f"Total JSONL lines: {len(all_lines)}")
 
-# Look for large tool_result messages that contain HTML
-for i, line in enumerate(all_lines[:600]):  # first 600 lines (before edits start)
+for i, line in enumerate(all_lines[:600]):
     try:
         obj = json.loads(line)
         msg = obj.get('message', {})
@@ -19,7 +18,7 @@ for i, line in enumerate(all_lines[:600]):  # first 600 lines (before edits star
                     c = item.get('content', '')
                     if isinstance(c, str) and len(c) > 3000 and ('DOCTYPE' in c or '<html' in c or 'class="block"' in c):
                         print(f"Line {i+1}: tool_result {len(c)} chars")
-                        # Check which module
+
                         for m in range(1, 6):
                             if f'Módulo {m}' in c or f'odulo {m}' in c:
                                 print(f"  -> Module {m}")

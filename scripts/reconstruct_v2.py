@@ -33,7 +33,7 @@ def strip_line_numbers(text):
     lines = text.split('\n')
     clean = []
     for line in lines:
-        # Match "NNN\t" prefix
+
         m = re.match(r'^\d+\t(.*)$', line)
         if m:
             clean.append(m.group(1))
@@ -53,7 +53,7 @@ def get_reads_for_mod(mod):
                     if isinstance(item, dict) and item.get('type') == 'tool_use' and item.get('name') == 'Read':
                         fp = item.get('input', {}).get('file_path', '')
                         if f'modulo {mod}' in fp.lower() and 'index.html' in fp:
-                            # Get result
+
                             for r in get_tool_results_after(i + 1):
                                 if len(r) > 500:
                                     reads.append((i+1, r))
@@ -79,24 +79,22 @@ def get_edit_ops_for_mod(mod):
             pass
     return ops
 
-# For each module, find the best (most complete) Read result
 for mod in range(2, 6):
     reads = get_reads_for_mod(mod)
-    # Find the read starting from line 1 with the most content
+
     full_reads = []
     for jsonl_line, raw in reads:
         first_line = raw.split('\n')[0]
-        # Check if it starts from line 1
+
         if re.match(r'^1\t<!DOCTYPE', first_line) or raw.startswith('<!DOCTYPE'):
             full_reads.append((jsonl_line, raw))
 
     if full_reads:
-        # Pick the largest full read
+
         best_jsonl_line, best_raw = max(full_reads, key=lambda x: len(x[1]))
         content = strip_line_numbers(best_raw)
         print(f"M{mod}: Found full Read at JSONL line {best_jsonl_line}: {len(best_raw)} chars -> {len(content)} clean chars, {content.count(chr(10))} lines")
 
-        # Now apply all Edit ops AFTER this read
         edit_ops = get_edit_ops_for_mod(mod)
         applied = 0
         failed = 0
@@ -116,6 +114,6 @@ for mod in range(2, 6):
         print(f"  Saved to {path}")
     else:
         print(f"M{mod}: No full Read found (from line 1)")
-        # Show what we have
+
         if reads:
             print(f"  Available reads: {[(r[0], len(r[1])) for r in reads[:5]]}")

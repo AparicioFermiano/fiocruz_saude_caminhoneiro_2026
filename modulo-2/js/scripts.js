@@ -1,7 +1,6 @@
-﻿/* ── Inicialização ──────────────────────────────────────────── */
+﻿
 lucide.createIcons();
 
-/* ── Barra de progresso de leitura ─────────────────────────── */
 const progressFill = document.getElementById('progressFill');
 
 window.addEventListener('scroll', () => {
@@ -12,7 +11,6 @@ window.addEventListener('scroll', () => {
   }
 });
 
-/* ── Modais ─────────────────────────────────────────────────── */
 window.openModal = (modalId) => {
   const modal = document.getElementById(modalId);
   if (modal) {
@@ -31,14 +29,12 @@ window.closeModal = (modalId) => {
   }
 };
 
-// Fecha modal ao clicar fora (no overlay)
 document.querySelectorAll('.overlay').forEach(overlay => {
   overlay.addEventListener('click', (e) => {
     if (e.target === overlay) closeModal(overlay.id);
   });
 });
 
-/* ── Hotspot ────────────────────────────────────────────────── */
 window.toggleHs = (btn, id) => {
   const pop = document.getElementById(id);
   const wasOpen = pop.classList.contains('is-open');
@@ -64,7 +60,6 @@ window.closeHs = (id) => {
   }
 };
 
-/* ── Abas (Tabs) ────────────────────────────────────────────── */
 window.switchTab = (tab, panelId) => {
   const tabs = tab.closest('.tabs');
 
@@ -86,7 +81,6 @@ window.switchTab = (tab, panelId) => {
   if (panel) panel.classList.add('is-active');
 };
 
-/* ── Carrossel ──────────────────────────────────────────────── */
 window.crNav = (btn, dir) => {
   const car = btn.closest('.carousel');
   const slides = Array.from(car.querySelectorAll('.carousel__slide'));
@@ -135,7 +129,6 @@ window.closeCrPop = (id) => {
   document.getElementById(id).classList.remove('is-open');
 };
 
-/* -- Sidebar: destaque da secao ativa ----- */
 const sidebarLinks = document.querySelectorAll(".sidebar-nav__link");
 if (sidebarLinks.length) {
   const sections = document.querySelectorAll("section[id]");
@@ -155,8 +148,5 @@ if (sidebarLinks.length) {
   sections.forEach(s => obs.observe(s));
 }
 
-/* ── Vuln popover (migrated from inline) ── */
-
   window.toggleVuln=function(btn,id){document.querySelectorAll('[id^="vf-"]').forEach(function(p){if(p.id!==id)p.style.display='none';});var p=document.getElementById(id);if(!p)return;p.style.display=p.style.display==='block'?'none':'block';};
   window.closeVuln=function(id){var p=document.getElementById(id);if(p)p.style.display='none';};
-  

@@ -40,7 +40,7 @@ def get_all_reads_for_mod(mod, after_jsonl=0, before_jsonl=999999):
                     if isinstance(item, dict) and item.get('type') == 'tool_use' and item.get('name') == 'Read':
                         fp = item.get('input', {}).get('file_path', '')
                         if f'modulo {mod}' in fp.lower() and 'index.html' in fp:
-                            # Get tool result from next few lines
+
                             for j in range(i+1, min(i+6, len(all_lines))):
                                 res_obj = json.loads(all_lines[j])
                                 msg2 = res_obj.get('message', {})
@@ -107,7 +107,6 @@ def get_first_edit_jsonl(mod):
             pass
     return 0
 
-# Process each module
 for mod in [2, 3, 4]:
     print(f"\n{'='*60}")
     print(f"=== Module {mod} ===")
@@ -115,11 +114,9 @@ for mod in [2, 3, 4]:
     first_edit_idx = get_first_edit_jsonl(mod)
     print(f"First edit at JSONL line {first_edit_idx+1}")
 
-    # Collect ALL reads after the first edit (to capture post-edit-1 state)
     all_reads = get_all_reads_for_mod(mod, after_jsonl=first_edit_idx+1)
     print(f"Found {len(all_reads)} reads after first edit")
 
-    # Find all edits after the first edit
     all_edits = get_edit_ops_for_mod(mod, after_jsonl=first_edit_idx+1)
     print(f"Found {len(all_edits)} subsequent edits")
 
@@ -127,8 +124,6 @@ for mod in [2, 3, 4]:
         print("No reads found - cannot reconstruct")
         continue
 
-    # Group reads by time windows between edits
-    # Use all reads that happened BEFORE the second edit as "baseline" state
     edit_lines = [op[0] for op in all_edits]
     second_edit_line = edit_lines[0] if edit_lines else 999999
 
@@ -136,11 +131,10 @@ for mod in [2, 3, 4]:
     print(f"Baseline reads (before 2nd edit at line {second_edit_line}): {len(baseline_reads)}")
 
     if not baseline_reads:
-        # Use ALL reads for stitching
+
         baseline_reads = all_reads
         print("Using all reads for stitching")
 
-    # Stitch baseline reads
     stitched = stitch_reads(baseline_reads)
     lc = stitched.count('\n')
     print(f"Stitched baseline: {lc} lines, {len(stitched)} chars")
@@ -149,7 +143,6 @@ for mod in [2, 3, 4]:
         print("Stitched content too small, skipping")
         continue
 
-    # Check coverage
     lines_dict = {}
     for jl, d in baseline_reads:
         lines_dict.update(d)
@@ -159,17 +152,15 @@ for mod in [2, 3, 4]:
         covered = len(lines_dict)
         print(f"Coverage: lines {min_ln}-{max_ln}, {covered} lines covered out of {max_ln-min_ln+1}")
 
-    # Apply subsequent edits
     content = stitched
     applied = 0
     failed = 0
 
-    # Apply edits in order (skip those we can't apply)
     seen_ops = set()
     for op_line, old, new in all_edits:
         sig = (old[:50], new[:50])
         if sig in seen_ops:
-            continue  # skip duplicates
+            continue
         seen_ops.add(sig)
         if old in content:
             content = content.replace(old, new, 1)
@@ -180,7 +171,6 @@ for mod in [2, 3, 4]:
     lc = content.count('\n')
     print(f"After applying edits: {lc} lines, {len(content)} chars ({applied} applied, {failed} failed)")
 
-    # Validate it's a complete HTML
     has_doctype = '<!DOCTYPE html>' in content
     has_closing = '</html>' in content
     print(f"Valid HTML: DOCTYPE={has_doctype}, </html>={has_closing}")

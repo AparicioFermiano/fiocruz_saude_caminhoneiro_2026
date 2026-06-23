@@ -78,7 +78,6 @@ def reconstruct_mod(mod):
     if not all_reads:
         return None
 
-    # Find the first Write op (if any)
     write_content = None
     write_jsonl = None
     for jsonl_line, op, old, new in all_ops:
@@ -87,19 +86,15 @@ def reconstruct_mod(mod):
             write_jsonl = jsonl_line
             break
 
-    # Group reads by their JSONL position relative to edits
     edit_lines = [op[0] for op in all_ops]
 
-    # Find best baseline: reads between first and second edit
     first_edit = edit_lines[0] if edit_lines else 0
     second_edit = edit_lines[1] if len(edit_lines) > 1 else 999999
 
-    # Collect all reads before the LAST edit that changed structure
-    # Use write_content if available (most reliable)
     if write_content:
         print(f"  Using Write at JSONL {write_jsonl} as baseline ({len(write_content)} chars)")
         content = write_content
-        # Apply edits AFTER the write
+
         applied, failed = 0, 0
         seen = set()
         for jsonl_line, op, old, new in all_ops:
@@ -120,13 +115,9 @@ def reconstruct_mod(mod):
         print(f"  Final: {content.count(chr(10))} lines, {len(content)} chars")
         return content
 
-    # No write - use reads approach
-    # Stitch all reads together, prioritizing later reads for conflicts
-    # (later reads show more up-to-date content)
     combined = {}
     read_timestamps = {}
 
-    # Sort reads by JSONL line, use each read to fill gaps
     for jsonl_line, d in sorted(all_reads, key=lambda x: x[0]):
         for ln, content_line in d.items():
             if ln not in combined or not combined[ln].strip():
@@ -137,7 +128,7 @@ def reconstruct_mod(mod):
         return None
 
     max_line = max(combined.keys())
-    # Fill missing lines
+
     result_lines = []
     for i in range(1, max_line + 1):
         result_lines.append(combined.get(i, ''))
@@ -146,7 +137,6 @@ def reconstruct_mod(mod):
     empty_lines = sum(1 for l in result_lines if not l)
     print(f"  Stitched: {len(result_lines)} lines, {len(stitched)} chars, {empty_lines} empty gaps")
 
-    # Apply all edits in order (deduplicated)
     content = stitched
     applied, failed = 0, 0
     seen = set()
@@ -176,9 +166,9 @@ for mod in [3, 4]:
         print(f"  Validating: DOCTYPE={has_doctype}, </html>={has_closing}, lines={lc}")
 
         if has_doctype and lc > 100:
-            # Add closing if missing
+
             if not has_closing:
-                # Check what's missing at the end
+
                 tail = result[-500:]
                 print(f"  File tail: {tail!r}")
                 if '</body>' not in tail:

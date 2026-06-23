@@ -37,7 +37,6 @@ def strip_linenum(text):
         out.append(m.group(1) if m else line)
     return '\n'.join(out)
 
-# Extract the M2 Read at JSONL line 580 (index 579)
 print("=== Extracting M2 read at JSONL 580 ===")
 for idx in range(578, 583):
     obj = json.loads(all_lines[idx])
@@ -51,7 +50,7 @@ for idx in range(578, 583):
                 print(f"  First line: {lines[0][:100]}")
                 print(f"  Last line: {lines[-1][:100]}")
                 print(f"  Total lines in raw: {len(lines)}")
-                # Get the last line number
+
                 last_with_num = None
                 for l in reversed(lines):
                     m = re.match(r'^(\d+)\t', l)
@@ -62,7 +61,6 @@ for idx in range(578, 583):
 
 print()
 
-# Extract the M5 Read at JSONL line 601 (index 600)
 print("=== Extracting M5 read at JSONL 601 ===")
 for idx in range(599, 605):
     obj = json.loads(all_lines[idx])

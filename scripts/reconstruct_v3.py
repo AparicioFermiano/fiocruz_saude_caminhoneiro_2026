@@ -25,7 +25,7 @@ def reconstruct_from_patch(structured_patch):
         for line in lines:
             if isinstance(line, str):
                 if line.startswith('+') or line.startswith(' '):
-                    result_lines.append(line[1:])  # strip the prefix
+                    result_lines.append(line[1:])
     return '\n'.join(result_lines)
 
 def reconstruct_before_from_patch(structured_patch):
@@ -36,11 +36,9 @@ def reconstruct_before_from_patch(structured_patch):
         for line in lines:
             if isinstance(line, str):
                 if line.startswith('-') or line.startswith(' '):
-                    result_lines.append(line[1:])  # strip the prefix
+                    result_lines.append(line[1:])
     return '\n'.join(result_lines)
 
-# Find all Edit operations with their toolUseResult (structuredPatch)
-# The toolUseResult is in the NEXT user message after the assistant's Edit tool_use
 def get_all_edits_with_patches(mod):
     """Return list of (jsonl_line, old_string, new_string, structured_patch) for a module."""
     results = []
@@ -55,7 +53,7 @@ def get_all_edits_with_patches(mod):
                         if f'modulo {mod}' in fp.lower() and 'index.html' in fp:
                             old = item.get('input', {}).get('old_string', '')
                             new = item.get('input', {}).get('new_string', '')
-                            # Get the toolUseResult from subsequent lines
+
                             for j in range(i+1, min(i+5, len(all_lines))):
                                 res_obj = json.loads(all_lines[j])
                                 tr = res_obj.get('toolUseResult', {})
@@ -67,7 +65,6 @@ def get_all_edits_with_patches(mod):
             pass
     return results
 
-# For each module, use the LAST edit's "after" content
 for mod in range(2, 6):
     edits = get_all_edits_with_patches(mod)
     if not edits:
@@ -76,12 +73,6 @@ for mod in range(2, 6):
 
     print(f"M{mod}: {len(edits)} edits found")
 
-    # Use the LAST edit's patch to get the final file state
-    # The last edit's structuredPatch shows the full diff of that edit
-    # and the "after" content from that patch should be the final state
-    # BUT we need the last edit that was actually applied
-
-    # Find the last edit whose patch is non-empty
     last_good = None
     for edit_data in reversed(edits):
         _, old, new, patch = edit_data
@@ -96,7 +87,6 @@ for mod in range(2, 6):
         print(f"  Last edit at JSONL {jsonl_line}: patch reconstructs {lc} lines, {len(after_content)} chars")
         print(f"  Preview: {after_content[:200]}")
 
-        # Check if it's a complete file
         if '<!DOCTYPE html>' in after_content and '</html>' in after_content:
             path = BASE / f'modulo {mod}' / 'index.html'
             path.write_text(after_content, encoding='utf-8')
