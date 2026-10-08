@@ -1,7 +1,0 @@
-MOD1: 342 sentencas DI | 5 ainda ausentes (<0.75)
-
-[0.67] Ana Luiza Machado Pinto (http://lattes.cnpq.br/6138366139843524)
-[0.67] Mariângela Carmo Valente (http://lattes.cnpq.br/6654827763556363)
-[0.3] No Brasil, tem como modelo prioritário a Estratégia Saúde da Família (ESF), com base territorial e foco na responsabilidade sanitária esse contexto, compreender os atributos essenciais e derivados da APS (Starfield, 2002) contribui para qualificar o cuidado ofertado e fortalecer práticas integrais e coordenadas em diferentes territórios e realidades sociais.
-[0.67] Os atributos da APS orientam tanto o vínculo com a equipes de referência da UBS quanto o acesso oportuno a outros pontos da RAS, como demonstrado no quadro a seguir.
-[0.67] Nesse contexto, a articulação intersetorial com órgãos do setor de transportes, instituições de fiscalização, empresas de logística, sindicatos e associações de caminhoneiras e caminheiros é estratégica para ampliar o alcance das ações de promoção da saúde, prevenção de agravos e melhoria das condições de trabalho.
