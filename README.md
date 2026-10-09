@@ -28,6 +28,10 @@ scripts/              scripts Python/PowerShell usados na montagem e revisão do
 .claude/              comandos do Claude Code para criar e validar módulos
 ```
 
+O `style.min.css` e o `modulo.min.js` de cada módulo saem ao salvar, pela extensão
+`emeraldwalk.runonsave` do VS Code (configurada em `.vscode/settings.json`). A lista de extensões
+recomendadas é a do workspace (`../.vscode/extensions.json`), e não mais a deste repositório.
+
 ## Publicar
 
 Copie a pasta do módulo para o servidor ou ambiente do curso. Não há build.
