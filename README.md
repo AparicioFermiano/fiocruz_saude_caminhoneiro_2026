@@ -23,10 +23,13 @@ Servir por HTTP em vez de abrir o arquivo direto evita bloqueio do navegador a s
 ```
 modulo-N/
   index.html          o módulo
-  css/ js/ images/ media/
-scripts/              scripts Python/PowerShell usados na montagem e revisão do conteúdo
+  css/ js/            a página carrega styles.min.css e scripts.min.js
+  images/ media/
+scripts/minify.ps1    gera um .min a partir de um .css ou .js (-Source, -Dest)
 .claude/              comandos do Claude Code para criar e validar módulos
 ```
+
+**Atenção:** os `.min` foram editados direto e têm o que `styles.css` e `scripts.js` não têm (botão de voltar ao topo, menu lateral no celular, lista de referências). Rodar o `minify.ps1` sobre a fonte hoje apaga isso da página.
 
 ## Publicar
 
